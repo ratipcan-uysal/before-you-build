@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "before-you-build",
+  "description": "Skills for the work that happens before you build: challenge the idea, shape the request, score its readiness, and extract the design decisions.",
+  "owner": {
+    "name": "Ratip Can Uysal"
+  },
+  "plugins": [
+    {
+      "name": "before-you-build",
+      "description": "Pressure-test what you are about to build. Adversarial grills, evidence-gated readiness scoring, and design-decision extraction for the work that happens before a single line of code.",
+      "author": {
+        "name": "Ratip Can Uysal"
+      },
+      "category": "productivity",
+      "source": "./",
+      "homepage": "https://github.com/ratipcan-uysal/before-you-build"
+    }
+  ]
+}

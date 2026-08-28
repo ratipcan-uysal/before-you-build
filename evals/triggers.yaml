@@ -1,0 +1,42 @@
+# Trigger and boundary tests.
+#
+# Each case is a prompt a user might actually type, and the skill that should
+# fire for it. `expect: none` means no skill in this set should fire — those
+# cases are the important ones. A set of skills with overlapping descriptions
+# fails here first, long before a user notices it.
+#
+# Run with:  python3 scripts/validate.py     (structure only, free)
+# Model-based routing checks are added once `claude plugin eval` is GA.
+
+cases:
+  # --- idea-grill: should fire -------------------------------------------
+  - prompt: "We're thinking about adding a referral program. Poke holes in it."
+    expect: idea-grill
+  - prompt: "Should we build this? I want you to challenge my thinking, not agree with me."
+    expect: idea-grill
+  - prompt: "Talk me out of rewriting the billing service."
+    expect: idea-grill
+  - prompt: "Here's my strategy for Q3. What am I missing?"
+    expect: idea-grill
+  - prompt: "Bu fikri sorgula, kolay kabul etme."
+    expect: idea-grill
+
+  # --- idea-grill: should NOT fire (boundary) ----------------------------
+  - prompt: "This feature is approved and starts next sprint. What could break in production?"
+    expect: risk-interrogate
+    note: "already decided — grilling the merits here wastes the user's time"
+  - prompt: "Is this spec complete enough for the team to start building?"
+    expect: readiness-score
+    note: "measurement, not debate"
+  - prompt: "Turn these notes into a proper written request."
+    expect: request-shaper
+    note: "production, not critique"
+  - prompt: "Here's the checkout mockup. Tear it apart."
+    expect: ux-grill
+    note: "'tear it apart' is grill language, but the object is a finished screen"
+  - prompt: "What screens do we need for this and what does each one do?"
+    expect: design-brief
+  - prompt: "Fix the failing test in auth_test.py"
+    expect: none
+  - prompt: "Summarise this article for me."
+    expect: none
