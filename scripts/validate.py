@@ -80,6 +80,20 @@ def parse_frontmatter(text, path):
     return fm, text[end + 5:]
 
 
+def strip_fences(text):
+    """Drop fenced code blocks. What is inside a fence is quoted content, not
+    prose: a link there is an illustration of a link, and a skill name there is
+    a document being shown rather than a claim about this repo."""
+    out, fenced = [], False
+    for line in text.splitlines():
+        if line.lstrip().startswith("```"):
+            fenced = not fenced
+            out.append("")
+            continue
+        out.append("" if fenced else line)
+    return "\n".join(out)
+
+
 def blocks_of(text):
     """(first_line_number, text) for each blank-line separated block."""
     out, buf, start = [], [], 1
@@ -153,7 +167,7 @@ prose = sorted(
 )
 for md in prose:
     rel = md.relative_to(ROOT)
-    text = md.read_text()
+    text = strip_fences(md.read_text())
 
     for target in LINK.findall(text):
         if ":" in target.split("/")[0]:      # mailto: and friends

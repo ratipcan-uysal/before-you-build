@@ -30,6 +30,12 @@ Write for the second. The first is not harmed by it.
 
 **You are the only skill that reads more than one document.** That is where the boundary is, and it is also where the work is: the chain drifts, and nothing until now has looked across it.
 
+## Say it when you assembled the sources
+
+If the documents you are checking were produced in this conversation, **open with that.** A model that wrote a brief, a flow and a contract, and then looks for disagreements between them, finds fewer than a stranger would — it recognises its own reasoning on both sides of every pair and reads agreement into it. This is the same guard `ux-grill` and `flow-grill` carry, and it bites harder here, because you are checking several documents rather than one and the pull is toward every one of them.
+
+Say which documents you wrote and which arrived, and recommend the check be repeated in a clean context. Then do the pass properly anyway — a compromised check that names its compromise still finds most of what is there.
+
 ## Phase 0 — Take stock, out loud
 
 Say what you have and what is missing. A pack assembled from four of nine documents is legitimate; one that does not say so is not.
@@ -45,7 +51,7 @@ Nothing before you has done this, and the chain demonstrably drifts — a design
 | Brief ↔ flow | A screen with no step, a step with no screen |
 | Flow ↔ design states | An error path nothing renders |
 | Data model ↔ contract | A field returned that no entity holds |
-| Slice ↔ everything downstream | Work described for something already cut |
+| Slice ↔ everything, both directions | Work described for something already cut — and, upstream, a target or a promise set for the whole feature and never restated for the smaller one |
 | Brief ↔ data model | A distinction the design leans on that no identity rule supports |
 | Every open list ↔ every other | The same question, two owners, two answers |
 | Every marker ↔ every later document | An `[ASSUMED]` dropped in transcription and now read as fact |
@@ -58,7 +64,8 @@ Nothing before you has done this, and the chain demonstrably drifts — a design
 
 Six sections, in this order, and the order is the design. Worked wording: [`references/pack.md`](references/pack.md).
 
-1. **Ask before you start.** Every `[DECISION NEEDED]` that cannot be deferred, each with its owner and the one sentence that would settle it. Explicitly: *these are to be asked, never filled.*
+1. **Ask before you start.** Every `[DECISION NEEDED]` whose answer **the first day of work would otherwise invent**, each with its owner and the one sentence that would settle it. Explicitly: *these are to be asked, never filled.*
+   **Keep the second tier separate and keep it.** `request-shaper` sorts open items by what they block — starting, or going live — and collapsing that here loses the distinction the requester paid an interview for. Something that blocks release and not the first commit belongs further down, under *Done means*, named as blocking release. Six undecided error exits do not stop anyone starting; they stop anyone shipping, and a pack that files them alongside the identity rule gets both ignored.
 2. **The job.** One paragraph — who finishes what, end to end. From `slice`'s spine if there is one.
 3. **Decided.** Facts, unhedged, in the words the chain used. Anything carrying `[ASSUMED]` keeps the marker.
 4. **Must not.** Prohibitions from the brief's non-goals, the slice's permanent cuts, the contract's anti-requirements. **The section a generator actually obeys**, and the shortest one to write.
@@ -83,7 +90,7 @@ Never soften the verdict because the user is in a hurry. `ASK FIRST` with four q
 
 Ask once: *"Want this as files in the repo rather than a document?"*
 
-On yes: the standing constraints — the prohibitions, the undeferrable decisions, the vocabulary — go where a coding agent reads project context on every session, and the rest goes beside it as the pack. This matters more than it sounds: **a pack that lives in a chat is re-read never**, and the decisions it holds are re-made every session by whoever is generating.
+On yes, the split is **what every session needs against what is read once.** Into the file a coding agent loads every time: the job, the ask-don't-guess list, the prohibitions, the decided-now-built-later list, and the vocabulary the code and the copy should use — a page, not a document. Beside it, the pack: the decided detail, the error paths, the acceptance, the disagreements. Getting the split wrong in either direction costs something real — too much in the standing file and it stops being read, too little and the prohibitions are absent from the session that breaks them. This matters more than it sounds: **a pack that lives in a chat is re-read never**, and the decisions it holds are re-made every session by whoever is generating.
 
 Never write files unasked, and never write code.
 

@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.3.1
+
+Three corrections to `build-context`, all found by producing the pack rather than by reading the skill.
+
+**It now declares itself compromised when it assembled the sources.** A model that wrote a brief, a flow and a contract, then hunts for disagreements between them, finds fewer than a stranger would. `ux-grill` and `flow-grill` have carried this guard from the start; the skill that checks *several* documents needed it most and did not have it.
+
+**Heads up — the two tiers of open items survive into the pack.** `request-shaper` sorts open items by what they block, starting or going live, and the first version of `build-context` flattened both into one list. That would have filed six undecided error exits beside a decision that stops the first commit. One of those stops you starting; the other six stop you shipping, and together they get skimmed.
+
+**The cross-check reads the slice in both directions.** Cutting scope changes what the documents *before* it mean, not only the ones after — a target set for the whole feature and never restated for the smaller one is a real disagreement, and the matrix could not see it.
+
+Also: the validator no longer treats a link inside a fenced code block as a link. A worked example that shows a document is quoting it, not claiming its links resolve from here.
+
 ## 3.3.0
 
 **`build-context` closes the chain.** It assembles what the other skills decided into one pack whose reader is whoever writes the code, and it puts **what is still open at the top**, above anything anyone could start building from. The chain used to end in nine documents, and nobody builds from nine documents.
