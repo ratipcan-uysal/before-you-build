@@ -73,6 +73,8 @@ Each with the specific version for this flow, not the general rule.
 
 Ask once: *"Want a draft contract to take to the backend team?"* On yes, follow [`references/draft-contract.md`](references/draft-contract.md).
 
+It has two layers. The shape layer is always safe. The **concrete layer** — real operations, paths and fields — only exists once you have **asked** which paradigm, which naming convention and how versioning works. Never assume REST; a proposal in the wrong paradigm tells the reader you do not know the stack, and everything above it is read in that light afterwards.
+
 **It is a conversation opener, not a specification**, and it lives in its own section so it can be deleted without losing anything. The needs stand alone; the draft is a proposal the people who own the system are free to discard entirely — and the skill says so, in the document, where they will read it.
 
 This crosses the set's usual line of what and why rather than how. It is deliberate: a product manager arriving with only a list of needs negotiates from a weaker position than one arriving with something concrete to argue against. The risk is that it reads as overreach, which is why the needs never depend on it.

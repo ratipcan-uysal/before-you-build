@@ -14,13 +14,26 @@ It is not a specification, and the document says so in its own words:
 
 That paragraph is not decoration. It is the thing that stops an experienced team reading the section as overreach, and it goes in every time.
 
+## Two layers, and the second one has to be asked for
+
+**The shape layer** is always safe: what is asked for, what comes back, and what is still open. It survives any paradigm.
+
+**The concrete layer** — real operations with paths, fields and verbs — is far more useful and only exists once you know the conventions. **Ask before writing a line of it**, in one exchange:
+
+1. **Which paradigm** — REST, GraphQL, gRPC, something else, mixed.
+2. **Naming** — resource nouns or action paths, and the field case. Best of all: two existing endpoints to copy the style from.
+3. **Versioning** — in the path, in a header, or not versioned.
+
+**If the answer is "I don't know" or "mixed", stop at the shape layer and say why.** A proposal in the wrong paradigm is worse than no proposal: it is not merely unusable, it tells the reader the author does not know the stack, and everything above it is then read in that light.
+
+When the conventions come back, **follow them exactly, including the ones you would not have chosen.** The value here is a document that looks like it belongs to this organisation, not one that argues for a better naming scheme. Naming is where a contract conversation goes to die, and you did not open this conversation to win that argument.
+
 ## Rules that keep it honest
 
 - **Every element traces to a need.** No field, operation or parameter that no step in the flow requires. The moment you add something because it seems useful, you are designing a system you have not seen.
-- **Shape, not protocol.** What is asked for and what comes back. Not verbs, paths, status codes, headers, or pagination style — unless the material already established them, in which case follow it.
 - **Mark it all `[DRAFT]`.** Every operation, every field.
 - **Name what you could not shape.** Where a need has no obvious form — a ranking, a limit that may live in a rules engine — say that rather than inventing one.
-- **No error catalogue.** Failure paths are in the flow, where they belong. A parallel list of error codes here is a second source of truth and the wrong one.
+- **No error catalogue, and no status codes.** Failure paths are in the flow, where they belong. A parallel list of codes here is a second source of truth and the wrong one — and error semantics are the part a backend team most reasonably owns.
 
 ## Shape
 
