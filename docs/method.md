@@ -1,6 +1,6 @@
 # The method
 
-Eight principles. The skills in this repo are what they look like when they are made executable.
+Nine principles. The skills in this repo are what they look like when they are made executable.
 
 ## 1. Steelman before you strike
 

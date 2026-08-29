@@ -90,7 +90,7 @@ They are deliberately unflattering. The score comes back NOT READY twice. The de
 
 ## The method
 
-Eight principles the skills are built on — steelman before you strike, one question at a time, silence is never consent, named verdicts instead of vibes. [`docs/method.md`](docs/method.md). The calls made along the way, with what was rejected and why, are in [`docs/decisions.md`](docs/decisions.md).
+Nine principles the skills are built on — steelman before you strike, one question at a time, silence is never consent, named verdicts instead of vibes. [`docs/method.md`](docs/method.md). The calls made along the way, with what was rejected and why, are in [`docs/decisions.md`](docs/decisions.md).
 
 The one worth stealing even if you never install this: **if the document does not say it, it scores zero.** Something counts as out of scope only when the document positively says so, quoted. Absence is never coverage.
 
