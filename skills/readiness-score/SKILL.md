@@ -74,6 +74,8 @@ Every score above 0 must be defensible by pointing at text. If you cannot point,
 
 **An item whose evidence is `[ASSUMED]` or `[UNVERIFIED]` scores at most 1.** `request-shaper` marks anything it inferred rather than received. An inference is worth something — it is a stated position someone can correct — but never as much as a decision. Without this cap the two skills would quietly agree with each other: one invents, the other scores the invention as content, and the user trusts a number built on nothing.
 
+**Say which skill closes an `[UNVERIFIED]` item.** A marked assumption is settled by whoever wrote it; a marked *claim about the outside world* — what a platform permits, what a vendor guarantees — is settled by reading what already exists, and `prior-art` is the skill that does it. Naming it turns a capped item into an afternoon's work instead of a permanent 1.
+
 The cap applies to the **item**, not the line. If everything supporting an item is marked, cap it at 1. If the item also rests on content the author actually gave, score that content normally and ignore the marked line — real evidence is not diluted by an inference sitting next to it. Say in the output which items were capped.
 
 Arithmetic, weights, and the worked example: [`references/scoring.md`](references/scoring.md).

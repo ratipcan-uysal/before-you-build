@@ -71,6 +71,10 @@ Every finding may carry **the decision that would close it** — never the desig
 
 Where a finding needs a decision that nobody has made, say so and hand it to `design-brief`. That is the boundary, and holding it is what makes the critique welcome rather than territorial.
 
+## Where this goes
+
+Findings go back to `design-brief` — a second version of the record, not a redesign here. And when the chain has produced other documents, say once that `build-context` is what assembles them and checks them against each other: a design loop can run twice and still end with nobody holding the whole thing.
+
 ## Operating rules
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
