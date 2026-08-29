@@ -96,3 +96,21 @@ cases:
   - prompt: "Does this document cover the risks properly?"
     expect: readiness-score
     note: "measuring what the document contains, not generating risk questions"
+
+  # --- design-brief: should fire ----------------------------------------
+  - prompt: "What screens do we need for this and what should each one do?"
+    expect: design-brief
+  - prompt: "Write the design brief before we open Figma."
+    expect: design-brief
+  - prompt: "Turn this request into a prompt I can give v0 to generate the UI."
+    expect: design-brief
+  - prompt: "Ekranlarda hangi kararlari vermemiz gerekiyor?"
+    expect: design-brief
+
+  # --- design-brief: should NOT fire (boundary) --------------------------
+  - prompt: "Here's the mockup we built. What's wrong with it?"
+    expect: ux-grill
+    note: "critique of an existing design"
+  - prompt: "List every state this screen can be in, including the weird ones."
+    expect: state-matrix
+    note: "exhaustive sweep, not decisions"

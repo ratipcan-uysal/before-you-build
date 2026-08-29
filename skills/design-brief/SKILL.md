@@ -1,0 +1,77 @@
+---
+name: design-brief
+description: Extract the design decisions behind a feature before anyone opens Figma or asks an AI to generate a screen — surface inventory, the single primary job of each surface, information hierarchy, navigation and input models, defaults, system feedback, binding constraints, and explicit non-goals. Implementation-independent — no pixels, no colours, no adjectives. Optionally emits a second output, a constraint block a UI generator will actually obey. Use when the user says "what should the screens do", "what screens do we need", "write the brief for the designer", "turn this into a design spec", "before we open Figma", "make a prompt for v0 or Figma Make", or has a shaped request and nobody has decided how it should be experienced. Do not use to critique a design that already exists (ux-grill), to enumerate every state exhaustively (state-matrix), to write the request itself (request-shaper), or to measure completeness (readiness-score).
+---
+
+# Design Brief
+
+AI can produce a screen in seconds. It cannot produce the **decisions** that make the screen right, and without them what comes back is plausible and wrong — a layout that answers a question nobody asked.
+
+You produce those decisions. Not pixels, not a palette, not "clean and modern". Which surfaces exist, what each one is *for*, what a person must see first, what they must supply, what is decided for them, and how they know what happened.
+
+## What a decision looks like
+
+A decision names a choice and what it rejects. Everything else is decoration.
+
+| Not a decision | A decision |
+|---|---|
+| "The interface should be intuitive" | "The list is the entry point; the amount field is not reachable without choosing a recipient first" |
+| "Modern, clean design" | "Recipient name outranks amount in the hierarchy — a mis-tap on the wrong person costs more than a mistyped figure" |
+| "Good error handling" | "Failures interrupt: the user is told in the flow, not in a notification they may not see" |
+
+If a line could appear in a brief for any other product, delete it.
+
+## This is not an interview
+
+`request-shaper` asks and waits. You **decide from the material** and mark what you cannot decide as `[DECISION NEEDED]`, naming who settles it. A designer with a marked brief can start; a designer waiting for a conversation cannot.
+
+Ask a question only when a decision is both undetermined and load-bearing — the kind that changes the surface inventory rather than one field on it. Two questions is a lot.
+
+## Not this skill
+
+| The user wants… | Use instead |
+|---|---|
+| A critique of a design that already exists | `ux-grill` |
+| Every state and edge case swept exhaustively | `state-matrix` |
+| The request itself written up | `request-shaper` |
+| A measure of how complete the document is | `readiness-score` |
+
+You name the states the design must **account for**. Sweeping every combination of them is `state-matrix`'s job, and doing it here produces a brief nobody reads.
+
+## Phase 0 — Read and classify
+
+Work from whatever exists — a shaped request, a flow, notes, a ticket. Classify as `readiness-score` does: what the work does, and where it runs. Surface matters more here than anywhere else, because a decision that is right on a phone is often wrong in a browser.
+
+If the material does not say what happens in the flow, stop and say so. A design brief written on top of undecided behaviour invents the behaviour, and the invention ships.
+
+## Phase 1 — Build the record
+
+Ten parts, in this order. Structure and worked wording: [`references/record.md`](references/record.md).
+
+Surfaces · the primary job of each · information hierarchy · navigation model · input model · defaults and decision points · system feedback · binding constraints · non-goals · done criteria.
+
+Two tests do most of the work:
+
+**The primary-job test.** For each surface: *if someone did exactly one thing here and left, what was it?* One verb phrase. If you need two, either it is two surfaces or one job is secondary — say which.
+
+**The hierarchy test.** Rank what appears, 1 to n. If two things are rank 1, neither is. Ranking forces the decision that "prominent" avoids.
+
+## Phase 2 — Mark what you could not decide
+
+Every `[DECISION NEEDED]` carries who settles it and what it blocks. Group them at the end rather than scattering them, so a designer can see in one glance whether they can start.
+
+Do not mark something as needing a decision when the material decides it and you missed it. Re-read first.
+
+## Phase 3 — The generator block (offer, do not assume)
+
+Ask once: *"Want this as a constraint block for a UI generator?"* On yes, follow [`references/generator.md`](references/generator.md).
+
+It is not the brief reformatted. Generators obey structure, order, and prohibitions; they ignore adjectives and quietly invent around gaps. The block states surfaces, the primary job, ranked element order, required states, and explicit prohibitions — and never contains a style adjective, because "modern and clean" is the instruction that produces the generic result the user is trying to escape.
+
+## Operating rules
+
+- **Language:** reply in whatever language the user is writing in.
+- **No visual specification.** No colours, spacing, type scale, or component names from a library the material never mentioned. You decide *what must be true*; a designer decides how it looks. Crossing that line makes the brief easy to dismiss.
+- **Every constraint names its source.** "Accessibility AA" because a policy requires it, or because you assumed it — those are different, and a designer needs to know which.
+- **Non-goals are load-bearing.** What the design must *not* do is the section that survives contact with a generator and with a stakeholder who wants one more thing on the screen.
+- **Output to chat**, then offer to save. Never write files unprompted.

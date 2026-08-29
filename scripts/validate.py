@@ -71,6 +71,13 @@ for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
     if not MIN_DESC <= len(desc) <= MAX_DESC:
         warn(f"{rel}: description is {len(desc)} chars (target {MIN_DESC}-{MAX_DESC}) — "
              "too short triggers unreliably, too long crowds the context")
+    raw_fm = skill_md.read_text().split("\n---\n", 1)[0][4:]
+    for line in raw_fm.splitlines():
+        if line.startswith("description:") and not line.strip().endswith(("'", '"')):
+            body = line.split(":", 1)[1]
+            if ": " in body and not body.strip().startswith(("'", '"')):
+                err(f"{rel}: unquoted description contains ': ' — breaks YAML parsing")
+
     if "Do not use" not in desc and "Not for" not in desc:
         warn(f"{rel}: description states no boundary — overlapping skills mis-fire")
 
