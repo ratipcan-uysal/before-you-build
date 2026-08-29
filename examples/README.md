@@ -1,6 +1,6 @@
 # Worked examples
 
-One fictional request, carried through eleven skills in the order they were actually run. Every document here is the real output, including the passes where a skill caught the one before it — and the two where a skill caught its own author.
+One fictional request, carried through twelve skills in the order they were actually run. Every document here is the real output, including the passes where a skill caught the one before it — and the two where a skill caught its own author.
 
 Read in this order:
 
@@ -17,7 +17,8 @@ Read in this order:
 | 9 | [`api-needs`](api-needs-contract.md) | What the system must provide — 1 supported, 7 unconfirmed — and a draft contract |
 | 10 | [`data-model`](data-model-quick-send.md) | What the system must remember. Four mismatches against the flow it was derived from, and one is whether the central noun is even a thing |
 | 11 | [`slice`](slice-quick-send.md) | What ships first. The part the feature is named after turns out not to be load-bearing |
-| 12 | [`build-context`](build-context-pack.md) | All eleven documents checked against each other and assembled. **Ten disagreements in fifteen checks** — including one the design and the flow each held consistently, and the request's most expensive marked assumption read as fact by three later documents |
+| 12 | [`decision-memo`](decision-memo-slice-approval.md) | One page asking one named person to approve one thing — shipping without the part the feature is named after. **The last skill in the set to be run, because no skill in the chain named it** |
+| 13 | [`build-context`](build-context-pack.md) | All eleven documents checked against each other and assembled. **Ten disagreements in fifteen checks** — including one the design and the flow each held consistently, and the request's most expensive marked assumption read as fact by three later documents |
 
 There is also [a standalone `idea-grill` session](idea-grill-session.md) on a different case: a team wants to add an AI support chatbot, and four questions later it turns out they have a screen problem and have never looked at their own ticket data.
 
@@ -45,4 +46,4 @@ Steps 5 to 8 are a loop, not a line. Some questions do not occur to anyone until
 
 Noticing and deciding are not the same step, and this example separates them the hard way. The drawing is what surfaced the question; the answer belongs to `data-model`, four steps away, because *what makes two recipients the same recipient* is an identity rule and not a rendering choice. Step 6 filed it as a design finding, step 10 found it was never a design question at all. Expect two passes, and expect the second to be the useful one.
 
-Most real sessions use one skill, not eleven.
+Most real sessions use one skill, not twelve.

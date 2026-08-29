@@ -48,9 +48,9 @@ Rendering it is what showed the first two attempts to be wrong, and the second w
 hizli-gonder-build/
 ├── CLAUDE.md                45   every session
 ├── specs/
-│   └── hizli-gonder.md     204   the spec, by subject
+│   └── hizli-gonder.md     287   the spec, by subject
 └── sources/                      the audit trail — not build instructions
-    ├── request.md · slice.md · screens.md
+    ├── request.md · slice.md · screens.md · ux-grill.md
     └── flow.md · data-model.md · api.md
 ```
 
@@ -59,6 +59,16 @@ Its section 4.2, *Confirmation*, holds in one place: the hierarchy and why the r
 Every one of those lines came from a different document. That is what assembling by subject means, and it is also a check: **the same rule usually appears in three documents in three shapes, and separate files hide that.** A reader meets each version in its own context and agrees with all three. Pulled into one section they either agree or they visibly do not.
 
 **Move sentences, do not rewrite them.** A sentence relocated is not a sentence rewritten, and the difference is checkable — every line traces to a line in `sources/`.
+
+### Then the check was run on it, and found three faults
+
+Claiming traceability is not measuring it. Walking every prohibition, default and marker back to its source turned up:
+
+1. **A prohibition inverted.** The design record decided, deliberately and in response to a review finding, that *"the balance prohibition covers only the region, not error messages"* — because a failure that does not say what is short cannot be acted on. The spec had it as *"no balance anywhere, error messages included."* **Assembly drifts toward the stricter reading**, and the stricter reading looks more careful, so nothing flags it.
+2. **`sources/` was incomplete.** Seven of eleven chain documents. Lines in the acceptance section cite an impact pass that is not in the folder, so their traceability target does not exist.
+3. **Markers were translated in the sources.** Thirteen `[TASLAK]` and thirteen `[KARAR GEREK]` against a chain contract that is `[DRAFT]` and `[DECISION NEEDED]`. A translated marker still looks marked, which is why the marker check now hunts for it.
+
+Two more absences surfaced the same way, because writing the copy meant opening the sources: the design record had **drafted no strings at all** and **no example records**, and the pack's last section had ticked both green. It also had none of the six project-wide constraints. All three are now in the spec, marked `[DRAFT]` — and writing them proved the point, since the number format had to be decided before a single button label could be written.
 
 ## What this pack cannot control
 ```

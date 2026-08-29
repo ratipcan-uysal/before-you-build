@@ -94,7 +94,7 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 
 [A full `idea-grill` session](examples/idea-grill-session.md) — a fictional team wants to add an AI support chatbot. Four questions later it turns out they have a screen problem, not a chatbot problem, and they had never looked at their own ticket data.
 
-Then [one fictional request carried through eleven skills](examples/README.md), in the order they were actually run — a bank asks for one-tap repeat transfers, and twelve documents later it has a flow with nine error paths, a design record on its second version, seven unconfirmed system needs, and a first slice that leaves out the part the feature is named after.
+Then [one fictional request carried through twelve skills](examples/README.md), in the order they were actually run — a bank asks for one-tap repeat transfers, and thirteen documents later it has a flow with nine error paths, a design record on its second version, seven unconfirmed system needs, and a first slice that leaves out the part the feature is named after.
 
 They are deliberately unflattering. The score comes back NOT READY twice. The design violates its own brief and nothing looks wrong. Two of the reviews open by declaring themselves compromised, because the same session produced what they are reviewing.
 
