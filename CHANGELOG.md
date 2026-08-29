@@ -4,6 +4,16 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.3.2
+
+**Heads up — `build-context` now carries the chain's documents, not a summary of them.**
+
+When it writes the handoff as project files, three things go down instead of two: the standing file a coding agent loads every session, the pack as a front door, **and the chain's own documents copied across whole** — the flow with its steps and exits, the design record with its states and drafted copy, the data model, the needs and the draft contract.
+
+The version shipped in 3.3.0 wrote the first two and pointed at the rest. That is complete for a team, who already hold those documents, and empty for a model, which is handed the folder and nothing else — and the summary then reads as the whole specification, so everything compressed out of it gets invented instead. Rendered for this repo's worked example, the handoff was 146 lines against 768 of material: **19% of it, reading as though it were all of it.**
+
+The pack's *Decided* section is now orientation and pointers rather than a restatement, with one rule attached: **nothing may exist only in the summary.** If a detail is in the pack and in no carried document, either a document is missing or the pack invented it, and both are findings.
+
 ## 3.3.1
 
 Three corrections to `build-context`, all found by producing the pack rather than by reading the skill.

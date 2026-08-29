@@ -26,11 +26,14 @@ No background, no motivation, no metrics. Those live in the request and a builde
 
 ## 3. Decided
 
-Facts, in the words the chain used, grouped so they can be found: behaviour and rules · surfaces and states · data · what the system must provide · errors and their exits.
+**Orientation, not the specification.** The specification is the chain's own documents, carried whole beside this one; this section tells a reader which of them holds what, and surfaces the handful of facts that would change how they read all of them.
 
-- **Quote where it is load-bearing.** A paraphrase is a small rewrite.
-- **Keep every `[ASSUMED]` marker.** An assumption promoted to a fact by transcription is the most expensive thing this section can contain.
+Grouped so they can be found: behaviour and rules · surfaces and states · data · what the system must provide · errors and their exits. Each group is a few lines and a pointer to the document that holds the detail.
+
+- **Quote where it is load-bearing.** A paraphrase is a small rewrite, and small rewrites are how a prohibition loses its edge.
+- **Keep every `[ASSUMED]` marker**, and say where the later documents dropped it. An assumption promoted to fact by transcription is the most expensive thing this section can contain.
 - **Never add a fact that is not in a source document.** If you find yourself writing something reasonable that nobody decided, it belongs in section 1.
+- **Never let this section become the only copy of anything.** If a detail exists here and in no carried document, either the document is missing or you wrote it — and both are findings.
 
 ## 4. Must not
 

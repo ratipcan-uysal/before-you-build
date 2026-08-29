@@ -90,7 +90,15 @@ Never soften the verdict because the user is in a hurry. `ASK FIRST` with four q
 
 Ask once: *"Want this as files in the repo rather than a document?"*
 
-On yes, the split is **what every session needs against what is read once.** Into the file a coding agent loads every time: the job, the ask-don't-guess list, the prohibitions, the decided-now-built-later list, and the vocabulary the code and the copy should use — a page, not a document. Beside it, the pack: the decided detail, the error paths, the acceptance, the disagreements. Getting the split wrong in either direction costs something real — too much in the standing file and it stops being read, too little and the prohibitions are absent from the session that breaks them. This matters more than it sounds: **a pack that lives in a chat is re-read never**, and the decisions it holds are re-made every session by whoever is generating.
+On yes, **three things go down, not two.**
+
+1. **The standing file** a coding agent loads every session: the job, the ask-don't-guess list, the prohibitions, the decided-now-built-later list, and the vocabulary the code and copy should use. A page, not a document. Too much here and it stops being read; too little and the prohibitions are absent from the session that breaks them.
+2. **The pack** beside it — the front door. Verdict, disagreements, what done means, what the pack cannot control, and enough decided detail to orient someone.
+3. **The chain's own documents, carried whole.** The flow with its steps and error paths, the design record with its states and drafted copy, the data model, the needs and the draft contract.
+
+**The third is not optional and is the one that gets skipped.** A pack that summarises those documents and points at them is complete for a team who already have them, and empty for a model, which is handed the folder and nothing else. The summary then reads as the whole specification, and everything it compressed away — the steps, the states, the exits, the fields, the strings — gets invented instead.
+
+**Carry, never re-summarise.** Copy each document across as it was written. Your own compression of another skill's output is a rewrite, and a rewrite is where a prohibition loses its edge and a marked assumption turns into a fact. This matters more than it sounds: **a pack that lives in a chat is re-read never**, and the decisions it holds are re-made every session by whoever is generating.
 
 Never write files unasked, and never write code.
 

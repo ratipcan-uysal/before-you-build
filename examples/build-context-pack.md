@@ -36,9 +36,32 @@ A sixth tier sits lower down and is deliberately not here: **six of eight error 
 
 ## Phase 4 — The same pack as project files
 
-The pack was rendered both ways. The split that emerged is **what every session needs against what is read once**, and it is not the same as important against unimportant.
+The pack was rendered as files, and rendering it is what showed the first version to be wrong.
 
-### `CLAUDE.md` — 45 lines, loaded on every session
+**The first attempt wrote two files** — a 45-line standing file and a 101-line pack — and pointed at the chain's documents for everything else. For a team that is complete: they have those documents. For a model it is empty, because a model is handed the folder and nothing else, and the summary then reads as the whole specification. Everything compressed out of it — the steps, the states, the exits, the fields, the strings — gets invented.
+
+**146 lines were going down. The material is 768.** The pack was carrying 19% of it and reading as though it carried all of it.
+
+```
+hizli-gonder-build/
+├── CLAUDE.md              45   loaded every session
+└── specs/
+    ├── quick-send.md     101   the front door — verdict, disagreements, done means
+    ├── request.md        126   problem, rules, limits, the open list by what it blocks
+    ├── slice.md           75   what is in this release, and what brings each cut thing back
+    ├── screens.md        128   surfaces, hierarchy, states, drafted copy, awkward data
+    ├── flow.md            96   8 steps · 4 decisions · 5 branches · 9 error paths with exits
+    ├── data-model.md      68   entities, identity rules, lifecycle, stored versus computed
+    └── api.md            129   8 needs with feasibility, anti-requirements, draft contract
+```
+
+The split that emerged is three-way and only the first part was obvious:
+
+- **Every session** — the job, the five questions, the prohibitions, the undeferrable decisions, the vocabulary. A page.
+- **The front door** — verdict, the ten disagreements, what done means, what the pack cannot control, and the few facts that change how everything else reads.
+- **The documents themselves, carried whole.** Not summarised. A compression of another skill's output is a rewrite, and a rewrite is where a prohibition loses its edge and a marked assumption becomes a fact.
+
+### `CLAUDE.md`, in full
 
 ```markdown
 # Quick Send — standing context
@@ -88,30 +111,6 @@ Use these words in code, copy and commits. They come from the request and changi
 `recipient` (not contact, not payee) · `quick send` (the region) · `transfer` (the record) · `source account` · `applied threshold`
 ```
 
-### `specs/quick-send.md` — 88 lines, read once
-
-The verdict, the ten disagreements, the decided detail grouped so it can be found, the eight error paths by name with their exits, and what the pack cannot control.
-
-```markdown
-## Done means
-
-**The signal.** Monthly transfers from mobile, against the trend before release. The stated target is +30%, from about 1,000,000 to 1,300,000 — **set for the full feature. See disagreement 10.**
-
-**Reachable, by name, each with its exit.** Not *"handle errors gracefully"*:
-
-| | Exit |
-|---|---|
-| List request fails | The region becomes invisible; the rest of the home screen works |
-| Insufficient balance | Lower the amount or change the account, back to confirmation |
-| Recipient account closed | `[DECISION NEEDED]` |
-| Receiving bank silent | Five minutes of uncertainty, then the money returns. What the customer sees during it is `[DECISION NEEDED]` |
-| Duplicate send | The second is the same transfer and is refused |
-| App killed mid-send | `[DECISION NEEDED]` |
-| Session or authorisation lost | `[DECISION NEEDED]` |
-| No connection | `[DECISION NEEDED]` |
-
-**Six of eight exits are undecided.** They are not in the ASK FIRST list because none of them blocks the first line of code — but every one of them blocks release.
-
 ## What this pack cannot control
 ```
 
@@ -137,5 +136,7 @@ Three things, and the third is the one worth reading.
 **The verdict counted questions and not contradictions.** A pack with nothing open and ten disagreements would have come back `BUILDABLE` — the exact failure the skill exists against, committed by the skill. It counts both now, and either can hold the verdict.
 
 **The cross-check only paired neighbours.** The sharpest findings came from documents three and four steps apart: number 9 runs from the request to the contract, and number 10 was not found by the matrix at all — it surfaced while writing the acceptance section, because a slice changes what the documents *before* it mean, not only the ones after.
+
+**The pack was a front door with no rooms behind it.** It summarised eleven documents and pointed at them, which is complete for a team holding those documents and empty for a model handed a folder. Phase 4 wrote the door and left the rooms in a chat window. It now carries the chain's documents whole, and the pack's *Decided* section is orientation with pointers rather than a paraphrase — because anything that exists only in the summary is either a missing document or something the summary invented, and both are findings.
 
 **The pack broke a contract the chain had already paid for.** `request-shaper` sorts open items by what they block — starting, or going live — after an interview specifically to establish that. The first version of this skill collapsed both into one list called *ask before you start*, which would have put six undecided error exits beside the identity rule. One of those stops the first commit; the other six stop the release. Filed together, both get skimmed. The distinction is restored, and the lesson is narrower than it looks: a skill that assembles other skills' output can destroy information by flattening it, and nothing upstream will complain.
