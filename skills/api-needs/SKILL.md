@@ -77,6 +77,8 @@ Each with the specific version for this flow, not the general rule.
 
 **Unconfirmed is not a soft yes.** It is the default when you cannot see the system, and writing it honestly is the whole point: a list of needs where everything is quietly assumed to work is the document that produces the week-three conversation.
 
+**And when you cannot name who would confirm it, that is the finding, not a blank in the field.** Write `Unconfirmed — no owner` and say so in the summary. All three verdicts assume somebody owns the system the need lands on; a need whose owner does not exist is not weakly supported, it is unowned, and an unowned need is never confirmed and never refused — it is forgotten, and rediscovered as the thing nobody built. This is common precisely where it costs most: the data plane a flow implies and no document ever assigns.
+
 ## Phase 4 — The draft contract, offered separately
 
 Ask once: *"Want a draft contract to take to the backend team?"* On yes, follow [`references/draft-contract.md`](references/draft-contract.md).
