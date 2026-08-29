@@ -96,6 +96,12 @@ cases:
   - prompt: "Does this document cover the risks properly?"
     expect: readiness-score
     note: "measuring what the document contains, not generating risk questions"
+  - prompt: "Walk this flow and tell me which branches never end."
+    expect: flow-grill
+    note: "answerable from the document; risk-interrogate asks about the world"
+  - prompt: "We are shipping this next month - what bites us in production?"
+    expect: risk-interrogate
+    note: "decided work, failure modes; not an audit of the flow's structure"
 
   # --- design-brief: should fire ----------------------------------------
   - prompt: "What screens do we need for this and what should each one do?"
@@ -218,6 +224,12 @@ cases:
   - prompt: "Is this idea worth building at all?"
     expect: idea-grill
     note: "slice cuts what was already decided to be worth building"
+  - prompt: "Is this request defined well enough for the team to start?"
+    expect: readiness-score
+    note: "definition is measured; size is cut - a complete request can still be too big"
+  - prompt: "This spec is enormous. Score it and tell me what is missing."
+    expect: readiness-score
+    note: "'enormous' is not a request to cut; the ask is the score"
 
   # --- data-model: should fire -------------------------------------------
   - prompt: "What are the entities here and what do we need to store?"
@@ -236,6 +248,12 @@ cases:
   - prompt: "What does the frontend need the backend to return for this?"
     expect: api-needs
     note: "verbs are api-needs; nouns are data-model"
+  - prompt: "Can our services even provide this, and fresh enough?"
+    expect: api-needs
+    note: "feasibility and freshness are needs, not entities"
+  - prompt: "What makes two of these the same record?"
+    expect: data-model
+    note: "identity is the model's first question and appears in no contract"
 
   # --- build-context: should fire ---------------------------------------
   - prompt: "Put all of this together into something I can hand over."
@@ -254,6 +272,12 @@ cases:
   - prompt: "Is this one document complete enough to start?"
     expect: readiness-score
     note: "one document is scored, several are assembled"
+  - prompt: "Turn these notes into something the team can start from."
+    expect: request-shaper
+    note: "one document is written from raw material; the pack is assembled from finished ones"
+  - prompt: "Fill in what is missing from the spec so the pack is complete."
+    expect: request-shaper
+    note: "build-context never fills a gap - that is the failure it exists against"
 
   # --- impact-radar: should fire ----------------------------------------
   - prompt: "If I change this field, what breaks?"
