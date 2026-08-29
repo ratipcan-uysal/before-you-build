@@ -108,6 +108,23 @@ Close with:
 - **The offer:** *"Want me to score this with `readiness-score`?"* — do not run it unasked, and never score your own draft as if you were neutral about it.
 - **When an open item names a person rather than a question**, say that `decision-memo` is how that decision gets made. An open list with owners and no way to reach them is a list that stays open, and the longest items on it are always the ones waiting on somebody.
 
+## Phase 6 — The second pass
+
+Findings arrive **after** the document is written. `prior-art` reads how the problem is already solved and comes back with departures. `impact-radar` comes back with what a change breaks. `idea-grill` in proxy mode raises questions before the document exists at all. Every one of them belongs in the request, and the request has already been handed over.
+
+**You write the second version. Nobody else can.** The skills that produce these findings are forbidden from rewriting anything — that separation is the whole reason their findings are worth reading — so a departure with nowhere to be written is a departure that dies where it was raised. Measured on a full chain run: `prior-art`'s three most decision-changing findings never re-entered the request, and the pack assembled ten documents later was where they surfaced. By then the flow, the model and the contract had all been written over the unamended version.
+
+The design loop already works this way — a brief is grilled and the record comes back as v2 — and this is the same move for the request.
+
+So, when findings arrive for a document you produced:
+
+- **Produce a version, not a reply.** A chat summary of what should change is not a change; the next skill reads the document.
+- **Every incorporated line keeps its origin and its marker.** *"`prior-art`: the documented products have the customer start the session"* — a finding that loses its source becomes an assertion, and the reader cannot tell an opened page from an opinion.
+- **A finding that closes an open item removes it from *Still open* and says which version closed it.** One that opens a new one adds it there with the owner it arrived with.
+- **Say what changed since the last version**, in a few lines, and report the split again. A re-score is only meaningful against a document that says what moved.
+
+**Do not answer the finding.** A departure is a question for whoever chose the mechanism; carrying it into the document is your job, settling it is theirs. A second pass that quietly resolves the questions it was handed is worse than no second pass, because the document now looks as though somebody decided.
+
 ## Operating rules
 
 - **Language:** write in whatever language the user is writing in, including the document itself — but **markers keep their English forms.** `[ASSUMED]` and `[UNVERIFIED]` are tokens `readiness-score` matches on to cap the item at 1 of 3; translated, they score as ordinary content and the contract between the skills silently stops working.
