@@ -101,6 +101,8 @@ One line, named, at the very top:
 
 Never soften the verdict because the user is in a hurry. `ASK FIRST` with four questions is a ten-minute conversation; the same four invented is a rewrite.
 
+**A question with an owner who will not answer is a different problem**, and `decision-memo` is the skill for it. Say so on any `ASK FIRST` item that has been open across more than one document — those are not waiting on writing, they are waiting on somebody.
+
 ## Phase 4 — Offer it as project files
 
 Ask once: *"Want this as files in the repo rather than a document?"*

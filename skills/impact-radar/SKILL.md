@@ -75,6 +75,8 @@ What to test **that is not the thing you changed.** The thing you changed will b
 
 Draw it from the Silent and Deferred rows first — those are precisely what a test plan built around the change will miss, because the change works.
 
+**Say where it goes.** A regression surface handed over on its own is read once and lost; `build-context` carries it into the handoff as *what must still be true afterwards*, which is the only place in the chain that keeps it. If no pack is being assembled, say plainly that this list has to reach whoever writes the tests, by name.
+
 ## Operating rules
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.

@@ -4,6 +4,19 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.6.0
+
+**Heads up — six skills now name the skill they hand off to.** An audit of every claim one skill makes about another found the `emits` break from 3.5.0 was not alone: **`decision-memo` and `build-context` were named by no skill at all**, and `slice` and `data-model` only by `build-context`, which runs last.
+
+That explains something. `decision-memo` is the only skill in this set never run against real material, and nothing in the chain has ever pointed at it — a skill nobody is sent to does not get used, however good its description is.
+
+- `readiness-score` now names `slice` when the scope is obviously more than one release, and `decision-memo` when a gap is open because a person has not decided. A NOT READY that reads as *go and write more* is wrong about both.
+- `flow-map` says its touchpoint marks feed **two** skills. A flow that only ever reaches `api-needs` gets a schema invented for it downstream.
+- `api-needs` asks whether the nouns have been named before drafting a contract over them, and names `build-context` at the end, because a list of needs is not a handoff.
+- `request-shaper` names `decision-memo` for any open item that names a person rather than a question.
+- `impact-radar` says where the regression surface goes. Handed over on its own it is read once and lost.
+- `build-context` names `decision-memo` for anything that has stayed open across more than one document.
+
 ## 3.5.0
 
 Three skills change, all from one question: is the produced spec enough for a backend or a mobile developer?

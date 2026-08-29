@@ -76,6 +76,8 @@ Three conditions force **NOT READY** regardless of the total:
 
 A blocker fires when its item scores 0. Report it by name and quote nothing — the absence *is* the finding.
 
+**Two things a score is often mistaken for, and the skill that actually does them.** A document can be complete and still far too large for one release: measuring definition is not measuring size, and `slice` is what cuts it — offer it whenever the scope is obviously more than one release, whatever the verdict. And when a gap is open because a named person has not decided, the fix is not more writing: `decision-memo` is how that decision gets made. Name both rather than leaving a NOT READY that reads as *go and write more*.
+
 ## Phase 5 — Verdict and output
 
 Decision order: blockers first, then the score.

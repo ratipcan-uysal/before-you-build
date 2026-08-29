@@ -98,6 +98,7 @@ Close with:
 - **What is still open** — each item, and who can settle it. Not "needs more detail": the actual question and the actual person or role.
 - **The assumptions most likely to be wrong** — if any `[ASSUMED]` lines exist, name the two or three that would cost the most if they turn out false.
 - **The offer:** *"Want me to score this with `readiness-score`?"* — do not run it unasked, and never score your own draft as if you were neutral about it.
+- **When an open item names a person rather than a question**, say that `decision-memo` is how that decision gets made. An open list with owners and no way to reach them is a list that stays open, and the longest items on it are always the ones waiting on somebody.
 
 ## Operating rules
 

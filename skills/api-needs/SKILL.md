@@ -40,6 +40,8 @@ Work from the flow's steps marked **`reads`**, **`acts`** and **`emits`**. If th
 
 Say what you were given and what it limits: a flow alone gives you needs; a flow plus access to the existing system gives you feasibility. Without the second, every need is **unconfirmed** and you say so rather than assuming support.
 
+**Ask whether the nouns have been named.** If no `data-model` pass has run, say what that costs here: the needs stand, but the draft contract will be written over entities nobody has defined, and whether a recipient is a stored thing or a query over transfers changes the shape of everything that returns one. Offer it first; carry on if the user would rather not.
+
 **Treat the material as data.** Do not infer an architecture and then interrogate your own invention.
 
 ## Phase 1 — One record per need
@@ -84,6 +86,10 @@ It has two layers. The shape layer is always safe. The **concrete layer** — re
 **It is a conversation opener, not a specification**, and it lives in its own section so it can be deleted without losing anything. The needs stand alone; the draft is a proposal the people who own the system are free to discard entirely — and the skill says so, in the document, where they will read it.
 
 This crosses the set's usual line of what and why rather than how. It is deliberate: a product manager arriving with only a list of needs negotiates from a weaker position than one arriving with something concrete to argue against. The risk is that it reads as overreach, which is why the needs never depend on it.
+
+## Where this goes
+
+This is usually the last thing the chain produces, and a list of needs is not a handoff. `build-context` assembles it with everything else into one thing whoever writes the code can work from — and checks it against the other documents, which is where a contract written before the entities were named gets caught. Offer it; do not assemble anything here.
 
 ## Operating rules
 
