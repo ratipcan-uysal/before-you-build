@@ -68,6 +68,8 @@ Ask once: *"Want this as a constraint block for a UI generator?"* On yes, follow
 
 It is not the brief reformatted. Generators obey structure, order, and prohibitions; they ignore adjectives and quietly invent around gaps. The block states surfaces, the primary job, ranked element order, required states, and explicit prohibitions — and never contains a style adjective, because "modern and clean" is the instruction that produces the generic result the user is trying to escape.
 
+**And it always closes with what it cannot control.** Decisions are necessary and not sufficient: without real copy, awkward example data, the full state set, and access to the design system, a generator invents all four and the result reads as finished. Ten minutes of strings and three deliberately awkward records change the output more than anything else the user can do — and they will skip it unless told.
+
 ## Operating rules
 
 - **Language:** reply in whatever language the user is writing in.

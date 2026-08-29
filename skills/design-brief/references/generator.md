@@ -41,7 +41,11 @@ MUST NOT:
 CONSTRAINTS:
 - surface: <phone / browser / both>
 - accessibility: <level, or "not specified — do not assume">
-- text: <real strings if you have them; otherwise say they are placeholders>
+- design system: <tokens or reference, or "none supplied — output is a layout study">
+
+CONTENT:
+- copy: <real strings, or "placeholder — do not treat as approved">
+- example data: <three records including one awkward: a long name, a single word, a duplicate>
 ```
 
 ## Rules
@@ -51,6 +55,19 @@ CONSTRAINTS:
 - **Real copy or a flag.** If you do not have the real strings, say so in the block. Otherwise the generator's invented copy gets screenshotted into a review deck and quietly becomes the copy.
 - **One surface per block.** A block covering three surfaces produces one screen with three jobs on it.
 - **Carry the `[DECISION NEEDED]` items in as prohibitions, not blanks.** *"Source account selection: NOT DECIDED — do not render a selector"* beats leaving it out, which invites one to be invented.
+
+## What the block cannot control — say so every time
+
+The record is the decisions layer. A generator needs decisions **plus** three things this skill does not produce, and it will invent all three silently if you do not supply them. Close every generator block with what is missing, in the user's own terms:
+
+| Missing | What the generator does instead |
+|---|---|
+| **Real copy** | Invents every label, button, error and empty-state string. It reads fine, gets screenshotted into a review, and quietly becomes the copy nobody approved |
+| **Example content** | Designs for the convenient case — a short name, a round number. Never the 34-character name, the single-word account, the two people with the same name |
+| **The full state set** | Renders the default state only. The record names the *moments* that need feedback; enumerating every state per surface is `state-matrix`'s job |
+| **Design system access** | Builds its own visual language. "Use the existing design system" means nothing to a tool that cannot see it — supply tokens, or accept that the output is a layout study and not a design |
+
+Supplying strings and three awkward example records costs ten minutes and changes the output more than any other input. Say that out loud, because users reliably skip it.
 
 ## What not to do with it
 
