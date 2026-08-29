@@ -47,6 +47,8 @@ If the material does not say what happens in the flow, stop and say so. A design
 
 **A request's error table is usually shorter than the flow's.** If the material lists fewer than a handful, say plainly that running `flow-map` first will change what this brief contains, and let the user choose. Do not map the flow yourself — that is a different skill and doing it here means the producer invents the behaviour it then designs for.
 
+**If they choose to carry on without one, the record says so at the top and calls itself partial.** Not a hedge — a scope line: *"written without a mapped flow; the states below are the ones the material named, and a second version will be needed."* A record that is missing most of its error states and does not say so is read as the finished set of decisions, and the states nobody wrote are then the states nobody draws. Measured on a full chain run, the second version's largest section was error states, every one of them traceable to the flow rather than to the request — that section is what the silent version of this document leaves out.
+
 ## Phase 1 — Build the record
 
 Ten parts, in this order. Structure and worked wording: [`references/record.md`](references/record.md).
@@ -95,6 +97,10 @@ It is not the brief reformatted. Generators obey structure, order, and prohibiti
 **Check the block against the record before handing it over**, decision by decision. Every ranked order, every prohibition, every state must trace to something you wrote above; anything in the block that the record does not contain is you designing, and anything the record contains that the block drops is a decision that will be silently reinvented by the generator.
 
 **And it always closes with what it cannot control.** Decisions are necessary and not sufficient: without real copy, awkward example data, the full state set, and access to the design system, a generator invents all four and the result reads as finished. Ten minutes of strings and three deliberately awkward records change the output more than anything else the user can do — and they will skip it unless told.
+
+## Where this goes
+
+The record is one document and nobody builds from documents plural. When the chain has produced others — a flow, a data model, a set of needs — `build-context` assembles them into one pack and checks them against each other, which is where a design that quietly contradicts its own flow gets caught. Offer it; do not assemble anything here.
 
 ## Operating rules
 

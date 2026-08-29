@@ -118,11 +118,16 @@ What this design must **not** do. The section that survives contact with a stake
 
 ## 10. Done criteria
 
-What makes this design correct, in terms someone can check.
+What makes this design correct — **written so that someone can hold it against a screen and answer yes or no in seconds.** Not read and agreed with: checked.
 
+The difference decides whether this section does anything. *"The recipient outranks the amount"* is the decision restated, and a reviewer nods at it while looking straight at a screen that violates it. Turn each one into the observation that would catch the violation — greyscale it and name what is heaviest, put the worst example record in it and say what is still visible, count the drawn states against part 7.
+
+> Greyscale the confirmation screen: the heaviest element is the recipient name, not the amount
+> The 34-character recipient name is drawn, and the amount is still on screen without scrolling
+> Every state in part 7 has a designed screen, including the ones marked `[DECISION NEEDED]`, drawn as marked placeholders
 > A customer who has sent money before can repeat a transfer without reading anything
-> No one can complete a send without having seen the recipient's name and the amount together
-> Every state in part 7 has a designed screen, including the ones marked `[DECISION NEEDED]` once decided
+
+The last one is a claim about behaviour and cannot be checked from a frame; keep those, and keep them last. A list of only unfalsifiable criteria is a list nobody uses, and a list with none of them has stopped describing the product.
 
 ## Decisions still needed
 
