@@ -1,6 +1,6 @@
 ---
 name: flow-grill
-description: Audit a flow that already exists — a diagram, a written sequence, a board export, or the output of flow-map — for the paths that lead nowhere, the branches nobody ended, the steps that assume the previous one worked, and the conditions nobody can test. Returns findings with severity, never a rewritten flow. Checks the flow against whatever was asked for before applying general lenses, because a flow that quietly drifted from its request looks complete. Use when the user says "review this flow", "what's missing from this journey", "grill this flow", "did we cover all the paths", "is this flow complete", or shows a diagram and wants it attacked. Do not use to produce a flow in the first place (flow-map), to critique a screen (ux-grill), to enumerate the states of one surface (state-matrix), or to ask how the system fails in production (risk-interrogate).
+description: Audit a flow that already exists — a diagram, a written sequence, a board export, or the output of flow-map — for the paths that lead nowhere, the branches nobody ended, the steps that assume the previous one worked, and the conditions nobody can test. Returns findings with severity, never a rewritten flow. Checks the flow against whatever was asked for before applying general lenses, because a flow that quietly drifted from its request looks complete. Use when the user says "review this flow", "what's missing from this journey", "grill this flow", "did we cover all the paths", "is this flow complete", or shows a diagram and wants it attacked. Do not use to produce a flow in the first place (flow-map), to critique a screen (ux-grill), or to ask how the system fails in production (risk-interrogate).
 ---
 
 # Flow Grill
@@ -29,7 +29,6 @@ Report drift as **High** at minimum, quoting what was asked.
 |---|---|
 | The flow written in the first place | `flow-map` |
 | A screen or mockup critiqued | `ux-grill` |
-| Every state of one surface enumerated | `state-matrix` |
 | How the system fails in production | `risk-interrogate` |
 
 The line against `risk-interrogate`: you audit **the flow as written** — a branch with no ending, a step assuming the last one worked. It asks how **the system in the world** behaves — a vendor outage, a fraud wave. Yours is answerable from the document; theirs is not.

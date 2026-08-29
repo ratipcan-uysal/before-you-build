@@ -1,6 +1,6 @@
 ---
 name: ux-grill
-description: Critique a design that already exists — a wireframe, mockup, screenshot, Figma frame, or a screen a generator produced — and return findings with severity, not a redesign. Checks conformance to whatever decisions were already made before applying general lenses, because a screen that quietly contradicts its own brief looks fine and passes review. Covers hierarchy, affordance, states, error paths, adjacency, irreversibility, correction, exits, accessibility, content under stress, and consistency. Use when the user says "critique this design", "what's wrong with this screen", "review this mockup", "tear this apart", "UX review", "does this design work", or shows a screen and wants an independent read. Do not use to decide what the screens should do in the first place (design-brief), to enumerate every state exhaustively (state-matrix), or to measure how complete a written document is (readiness-score).
+description: Critique a design that already exists — a wireframe, mockup, screenshot, Figma frame, or a screen a generator produced — and return findings with severity, not a redesign. Checks conformance to whatever decisions were already made before applying general lenses, because a screen that quietly contradicts its own brief looks fine and passes review. Covers hierarchy, affordance, states, error paths, adjacency, irreversibility, correction, exits, accessibility, content under stress, and consistency. Use when the user says "critique this design", "what's wrong with this screen", "review this mockup", "tear this apart", "UX review", "does this design work", or shows a screen and wants an independent read. Do not use to decide what the screens should do in the first place (design-brief), or to measure how complete a written document is (readiness-score).
 ---
 
 # UX Grill
@@ -30,7 +30,6 @@ Report a contradicted decision as **High** at minimum, quoting the decision. If 
 | The user wants… | Use instead |
 |---|---|
 | The design decisions made in the first place | `design-brief` |
-| Every state and edge case enumerated | `state-matrix` |
 | A written document scored for completeness | `readiness-score` |
 
 ## Phase 0 — Look, and say what you have
@@ -51,6 +50,8 @@ Run these three before anything else; they find most of what matters.
 **The stress test.** The longest name, the biggest number, the empty list, the failed request, the smallest phone. Designs are made against convenient content and meet inconvenient content in production.
 
 Then the eleven lenses: [`references/lenses.md`](references/lenses.md) — hierarchy · affordance · states · error paths · adjacency · irreversibility · correction · exits · accessibility · content under stress · consistency.
+
+The states lens carries a **per-surface sweep**: what this surface does when a dependency never arrives, when what it showed has gone stale, when the session is lost while it is open. A surface that needs three things and has a designed state for two is the finding it produces most often.
 
 Work the ones the material can answer. A lens that produces nothing produces nothing — say which you could not apply and why.
 

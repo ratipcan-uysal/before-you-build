@@ -4,6 +4,14 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.0.0
+
+**`state-matrix` is removed.** Its work now lives in two places you were probably already running.
+
+**Heads up.** If you were invoking it by name, that no longer resolves. The per-surface sweep — what a surface does when a dependency never arrives, when what it showed went stale, when the session is lost while it is open — is now part of `ux-grill`'s states lens, which runs on the same surface at the same point in the work. The project-wide constraints it kept rediscovering — theme, text scaling, minimum viewport, motion, truncation, number formatting — moved into `design-brief`, which now asks for all six and drafts them.
+
+It was removed because two rounds of narrowing left it thin, and because a twelfth skill costs a boundary that has to be defended, tested and kept from drifting. It earned one finding the others would plausibly have reached anyway. The full reasoning, including the deletion condition written before it was met, is in [`docs/decisions.md`](docs/decisions.md).
+
 ## 2.0.0 — all twelve
 
 **`impact-radar`** joins the set. What a change to something existing will break, traced across ten dimensions — and the distinction the whole skill turns on: **loud breakage throws and gets fixed in a day; silent breakage keeps working and is wrong.** A report that groups differently outranks a screen that errors, every time. Deferred breakage is worse than both, because release day looks fine.

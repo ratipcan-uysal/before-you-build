@@ -112,8 +112,8 @@ cases:
     expect: ux-grill
     note: "critique of an existing design"
   - prompt: "List every state this screen can be in, including the weird ones."
-    expect: state-matrix
-    note: "exhaustive sweep, not decisions"
+    expect: ux-grill
+    note: "the states lens sweeps a surface"
 
   # --- ux-grill: should fire --------------------------------------------
   - prompt: "Here are the mockups. Tear them apart."
@@ -131,23 +131,6 @@ cases:
     expect: idea-grill
     note: "merit of the idea, not quality of the design"
 
-  # --- state-matrix: should fire ----------------------------------------
-  - prompt: "List every state this screen needs, including the ones we forgot."
-    expect: state-matrix
-  - prompt: "What happens when the list is empty, or has ten thousand rows?"
-    expect: state-matrix
-  - prompt: "Did we cover all the edge cases for this surface?"
-    expect: state-matrix
-  - prompt: "Bu ekranin butun durumlarini cikar, unuttuklarimiz dahil."
-    expect: state-matrix
-
-  # --- state-matrix: should NOT fire (boundary) --------------------------
-  - prompt: "Here's the finished screen. What's wrong with it?"
-    expect: ux-grill
-    note: "critique, not enumeration"
-  - prompt: "We're shipping this next week. What breaks in production?"
-    expect: risk-interrogate
-    note: "failure modes of a system, not states of a surface"
 
   # --- flow-map: should fire --------------------------------------------
   - prompt: "Map the flow for this feature — every step, including the failures."
@@ -164,7 +147,7 @@ cases:
     expect: flow-grill
     note: "auditing an existing flow, not producing one"
   - prompt: "What states can this one screen be in?"
-    expect: state-matrix
+    expect: ux-grill
     note: "states of a surface, not sequence across surfaces"
 
   # --- flow-grill: should fire ------------------------------------------

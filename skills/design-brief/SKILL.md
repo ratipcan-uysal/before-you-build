@@ -1,6 +1,6 @@
 ---
 name: design-brief
-description: Extract the design decisions behind a feature before anyone opens Figma or asks an AI to generate a screen — surface inventory, the single primary job of each surface, information hierarchy, navigation and input models, defaults, system feedback, binding constraints, and explicit non-goals. Implementation-independent — no pixels, no colours, no adjectives. Optionally emits a second output, a constraint block a UI generator will actually obey. Use when the user says "what should the screens do", "what screens do we need", "write the brief for the designer", "turn this into a design spec", "before we open Figma", "make a prompt for v0 or Figma Make", or has a shaped request and nobody has decided how it should be experienced. Do not use to critique a design that already exists (ux-grill), to enumerate every state exhaustively (state-matrix), to write the request itself (request-shaper), or to measure completeness (readiness-score).
+description: Extract the design decisions behind a feature before anyone opens Figma or asks an AI to generate a screen — surface inventory, the single primary job of each surface, information hierarchy, navigation and input models, defaults, system feedback, binding constraints, and explicit non-goals. Implementation-independent — no pixels, no colours, no adjectives. Optionally emits a second output, a constraint block a UI generator will actually obey. Use when the user says "what should the screens do", "what screens do we need", "write the brief for the designer", "turn this into a design spec", "before we open Figma", "make a prompt for v0 or Figma Make", or has a shaped request and nobody has decided how it should be experienced. Do not use to critique a design that already exists (ux-grill), to write the request itself (request-shaper), or to measure completeness (readiness-score).
 ---
 
 # Design Brief
@@ -32,11 +32,10 @@ Ask a question only when a decision is both undetermined and load-bearing — th
 | The user wants… | Use instead |
 |---|---|
 | A critique of a design that already exists | `ux-grill` |
-| Every state and edge case swept exhaustively | `state-matrix` |
 | The request itself written up | `request-shaper` |
 | A measure of how complete the document is | `readiness-score` |
 
-You name the states the design must **account for**. Sweeping every combination of them is `state-matrix`'s job, and doing it here produces a brief nobody reads.
+You name the states the design must **account for**. Checking that each one was actually drawn is `ux-grill`'s job, and doing it here means the producer is checking its own work.
 
 ## Phase 0 — Read and classify
 
@@ -77,7 +76,7 @@ Marking a gap and stopping is not enough when you could have filled it. Propose 
 
 **Draft the example content.** Three records, and at least one deliberately awkward for this domain — the name that is far too long, the single-word entry, the two entries that look identical. Generators design for the convenient case unless handed the inconvenient one.
 
-**Draft only the states you can derive**, and say so. The moments needing feedback are yours; the exhaustive sweep of every state and edge case belongs to `state-matrix`. Taking that over collapses a boundary that exists for a reason.
+**Draft only the states you can derive**, and say so. Naming the moments that need feedback is yours; checking that each one was actually drawn belongs to `ux-grill`, and taking it over means the producer marks its own work.
 
 **Draft the project-wide constraints.** Theme, text scaling, minimum viewport, motion, truncation, number formatting. Each has a defensible default, each applies to every surface, and each is otherwise rediscovered on the fourth screen by a state sweep — late, and answered differently every time.
 

@@ -84,7 +84,7 @@ How the person knows what is happening, at each moment that matters: in progress
 
 **Every state named here must exist in the deliverable, including the undecided ones.** A set of screens that silently omits a `[DECISION NEEDED]` state looks complete, gets reviewed as complete, and hides the exact gap the brief was written to expose. An undecided state ships as a marked placeholder, never as an absence.
 
-Name the states the design must account for. Sweeping every combination is `state-matrix`.
+Name the states the design must account for. Checking each one was drawn belongs to `ux-grill`.
 
 ## 8. Binding constraints
 

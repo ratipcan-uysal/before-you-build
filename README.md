@@ -46,8 +46,7 @@ flowchart TD
     FG --> AN[api-needs]
     AN --> DM
     FG --> DB[design-brief]
-    DB --> SM[state-matrix]
-    SM --> UX[ux-grill]
+    DB --> UX[ux-grill]
     UX -->|decisions only a drawing reveals| DB
     UX --> DM[decision-memo]
     DM --> out([now build it])
@@ -56,7 +55,7 @@ flowchart TD
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC,RI,DB,UX,SM,FM,FG,AN,IR,DM shipped
+    class IG,RS,SC,RI,DB,UX,FM,FG,AN,IR,DM shipped
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
@@ -75,7 +74,6 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) | What breaks in production? | ✅ |
 | [`flow-map`](skills/flow-map/SKILL.md) | What happens, in what order, including the unhappy paths? | ✅ |
 | [`flow-grill`](skills/flow-grill/SKILL.md) | Is the flow logically complete? | ✅ |
-| [`state-matrix`](skills/state-matrix/SKILL.md) | Which states did we forget? | ✅ |
 | [`api-needs`](skills/api-needs/SKILL.md) | What must the system be able to provide? | ✅ |
 | [`impact-radar`](skills/impact-radar/SKILL.md) | If I change this, what do I break? | ✅ |
 | [`decision-memo`](skills/decision-memo/SKILL.md) | How do I get a decision made? | ✅ |
@@ -98,7 +96,7 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v2.0` — **all twelve skills are complete.** From here the set changes because it is used, not because it is unfinished. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
+`v3.0` — **eleven skills.** `state-matrix` was removed after three rounds of narrowing left it doing what `ux-grill` and `design-brief` already covered; [why](docs/decisions.md). From here the set changes because it is used. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
 
 What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
 

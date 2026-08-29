@@ -68,7 +68,7 @@ The record is the decisions layer. A generator needs decisions **plus** three th
 |---|---|
 | **Real copy** | Invents every label, button, error and empty-state string. It reads fine, gets screenshotted into a review, and quietly becomes the copy nobody approved. **Draft it instead** — marked `[DRAFT]`, approved in one pass |
 | **Example content** | Designs for the convenient case — a short name, a round number. Never the 34-character name, the single-word account, the two people with the same name. **Draft three records**, one of them deliberately awkward |
-| **The full state set** | Renders the default state only. The record names the *moments* that need feedback; enumerating every state per surface is `state-matrix`'s job |
+| **The full state set** | Renders the default state only, whatever the record says. Every state you need drawn has to appear in the block by name |
 | **Design system access** | Builds its own visual language. "Use the existing design system" means nothing to a tool that cannot see it — supply tokens, or accept that the output is a layout study and not a design |
 
 Supplying strings and three awkward example records costs ten minutes and changes the output more than any other input. Say that out loud, because users reliably skip it.
@@ -77,4 +77,4 @@ Supplying strings and three awkward example records costs ten minutes and change
 
 Do not treat the generated result as a design. It is a draft of a layout that respects your decisions — worth minutes, not hours. It has not been critiqued, its states have not been swept, and nobody has checked it against a real user.
 
-That is what `ux-grill` and `state-matrix` are for, and running them on generated output is the point at which this set earns its name.
+That is what `ux-grill` is for, and running it on generated output — in a context that did not produce it — is the point at which this set earns its name.

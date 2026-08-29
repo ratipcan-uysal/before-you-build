@@ -1,6 +1,6 @@
 ---
 name: flow-map
-description: Turn a shaped request, notes, or a described feature into the flow a team can build from — the happy path as numbered steps, every branch with its condition, every error path with what the user is left holding, and a mark at each point where the system has to do something. Reports coverage as counts, so a flow with twelve happy steps and one error path says so out loud. Use when the user says "map the flow", "what are the steps", "turn this into a user journey", "what happens step by step", "draw the flow for this", or has a request and nobody has written down what actually happens. Do not use to audit a flow that already exists (flow-grill), to decide what the screens should do (design-brief), to enumerate the states of a surface (state-matrix), or to derive what the system must provide (api-needs).
+description: Turn a shaped request, notes, or a described feature into the flow a team can build from — the happy path as numbered steps, every branch with its condition, every error path with what the user is left holding, and a mark at each point where the system has to do something. Reports coverage as counts, so a flow with twelve happy steps and one error path says so out loud. Use when the user says "map the flow", "what are the steps", "turn this into a user journey", "what happens step by step", "draw the flow for this", or has a request and nobody has written down what actually happens. Do not use to audit a flow that already exists (flow-grill), to decide what the screens should do (design-brief), or to derive what the system must provide (api-needs).
 ---
 
 # Flow Map
@@ -21,7 +21,6 @@ The happy path takes ten minutes and everyone agrees on it. The value is in the 
 |---|---|
 | A flow that exists audited for gaps | `flow-grill` |
 | What the screens should do and look like | `design-brief` |
-| Every state of one surface swept | `state-matrix` |
 | What the system must be able to provide | `api-needs` |
 
 You mark **where** the system has to act. Turning those marks into requirements is `api-needs`, and doing it here produces a flow nobody can read.
@@ -54,7 +53,7 @@ Not an appendix. Numbered alongside the branches, because they are where the wor
 
 Sweep for them rather than recalling them: [`references/completeness.md`](references/completeness.md) — what fails, what times out, what the user abandons, what arrives twice, what was true when the screen loaded and false when they acted.
 
-Every error path answers two things: **what the person is left holding**, and **how they get out**. An error path with no exit is the same trap `state-matrix` looks for, found earlier and more cheaply.
+Every error path answers two things: **what the person is left holding**, and **how they get out**. An error path with no exit is a trap, and this is the cheapest place to find one.
 
 ## Phase 4 — Mark the system touchpoints
 

@@ -18,7 +18,14 @@ Catches: a primary action drawn as an information tile, text that looks tappable
 Catches: no empty state, no loading state, an error state that was never drawn, a list designed for four items and shipped with four hundred.
 
 > "Which states exist as a drawn screen, and which exist only as an assumption?"
-> Enumerating every combination is `state-matrix`; here you are looking for the ones that are simply absent.
+
+**Sweep for them rather than recalling them.** Per surface, ask what happens when: the data is absent, singular, or far larger than expected · a dependency this surface needs never arrives · what was shown has gone stale before it was used · permission or session is lost while the screen is open · the app is backgrounded and returned to midway · the person arrives after a long absence and the prefilled values are old.
+
+Most produce nothing on most surfaces. The one that reliably produces something is the second — a surface that needs three things and has a designed state for two.
+
+Report each as a **condition the design must answer for**, never as a check that would verify it. *"What is the largest amount this surface must display"* is a state; *"does 999,999.99 fit"* is a test, and a list of tests arrives with nobody owning the decision behind it.
+
+Project-wide constraints — theme, text scaling, minimum viewport, motion, truncation, number formatting — are not findings here. They have the same answer on every surface and belong in `design-brief`. Check they were decided, and point there in one line if they were not.
 
 ## 4. Error paths — what happens when it fails?
 Catches: an error that says something went wrong and not what, an error far from the field that caused it, a dead end with no way forward, a failure the user never sees at all.
