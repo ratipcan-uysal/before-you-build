@@ -4,6 +4,20 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 1.3.0
+
+**`flow-grill`** joins the set. Audits a flow that exists and returns findings, never a rewritten flow — not even a small one, because the moment you write the steps the review becomes a proposal.
+
+It runs the same two guards as `ux-grill`: it declares itself compromised if it authored the flow in the same conversation, and it checks drift from the request before checking completeness. Drift runs in both directions, and the invisible one is a flow that quietly **dropped** something the request included — a missing thing leaves no gap in a diagram.
+
+## 1.2.0
+
+**`flow-map`** joins the set. Produces the flow as numbered steps with every branch's condition and ending, error paths numbered alongside rather than appended, and a mark at each point where the system reads or acts.
+
+Coverage comes back as counts. Nine happy-path steps and one error path did not have one failure; it had one that came to mind.
+
+**`api-needs` is now planned**, and it sits after the flow rather than after the screens: screens tell you about reads, flows tell you about writes, sequencing and failure.
+
 ## 1.1.0
 
 **`state-matrix`** joins the set. Enumerates every state a surface can be in across six dimensions, marks each **Designed / Decided / Open / Unreachable**, and reports the counts. Two checks read across the finished matrix: a state with no way out is a trap, and a designed state nothing leads to is dead.

@@ -166,3 +166,19 @@ cases:
   - prompt: "What states can this one screen be in?"
     expect: state-matrix
     note: "states of a surface, not sequence across surfaces"
+
+  # --- flow-grill: should fire ------------------------------------------
+  - prompt: "Here's our flow diagram. What's missing from it?"
+    expect: flow-grill
+  - prompt: "Grill this user journey — did we cover all the paths?"
+    expect: flow-grill
+  - prompt: "Bu akisi denetle, eksik dallar var mi?"
+    expect: flow-grill
+
+  # --- flow-grill: should NOT fire (boundary) ----------------------------
+  - prompt: "Nobody has written the flow yet. Work out what happens step by step."
+    expect: flow-map
+    note: "producing, not auditing"
+  - prompt: "This flow is signed off. What could take it down in production?"
+    expect: risk-interrogate
+    note: "system behaviour in the world, not completeness of the document"
