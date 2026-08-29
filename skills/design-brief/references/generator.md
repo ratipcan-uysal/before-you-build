@@ -53,6 +53,8 @@ Drafted copy goes **into** the block, flagged. Leaving it out to be safe does no
 ## Rules
 
 - **MUST NOT is the highest-value section.** It is the only reliable control over what a generator invents. Write the specific things: no contacts import, no avatars, no bulk actions, no promotional banner, no onboarding carousel.
+- **Ban real-world entities by name.** Generators reach for real banks, airlines, brands and logos to make sample content feel plausible, and a mockup carrying a real institution's name is a mockup someone will screenshot into an external deck. Put it in MUST NOT and supply fictional names in the example data.
+- **Carry the rank mechanism, not the rank.** "1. recipient" tells a generator the order and nothing about the means, and it will happily make item 2 the largest thing on the screen. Write how rank 1 wins — largest, isolated, contained, first — or the order is decorative.
 - **Rank order, never "prominent".** "Make the recipient prominent" produces bold text. "1. recipient name" produces a layout.
 - **Real copy or a flag.** If you do not have the real strings, say so in the block. Otherwise the generator's invented copy gets screenshotted into a review deck and quietly becomes the copy.
 - **One surface per block.** A block covering three surfaces produces one screen with three jobs on it.

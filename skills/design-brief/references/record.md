@@ -32,6 +32,8 @@ Rank what appears, 1 to n, per surface. Rank forces the decision that "prominent
 
 Always give the reason for the top rank. That sentence is what a designer defends the layout with in review.
 
+**And name the mechanism that carries it.** A rank nobody can execute is a claim, not a decision — a brief saying "recipient outranks amount" while the amount is the largest number on the screen has not been followed, and everyone involved will believe it has. Say *how* rank 1 wins: position, size, weight, containment, isolation, or the reading order. Size is the strongest signal and the one most often accidentally contradicted; if rank 1 is not the largest thing, say what compensates and check it survives a squint.
+
 ## 4. Navigation model
 
 How someone gets in, how they get out, and what the system does when they are interrupted.
@@ -40,6 +42,8 @@ How someone gets in, how they get out, and what the system does when they are in
 > **Out:** back returns to home with nothing sent; there is no partial state to preserve
 > **Deep link:** `[DECISION NEEDED]` — can a push or SMS open this directly? Product decides; it changes whether the surface must work without the home screen loaded
 > **Interrupted:** app killed mid-confirmation returns to home, nothing sent
+
+**Enumerate every exit, and say whether they differ.** A back control and a cancel button are two exits; if they do the same thing, say so, and if they do not, say what each does. Say also what happens to each while an action is in flight — an exit that stays live during a transfer either cancels it or lies.
 
 The interrupted row is the one most briefs omit and most users encounter.
 
@@ -54,6 +58,8 @@ What the person must supply, in what order, and what may be deferred.
 
 Where a value is pre-filled, say where it comes from and how it is corrected. A pre-filled field the user cannot see themselves changing is a field they will get wrong.
 
+**Say what must read as actionable, and what must not.** Hierarchy decides what is seen first; affordance decides what looks pressable. They come apart constantly — a card carrying the primary action of the whole flow, drawn as an information tile, is a screen where nobody knows what to tap. Name the elements that must announce themselves as controls, and the ones that must stay inert so they do not compete.
+
 ## 6. Defaults and decision points
 
 Every place the system decides on the user's behalf, with the cost of that default being wrong.
@@ -63,6 +69,8 @@ Every place the system decides on the user's behalf, with the cost of that defau
 
 A default with no stated cost has not been thought about.
 
+**A `[DECISION NEEDED]` must not be closed by the visuals.** Drawing a single account in a header answers "which account does the money leave from" without anyone deciding it, and the decision then reaches production as a layout nobody argued about. Where a decision is open, the design shows it open — a marked placeholder, not a plausible-looking answer.
+
 ## 7. System feedback
 
 How the person knows what is happening, at each moment that matters: in progress, succeeded, failed, still pending.
@@ -71,6 +79,10 @@ How the person knows what is happening, at each moment that matters: in progress
 > **Succeeded:** `[DECISION NEEDED]` — the material defines failure and never defines success. In a one-tap flow this is the top cause of sending twice
 > **Failed:** the material says account history only. Recorded as decided, and flagged: a failure the user does not see is a failure they repeat
 > **Pending beyond five minutes:** not defined
+
+**Say where the point of no return is announced.** If a surface is the last one before something irreversible happens, the person on it has to know that — especially when a step they expected (a password, a review screen) has been deliberately removed. A flow that removes friction and says nothing about it feels fast in a demo and reckless in a customer's hand.
+
+**Every state named here must exist in the deliverable, including the undecided ones.** A set of screens that silently omits a `[DECISION NEEDED]` state looks complete, gets reviewed as complete, and hides the exact gap the brief was written to expose. An undecided state ships as a marked placeholder, never as an absence.
 
 Name the states the design must account for. Sweeping every combination is `state-matrix`.
 
