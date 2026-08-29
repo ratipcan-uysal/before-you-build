@@ -60,7 +60,9 @@ When an entire category is out of scope (a backend-only change genuinely has no 
 
 Every score above 0 must be defensible by pointing at text. If you cannot point, it is 0.
 
-**A line marked `[ASSUMED]` scores at most 1.** `request-shaper` marks anything it inferred rather than received. An inference is worth something — it is a stated position someone can correct — but never as much as a decision. Without this cap the two skills would quietly agree with each other: one invents, the other scores the invention as content, and the user trusts a number built on nothing.
+**An item whose evidence is `[ASSUMED]` scores at most 1.** `request-shaper` marks anything it inferred rather than received. An inference is worth something — it is a stated position someone can correct — but never as much as a decision. Without this cap the two skills would quietly agree with each other: one invents, the other scores the invention as content, and the user trusts a number built on nothing.
+
+The cap applies to the **item**, not the line. If everything supporting an item is marked, cap it at 1. If the item also rests on content the author actually gave, score that content normally and ignore the marked line — real evidence is not diluted by an inference sitting next to it. Say in the output which items were capped.
 
 Arithmetic, weights, and the worked example: [`references/scoring.md`](references/scoring.md).
 

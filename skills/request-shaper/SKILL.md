@@ -65,7 +65,21 @@ Ask only what is still open. Question bank by category, marked by whether it tak
 
 **When an answer changes the classification, say so immediately.** "Mobile and web" turns a single-surface request into a multi-surface one and opens a set of items that were not in scope a moment ago. Name what just opened and why, before asking the next question. A user who watches the scope grow while they are still in the room can push back on it; one who finds out at estimation cannot.
 
-## Phase 3 — Write the document
+## Phase 3 — Sweep before you write
+
+The interview ends when you judge you have enough, not when the rubric is exhausted — asking sixty questions is not a service. But **the document must still account for every item**, or it presents a partial interview as a finished piece of work.
+
+So before writing: walk the full rubric and sort every item into one of three states.
+
+- **Answered** — goes into the body.
+- **Asked, still open** — the user could not settle it. Goes into *Still open* with an owner.
+- **Never asked** — you ran out of room, or judged it lower priority. Goes into *Still open* too, marked as not yet raised.
+
+Never let the second and third silently merge. A reader who sees nineteen open items assumes the rest were covered. If thirty-four were never raised, the document is lying by omission, and the score will say so within minutes.
+
+Report the split as a number at handoff, the way `readiness-score` reports coverage.
+
+## Phase 4 — Write the document
 
 Structure, section by section, with worked wording: [`references/template.md`](references/template.md).
 
@@ -75,7 +89,7 @@ Six sections matching the readiness rubric — problem and scope · users and tr
 
 **A section with nothing in it says so.** "Not discussed" is honest and scores zero, which is correct. Never pad a thin section to make the document look finished — that is precisely the failure this whole set exists to prevent.
 
-## Phase 4 — Hand off
+## Phase 5 — Hand off
 
 Close with:
 

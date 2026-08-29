@@ -44,11 +44,13 @@ Which events fire and with what parameters. What is logged or kept as an audit t
 A feature with a target and no measurement is a feature nobody can defend at the review. If none of this is needed, write that as a decision — *"no reporting required; usage covered by existing transfer dashboards"* — rather than leaving the section empty.
 
 ### Still open
-Every gap, with the question and who can settle it.
+Every gap, with the question, who settles it, and — critically — whether it was raised at all.
 
-| Question | Who settles it | What it blocks |
-|---|---|---|
-| … | … | … |
+| Question | Who settles it | What it blocks | Status |
+|---|---|---|---|
+| … | … | … | asked / not raised |
+
+Both states belong here. A reader who sees only the questions you asked assumes everything else was covered, and that assumption survives right up until someone tries to build it. Close the section with the count: *"12 answered, 7 asked and open, 34 not yet raised."*
 
 ### Assumptions most likely to be wrong
 Only if `[ASSUMED]` lines exist. Two or three, chosen by what they would cost if false — not by how uncertain you feel about them.

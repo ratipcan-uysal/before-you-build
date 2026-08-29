@@ -138,7 +138,7 @@ These are the questions that are always the same for a given surface. A mobile r
 - **W1** Which browsers and viewports are supported, and what happens outside that set *(K1)*
 - **W2** Responsive behaviour across desktop, tablet, and mobile web *(K5)*
 - **W3** Session and multi-tab behaviour — timeout, and the same flow open twice *(K3)*
-- **W4** Accessibility conformance level required *(K5)*
+- **W4** Keyboard navigation and screen-reader behaviour for this specific flow *(K5)*
 - **W5** Whether the page is public — indexing, sharing, and what a logged-out visitor sees *(K2)*
 
 ### `backend`
@@ -152,6 +152,10 @@ These are the questions that are always the same for a given surface. A mobile r
 - **X1** Whether behaviour must be identical everywhere, and what is allowed to differ *(K3)*
 - **X2** Rollout order across surfaces, and what users see in the gap *(K1)*
 - **X3** Which surface owns the rule when two disagree *(K4)*
+
+## No item may be asked twice
+
+Every item belongs to exactly one place. If a conditional item restates a spine item, the conditional one is wrong and must be narrowed or deleted — a document that omits something should lose those points once, not twice. When adding an item, read the spine first.
 
 ## Reading items honestly
 
