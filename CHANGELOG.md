@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.3.0
+
+**`build-context` closes the chain.** It assembles what the other skills decided into one pack whose reader is whoever writes the code, and it puts **what is still open at the top**, above anything anyone could start building from. The chain used to end in nine documents, and nobody builds from nine documents.
+
+It is the only skill in the set that reads more than one, which is where its boundary is and also where the work is. Its first phase checks the chain against itself — a screen with no step, an error path nothing renders, a field returned that no entity holds, the same question carrying two owners in two documents, an `[ASSUMED]` marker dropped in transcription and now read as fact. Run against this repo's own worked example it found **nine disagreements in fifteen checks**, including the request's most expensive marked assumption being treated as settled by three later documents.
+
+**A disagreement is never reconciled here.** Choosing the more recent document, or the one that reads better, is making a product decision by filing order — in the document whose whole purpose is to stop that.
+
+**Heads up — the verdict counts contradictions, not just questions.** `BUILDABLE` requires that nothing undeferrable is open **and** that no disagreement is unresolved. A pack with nothing open and nine places where two documents contradict each other is not buildable: whoever builds picks a side per contradiction, and no two picks have to agree.
+
+**With this the set is fourteen skills and nothing is planned.** The three added since 3.0 all come from one correction — it was built for a PM handing a request to a team, and it also has to serve someone handing it to a model that writes the whole product. That reader does not ask when something is missing.
+
 ## 3.2.0
 
 **`slice` joins the set**, and it runs fourth — straight after `readiness-score`, before anything is designed. Putting it at the end, next to the handoff, is where scope-cutting usually appears on a diagram and where it is useless: the design, the flow and the contract have already been produced for things that will not ship. That happened in this repo's own worked example, where a brief and a flow were written for a web surface the request itself defers.

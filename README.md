@@ -62,8 +62,7 @@ flowchart TD
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC,SL,RI,DB,UX,FM,FG,DMO,AN,IR,DM shipped
-    class BC planned
+    class IG,RS,SC,SL,RI,DB,UX,FM,FG,DMO,AN,BC,IR,DM shipped
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
@@ -87,6 +86,7 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`api-needs`](skills/api-needs/SKILL.md) | What must the system be able to provide? | ✅ |
 | [`impact-radar`](skills/impact-radar/SKILL.md) | If I change this, what do I break? | ✅ |
 | [`decision-memo`](skills/decision-memo/SKILL.md) | How do I get a decision made? | ✅ |
+| [`build-context`](skills/build-context/SKILL.md) | What does whoever writes the code need, and what must they not invent? | ✅ |
 
 **Producing** and **grilling** are always separate skills. A model that generates a design and then reviews it will approve its own work — not from vanity, but from the ordinary pull of consistency. `design-brief` decides; `ux-grill` attacks. They never run in the same breath.
 
@@ -106,11 +106,11 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v3.2` — **thirteen skills**, one planned. `data-model` joins because a generator handed an undefined schema invents one that works and encodes the wrong product decisions invisibly. `slice` joins because the chain was being run across scope that would not ship. `build-context` is named in the chain above and not written yet. `state-matrix` was removed at v3.0 after three rounds of narrowing left it doing what `ux-grill` and `design-brief` already covered; [why](docs/decisions.md). From here the set changes because it is used. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
+`v3.3` — **fourteen skills**, none planned. The three added at 3.1 to 3.3 all come from one correction: the set was built for a PM handing a request to a team, and it also has to serve someone handing it to a model that writes the whole product. `data-model` because an undefined schema gets invented, `slice` because the chain was being run across scope that would not ship, and `build-context` because the chain ended in nine documents and nobody builds from nine documents. `state-matrix` was removed at v3.0 after three rounds of narrowing left it doing what `ux-grill` and `design-brief` already covered; [why](docs/decisions.md). From here the set changes because it is used. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
 
 What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
 
-Each skill ships with its trigger and boundary tests in [`evals/triggers.yaml`](evals/triggers.yaml), checked in CI. Boundary tests matter more than trigger tests: thirteen skills with overlapping descriptions fail by firing the wrong one, and the user never finds out why the answer was off.
+Each skill ships with its trigger and boundary tests in [`evals/triggers.yaml`](evals/triggers.yaml), checked in CI. Boundary tests matter more than trigger tests: fourteen skills with overlapping descriptions fail by firing the wrong one, and the user never finds out why the answer was off.
 
 ## Origin
 

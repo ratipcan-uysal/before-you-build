@@ -14,6 +14,7 @@ The user invoked the before-you-build router. Figure out where they are in the c
 | A shaped request, and nobody has decided what the screens should do | `design-brief` |
 | A wireframe, mockup, or screenshot to be critiqued | `ux-grill` |
 | A mapped flow, and nobody has decided what the system stores | `data-model` |
+| Several documents from this chain, and the question is "can we build now?" | `build-context` |
 
 If they gave you nothing to work with, ask exactly one question: *"What do you have — a raw idea, a written request, or a design?"* Then route.
 

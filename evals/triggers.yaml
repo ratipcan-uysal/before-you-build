@@ -219,6 +219,24 @@ cases:
     expect: api-needs
     note: "verbs are api-needs; nouns are data-model"
 
+  # --- build-context: should fire ---------------------------------------
+  - prompt: "Put all of this together into something I can hand over."
+    expect: build-context
+  - prompt: "Set up the context so Claude can build this without inventing things."
+    expect: build-context
+  - prompt: "I've run the whole chain. Write the handoff."
+    expect: build-context
+  - prompt: "Hepsini toparla, artik yapmaya baslayacagiz."
+    expect: build-context
+
+  # --- build-context: should NOT fire (boundary) ------------------------
+  - prompt: "Design the architecture and pick the stack for this."
+    expect: none
+    note: "the pack carries decisions; it never designs the build"
+  - prompt: "Is this one document complete enough to start?"
+    expect: readiness-score
+    note: "one document is scored, several are assembled"
+
   # --- impact-radar: should fire ----------------------------------------
   - prompt: "If I change this field, what breaks?"
     expect: impact-radar

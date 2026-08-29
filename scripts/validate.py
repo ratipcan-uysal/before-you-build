@@ -42,7 +42,8 @@ VOCABULARY = {
 # Skills that do not exist yet. Nameable where the set records its direction;
 # an error anywhere a reader would take them for something they can run.
 PLANNED = {
-    "build-context": "planned — the handoff pack a generator reads",
+    # Empty, and kept: the next skill named in the chain before it is written
+    # goes here, and the split below is what makes naming it early safe.
 }
 
 SKILL_SHAPED = re.compile(r"`([a-z][a-z0-9]*(?:-[a-z0-9]+)+)`")
