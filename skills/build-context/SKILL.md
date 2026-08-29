@@ -90,15 +90,20 @@ Never soften the verdict because the user is in a hurry. `ASK FIRST` with four q
 
 Ask once: *"Want this as files in the repo rather than a document?"*
 
-On yes, **three things go down, not two.**
+On yes, **two files, and the second is assembled by subject.**
 
-1. **The standing file** a coding agent loads every session: the job, the ask-don't-guess list, the prohibitions, the decided-now-built-later list, and the vocabulary the code and copy should use. A page, not a document. Too much here and it stops being read; too little and the prohibitions are absent from the session that breaks them.
-2. **The pack** beside it — the front door. Verdict, disagreements, what done means, what the pack cannot control, and enough decided detail to orient someone.
-3. **The chain's own documents, carried whole.** The flow with its steps and error paths, the design record with its states and drafted copy, the data model, the needs and the draft contract.
+1. **The standing file** a coding agent loads every session: the job, the ask-don't-guess list, the prohibitions, the decided-now-built-later list, and the vocabulary. A page, not a document.
+2. **One spec**, organised by what someone is about to build — never by which skill produced what. Whoever writes the confirmation screen should find its rules, its hierarchy, its states, its copy, its steps, its error exits, what it stores and what feeds it **in one section**, not spread across five documents that each hold a fifth of it.
 
-**The third is not optional and is the one that gets skipped.** A pack that summarises those documents and points at them is complete for a team who already have them, and empty for a model, which is handed the folder and nothing else. The summary then reads as the whole specification, and everything it compressed away — the steps, the states, the exits, the fields, the strings — gets invented instead.
+**Assemble by subject; carry by sentence.** Surface-bound material gathers per surface. The flow, the data model and the system contract are cross-cutting by nature and stay whole. What never happens is a spec shaped like the chain that produced it — that shape serves the process, and nobody building is auditing the process.
 
-**Carry, never re-summarise.** Copy each document across as it was written. Your own compression of another skill's output is a rewrite, and a rewrite is where a prohibition loses its edge and a marked assumption turns into a fact. This matters more than it sounds: **a pack that lives in a chat is re-read never**, and the decisions it holds are re-made every session by whoever is generating.
+**Move sentences; do not rewrite them.** A sentence relocated is not a sentence rewritten, and the difference is checkable: every line in the spec traces to a line in a source document, quoted where it is load-bearing. Your own compression is a rewrite, and a rewrite is where a prohibition loses its edge and a marked assumption turns into a fact.
+
+**Assembling is also a check.** The same rule usually appears in three documents in three shapes, and separate files hide that — a reader meets each version in its own context and agrees with all three. Pulled into one section they either agree or they visibly do not, and the ones that do not are Phase 1 findings you missed.
+
+**Keep the sources beside it, and say what they are for.** The chain's documents go in their own folder as the audit trail the spec's traceability points at — and as the home for the reasoning the spec compresses, which is most of what the grills produced. They are not build instructions and nobody should have to read them to build. A folder that does not say which of the two it is gets read as neither.
+
+**Split only when the spec is genuinely too long to open**, and split by subject as well — never back into one file per skill.
 
 Never write files unasked, and never write code.
 

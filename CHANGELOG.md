@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.4.0
+
+**Heads up — `build-context` now writes one spec, ordered by what someone is about to build.**
+
+3.3.2 fixed a summary that read as a specification by carrying the chain's documents across whole. Lossless, and still wrong: it produced a folder shaped like the process that made it. Whoever writes one screen finds its rule in the request, its hierarchy and copy in the design record, its steps and error exit in the flow, what it stores in the data model, and what feeds it in the needs — five files, a fifth of the answer in each. Nobody building is auditing the process.
+
+The distinction that was missing: **summarising is lossy, reorganising is not.** Refusing to summarise was right; it was never a reason to hand over a folder organised by which skill produced what.
+
+So: one spec, assembled by subject. Surface-bound material gathers per surface; the flow, the data model and the contract are cross-cutting and stay whole. **Move sentences, do not rewrite them** — a sentence relocated is not a sentence rewritten, and the difference is checkable, because every line traces to a line in the sources kept beside it.
+
+**Assembling is also a check.** The same rule usually appears in three documents in three shapes. Separate files hide that: a reader meets each version in its own context and agrees with all three. Pulled into one section they either agree or they visibly do not, and the ones that do not are cross-check findings that were missed.
+
 ## 3.3.2
 
 **Heads up — `build-context` now carries the chain's documents, not a summary of them.**

@@ -1,5 +1,22 @@
 # The pack, section by section
 
+The spec below is one document ordered by what someone is about to build. It is **not** ordered by which skill produced what: that shape serves the process, and it makes whoever writes a screen open five files to assemble a fifth of the answer from each.
+
+    1  Ask first                     open decisions, with owners
+    2  What this is                  the job, and what is in this release
+    3  Rules                         behaviour, limits, permissions
+    4  Surfaces                      per surface — purpose, hierarchy, states,
+                                     copy, prohibitions, what it reads and writes
+    5  Flow                          steps, decisions, branches, error exits
+    6  Data                          entities, identity, lifecycle, stored or computed
+    7  What the system must provide  needs, anti-requirements, draft contract
+    8  Done means                    the signal, and what must be reachable
+    9  Disagreements                 unreconciled, each needing someone to choose
+    10 What this cannot control      copy, awkward data, design system, stack
+
+Sections 4 to 7 are the shape that matters. Surface-bound material gathers per surface; flow, data and contract are cross-cutting and stay whole. Everything else is scaffolding around them.
+
+
 One document, six sections, in this order. The order is the design: whoever reads top to bottom meets what is unsettled before they meet anything they could start building from.
 
 Open with the verdict on its own line — `BUILDABLE`, `ASK FIRST` or `NOT BUILDABLE` — and, in one sentence, which chain documents this was assembled from and which are missing.

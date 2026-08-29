@@ -34,82 +34,31 @@ The five: the recipient identity rule · which account money leaves from · audi
 
 A sixth tier sits lower down and is deliberately not here: **six of eight error exits are undecided.** None of them stops anyone starting. All of them stop anyone shipping, and filing them next to the identity rule gets both ignored.
 
-## Phase 4 — The same pack as project files
+## Phase 4 — The same material as project files
 
-The pack was rendered as files, and rendering it is what showed the first version to be wrong.
+Rendering it is what showed the first two attempts to be wrong, and the second was wrong in a way that is easy to defend and still wrong.
 
-**The first attempt wrote two files** — a 45-line standing file and a 101-line pack — and pointed at the chain's documents for everything else. For a team that is complete: they have those documents. For a model it is empty, because a model is handed the folder and nothing else, and the summary then reads as the whole specification. Everything compressed out of it — the steps, the states, the exits, the fields, the strings — gets invented.
+**Attempt one** wrote a standing file and a pack that summarised eleven documents and pointed at them. Complete for a team who hold those documents; empty for a model, which gets the folder and nothing else. **146 lines going down against 768 of material.**
 
-**146 lines were going down. The material is 768.** The pack was carrying 19% of it and reading as though it carried all of it.
+**Attempt two** carried the chain's documents across whole, unsummarised. Lossless, and still wrong — because it produced a folder shaped like the process that made it. Whoever writes the confirmation screen finds its rule in the request, its hierarchy and copy in the design record, its steps and its error exit in the flow, what it stores in the data model, and what feeds it in the needs. **Five files, a fifth of the answer in each.** Nobody building is auditing the process.
+
+**Attempt three** is one spec **ordered by what someone is about to build**:
 
 ```
 hizli-gonder-build/
-├── CLAUDE.md              45   loaded every session
-└── specs/
-    ├── quick-send.md     101   the front door — verdict, disagreements, done means
-    ├── request.md        126   problem, rules, limits, the open list by what it blocks
-    ├── slice.md           75   what is in this release, and what brings each cut thing back
-    ├── screens.md        128   surfaces, hierarchy, states, drafted copy, awkward data
-    ├── flow.md            96   8 steps · 4 decisions · 5 branches · 9 error paths with exits
-    ├── data-model.md      68   entities, identity rules, lifecycle, stored versus computed
-    └── api.md            129   8 needs with feasibility, anti-requirements, draft contract
+├── CLAUDE.md                45   every session
+├── specs/
+│   └── hizli-gonder.md     204   the spec, by subject
+└── sources/                      the audit trail — not build instructions
+    ├── request.md · slice.md · screens.md
+    └── flow.md · data-model.md · api.md
 ```
 
-The split that emerged is three-way and only the first part was obvious:
+Its section 4.2, *Confirmation*, holds in one place: the hierarchy and why the recipient outranks the amount, the prefilled and in-place-editable amount with the branch it creates, the four states, the locked screen with the exit control removed, the prohibition on showing balance **including in error messages**, which two needs it reads and that they are separate sources, what it writes and that it must be atomic, what it stores, which events it emits — and the open decision about the source-account picker, with the note that the flow and the design each hold a consistent and incompatible version of it.
 
-- **Every session** — the job, the five questions, the prohibitions, the undeferrable decisions, the vocabulary. A page.
-- **The front door** — verdict, the ten disagreements, what done means, what the pack cannot control, and the few facts that change how everything else reads.
-- **The documents themselves, carried whole.** Not summarised. A compression of another skill's output is a rewrite, and a rewrite is where a prohibition loses its edge and a marked assumption becomes a fact.
+Every one of those lines came from a different document. That is what assembling by subject means, and it is also a check: **the same rule usually appears in three documents in three shapes, and separate files hide that.** A reader meets each version in its own context and agrees with all three. Pulled into one section they either agree or they visibly do not.
 
-### `CLAUDE.md`, in full
-
-```markdown
-# Quick Send — standing context
-
-Read on every session. The full pack is in [`specs/quick-send.md`](specs/quick-send.md).
-
-## The job
-
-A customer who has sent money before sends it again to the same person, from the home screen, without walking the whole transfer flow from the start.
-
-**This is slice one.** Passwordless sending, the web surface and the source-account picker are deliberately not in it. Do not add them back; see the spec for what brings each one in.
-
-## Ask, do not guess
-
-Five things are undecided. **If you need one of them, stop and ask.** Do not pick the sensible option — a plausible answer here becomes a migration.
-
-| Open | Who answers | If you guess |
-|---|---|---|
-| What makes two recipients the same recipient — account number alone, or account number and name | Requester + backend | Duplicates accumulate under the wrong rule; the fix is a merge with rules about which history survives |
-| Which account money leaves from when a customer has several | Requester | Every surface showing money picks its own answer and they will not agree |
-| Audit log retention period and its owner | Compliance | The obligation applies from the first record written |
-| Accessibility conformance level | UX | Retrofitting contrast and targets touches every surface |
-| Minimum supported app version, and what older versions show | Mobile | An unmanaged version is a support incident with no fix path |
-
-## Must not
-
-- **No amount on the recipient cards.** No balance anywhere in this flow, error messages included — this is a stated constraint, not a layout preference.
-- **No avatars, no contact-book access, no bulk send.**
-- **No client-side ranking.** The list arrives ordered.
-- **No second call to fetch the last amount** — the list carries it.
-- **No secret, limit or threshold enforced only on the device.**
-- **No fetching balance in order to draw the region.**
-
-## Decided now, built later
-
-These are in the build even though the features around them are not.
-
-- **Applied threshold.** Every transfer stores the limit in force when it was made. The screen that shows it is not in this slice.
-- **Default source account.** The picker is out; which account money leaves from is a decision, not a default to invent.
-- **Event source parameter.** Every send event carries its source from day one. A million existing rows without it cannot be backfilled.
-- **Audit trail.** Written from the first transfer. The tooling to read it is out.
-
-## Vocabulary
-
-Use these words in code, copy and commits. They come from the request and changing them costs a translation layer in every conversation.
-
-`recipient` (not contact, not payee) · `quick send` (the region) · `transfer` (the record) · `source account` · `applied threshold`
-```
+**Move sentences, do not rewrite them.** A sentence relocated is not a sentence rewritten, and the difference is checkable — every line traces to a line in `sources/`.
 
 ## What this pack cannot control
 ```
@@ -136,6 +85,8 @@ Three things, and the third is the one worth reading.
 **The verdict counted questions and not contradictions.** A pack with nothing open and ten disagreements would have come back `BUILDABLE` — the exact failure the skill exists against, committed by the skill. It counts both now, and either can hold the verdict.
 
 **The cross-check only paired neighbours.** The sharpest findings came from documents three and four steps apart: number 9 runs from the request to the contract, and number 10 was not found by the matrix at all — it surfaced while writing the acceptance section, because a slice changes what the documents *before* it mean, not only the ones after.
+
+**The output was wrong twice, and the second time it was defensibly wrong.** First a summary that read as a specification. Then the chain's documents carried whole — lossless, and shaped like the process rather than like the work. The distinction that was missing: *summarising* is lossy and *reorganising* is not, and refusing to summarise is not a reason to hand over a folder organised by which skill produced what.
 
 **The pack was a front door with no rooms behind it.** It summarised eleven documents and pointed at them, which is complete for a team holding those documents and empty for a model handed a folder. Phase 4 wrote the door and left the rooms in a chat window. It now carries the chain's documents whole, and the pack's *Decided* section is orientation with pointers rather than a paraphrase — because anything that exists only in the summary is either a missing document or something the summary invented, and both are findings.
 
