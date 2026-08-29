@@ -183,6 +183,24 @@ cases:
   - prompt: "The flow isn't written down yet — what are the steps?"
     expect: flow-map
 
+  # --- slice: should fire ------------------------------------------------
+  - prompt: "This is way too big for one release. What ships first?"
+    expect: slice
+  - prompt: "Cut this down to an MVP."
+    expect: slice
+  - prompt: "What should be in v1 and what can wait?"
+    expect: slice
+  - prompt: "Bunu kucultelim, ilk surumde ne cikar?"
+    expect: slice
+
+  # --- slice: should NOT fire (boundary) --------------------------------
+  - prompt: "How many weeks will the first version take?"
+    expect: none
+    note: "estimation is not in this set"
+  - prompt: "Is this idea worth building at all?"
+    expect: idea-grill
+    note: "slice cuts what was already decided to be worth building"
+
   # --- data-model: should fire -------------------------------------------
   - prompt: "What are the entities here and what do we need to store?"
     expect: data-model

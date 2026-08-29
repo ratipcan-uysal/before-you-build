@@ -1,0 +1,99 @@
+---
+name: slice
+description: Cut a defined request down to a first slice worth shipping on its own, and say precisely what falls out and what brings it back. Finds the one job a person must be able to finish end to end, then tests every candidate cut against whether anyone still gets whole value, whether you could tell it worked, and whether the deferred part comes back cheaply or comes back as a migration. Separates cutting the build from cutting the decision — a deferred feature is a smaller build, a deferred decision is one made silently by whoever writes the code. Writes its exclusions as quotable declarations so readiness-score can mark them out of scope with evidence. Use when the user says "what ships first", "cut this down", "what is in v1", "this is too big", "what is the MVP", "help me scope this", or has a request nobody can build in the time available. Do not use to argue whether the thing is worth building at all (idea-grill), to measure whether it is defined enough (readiness-score), to write the request itself (request-shaper), or to estimate how long any of it takes.
+---
+
+# Slice
+
+A first version is not the whole thing with the hard parts removed. That is the same product, later, and nobody can use it in the meantime.
+
+A slice is a cut through every layer that leaves one person able to finish one job. Everything else waits, in writing, with a way back.
+
+## The one rule
+
+**Cut the build, never the decision.**
+
+A deferred feature is a smaller build. A deferred decision is a decision — made silently, by whoever writes the code, and when that is a model it is made instantly and never mentioned. *"Multiple accounts come later"* is a plan. *"What makes two recipients the same recipient, later"* is not postponing anything: the first line of code answers it, and the answer becomes a migration.
+
+So every cut produces two lists. What is not being **built** yet, and what has already been **decided** and merely gets built later.
+
+## Not this skill
+
+| The user wants… | Use instead |
+|---|---|
+| To argue whether this is worth building at all | `idea-grill` |
+| To know whether the request is defined enough | `readiness-score` |
+| The request itself written up | `request-shaper` |
+| How long any of it takes | Not in this set. Say so plainly |
+
+You run **after** `readiness-score` and before everything downstream. Slicing an undefined request cuts guesses; designing before slicing produces screens, flows and contracts for things that will not ship.
+
+## Phase 0 — Put everything on the table
+
+One line each, no ordering, no judgement yet. Include what the request **implies** but does not say — the second surface, the empty state, the failure the flow will need. A cut made against a partial list is not a cut, it is an oversight with a confident name on it.
+
+If nothing has scored the material, say the list is probably short and offer `readiness-score` first.
+
+## Phase 1 — Find the spine
+
+**One person, one job, start to finish.** Say it in a sentence with a subject and a verb: *"a customer who has sent money before sends it again to the same person."*
+
+Everything on the spine ships. Everything else is a candidate.
+
+**The test: remove a step and the job cannot be finished.** If the job survives without it, it is not spine — however obviously good, however nearly free.
+
+The common failure is a spine drawn **along** a layer rather than through them. *"The backend first"* completes no job for anyone, produces no signal, and is the version of slicing that feels responsible and teaches nothing.
+
+**Then check the headline against the spine.** The thing the request is named after, the part everyone is arguing about, the piece waiting on an approval — hold it up to the job and ask whether the job finishes without it. It often does, and when it does, that single cut is worth more than every other cut combined: it takes the blocking approvals, the risk surface and the hardest dependency with it, and usually leaves the hypothesis still testable. A request whose risky half is not load-bearing is the most common shape there is, and nobody looks, because the risky half is what the request is called.
+
+## Phase 2 — Cut, and test every cut
+
+Four questions per candidate. A cut that fails one is not made yet.
+
+1. **Does anyone still get whole value?** Half a job delivered is nothing delivered. If cutting it leaves someone unable to finish, it was spine and you mislabelled it.
+2. **Could you tell whether it worked?** Name the signal *before* the cut. A slice nobody can evaluate makes the next cut guesswork too, and that compounds.
+3. **Does it come back cheaply, or as a migration?** A deferred screen is a screen. A deferred decision about what is stored is a migration — see the rule above.
+4. **Who notices it is missing, and how?** *"They see nothing"* is a design decision nobody has made, not a cut.
+
+**Say what each cut buys.** A cut with no named saving is a preference wearing a schedule.
+
+## Phase 3 — What cannot be cut
+
+Things that look like features and are decisions in costume. These go into the slice as decisions even when the feature they belong to is deferred. Full list with what each one costs when deferred: [`references/undeferrable.md`](references/undeferrable.md).
+
+- **Identity rules** — what makes two records the same thing. Decided once, or migrated forever.
+- **Stored versus computed**, for anything a person is shown and might be shown again.
+- **The auth and permission model**, even when there is exactly one user today.
+- **Anything touching money, law or someone else's data** — retention, consent, audit trail. Never deferrable, only undeclared.
+
+## Phase 4 — The cuts that cost more than the build
+
+Slicing advice assumes building is the expensive part. Check it rather than assuming it, because the assumption has been wrong twice in living memory: once when the deferred work needs a compatibility path, and again now that a generator can produce a second surface in an afternoon while re-establishing the context to add it later costs a day.
+
+For each cut, ask what **resuming** it costs: reloading the context, a second design pass, a migration, a version people are already running. When resuming costs more than building, the cut is a false economy and should be named as one rather than quietly reversed later.
+
+## Phase 5 — Write it so the score can read it
+
+`readiness-score` marks an item out of scope only when the document positively says so, and quotes the sentence that says it. **Your exclusions are those sentences.** Write them as declarations, not intentions.
+
+> Not: *"we'll probably do web later"*
+> This: *"This slice is mobile only. Web is out of scope for this release."*
+
+A well-cut slice **scores higher** than the request it came from, because the open items belonging to the deferred parts leave scope with a quote attached. If the score does not move, the cut removed nothing.
+
+## The output
+
+| Section | What goes in it |
+|---|---|
+| **In the slice** | The spine, and what survived Phase 2 |
+| **Decided now, built later** | Phase 3 — the decision, not the feature |
+| **Out of this slice** | Each with its quotable sentence, and what brings it back |
+| **Not doing** | Permanent cuts, said out loud once so nobody re-proposes them monthly |
+
+## Operating rules
+
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
+- **Never cut to a number.** Cutting to fit a date produces a slice with a hole in the middle. Cut to a job, then say what the job will take to finish; if that does not fit the date, that is the finding.
+- **Never cut something nobody raised.** Removing what the requester never asked for is not slicing, it is quietly narrowing the request, and it is found in the review.
+- **Say when nothing should be cut.** Some requests are already a slice. Saying so is a real answer, and it is more useful than a ceremonial cut that removes the empty state.
+- **Output to chat**, then offer to save. Never write files unprompted.

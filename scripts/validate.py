@@ -42,7 +42,6 @@ VOCABULARY = {
 # Skills that do not exist yet. Nameable where the set records its direction;
 # an error anywhere a reader would take them for something they can run.
 PLANNED = {
-    "slice": "planned — what ships first",
     "build-context": "planned — the handoff pack a generator reads",
 }
 

@@ -4,6 +4,16 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.2.0
+
+**`slice` joins the set**, and it runs fourth — straight after `readiness-score`, before anything is designed. Putting it at the end, next to the handoff, is where scope-cutting usually appears on a diagram and where it is useless: the design, the flow and the contract have already been produced for things that will not ship. That happened in this repo's own worked example, where a brief and a flow were written for a web surface the request itself defers.
+
+Its rule is **cut the build, never the decision.** A deferred feature is a smaller build. A deferred decision is one made silently by whoever writes the code, instantly and without mention when that is a model. So the output has two lists rather than one, and the second — *decided now, built later* — carries the things that look like features and are decisions in costume: identity rules, stored-versus-computed, the permission model, and anything touching money, law or someone else's data.
+
+Its first phase does one thing beyond finding the spine: it holds the **headline** against it. The part the request is named after, the part waiting on an approval, is often not load-bearing — and when it is not, that single cut takes the blocking approvals, the risk surface and the hardest dependency with it while leaving the hypothesis testable. Nobody looks, because the risky half is what the request is called.
+
+**Heads up — a slice should raise your readiness score.** `slice` writes its exclusions as declarations rather than intentions, because `readiness-score` marks an item out of scope only against a quoted sentence. The open items belonging to deferred parts then leave scope with evidence attached. If the score does not move after a cut, the cut removed nothing.
+
 ## 3.1.0
 
 **`data-model` joins the set.** It decides what the system must remember before anyone writes a schema: the entities, what makes two records the same thing, who owns them, what creates and ends them, which relationships carry a rule, and what is stored rather than computed. It takes its nouns from a mapped flow instead of brainstorming them, and checks itself back against that flow — a step that reads something no entity holds means one of the two is wrong.
