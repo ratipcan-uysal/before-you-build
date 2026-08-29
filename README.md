@@ -2,7 +2,9 @@
 
 **Building is cheap now. Deciding what to build is still the bottleneck.**
 
-A set of Claude Code skills for the work that happens before a single line of code: challenge the idea, shape the request, measure whether it is actually ready, and extract the design decisions that make the difference between a screen that looks right and one that *is* right.
+A set of Claude Code skills for the work that happens before a single line of code: challenge the idea, shape the request, measure whether it is actually ready, and extract the decisions that make the difference between a thing that looks right and one that *is* right.
+
+It serves two builders. One writes a request and hands it to a team. The other hands it to a model that will write the whole product. **The second needs this more, not less** — a team asks when something is missing, and a generator fills the gap silently and confidently, in a way that reads as finished.
 
 These skills are deliberately hard to please. A model asked to review something will usually find a way to approve it — that is the failure this repo is built against.
 
@@ -28,6 +30,7 @@ There is no single front door. What you reach for depends on what landed on your
 | A decision made above you, with detail | no | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) — nothing needs shaping because nothing can be changed; the failure modes are your whole contribution |
 | A decision made above you, with no detail | no | [`request-shaper`](skills/request-shaper/SKILL.md) first — risk questions need decisions to attach to, and there are none yet |
 | A change to something that already exists | no | [`impact-radar`](skills/impact-radar/SKILL.md) |
+| A product you are building yourself, with a model writing the code | yes | `idea-grill`, then the chain — everything you leave out gets invented, and you will not be told |
 
 Most of the work inside an organisation is the rows where the answer is *no*. The set is built for those too, not only for the founder defending their own idea.
 
@@ -41,21 +44,26 @@ flowchart TD
     SC -->|not ready| RS
     SC -->|risks unclear| RI[risk-interrogate]
     RI --> RS
-    SC -->|ready| FM[flow-map]
-    FM --> FG[flow-grill]
-    FG --> AN[api-needs]
-    AN --> DM
-    FG --> DB[design-brief]
+    SC -->|ready| SL[slice]
+    SL -->|first slice only| DB[design-brief]
     DB --> UX[ux-grill]
     UX -->|decisions only a drawing reveals| DB
-    UX --> DM[decision-memo]
-    DM --> out([now build it])
+    DB --> FM[flow-map]
+    FM --> FG[flow-grill]
+    FG -->|error paths the brief needs| DB
+    FG --> DMO[data-model]
+    DMO -->|nouns before verbs| AN[api-needs]
+    AN --> BC[build-context]
+    UX --> BC
+    BC --> out([now build it])
+    blocked([a decision nobody will make]) --> DM[decision-memo]
     change([changing something that already exists]) --> IR[impact-radar]
     IR --> RS
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC,RI,DB,UX,FM,FG,AN,IR,DM shipped
+    class IG,RS,SC,RI,DB,UX,FM,FG,DMO,AN,IR,DM shipped
+    class SL,BC planned
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
@@ -74,6 +82,7 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) | What breaks in production? | ✅ |
 | [`flow-map`](skills/flow-map/SKILL.md) | What happens, in what order, including the unhappy paths? | ✅ |
 | [`flow-grill`](skills/flow-grill/SKILL.md) | Is the flow logically complete? | ✅ |
+| [`data-model`](skills/data-model/SKILL.md) | What must the system remember? | ✅ |
 | [`api-needs`](skills/api-needs/SKILL.md) | What must the system be able to provide? | ✅ |
 | [`impact-radar`](skills/impact-radar/SKILL.md) | If I change this, what do I break? | ✅ |
 | [`decision-memo`](skills/decision-memo/SKILL.md) | How do I get a decision made? | ✅ |
@@ -96,11 +105,11 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v3.0` — **eleven skills.** `state-matrix` was removed after three rounds of narrowing left it doing what `ux-grill` and `design-brief` already covered; [why](docs/decisions.md). From here the set changes because it is used. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
+`v3.1` — **twelve skills**, two planned. `data-model` joins because a generator handed an undefined schema invents one that works and encodes the wrong product decisions invisibly; `slice` and `build-context` are named in the chain above and not written yet. `state-matrix` was removed at v3.0 after three rounds of narrowing left it doing what `ux-grill` and `design-brief` already covered; [why](docs/decisions.md). From here the set changes because it is used. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
 
 What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
 
-Each skill ships with its trigger and boundary tests in [`evals/triggers.yaml`](evals/triggers.yaml), checked in CI. Boundary tests matter more than trigger tests: eleven skills with overlapping descriptions fail by firing the wrong one, and the user never finds out why the answer was off.
+Each skill ships with its trigger and boundary tests in [`evals/triggers.yaml`](evals/triggers.yaml), checked in CI. Boundary tests matter more than trigger tests: a dozen skills with overlapping descriptions fail by firing the wrong one, and the user never finds out why the answer was off.
 
 ## Origin
 

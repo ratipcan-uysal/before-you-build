@@ -13,6 +13,7 @@ The user invoked the before-you-build router. Figure out where they are in the c
 | A written request, and the question is "can we start building?" | `readiness-score` |
 | A shaped request, and nobody has decided what the screens should do | `design-brief` |
 | A wireframe, mockup, or screenshot to be critiqued | `ux-grill` |
+| A mapped flow, and nobody has decided what the system stores | `data-model` |
 
 If they gave you nothing to work with, ask exactly one question: *"What do you have — a raw idea, a written request, or a design?"* Then route.
 

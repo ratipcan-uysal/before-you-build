@@ -183,6 +183,24 @@ cases:
   - prompt: "The flow isn't written down yet — what are the steps?"
     expect: flow-map
 
+  # --- data-model: should fire -------------------------------------------
+  - prompt: "What are the entities here and what do we need to store?"
+    expect: data-model
+  - prompt: "Design the data model for this before I let Claude build it."
+    expect: data-model
+  - prompt: "What does the database need to hold for this feature?"
+    expect: data-model
+  - prompt: "Bu ozellik icin hangi verileri saklamamiz gerekiyor?"
+    expect: data-model
+
+  # --- data-model: should NOT fire (boundary) ---------------------------
+  - prompt: "Write the migration and pick the right indexes for this table."
+    expect: none
+    note: "physical schema belongs to whoever builds it"
+  - prompt: "What does the frontend need the backend to return for this?"
+    expect: api-needs
+    note: "verbs are api-needs; nouns are data-model"
+
   # --- impact-radar: should fire ----------------------------------------
   - prompt: "If I change this field, what breaks?"
     expect: impact-radar

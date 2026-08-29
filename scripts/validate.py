@@ -39,6 +39,13 @@ VOCABULARY = {
     "owner-question",                                      # idea-grill proxy outcome
 }
 
+# Skills that do not exist yet. Nameable where the set records its direction;
+# an error anywhere a reader would take them for something they can run.
+PLANNED = {
+    "slice": "planned — what ships first",
+    "build-context": "planned — the handoff pack a generator reads",
+}
+
 SKILL_SHAPED = re.compile(r"`([a-z][a-z0-9]*(?:-[a-z0-9]+)+)`")
 LINK = re.compile(r"\]\((?!https?://)([^)#\s]+)\)")
 HISTORY_MARKER = re.compile(r"remov|retire|supersed|replac|\bdropped\b|\bv\d+\.\d+", re.I)
@@ -170,6 +177,12 @@ for md in prose:
                     + ("A live document must describe the set as it is."
                        if live else
                        "Say near it that it was removed, or take it out."))
+            elif token in PLANNED:
+                if not live:
+                    continue
+                err(f"{rel}:{line_no}: names `{token}`, {PLANNED[token]}. "
+                    "A skill file, an example or the router must not name a "
+                    "skill the user cannot run.")
             else:
                 err(f"{rel}:{line_no}: `{token}` is not a skill and not declared "
                     "vocabulary — a typo, a rename nobody swept, or a term to "

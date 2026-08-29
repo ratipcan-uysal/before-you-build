@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.1.0
+
+**`data-model` joins the set.** It decides what the system must remember before anyone writes a schema: the entities, what makes two records the same thing, who owns them, what creates and ends them, which relationships carry a rule, and what is stored rather than computed. It takes its nouns from a mapped flow instead of brainstorming them, and checks itself back against that flow — a step that reads something no entity holds means one of the two is wrong.
+
+It runs **before `api-needs`**: nouns before verbs, because a contract over undefined nouns is a contract over guesses. Nothing about `api-needs` changes, but its draft contract has better ground to stand on when the entities are named first.
+
+Why it exists: ask a model to build and it produces a schema that works. Working is not the test. Copy a recipient's name onto a transfer and last March's receipt still says what it said; reference it instead and a rename edits every past receipt. Both schemas work, both survive review, and nothing records which was chosen.
+
+**Heads up — `design-brief` now asks for your error paths.** It names them before deciding anything, and if the material lists only a handful it will say plainly that running `flow-map` first will change what the brief contains, then let you choose. This came from a measurement: of twelve design-review findings that named a decision, every one a mapped flow would have answered first was an error path and its exit — the retry left enabled, the message ordering an action the screen does not offer, the value hidden by a prohibition the exit needs. The order of the chain did not change; the input requirement did.
+
+**Two skills are named in the chain and not written yet** — `slice` (what ships first, running fourth so the rest of the chain is spent on the first slice only) and `build-context` (the handoff, whose reader is whoever writes the code, human or not). They appear in the README diagram as planned. They will not appear inside any skill, example or router until they exist.
+
 ## 3.0.0
 
 **`state-matrix` is removed.** Its work now lives in two places you were probably already running.

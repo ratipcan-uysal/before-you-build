@@ -43,6 +43,10 @@ Work from whatever exists — a shaped request, a flow, notes, a ticket. Classif
 
 If the material does not say what happens in the flow, stop and say so. A design brief written on top of undecided behaviour invents the behaviour, and the invention ships.
 
+**Name the error paths before you decide anything.** List every failure the material describes and, for each, what the person is left holding and how they get out. This is the input that decides the quality of the brief: a measured pass on a real feature put every finding about an error state — the retry that stays enabled, the message ordering an action the screen does not offer, the value hidden by a prohibition the exit needs — in the half of the review that a mapped flow would have answered first, while the identity, placement and contrast findings were untouched by it.
+
+**A request's error table is usually shorter than the flow's.** If the material lists fewer than a handful, say plainly that running `flow-map` first will change what this brief contains, and let the user choose. Do not map the flow yourself — that is a different skill and doing it here means the producer invents the behaviour it then designs for.
+
 ## Phase 1 — Build the record
 
 Ten parts, in this order. Structure and worked wording: [`references/record.md`](references/record.md).
