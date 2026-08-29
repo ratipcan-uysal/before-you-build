@@ -37,8 +37,8 @@ flowchart TD
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC,DB,UX shipped
-    class RI,FM,FG,SM,IR,DM planned
+    class IG,SC shipped
+    class RS,RI,FM,FG,DB,SM,UX,IR,DM planned
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
