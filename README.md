@@ -46,6 +46,7 @@ flowchart TD
     FG --> DB[design-brief]
     DB --> SM[state-matrix]
     SM --> UX[ux-grill]
+    UX -->|decisions only a drawing reveals| DB
     UX --> DM[decision-memo]
     DM --> out([now build it])
     change([changing something that already exists]) --> IR[impact-radar]
@@ -53,11 +54,13 @@ flowchart TD
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC,RI,DB,UX shipped
-    class FM,FG,SM,IR,DM planned
+    class IG,RS,SC,RI,DB,UX,SM shipped
+    class FM,FG,IR,DM planned
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
+
+**The design part is a loop, not a line.** Some decisions cannot be made until something has been drawn — *"two recipients have the same name; how does anyone tell them apart"* is not derivable from a request, and nobody thinks of it until two identical cards sit side by side. The brief decides what can be decided, the drawing surfaces the rest, the grill names them, and they go back to the brief. Expect two or three passes, and expect the second one to be the useful one.
 
 ## Skills
 
@@ -71,7 +74,7 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) | What breaks in production? | ✅ |
 | `flow-map` | What happens, in what order, including the unhappy paths? | planned |
 | `flow-grill` | Is the flow logically complete? | planned |
-| `state-matrix` | Which states did we forget? | planned |
+| [`state-matrix`](skills/state-matrix/SKILL.md) | Which states did we forget? | ✅ |
 | `impact-radar` | If I change this, what do I break? | planned |
 | `decision-memo` | How do I get a decision made? | planned |
 
@@ -96,7 +99,7 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v1.0` — **wave one is complete**: `idea-grill`, `request-shaper`, `readiness-score`, `risk-interrogate`, `design-brief`, and `ux-grill` are all in use. Wave two follows: `flow-map`, `flow-grill`, `state-matrix`, `impact-radar`, `decision-memo`. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another.
+`v1.1` — wave one is complete and `state-matrix` has joined it, closing the design loop: decide with `design-brief`, sweep the states, then attack it with `ux-grill` and take what you find back to the brief. Still to come: `flow-map`, `flow-grill`, `impact-radar`, `decision-memo`. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another.
 
 Each skill ships with its trigger and boundary tests in [`evals/triggers.yaml`](evals/triggers.yaml), checked in CI. Boundary tests matter more than trigger tests: eleven skills with overlapping descriptions fail by firing the wrong one, and the user never finds out why the answer was off.
 
