@@ -73,6 +73,8 @@ You are marking **where**, never **what**. The moment you write a field name or 
 
 **Count the marks by walking the table, and report marks and steps as separate numbers.** A step can carry two or three, so the two totals differ and mixing them is the most common error in this document — *"nine touchpoints"* over a table holding nineteen marks on ten steps reads as precision and is arithmetic. Branches carry marks too, and they are the ones left out of the count.
 
+**Show the working, not the total.** List each mark type with the step numbers that carry it — `acts 2, 6, 9, 12, 13, 16 = 6` — and the count of marked steps beside the count of marks. A total on its own is a number nobody can check, and this is the line of the document most likely to be wrong: the warning above has not been enough on its own, because a wrong total looks exactly like a right one. Written as step numbers it cannot drift from the table without the table being wrong too, and the next two skills both build their work list from these marks.
+
 **These marks feed two skills, not one.** `api-needs` turns them into what the system must provide; `data-model` turns them into what it must remember, and runs first, because a contract written over nouns nobody has defined is a contract over guesses. Offer both when you hand the flow over — a flow that only ever reaches `api-needs` gets a schema invented for it downstream.
 
 ## Phase 5 — Offer the diagram
