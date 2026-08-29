@@ -54,7 +54,7 @@ Nothing before you has done this, and the chain demonstrably drifts — a design
 | Slice ↔ everything, both directions | Work described for something already cut — and, upstream, a target or a promise set for the whole feature and never restated for the smaller one |
 | Brief ↔ data model | A distinction the design leans on that no identity rule supports |
 | Every open list ↔ every other | The same question, two owners, two answers |
-| Every marker ↔ every later document | An `[ASSUMED]` dropped in transcription and now read as fact |
+| Every marker ↔ every later document | An `[ASSUMED]` dropped in transcription and now read as fact — **or translated**, which is the same break and harder to see, because the line still looks marked |
 
 **Do not only check neighbours.** The pairs above are adjacent in the chain and they are the easy half. The expensive disagreements run between documents three or four steps apart — an assumption marked in the request and treated as settled in the contract, a prohibition in the brief that the model contradicts. Read the earliest document last, against everything.
 

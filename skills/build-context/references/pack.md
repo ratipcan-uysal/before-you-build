@@ -83,3 +83,5 @@ Nothing here is invented. If the flow does not name an error path, it is not in 
 Always present, always last, even when the answer is *nothing missing*.
 
 Four things decide the output more than any further decision will: **real copy**, **deliberately awkward example data**, **the design system**, and **the actual stack constraints**. Say which you have and which you do not, and say plainly that a generator handed none of them invents all four and returns something that reads as finished.
+
+**Open each one before you tick it.** *"The design record drafts the copy"* is what that skill is supposed to do, not evidence that this run did it. Go and find the strings, or mark it missing. A false tick here is worse than a missing section: a missing section gets chased, and a tick closes the question. This is the last part of the pack anyone reads, which is exactly why an unchecked reassurance survives in it — and *"absence is never coverage"* is the rule the whole set is built on.
