@@ -114,3 +114,19 @@ cases:
   - prompt: "List every state this screen can be in, including the weird ones."
     expect: state-matrix
     note: "exhaustive sweep, not decisions"
+
+  # --- ux-grill: should fire --------------------------------------------
+  - prompt: "Here are the mockups. Tear them apart."
+    expect: ux-grill
+  - prompt: "Review this screen — what's wrong with it?"
+    expect: ux-grill
+  - prompt: "Bu ekran tasarimini elestir, kor noktalari bul."
+    expect: ux-grill
+
+  # --- ux-grill: should NOT fire (boundary) ------------------------------
+  - prompt: "Nobody has decided what these screens should do yet. Work it out."
+    expect: design-brief
+    note: "deciding, not critiquing"
+  - prompt: "Should we build this screen at all?"
+    expect: idea-grill
+    note: "merit of the idea, not quality of the design"

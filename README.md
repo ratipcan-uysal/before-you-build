@@ -53,8 +53,8 @@ flowchart TD
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC,RI,DB shipped
-    class FM,FG,SM,UX,IR,DM planned
+    class IG,RS,SC,RI,DB,UX shipped
+    class FM,FG,SM,IR,DM planned
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
@@ -67,7 +67,7 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`request-shaper`](skills/request-shaper/SKILL.md) | What exactly are we building? | ✅ |
 | [`readiness-score`](skills/readiness-score/SKILL.md) | Is it ready to build? (0–100 + verdict) | ✅ |
 | [`design-brief`](skills/design-brief/SKILL.md) | What should the screens actually do? | ✅ |
-| `ux-grill` | Is this design right? | soon |
+| [`ux-grill`](skills/ux-grill/SKILL.md) | Is this design right? | ✅ |
 | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) | What breaks in production? | ✅ |
 | `flow-map` | What happens, in what order, including the unhappy paths? | planned |
 | `flow-grill` | Is the flow logically complete? | planned |
@@ -96,7 +96,7 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v0.5` — five of the six wave-one skills are complete and in use: `idea-grill`, `readiness-score`, `request-shaper`, `risk-interrogate`, and `design-brief`. `ux-grill` closes wave one and is being written now; wave two follows. This repo is public from the first commit, so you are seeing it get built.
+`v1.0` — **wave one is complete**: `idea-grill`, `request-shaper`, `readiness-score`, `risk-interrogate`, `design-brief`, and `ux-grill` are all in use. Wave two follows: `flow-map`, `flow-grill`, `state-matrix`, `impact-radar`, `decision-memo`. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another.
 
 Each skill ships with its trigger and boundary tests in [`evals/triggers.yaml`](evals/triggers.yaml), checked in CI. Boundary tests matter more than trigger tests: eleven skills with overlapping descriptions fail by firing the wrong one, and the user never finds out why the answer was off.
 
