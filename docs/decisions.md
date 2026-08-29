@@ -35,3 +35,7 @@ Kept in the repo rather than in anyone's head, because the most reliable reader 
 **Verdicts come from a closed set with published definitions.** `READY / CONDITIONAL / NOT READY`, `SURVIVES / SURVIVES, NARROWED / UNRESOLVED / FATAL FLAW`. A summary drifts toward whoever spoke last; a label can be argued with.
 
 **No confidence hedges.** Coverage is reported as fact — "27 items in scope, 6 with no evidence either way" — because "medium confidence" tells nobody what to do next.
+
+**`api-needs` will propose a draft contract, which crosses the set's own line.** Everywhere else the rule is what and why, never how — naming endpoints and field shapes is designing, and designing the backend belongs to the people who own it. The exception is deliberate: a product manager who arrives with only a list of needs is negotiating from a weaker position than one who arrives with something concrete to argue against. The risk is that an experienced backend team reads a proposed contract as overreach, so the need must stand on its own and the draft must be a separate section that can be deleted without losing anything.
+
+**API needs are derived from the flow, not from the screens.** Screens tell you about reads. Flows tell you about writes, sequencing and failure — which is where the hard questions live: what has to be atomic, what can be retried, what happens when step four succeeds and step five does not. Deriving from `design-brief` alone was the original plan and would have produced a read-shaped view of the problem.

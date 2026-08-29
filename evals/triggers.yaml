@@ -148,3 +148,21 @@ cases:
   - prompt: "We're shipping this next week. What breaks in production?"
     expect: risk-interrogate
     note: "failure modes of a system, not states of a surface"
+
+  # --- flow-map: should fire --------------------------------------------
+  - prompt: "Map the flow for this feature — every step, including the failures."
+    expect: flow-map
+  - prompt: "What happens step by step when someone does this?"
+    expect: flow-map
+  - prompt: "Turn this request into a user journey with the branches."
+    expect: flow-map
+  - prompt: "Bu talebin akisini cikar, hata yollari dahil."
+    expect: flow-map
+
+  # --- flow-map: should NOT fire (boundary) ------------------------------
+  - prompt: "Here's our existing flow diagram. What's missing from it?"
+    expect: flow-grill
+    note: "auditing an existing flow, not producing one"
+  - prompt: "What states can this one screen be in?"
+    expect: state-matrix
+    note: "states of a surface, not sequence across surfaces"

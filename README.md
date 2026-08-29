@@ -43,6 +43,7 @@ flowchart TD
     RI --> RS
     SC -->|ready| FM[flow-map]
     FM --> FG[flow-grill]
+    FG --> AN[api-needs]
     FG --> DB[design-brief]
     DB --> SM[state-matrix]
     SM --> UX[ux-grill]
@@ -54,8 +55,8 @@ flowchart TD
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC,RI,DB,UX,SM shipped
-    class FM,FG,IR,DM planned
+    class IG,RS,SC,RI,DB,UX,SM,FM shipped
+    class FG,AN,IR,DM planned
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
@@ -72,9 +73,10 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`design-brief`](skills/design-brief/SKILL.md) | What should the screens actually do? | ✅ |
 | [`ux-grill`](skills/ux-grill/SKILL.md) | Is this design right? | ✅ |
 | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) | What breaks in production? | ✅ |
-| `flow-map` | What happens, in what order, including the unhappy paths? | planned |
+| [`flow-map`](skills/flow-map/SKILL.md) | What happens, in what order, including the unhappy paths? | ✅ |
 | `flow-grill` | Is the flow logically complete? | planned |
 | [`state-matrix`](skills/state-matrix/SKILL.md) | Which states did we forget? | ✅ |
+| `api-needs` | What must the system be able to provide? | planned |
 | `impact-radar` | If I change this, what do I break? | planned |
 | `decision-memo` | How do I get a decision made? | planned |
 
@@ -99,7 +101,7 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v1.1` — wave one is complete and `state-matrix` has joined it, closing the design loop: decide with `design-brief`, sweep the states, then attack it with `ux-grill` and take what you find back to the brief. Still to come: `flow-map`, `flow-grill`, `impact-radar`, `decision-memo`. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another.
+`v1.2` — eight skills. Wave one is complete, and `state-matrix` and `flow-map` have joined it. Still to come: `flow-grill`, `api-needs`, `impact-radar`, `decision-memo`. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another.
 
 What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
 
