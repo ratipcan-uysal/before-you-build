@@ -86,12 +86,9 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 
 [A full `idea-grill` session](examples/idea-grill-session.md) — a fictional team wants to add an AI support chatbot. Four questions later it turns out they have a screen problem, not a chatbot problem, and they had never looked at their own ticket data.
 
-Then one request carried through three skills, so you can see what each adds:
+Then [one fictional request carried through eight skills](examples/README.md), in the order they were actually run — a bank asks for one-tap repeat transfers, and nine documents later it has a flow with nine error paths, a design record on its second version, and seven unconfirmed system needs.
 
-1. [The input](examples/quick-send-request.md) — a bank's business unit asks for a one-tap repeat transfer. One page, one contradiction, and a lot of silence.
-2. [`request-shaper`](examples/request-shaper-interview.md) — fifteen questions later it is a seven-section document. An answer doubles the scope mid-interview; two answers contradict each other ten minutes apart.
-3. [`readiness-score`](examples/readiness-score-comparison.md) — 12/100 before, 39/100 after, and **NOT READY** both times. The score catches the shaper for stopping early and saying nothing about it.
-4. [`risk-interrogate`](examples/risk-interrogate-pass.md) — six of sixteen draft questions struck for repeating gaps the document already listed. What survives is traceable to decisions that were made.
+They are deliberately unflattering. The score comes back NOT READY twice. The design violates its own brief and nothing looks wrong. Two of the reviews open by declaring themselves compromised, because the same session produced what they are reviewing.
 
 ## The method
 
