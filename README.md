@@ -101,6 +101,8 @@ The one worth stealing even if you never install this: **if the document does no
 
 `v1.1` — wave one is complete and `state-matrix` has joined it, closing the design loop: decide with `design-brief`, sweep the states, then attack it with `ux-grill` and take what you find back to the brief. Still to come: `flow-map`, `flow-grill`, `impact-radar`, `decision-memo`. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another.
 
+What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
+
 Each skill ships with its trigger and boundary tests in [`evals/triggers.yaml`](evals/triggers.yaml), checked in CI. Boundary tests matter more than trigger tests: eleven skills with overlapping descriptions fail by firing the wrong one, and the user never finds out why the answer was off.
 
 ## Origin
