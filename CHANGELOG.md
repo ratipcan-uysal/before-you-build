@@ -4,6 +4,23 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.2.0
+
+The first end-to-end run of the whole chain on one real request, and eight changes that came out of it. 4.1.0 ended with a standing rule — a skill is finished when it has been run once on real input and one other skill has been checked against it. This is that run, applied to all fifteen at once.
+
+**Heads up — a `design-brief` record written before the flow exists now says so and calls itself partial.** An existing record re-run will come back marked. The finding behind it: the first version was read as the complete set of decisions, and the second version's largest section was error states, every one traceable to the flow rather than to the request.
+
+- **`readiness-score` declares itself compromised when it scores its own draft.** The guard lived in `flow-grill`, `ux-grill` and `build-context` and not here, which is backwards: `request-shaper` → `readiness-score` is the pair that actually runs back to back, and the output is a number, so it reads as measurement whoever wrote it.
+- **`request-shaper` takes in the questions raised before the document existed.** A proxy-mode `idea-grill` produces questions for the requester and nothing carried them. On the run, the first question asked — whether the requested thing was the right response at all — was absent from all fifteen documents that followed, and only `build-context` noticed, last.
+- **A need whose owner does not exist is a finding, not a blank.** All three of `api-needs`' feasibility verdicts assumed somebody owns the system the need lands on. Two needs had no owner at all; unowned is not weakly supported, it is never confirmed, never refused, and rediscovered as the thing nobody built.
+- **`flow-map` shows its arithmetic.** It already warned that mixing marks and steps is the most common error in the document. The warning was not enough — a pass wrote 16 marks on 10 steps over a table holding 14 on 8.
+- **The router stopped growing three skills ago.** Seven destinations out of fifteen, and three of the six front doors the README names could not be reached from it. `flow-map` now joins `design-brief` on *a shaped request*, with a line saying which comes first.
+- **One-way handoffs made two-way.** `prior-art` hands `slice` a named alternative and `slice` never mentioned it; `readiness-score` caps an `[UNVERIFIED]` item and never named the skill that settles it; `build-context` was named by two skills in the set and by neither one in the design loop.
+- **`design-brief` done criteria get checked rather than read.** They restated the decisions, which is what a reviewer nods at while looking straight at a screen that violates them — as happened: the record said the recipient outranks the amount, the drawing made the amount largest, nothing looked wrong.
+- **Boundary cases for the four pairs that actually collide** — `slice`/`readiness-score`, `data-model`/`api-needs`, `build-context`/`request-shaper`, `flow-grill`/`risk-interrogate`. The thinnest sections were the newest skills, which are also the ones whose descriptions overlap most. 93 cases to 101.
+
+What the run did not fix, and is the larger finding: **the chain has no way back into a document that already exists.** `prior-art` ran after the request was written, and its three most decision-changing findings never re-entered it — `build-context` collected them ten documents later. The same shape as the vanished question above, and not closable by one skill naming another.
+
 ## 4.1.0
 
 Three checks that examine whether a skill has actually **joined the set**, rather than merely solving its problem. Every one of them exists because the same mistake was made five times, three of them on the day the first two were being audited.
