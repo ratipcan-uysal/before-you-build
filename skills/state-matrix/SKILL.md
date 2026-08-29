@@ -1,13 +1,15 @@
 ---
 name: state-matrix
-description: Enumerate every state a surface or flow can be in — the empty one, the loading one, the failed one, the one with four hundred rows, the one where the session expired midway — and report which are designed, which are decided, and which nobody has thought about. Sweeps six dimensions (data, lifecycle, permission, content stress, environment, time) and lists combinations only where two dimensions produce a genuinely different screen. Use when the user says "what states does this need", "list every state", "which edge cases are we missing", "what happens when it is empty", "did we cover the error cases", or has a design and wants the states nobody drew. Do not use to critique a design that exists (ux-grill), to decide what the surfaces should do (design-brief), to audit the logic of a flow (flow-grill), or to surface production failure modes (risk-interrogate).
+description: Find the conditions a surface's own dependencies put it in that nobody decided — the request that never arrived, the value that went stale between render and use, the context switched while the screen was open, the return from the background midway. Sweeps six dimensions per surface and marks each condition Designed, Decided, Open or Unreachable, with counts. Produces conditions the design must answer for, never checks that verify an answer, and never the project-wide constraints that belong in the brief. Use when the user says "what states does this screen need", "which edge cases are we missing", "what happens when it is empty", "did we cover the error cases", or has decided what a surface does and not what happens when the world does not cooperate. Do not use to critique a design that exists (ux-grill), to decide what the surfaces should do (design-brief), to audit the logic of a flow (flow-grill), or to ask how the system fails in production (risk-interrogate).
 ---
 
 # State Matrix
 
-Every surface has more states than anyone drew. The default state gets designed, the empty state gets remembered, and the rest are discovered by users.
+Every surface has more states than anyone drew. The default gets designed, the empty state gets remembered, and the rest are discovered by users.
 
-You enumerate them, exhaustively but not infinitely, and report which are handled. You do not design them — you make the absences countable.
+You find them at the granularity a designer can act on. `risk-interrogate` asks how the **system** fails and answers for the whole feature; nobody can draw *"data integrity"*. You ask what **this one surface** can be in, and *"the threshold never arrived"* is a screen somebody draws this afternoon.
+
+You do not design the states. You make the absences countable.
 
 ## The rule that keeps it useful
 
