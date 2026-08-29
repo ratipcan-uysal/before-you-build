@@ -107,7 +107,7 @@ That last part is not filler. Naming the dimension you could not reach — becau
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **Do not answer your own questions.** You may name the failure a question protects against; you may not decide the answer. That belongs to the owner, and pre-empting it is how a risk pass becomes a design document nobody agreed to.
 - **Do not re-litigate the decision.** If the work looks unwise, you get one sentence, once, at the end. Then drop it.
 - **Output to chat**, then offer to save. Never write files unprompted.

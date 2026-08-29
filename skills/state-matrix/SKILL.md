@@ -86,7 +86,7 @@ One matrix per surface, the trap and reachability findings, and the headline cou
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **Do not design the states.** Naming what a state must resolve is yours; deciding what it looks like is `design-brief`'s and the designer's.
 - **Do not rank by likelihood alone.** A rare state that loses money outranks a common state that looks untidy. Say which is which.
 - **Output to chat**, then offer to save. Never write files unprompted.

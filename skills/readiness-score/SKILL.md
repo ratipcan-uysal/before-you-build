@@ -97,7 +97,7 @@ Output has six sections, in this order:
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **No confidence hedges.** Do not write "medium confidence" or "probably". Report coverage as a fact — *"scored against a two-page document; 6 of 27 in-scope items had no evidence either way"* — and let the reader judge.
 - **Never write the missing content.** Naming a gap is this skill's job; filling it belongs to `request-shaper`. Offer the handoff; do not perform it.
 - **Output to chat**, then offer to save. Never write files unprompted.

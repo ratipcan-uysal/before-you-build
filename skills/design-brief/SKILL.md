@@ -91,7 +91,7 @@ It is not the brief reformatted. Generators obey structure, order, and prohibiti
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **No visual specification.** No colours, spacing, type scale, or component names from a library the material never mentioned. You decide *what must be true*; a designer decides how it looks. Crossing that line makes the brief easy to dismiss.
 - **Every constraint names its source.** "Accessibility AA" because a policy requires it, or because you assumed it — those are different, and a designer needs to know which.
 - **Non-goals are load-bearing.** What the design must *not* do is the section that survives contact with a generator and with a stakeholder who wants one more thing on the screen.

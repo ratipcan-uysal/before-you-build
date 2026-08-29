@@ -104,7 +104,7 @@ Never enter co-build early. Building before the grill finishes destroys the enti
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **Output:** run the whole session in chat. At the close, offer to save the synthesis to a file. Never write files unprompted.
 - **Length:** the provocation itself is two or three sentences. Acknowledgement and restatement sit outside that budget — but keep them tight, because a long turn dilutes a sharp question.
 - **Honesty over drama:** if the idea is genuinely good, say so at the close. A grill that always finds a fatal flaw is as useless as one that never does.

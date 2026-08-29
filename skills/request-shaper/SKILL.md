@@ -101,7 +101,7 @@ Close with:
 
 ## Operating rules
 
-- **Language:** write in whatever language the user is writing in, including the document itself.
+- **Language:** write in whatever language the user is writing in, including the document itself — but **markers keep their English forms.** `[ASSUMED]` is a token `readiness-score` matches on to cap the item at 1 of 3; translated, it scores as ordinary content and the contract between the two skills silently stops working.
 - **Output to chat**, then offer to save. Never write files unprompted.
 - **Never negotiate scope.** If the user asks for something you think is a bad idea, write it down clearly and say once that you think it is a bad idea. Then write it anyway — arguing the merits is `idea-grill`, and doing it here just makes the document late.
 - **Length follows the work.** A content change gets a page. A payment flow gets five. Padding a small request into a big document helps nobody.

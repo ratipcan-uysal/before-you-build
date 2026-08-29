@@ -79,7 +79,7 @@ This crosses the set's usual line of what and why rather than how. It is deliber
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **Never invent a field the flow does not require.** Every item traces to a step. A need nobody's flow asks for is you designing.
 - **Never specify transport, storage, or protocol** unless the material already did. "Available when the screen opens" is a need; "GET, cached 60s" is someone else's decision.
 - **Output to chat**, then offer to save. Never write files unprompted.

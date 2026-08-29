@@ -60,7 +60,7 @@ Anything that is not the ask, the evidence for it, or the cost of it comes out. 
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **No hedging vocabulary.** No "we believe", "it is anticipated", "medium confidence". State it, or state that it is unknown. A hedge reads as an author protecting themselves, and a reader who notices that stops trusting the rest.
 - **No new analysis.** A gap you notice is a note to the author, delivered separately — never a paragraph you invented inside the memo.
 - **Output to chat**, then offer to save. Never write files unprompted.
