@@ -44,16 +44,38 @@ Which events fire and with what parameters. What is logged or kept as an audit t
 A feature with a target and no measurement is a feature nobody can defend at the review. If none of this is needed, write that as a decision — *"no reporting required; usage covered by existing transfer dashboards"* — rather than leaving the section empty.
 
 ### Still open
-Every gap, with the question, who settles it, and — critically — whether it was raised at all.
 
-| Question | Who settles it | What it blocks | Status |
-|---|---|---|---|
-| … | … | … | asked / not raised |
+Three tiers, ordered by when the reader has to act. Sort by **what it blocks**, never by which rubric category it came from — categories are the author's taxonomy, and the reader is asking one question: what do I have to chase now, and what can wait.
 
-Both states belong here. A reader who sees only the questions you asked assumes everything else was covered, and that assumption survives right up until someone tries to build it. Close the section with the count: *"12 answered, 7 asked and open, 34 not yet raised."*
+**Blocks starting** — a developer or designer cannot produce the thing without it. Any unresolved blocker item lives here by definition.
+
+| Question | Who settles it |
+|---|---|
+| … | … |
+
+**Blocks go-live** — work can begin, the product cannot ship. Sign-offs, monitoring, support tooling, training, release planning.
+
+| Question | Who settles it |
+|---|---|
+| … | … |
+
+**Not yet raised** — everything the interview never reached. **One line per area, not one row per item.** These have to be visible and countable; they do not have to be itemised. A thirty-four row table is honest and unreadable, and an unreadable section gets skipped, which costs more than brevity would have.
+
+> **Design and states** — on-screen copy, accessibility level, languages, responsive behaviour *(4)*
+> **Risk** — performance targets, privacy review, data residency, running cost *(4)*
+
+Close with the count: *"14 answered · 15 partial · 34 not raised."* The number is what stops a reader assuming the blanks were covered.
 
 ### Assumptions most likely to be wrong
 Only if `[ASSUMED]` lines exist. Two or three, chosen by what they would cost if false — not by how uncertain you feel about them.
+
+## Deciding what blocks what
+
+- **Blocks starting** if someone building or designing would have to stop and ask: behaviour, rules, limits, data source, states, the main path, anything a screen depends on.
+- **Blocks go-live** if the work can proceed but release cannot: sign-offs, alerting, audit retention, support tooling, training, store planning, cost approval.
+- **Neither** if it can be decided at any point without anyone waiting. Those still appear under *not yet raised*; they simply are not urgent.
+
+When unsure, ask whether someone is blocked **today**. If yes it blocks starting, whatever category it came from.
 
 ## Rules
 

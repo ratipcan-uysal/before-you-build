@@ -77,6 +77,8 @@ So before writing: walk the full rubric and sort every item into one of three st
 
 Never let the second and third silently merge. A reader who sees nineteen open items assumes the rest were covered. If thirty-four were never raised, the document is lying by omission, and the score will say so within minutes.
 
+Then present them by **what they block** — blocks starting, blocks go-live, not yet raised — and collapse the third into one line per area rather than one row per item. Full accounting, seven lines instead of thirty-four. A section nobody reads costs more than a short one. Format in [`references/template.md`](references/template.md).
+
 Report the split as a number at handoff, the way `readiness-score` reports coverage.
 
 ## Phase 4 — Write the document
