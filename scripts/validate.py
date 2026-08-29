@@ -160,7 +160,7 @@ if not skill_names:
 prose = sorted(
     [ROOT / "README.md", ROOT / "CHANGELOG.md"]
     + list((ROOT / "docs").glob("*.md"))
-    + list((ROOT / "examples").glob("*.md"))
+    + list((ROOT / "examples").rglob("*.md"))
     + list((ROOT / "commands").glob("*.md"))
     + list((ROOT / "skills").glob("*/SKILL.md"))
     + list((ROOT / "skills").glob("*/references/*.md"))
@@ -272,6 +272,25 @@ for example in sorted((ROOT / "examples").glob("*.md")):
     if example.name != "README.md" and f"]({example.name})" not in examples_readme:
         err(f"examples/README.md: does not link {example.name} — "
             "an example nobody reading the index can find")
+
+# A worked example that runs to twenty documents goes in its own folder, and the
+# folder needs the same guarantee the flat files have: an index that reaches
+# every file. Without this the second example is twenty documents nobody checks.
+for sub in sorted(d for d in (ROOT / "examples").iterdir() if d.is_dir()):
+    index = sub / "README.md"
+    if not index.exists():
+        err(f"examples/{sub.name}/: no README.md — a folder of examples with no "
+            "index is a folder nobody reads")
+        continue
+    if f"]({sub.name}/README.md)" not in examples_readme:
+        err(f"examples/README.md: does not link {sub.name}/README.md — "
+            "the folder is unreachable from the index above it")
+    body = index.read_text()
+    for example in sorted(sub.iterdir()):
+        if example.name == "README.md" or example.name.startswith("."):
+            continue
+        if f"]({example.name})" not in body:
+            err(f"examples/{sub.name}/README.md: does not link {example.name}")
 
 changelog = (ROOT / "CHANGELOG.md").read_text()
 if not re.search(rf"^## {re.escape(plugin['version'])}\b", changelog, re.M):

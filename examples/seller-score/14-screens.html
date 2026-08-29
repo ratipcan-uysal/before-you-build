@@ -1,0 +1,101 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Seller panel — Performance, wireframe v1</title>
+<style>
+  body { font: 14px/1.55 -apple-system, system-ui, sans-serif; background:#f4f5f7; color:#16181d; padding:24px; }
+  h1 { font-size:18px; margin:0 0 4px; } .note { color:#666; max-width:78ch; margin:0 0 22px; }
+  .win { background:#fff; border:1px solid #ccd0d6; border-radius:10px; margin-bottom:22px; overflow:hidden; max-width:900px; }
+  .cap { font-size:12px; color:#555; padding:6px 12px; background:#eceef1; border-bottom:1px solid #dde0e5; }
+  .chrome { display:flex; gap:0; }
+  .side { width:170px; background:#fafbfc; border-right:1px solid #e6e8ec; padding:14px 0; font-size:13px; color:#5a6270; }
+  .side div { padding:7px 16px; } .side .on { background:#e9edf5; color:#16181d; font-weight:600; }
+  .main { flex:1; padding:22px 26px; }
+  .h { font-size:20px; font-weight:600; margin:0 0 2px; }
+  .sub { font-size:13px; color:#6b7280; margin-bottom:2px; }
+  .fresh { font-size:12px; color:#8a919e; margin-bottom:20px; }
+  .grid { display:flex; gap:16px; }
+  .card { flex:1; border:1px solid #e3e6ea; border-radius:9px; padding:15px; }
+  .card.bad { border-color:#e0b4b4; }
+  .cname { font-size:13px; color:#5a6270; margin-bottom:9px; }
+  .cval { font-size:30px; font-weight:600; letter-spacing:-0.5px; }
+  .cref { font-size:12px; color:#8a919e; margin-top:7px; }
+  .cref.ph { color:#a06a00; background:#fff6e0; border-radius:4px; padding:2px 6px; display:inline-block; }
+  .flag { font-size:12px; color:#a33; margin-top:7px; }
+  .none { font-size:30px; font-weight:600; color:#c8ccd2; }
+  .how { margin-top:20px; font-size:13px; color:#2757c7; }
+  .empty { color:#6b7280; font-size:13px; }
+</style>
+<h1>Seller panel — Performance section, wireframe v1</h1>
+<p class="note">Drawn from the partial decision record in 08-design-brief-v1.md. No visual language, a layout study. The highlighted block is the placeholder for the record's undecided item.</p>
+
+<div class="win">
+  <div class="cap">1 · Default</div>
+  <div class="chrome">
+    <div class="side"><div>Orders</div><div>Products</div><div class="on">Performance</div><div>Campaigns</div><div>Settings</div></div>
+    <div class="main">
+      <p class="h">Performance</p>
+      <p class="sub">Your orders between 3 June and 1 September 2026</p>
+      <p class="fresh">Last updated: 1 September 2026, 04:12</p>
+      <div class="grid">
+        <div class="card"><div class="cname">On-time delivery</div><div class="cval">98.2%</div><div class="cref ph">[DECISION NEEDED] — comparison basis not decided</div></div>
+        <div class="card"><div class="cname">Seller-caused cancellations</div><div class="cval">0.4%</div><div class="cref ph">[DECISION NEEDED] — comparison basis not decided</div></div>
+        <div class="card"><div class="cname">Product reviews</div><div class="cval">4.7</div><div class="cref ph">[DECISION NEEDED] — comparison basis not decided</div></div>
+      </div>
+      <p class="how">How is this calculated?</p>
+    </div>
+  </div>
+</div>
+
+<div class="win">
+  <div class="cap">2 · A seller with two poor components</div>
+  <div class="chrome">
+    <div class="side"><div>Orders</div><div>Products</div><div class="on">Performance</div><div>Campaigns</div><div>Settings</div></div>
+    <div class="main">
+      <p class="h">Performance</p>
+      <p class="sub">Your orders between 3 June and 1 September 2026</p>
+      <p class="fresh">Last updated: 1 September 2026, 04:12</p>
+      <div class="grid">
+        <div class="card bad"><div class="cname">On-time delivery</div><div class="cval">61.0%</div><div class="cref ph">[DECISION NEEDED]</div></div>
+        <div class="card bad"><div class="cname">Seller-caused cancellations</div><div class="cval">11.3%</div><div class="cref ph">[DECISION NEEDED]</div></div>
+        <div class="card"><div class="cname">Product reviews</div><div class="cval">4.9</div><div class="cref ph">[DECISION NEEDED]</div></div>
+      </div>
+      <p class="how">How is this calculated?</p>
+    </div>
+  </div>
+</div>
+
+<div class="win">
+  <div class="cap">3 · New seller — 3 orders in 90 days</div>
+  <div class="chrome">
+    <div class="side"><div>Orders</div><div>Products</div><div class="on">Performance</div><div>Campaigns</div><div>Settings</div></div>
+    <div class="main">
+      <p class="h">Performance</p>
+      <p class="sub">Your orders between 3 June and 1 September 2026</p>
+      <p class="fresh">Last updated: 1 September 2026, 04:12</p>
+      <div class="grid">
+        <div class="card"><div class="cname">On-time delivery</div><div class="none">—</div><div class="cref">You do not have enough orders in this period for this component.</div></div>
+        <div class="card"><div class="cname">Seller-caused cancellations</div><div class="cval">0.0%</div><div class="cref ph">[DECISION NEEDED]</div></div>
+        <div class="card"><div class="cname">Product reviews</div><div class="none">—</div><div class="cref">You do not have enough orders in this period for this component.</div></div>
+      </div>
+      <p class="how">How is this calculated?</p>
+    </div>
+  </div>
+</div>
+
+<div class="win">
+  <div class="cap">4 · One component could not be computed</div>
+  <div class="chrome">
+    <div class="side"><div>Orders</div><div>Products</div><div class="on">Performance</div><div>Campaigns</div><div>Settings</div></div>
+    <div class="main">
+      <p class="h">Performance</p>
+      <p class="sub">Your orders between 3 June and 1 September 2026</p>
+      <p class="fresh">Last updated: 1 September 2026, 04:12</p>
+      <div class="grid">
+        <div class="card"><div class="cname">On-time delivery</div><div class="cval">98.2%</div><div class="cref ph">[DECISION NEEDED]</div></div>
+        <div class="card"><div class="cname">Seller-caused cancellations</div><div class="none">—</div><div class="flag">This value could not be calculated right now. The other components are current.</div></div>
+        <div class="card"><div class="cname">Product reviews</div><div class="cval">4.7</div><div class="cref ph">[DECISION NEEDED]</div></div>
+      </div>
+      <p class="how">How is this calculated?</p>
+    </div>
+  </div>
+</div>

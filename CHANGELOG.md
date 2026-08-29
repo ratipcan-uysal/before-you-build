@@ -4,6 +4,16 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.3.0
+
+**A second worked example**, and it is a different shape from the first on purpose. [Changing a seller score](examples/seller-score/README.md) — a marketplace wants to change what a seller's score means, and twenty documents later the release being proposed does not change the score at all. It starts where most work inside an organisation starts, with something that already exists, so it enters at `impact-radar` rather than `idea-grill` — the row the README calls most of the work and the one no example covered.
+
+It is the run the 4.2.0 fixes were measured against, so it shows them working rather than asserting them: every question raised is carried to the end (**questions lost: 0**, against a previous run that lost one and noticed in the last document), a second pass adds four departures and moves the score by nothing because questions are not content, and the cut travels back into the request to retire five open items with the quote that retired each.
+
+What it fails at is worth more than what it gets right. A drawing decides, in a border colour, something its own record explicitly marked undecided — the second time in two examples that a design has quietly contradicted its own brief. And three numbers pointing in three different directions are all drawn identically, because the record settled hierarchy and reference and never thought to settle direction.
+
+**CI now reads example folders.** The prose checks resolved links and skill names in `examples/*.md` and stopped there, so twenty documents in a subfolder would have been unchecked. It now walks subfolders, and requires each one to carry an index that reaches every file in it — the same guarantee the flat examples already had.
+
 ## 4.2.0
 
 The first end-to-end run of the whole chain on one real request, and eight changes that came out of it. 4.1.0 ended with a standing rule — a skill is finished when it has been run once on real input and one other skill has been checked against it. This is that run, applied to all fifteen at once.
