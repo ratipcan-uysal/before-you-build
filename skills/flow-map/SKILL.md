@@ -62,6 +62,9 @@ Go back through every step and mark the ones where the system must read, write, 
 
 - **reads** — the step needs information it does not already have
 - **acts** — the step changes state, spends money, or tells something else
+- **emits** — the step produces an analytics or business event
+
+`emits` earns its own mark rather than folding into `acts` because analytics is the thing that gets left out. A flow with no way to carry it produces an `api-needs` pass that never asks for it, a build that ships without it, and a target nobody can verify three months later.
 
 You are marking **where**, never **what**. The moment you write a field name or an endpoint, you have started designing a contract, and that belongs to `api-needs` and to the people who own the system.
 

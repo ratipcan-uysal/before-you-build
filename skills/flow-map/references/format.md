@@ -23,7 +23,9 @@ Three lines before the first step. They are the boundaries of what follows, and 
 
 **Actor is the one who acts**, not the one who benefits. If the system does it while the person waits, the actor is the system.
 
-**System is a mark, not a description.** `reads` when the step needs information it does not already have; `acts` when it changes state, spends money, or tells something else. Both when both. Nothing when neither — most user steps are blank, and that is the point: the marks show where the system is load-bearing.
+**System is a mark, not a description.** `reads` when the step needs information it does not already have; `acts` when it changes state, spends money, or tells something else; `emits` when it produces an analytics or business event. More than one when more than one applies. Nothing when none — most user steps are blank, and that is the point: the marks show where the system is load-bearing.
+
+`emits` is separate from `acts` deliberately. Analytics is what gets forgotten, and a flow with nowhere to write it produces a contract nobody asked for it in.
 
 ## Branches
 
