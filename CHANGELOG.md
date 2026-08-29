@@ -4,6 +4,16 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.6.1
+
+**Heads up — a `decision-memo` asking for a reduction now says what it takes to undo.**
+
+The first run of this skill against real material was a scope cut, which is one of the three asks its own opening phase names. Writing it surfaced the gap: a reader being asked to give something up asks whether they can have it back **before** they ask what it saves, and none of the seven fields owned that question. It belongs in *what it costs*, as a third required part alongside what we give up and what we accept.
+
+If the honest answer is a migration rather than a decision, the memo says so — that turns a deferral into a permanent cut, and the reader is entitled to know which one they are approving. Where a `slice` pass exists, the column is already written and the line is a lift rather than a judgement.
+
+This was the last skill in the set never run against real material. Every one has now produced at least one correction on its first run.
+
 ## 3.6.0
 
 **Heads up — six skills now name the skill they hand off to.** An audit of every claim one skill makes about another found the `emits` break from 3.5.0 was not alone: **`decision-memo` and `build-context` were named by no skill at all**, and `slice` and `data-model` only by `build-context`, which runs last.

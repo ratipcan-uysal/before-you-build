@@ -44,6 +44,8 @@ Format, order, and worked wording: [`references/format.md`](references/format.md
 
 The ask · why now · what we know · the recommendation · what it costs · if nobody decides · what I need from you.
 
+**When the ask is a reduction — cut this scope, stop this work, defer this thing — one line goes inside the cost field and nothing else will do: what it takes to undo.** A reader deciding whether to give something up asks whether they can have it back long before they ask what it saves, and a memo that leaves it out gets that question in the room instead, where the answer is improvised. Say what brings the cut thing back and what it costs then — and if the answer is *a migration* rather than *a decision*, say that, because it changes the ask from a deferral into a permanent one. `slice` produces this column already; if a slice exists, the line is a lift, not a judgement.
+
 The order is fixed and the ask is first. A memo that builds to its request has already lost the reader who stopped after the summary — which is most of them.
 
 ## Phase 2 — Cut to one page

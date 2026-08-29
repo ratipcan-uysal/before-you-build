@@ -48,6 +48,12 @@ Two parts, both required.
 
 A memo that names its own worst fact is trusted on everything else. One that omits it is disbelieved on everything else the moment the fact surfaces — and it always surfaces, usually in the room.
 
+**A third part, whenever the ask is a reduction:** what it takes to undo. Cutting scope, stopping work, deferring a thing — the reader's first question is whether they can have it back, and it arrives before the question about what it saves.
+
+> The passwordless path returns on two conditions: risk approval, and confirmation that the threshold can be enforced server-side. **No migration** — the applied threshold is stored on every transfer in this slice too, which is part of the cut rather than a precaution taken afterwards.
+
+Say what brings it back and what it costs then. **If the honest answer is a migration rather than a decision, say so** — that turns the ask from a deferral into a permanent cut, and the reader is entitled to know which one they are approving. Where a `slice` pass exists it has already written this column; lift it rather than judging it again.
+
 ## 6. If nobody decides
 
 The strongest field, and the one most memos leave out.
