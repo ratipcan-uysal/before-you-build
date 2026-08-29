@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.1.0
+
+Three checks that examine whether a skill has actually **joined the set**, rather than merely solving its problem. Every one of them exists because the same mistake was made five times, three of them on the day the first two were being audited.
+
+- **Every skill must be named by another skill.** Being listed in the README routes nobody. `decision-memo` was named by nothing for weeks and went unrun as a direct result — a skill nobody is sent to does not get used, however good its description is.
+- **Every marker a skill emits must be covered by its own Language rule.** A token that appears in the body and not in the rule gets translated, and a translated marker breaks a contract silently.
+- **Every skill states a boundary.** A skill with no *Not this skill* section fires on its neighbours' work.
+
+A written checklist was tried first and is the thing that failed. The validator is the only part of this that runs whether or not anyone remembers it.
+
+Verified in both directions against a scratch copy. What still cannot be checked mechanically — whether both ends of a declared contract are implemented, whether a producer carries the guards its siblings carry — is recorded in [`docs/decisions.md`](docs/decisions.md) as a standing rule instead: a skill is finished when it has been run once on real input and one other skill has been checked against it, not when it is written.
+
 ## 4.0.1
 
 `prior-art` shipped without a clear answer to *when is it called, and what does it feed*. Three breaks, all found by asking.

@@ -216,6 +216,41 @@ for md in prose:
                     "vocabulary — a typo, a rename nobody swept, or a term to "
                     "add to VOCABULARY in this script")
 
+# --- a new skill joins a set, not just a problem ---------------------------
+# Three failures, all of them made here, all of them at authoring time: a skill
+# nobody is routed to (decision-memo went unrun for weeks), a skill that emits a
+# marker its own language rule does not cover, and a skill with no boundary.
+# A checklist was tried and forgotten three times. This runs every commit.
+MARKER = re.compile(r"`(\[[A-Z][A-Z ]+\])`")
+for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
+    name = skill_md.parent.name
+    rel = skill_md.relative_to(ROOT)
+    body = skill_md.read_text().split("\n---\n", 1)[-1]
+
+    if not re.search(r"^## Not this skill", body, re.M):
+        err(f"{rel}: no 'Not this skill' section — a skill with no stated boundary "
+            "fires on its neighbours' work")
+
+    # Only other skills count. Being listed in the README routes nobody.
+    named_by = [p for p in prose
+                if p.parts[-4:-3] == ("skills",) or p.parts[-3:-2] == ("skills",)
+                if p != skill_md and name not in p.parts
+                and f"`{name}`" in p.read_text()]
+    if not named_by:
+        err(f"{name}: no other skill names it — nothing routes here, so nothing "
+            "will reach it. Name it from the skill that should hand off")
+
+    lang = [l for l in body.splitlines() if l.strip().startswith("- **Language:**")]
+    if not lang:
+        err(f"{rel}: no Language operating rule")
+    else:
+        used = {m for line in body.splitlines() if line not in lang
+                for m in MARKER.findall(line)}
+        uncovered = sorted(used - set(MARKER.findall(lang[0])))
+        if uncovered:
+            err(f"{rel}: emits {' '.join(uncovered)} but its Language rule does not "
+                "name them — a translated marker breaks the chain silently")
+
 # --- indexes point at what is on disk -------------------------------------
 readme = (ROOT / "README.md").read_text()
 for name in sorted(skill_names):
