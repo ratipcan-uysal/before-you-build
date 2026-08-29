@@ -15,6 +15,15 @@ You enumerate them, exhaustively but not infinitely, and report which are handle
 
 Without this, six dimensions multiply into hundreds of rows, the list becomes unreadable, and the reader concludes the exercise is academic. With it, a busy surface has twenty to forty states and every one earns a place.
 
+**A state is a condition the design must answer for. A test is a check that the answer holds.** You produce the first and stop.
+
+> *"Does 999,999.99 fit?"* is a test. *"What is the largest amount this surface must display, and how is it formatted?"* is a state.
+> *"Is the button enabled at zero?"* is a test. *"Can the amount be zero, and what does the surface do?"* is a state.
+
+The difference is not pedantry: a list of checks belongs to whoever tests, arrives with no owner for the decision behind it, and turns this skill into a back door for a test suite the set does not have.
+
+**And the drift is diagnostic.** A row that reads like a test case is usually a **constraint in disguise** — a rule that applies to every surface and belongs in `design-brief`, not a condition specific to this one. When a row comes out phrased as a check, ask which it is before rewording it.
+
 **And no state may be "shouldn't happen".** If it is reachable, it needs an answer — even if the answer is a deliberate crash into a generic error. An unreachable-by-design state is fine; write down why it is unreachable.
 
 ## Not this skill

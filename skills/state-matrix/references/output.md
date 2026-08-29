@@ -13,7 +13,7 @@ One or two lines: which surfaces, what material you worked from, and what that l
 | Partial | Recipients loaded, balances did not | Whether the surface degrades or blocks | **Open** — Product + Backend |
 
 - **Reached when** is a trigger, not a category. "Error state" is a bucket; "the counterparty bank does not respond within the timeout" is a row somebody can act on.
-- **What it must resolve** is the question the state poses — never your answer to it. Deciding is `design-brief`'s job, and answering here quietly turns a sweep into a design.
+- **What it must resolve** is the question the state poses — never your answer to it, and never the check that would verify it. Deciding is `design-brief`'s job and answering here turns a sweep into a design; phrasing it as a check turns it into a test plan, which belongs to whoever tests and arrives with nobody owning the decision behind it.
 - **Status** is one of **Designed** (a screen exists), **Decided** (written down, no screen), **Open** (nobody has decided — name who must), **Unreachable** (cannot occur, with the reason).
 
 Order rows by consequence, not by dimension. A rare state that loses money sits above a common state that looks untidy, and say which is which.
