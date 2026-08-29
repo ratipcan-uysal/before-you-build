@@ -44,9 +44,11 @@ CONSTRAINTS:
 - design system: <tokens or reference, or "none supplied — output is a layout study">
 
 CONTENT:
-- copy: <real strings, or "placeholder — do not treat as approved">
-- example data: <three records including one awkward: a long name, a single word, a duplicate>
+- copy: <the drafted strings, flagged [DRAFT] if not yet approved>
+- example data: <three records, at least one awkward for this domain>
 ```
+
+Drafted copy goes **into** the block, flagged. Leaving it out to be safe does not make the generator cautious — it makes it inventive.
 
 ## Rules
 
@@ -62,8 +64,8 @@ The record is the decisions layer. A generator needs decisions **plus** three th
 
 | Missing | What the generator does instead |
 |---|---|
-| **Real copy** | Invents every label, button, error and empty-state string. It reads fine, gets screenshotted into a review, and quietly becomes the copy nobody approved |
-| **Example content** | Designs for the convenient case — a short name, a round number. Never the 34-character name, the single-word account, the two people with the same name |
+| **Real copy** | Invents every label, button, error and empty-state string. It reads fine, gets screenshotted into a review, and quietly becomes the copy nobody approved. **Draft it instead** — marked `[DRAFT]`, approved in one pass |
+| **Example content** | Designs for the convenient case — a short name, a round number. Never the 34-character name, the single-word account, the two people with the same name. **Draft three records**, one of them deliberately awkward |
 | **The full state set** | Renders the default state only. The record names the *moments* that need feedback; enumerating every state per surface is `state-matrix`'s job |
 | **Design system access** | Builds its own visual language. "Use the existing design system" means nothing to a tool that cannot see it — supply tokens, or accept that the output is a layout study and not a design |
 

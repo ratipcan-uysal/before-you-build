@@ -62,7 +62,26 @@ Every `[DECISION NEEDED]` carries who settles it and what it blocks. Group them 
 
 Do not mark something as needing a decision when the material decides it and you missed it. Re-read first.
 
-## Phase 3 — The generator block (offer, do not assume)
+## Phase 3 — Draft what a generator would otherwise invent
+
+Marking a gap and stopping is not enough when you could have filled it. Propose — in one block at the end, never as an interview — the things a generator will otherwise fabricate.
+
+**Two markers, and they mean different things.**
+
+| | |
+|---|---|
+| `[DECISION NEEDED]` | You cannot decide this. It is a product or business call whose consequences you are not positioned to weigh. Someone must answer it. |
+| `[DRAFT]` | You have proposed something usable. It needs a nod, not a meeting. |
+
+**Draft the copy.** Every label, button, error, empty state, and confirmation string. Copy is a product decision, not a visual one, so it is yours to propose. Approving twelve strings takes three minutes; writing them from nothing takes a meeting that does not get scheduled. Mark the block `[DRAFT]` and say plainly that unapproved copy which reaches a screenshot becomes approved copy by default.
+
+**Draft the example content.** Three records, and at least one deliberately awkward for this domain — the name that is far too long, the single-word entry, the two entries that look identical. Generators design for the convenient case unless handed the inconvenient one.
+
+**Draft only the states you can derive**, and say so. The moments needing feedback are yours; the exhaustive sweep of every state and edge case belongs to `state-matrix`. Taking that over collapses a boundary that exists for a reason.
+
+**Never draft the design system.** Inventing tokens for someone's existing app is exactly what makes a brief easy to dismiss. Say instead what the generator needs and how to supply it: exported tokens, a screenshot of two existing screens, or a component list.
+
+## Phase 4 — The generator block (offer, do not assume)
 
 Ask once: *"Want this as a constraint block for a UI generator?"* On yes, follow [`references/generator.md`](references/generator.md).
 
