@@ -71,6 +71,8 @@ Go back through every step and mark the ones where the system must read, write, 
 
 You are marking **where**, never **what**. The moment you write a field name or an endpoint, you have started designing a contract, and that belongs to `api-needs` and to the people who own the system.
 
+**Count the marks by walking the table, and report marks and steps as separate numbers.** A step can carry two or three, so the two totals differ and mixing them is the most common error in this document — *"nine touchpoints"* over a table holding nineteen marks on ten steps reads as precision and is arithmetic. Branches carry marks too, and they are the ones left out of the count.
+
 **These marks feed two skills, not one.** `api-needs` turns them into what the system must provide; `data-model` turns them into what it must remember, and runs first, because a contract written over nouns nobody has defined is a contract over guesses. Offer both when you hand the flow over — a flow that only ever reaches `api-needs` gets a schema invented for it downstream.
 
 ## Phase 5 — Offer the diagram

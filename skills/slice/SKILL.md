@@ -51,7 +51,7 @@ The common failure is a spine drawn **along** a layer rather than through them. 
 Four questions per candidate. A cut that fails one is not made yet.
 
 1. **Does anyone still get whole value?** Half a job delivered is nothing delivered. If cutting it leaves someone unable to finish, it was spine and you mislabelled it.
-2. **Could you tell whether it worked?** Name the signal *before* the cut. A slice nobody can evaluate makes the next cut guesswork too, and that compounds.
+2. **Could you tell whether it worked?** Name the signal *before* the cut — and **check that the signal exists**, rather than that one is nameable. A measure with no current value and no target is not a signal, it is a sentence: *"first-contact resolution will improve"* answers nothing after release, because nothing says what it is now. If `readiness-score` has already scored the success criterion zero, this test **fails** and the cut is made anyway with that said out loud. Passing it on a metric another skill has already called missing is how two skills quietly agree that an unmeasurable slice is measurable.
 3. **Does it come back cheaply, or as a migration?** A deferred screen is a screen. A deferred decision about what is stored is a migration — see the rule above.
 4. **Who notices it is missing, and how?** *"They see nothing"* is a design decision nobody has made, not a cut.
 

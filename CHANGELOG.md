@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.7.0
+
+The set was run end to end on a second, deliberately different request — an SDK, embedded in someone else's app, with a regulated consent flow. Three defects, all from the run.
+
+**Heads up — `readiness-score` gains a sixth work type, `capability`.** The five existing values had no home for work consumed by other software rather than used directly. An SDK was scored as `input-collection`, which is defensible and misses the point: the essence of that request was **irreversible disclosure**, which fits `transaction`'s definition and is written in money-and-state language, so nobody looks there. `capability` opens five conditional items, and two of them are where the money is — whether behaviour can be switched off **without every host shipping a release**, and what the default is when the host declares nothing.
+
+**Heads up — `slice`'s second test now checks that the signal exists**, not that one can be named. In this run it passed on *"first-contact resolution will improve"* while `readiness-score` had already fired that same measure as a **blocker scoring zero**. Two skills quietly agreeing that an unmeasurable slice is measurable is exactly the collusion the `[ASSUMED]` contract exists to prevent elsewhere. The cut can still be made; it is now made with that said out loud.
+
+**`flow-map` counts marks and steps separately.** A step carries two or three touchpoint marks, and branches carry them too. *"Nine touchpoints"* over a table holding nineteen marks on ten steps reads as precision and is arithmetic — this is the third time that specific error has been made in this repo, which makes it a rule rather than a slip.
+
+Three things worked that had never been tested. `design-brief`'s hardened opening reordered the run on its first real outing — the request had zero error paths, so it said running `flow-map` first would change the brief, and it did. `risk-interrogate`'s *a gap is not a risk* struck seven of nineteen draft questions. And `build-context`'s non-adjacent pairs, added the same day, found the `slice`-against-score contradiction that neither skill could see alone.
+
 ## 3.6.2
 
 Three holes closed in the validator, all of them ones this repo had named and left open.

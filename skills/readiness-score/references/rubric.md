@@ -17,6 +17,9 @@ Take every value that applies on each axis. If the document gives no signal for 
 | `input-collection` | gathers data from a person | form, sign-up, onboarding, settings, upload, edit profile |
 | `content-config` | changes content or configuration rather than behaviour | copy, banner, pricing table, feature flag, translation |
 | `personalization` | shows or offers different things to different people | segment, campaign, offer, targeting, eligibility, A/B, personalised, "for customers who…" |
+| `capability` | is consumed by other software rather than used directly | SDK, library, plugin, widget, embed, integration, "so other teams can", "so partner apps can" |
+
+`capability` is the one people miss, because the work has an end user somewhere and the document describes them. Ask instead **who integrates it**: if a developer has to make a decision before anyone sees a screen, this value applies as well as whichever other one does.
 
 ### Axis 2 — where it runs
 
@@ -114,6 +117,15 @@ They join the category named beside them and add to that category's available po
 - **G1** Which rule wins when a user matches several segments, campaigns, or offers at once *(K3)*
 - **G2** When eligibility is evaluated, and whether it is re-evaluated before the action completes *(K3)*
 - **G3** What someone who matches nothing sees *(K5)*
+
+### `capability`
+- **Y1** The integrating developer as a user — what they must decide, supply, or declare before anything works *(K2)*
+- **Y2** Versioning and the compatibility window — how long the server must speak to a version embedded months ago *(K4)*
+- **Y3** Whether behaviour can be changed or switched off **without every host shipping a release** *(K6)*
+- **Y4** Isolation — what the host loses when this fails, crashes, or leaks *(K6)*
+- **Y5** Which decisions the host declares and which are fixed, and what the default is when the host declares nothing *(K3)*
+
+**Y3 and Y5 are where the money is.** A defect in embedded code is fixed by every host releasing, which is weeks; and a default that fails open is a defect nobody sees.
 
 ### `content-config`
 - **C1** Who can change it, and through which interface *(K2)*
