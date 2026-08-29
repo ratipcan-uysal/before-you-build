@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.0.1
+
+`prior-art` shipped without a clear answer to *when is it called, and what does it feed*. Three breaks, all found by asking.
+
+- **Two entry points disagreed.** `request-shaper` named it at the moment it writes a mechanism line; the chain diagram routed to it after the score. Neither was wrong and together they were unusable.
+- **The diagram drew two edges out of the same node with the same label**, and the return edge fed only `request-shaper` — while the customer for a mechanism departure is `slice`, which needs a *named alternative* to make a cut a choice rather than a subtraction.
+- **Two callers, one recipient written.** The operating rule said the output goes into the request's open list. A constraint question raised by `design-brief` belongs in the brief's decision list; it is not the requester's to settle.
+
+It is now written as what it is: **not a step in the chain, but a skill that answers to whoever called it.** Three callers, three different outputs, three different places they go — and one edge forward, because a named alternative is what turns a cut into a choice.
+
+If the caller is unclear, it asks which of the three before reading anything. They need different sources and produce different documents, and doing all three at once produces a survey nobody acts on.
+
 ## 4.0.0 — fifteen skills
 
 **`prior-art` joins the set**, and it is the only skill here that reads material the user did not produce. That makes it the only one that can be confidently wrong about the world, so it is built as a grill rather than a producer: it asks questions, never recommends, and never names a product to buy.

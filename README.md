@@ -30,6 +30,7 @@ There is no single front door. What you reach for depends on what landed on your
 | A decision made above you, with detail | no | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) — nothing needs shaping because nothing can be changed; the failure modes are your whole contribution |
 | A decision made above you, with no detail | no | [`request-shaper`](skills/request-shaper/SKILL.md) first — risk questions need decisions to attach to, and there are none yet |
 | A change to something that already exists | no | [`impact-radar`](skills/impact-radar/SKILL.md) |
+| A request that specifies *how*, and nobody has asked why that way | — | [`prior-art`](skills/prior-art/SKILL.md) — it reads what already solves this and hands back questions |
 | A product you are building yourself, with a model writing the code | yes | `idea-grill`, then the chain — everything you leave out gets invented, and you will not be told |
 
 Most of the work inside an organisation is the rows where the answer is *no*. The set is built for those too, not only for the founder defending their own idea.
@@ -44,10 +45,12 @@ flowchart TD
     SC -->|not ready| RS
     SC -->|risks unclear| RI[risk-interrogate]
     RI --> RS
-    SC -->|ready| PA[prior-art]
-    PA -->|departures as questions| RS
     SC -->|ready| SL[slice]
     SL -->|first slice only| DB[design-brief]
+    RS -.->|a mechanism, not a requirement| PA[prior-art]
+    DB -.->|a constraint nobody else imposes| PA
+    PA -.->|departures, as questions| RS
+    PA -.->|a named alternative to cut| SL
     DB --> UX[ux-grill]
     UX -->|decisions only a drawing reveals| DB
     DB --> FM[flow-map]
@@ -78,7 +81,6 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`idea-grill`](skills/idea-grill/SKILL.md) | Should we build this at all? | ✅ |
 | [`request-shaper`](skills/request-shaper/SKILL.md) | What exactly are we building? | ✅ |
 | [`readiness-score`](skills/readiness-score/SKILL.md) | Is it ready to build? (0–100 + verdict) | ✅ |
-| [`prior-art`](skills/prior-art/SKILL.md) | How is this already solved, and where do we depart? | ✅ |
 | [`slice`](skills/slice/SKILL.md) | What ships first, and what falls out? | ✅ |
 | [`design-brief`](skills/design-brief/SKILL.md) | What should the screens actually do? | ✅ |
 | [`ux-grill`](skills/ux-grill/SKILL.md) | Is this design right? | ✅ |
@@ -87,6 +89,7 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`flow-grill`](skills/flow-grill/SKILL.md) | Is the flow logically complete? | ✅ |
 | [`data-model`](skills/data-model/SKILL.md) | What must the system remember? | ✅ |
 | [`api-needs`](skills/api-needs/SKILL.md) | What must the system be able to provide? | ✅ |
+| [`prior-art`](skills/prior-art/SKILL.md) | How is this already solved, and where do we depart? | ✅ |
 | [`impact-radar`](skills/impact-radar/SKILL.md) | If I change this, what do I break? | ✅ |
 | [`decision-memo`](skills/decision-memo/SKILL.md) | How do I get a decision made? | ✅ |
 | [`build-context`](skills/build-context/SKILL.md) | What does whoever writes the code need, and what must they not invent? | ✅ |
