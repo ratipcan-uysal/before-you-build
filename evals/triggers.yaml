@@ -182,3 +182,20 @@ cases:
   - prompt: "This flow is signed off. What could take it down in production?"
     expect: risk-interrogate
     note: "system behaviour in the world, not completeness of the document"
+
+  # --- api-needs: should fire -------------------------------------------
+  - prompt: "What does the frontend need from the backend for this flow?"
+    expect: api-needs
+  - prompt: "Work out what APIs we need before I talk to the backend team."
+    expect: api-needs
+  - prompt: "Can our services actually provide the data this design assumes?"
+    expect: api-needs
+  - prompt: "Bu akis icin backend'den ne istememiz gerekiyor?"
+    expect: api-needs
+
+  # --- api-needs: should NOT fire (boundary) -----------------------------
+  - prompt: "Design the endpoints and write the OpenAPI spec."
+    expect: none
+    note: "designing the backend is not this set's job"
+  - prompt: "The flow isn't written down yet — what are the steps?"
+    expect: flow-map

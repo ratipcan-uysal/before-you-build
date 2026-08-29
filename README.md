@@ -55,8 +55,8 @@ flowchart TD
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC,RI,DB,UX,SM,FM,FG shipped
-    class AN,IR,DM planned
+    class IG,RS,SC,RI,DB,UX,SM,FM,FG,AN shipped
+    class IR,DM planned
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
@@ -76,7 +76,7 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`flow-map`](skills/flow-map/SKILL.md) | What happens, in what order, including the unhappy paths? | ✅ |
 | [`flow-grill`](skills/flow-grill/SKILL.md) | Is the flow logically complete? | ✅ |
 | [`state-matrix`](skills/state-matrix/SKILL.md) | Which states did we forget? | ✅ |
-| `api-needs` | What must the system be able to provide? | planned |
+| [`api-needs`](skills/api-needs/SKILL.md) | What must the system be able to provide? | ✅ |
 | `impact-radar` | If I change this, what do I break? | planned |
 | `decision-memo` | How do I get a decision made? | planned |
 
@@ -101,7 +101,7 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v1.3` — nine skills. Wave one is complete; `state-matrix`, `flow-map` and `flow-grill` have joined it. Still to come: `api-needs`, `impact-radar`, `decision-memo`. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another.
+`v1.4` — ten skills. Two left: `impact-radar` and `decision-memo`. Still to come: `impact-radar`, `decision-memo`. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another.
 
 What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
 

@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 1.4.0
+
+**`api-needs`** joins the set. At each point the flow reads or acts, what the system must be able to provide — and crucially **when**: "the app needs the ranked list" is not a requirement, "on every launch before the person has touched anything" is, and only the second one has a cost.
+
+Three things worth knowing:
+
+- **Feasibility has three states, and Unconfirmed is the default.** If you cannot see the system, every need is unconfirmed and it says so with an owner attached. A list where everything is quietly assumed to work is the document that produces the week-three conversation.
+- **It sweeps for assumed capabilities** — data a design takes for granted that nothing is known to produce. These are invisible in a flow, because the step reads perfectly.
+- **It will draft a contract if you ask**, in a separate section that says in its own words that it is a starting point for the backend team rather than a specification. The needs stand without it, and it can be deleted.
+
+Despite the name it is not about HTTP: a need can be met by a cache, a push, or a precomputed table.
+
 ## 1.3.0
 
 **`flow-grill`** joins the set. Audits a flow that exists and returns findings, never a rewritten flow — not even a small one, because the moment you write the steps the review becomes a proposal.
