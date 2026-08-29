@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.0.0 — fifteen skills
+
+**`prior-art` joins the set**, and it is the only skill here that reads material the user did not produce. That makes it the only one that can be confidently wrong about the world, so it is built as a grill rather than a producer: it asks questions, never recommends, and never names a product to buy.
+
+It exists because the set had no way to see a choice presented as a requirement. Requests describe **one** way of solving the problem, and by the time it is written down nobody remembers it was a choice. `prior-art` reads what already solves the problem and asks about three kinds of departure — a different **mechanism**, a **constraint** nobody else imposes, and a **capability** nobody confirmed the platform has. Each has a different owner, and capability departures can usually be settled the same day rather than discussed for a week.
+
+**Heads up — every line cites a source that was actually opened.** Not a search result title, not a recollection. This is the same evidence gate `readiness-score` applies to out-of-scope claims, and it is not decoration: on its first run the rule caught its own author. A claim written from a search summary — *"comparable products have the customer start the session, not the agent"* — did not survive contact with the page, which documents agent-sent SMS links as one of five supported methods. The corrected finding is narrower, accurate, and more useful: the work **stacks two initiation methods** where the documented product treats them as alternatives.
+
+`request-shaper` names it whenever it writes a mechanism line, and `design-brief` names it for any constraint nobody else imposes — because from inside the work, an insight and an unexamined assumption look identical.
+
+**Major version** because the chain has a new step and the marker vocabulary grew in 3.9. Nothing that worked before behaves differently.
+
 ## 3.9.0
 
 **Heads up — `[UNVERIFIED]` joins the marker vocabulary, and every skill recognises it.**

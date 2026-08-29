@@ -183,6 +183,24 @@ cases:
   - prompt: "The flow isn't written down yet — what are the steps?"
     expect: flow-map
 
+  # --- prior-art: should fire --------------------------------------------
+  - prompt: "Has anyone solved this before? Are we reinventing something?"
+    expect: prior-art
+  - prompt: "Check this design against how other products do it."
+    expect: prior-art
+  - prompt: "Is this the normal way to build this kind of thing?"
+    expect: prior-art
+  - prompt: "Bunu baskalari nasil cozmus, biz nerede ayrisiyoruz?"
+    expect: prior-art
+
+  # --- prior-art: should NOT fire (boundary) -----------------------------
+  - prompt: "Which cobrowsing vendor should we buy?"
+    expect: none
+    note: "naming a product to buy turns it into a procurement paper"
+  - prompt: "Is this idea worth building at all?"
+    expect: idea-grill
+    note: "merit is idea-grill; prior-art asks why this way, not whether"
+
   # --- slice: should fire ------------------------------------------------
   - prompt: "This is way too big for one release. What ships first?"
     expect: slice
