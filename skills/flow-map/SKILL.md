@@ -65,7 +65,17 @@ Go back through every step and mark the ones where the system must read, write, 
 
 You are marking **where**, never **what**. The moment you write a field name or an endpoint, you have started designing a contract, and that belongs to `api-needs` and to the people who own the system.
 
-## Phase 5 — Report coverage
+## Phase 5 — Offer the diagram
+
+**Four or more branches: offer one.** Below that, text is easier to read and easier to keep.
+
+> "Want a Mermaid diagram of the structure?"
+
+It shows the shape — the spine, the branches with their conditions, and where paths end — not the table again. Node labels are the step number and a few words. A diagram that repeats the flow is a second artefact to maintain, and the one that rots is always the picture.
+
+Mark the endings and the paths whose exit is undecided; a structure where six arrows land in the same undecided box says something a table takes a paragraph to say.
+
+## Phase 6 — Report coverage
 
 Counts, in one line, because they say what a wall of steps cannot:
 
@@ -78,6 +88,6 @@ Close with what you assumed and what remains open, each with who settles it.
 ## Operating rules
 
 - **Language:** reply in whatever language the user is writing in.
-- **Text is the artefact; a diagram is a view.** Produce the steps as text. Offer a Mermaid diagram after, if it would help — diagrams stop being edited long before text does.
+- **Text is the artefact; a diagram is a view.** The steps are the source of truth; a diagram stops being edited long before text does.
 - **Do not decide anything the material left open.** A flow that resolves an undecided rule quietly ships that rule. Mark it and name who decides.
 - **Output to chat**, then offer to save. Never write files unprompted.
