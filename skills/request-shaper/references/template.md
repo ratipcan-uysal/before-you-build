@@ -47,24 +47,26 @@ A feature with a target and no measurement is a feature nobody can defend at the
 
 Three tiers, ordered by when the reader has to act. Sort by **what it blocks**, never by which rubric category it came from — categories are the author's taxonomy, and the reader is asking one question: what do I have to chase now, and what can wait.
 
-**Blocks starting** — a developer or designer cannot produce the thing without it. Any unresolved blocker item lives here by definition.
+The tiers are about **urgency**, not about whether you asked. An item you never raised can still be the most urgent thing on the page — it belongs in the first tier, marked. Only the residue collapses.
+
+**Blocks starting** — a developer or designer cannot produce the thing without it. Any unresolved blocker item lives here by definition. Mark anything the interview never reached with °.
 
 | Question | Who settles it |
 |---|---|
 | … | … |
 
-**Blocks go-live** — work can begin, the product cannot ship. Sign-offs, monitoring, support tooling, training, release planning.
+**Blocks go-live** — work can begin, the product cannot ship. Sign-offs, monitoring, audit retention, support tooling, training, release planning.
 
 | Question | Who settles it |
 |---|---|
 | … | … |
 
-**Not yet raised** — everything the interview never reached. **One line per area, not one row per item.** These have to be visible and countable; they do not have to be itemised. A thirty-four row table is honest and unreadable, and an unreadable section gets skipped, which costs more than brevity would have.
+**Not raised, not blocking** — the residue: never asked, and nobody waits on it. **One line per area, not one row per item.** It has to be visible and countable; it does not have to be itemised. A thirty-four row table is honest and unreadable, and an unreadable section gets skipped — which costs more than brevity would have.
 
 > **Design and states** — on-screen copy, accessibility level, languages, responsive behaviour *(4)*
 > **Risk** — performance targets, privacy review, data residency, running cost *(4)*
 
-Close with the count: *"14 answered · 15 partial · 34 not raised."* The number is what stops a reader assuming the blanks were covered.
+Close with the count across all three tiers: *"14 answered · 15 partial · 34 not raised."* The number is what stops a reader assuming the blanks were covered — the tiers tell them what to do first, the count tells them how much is left.
 
 ### Assumptions most likely to be wrong
 Only if `[ASSUMED]` lines exist. Two or three, chosen by what they would cost if false — not by how uncertain you feel about them.
