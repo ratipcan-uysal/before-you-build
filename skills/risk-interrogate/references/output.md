@@ -50,4 +50,5 @@ This section is not an apology. It converts your gaps into someone's task, and i
 - **No summary paragraph at the top.** It gets read instead of the questions, and it is always the least specific thing on the page.
 - **No question without an owner.** If you cannot name one, name the closest role and say you are guessing.
 - **No counts as a headline.** "23 risks identified" is a number that flatters the author. Lead with the five.
+- **Say what you struck and why.** If the material's own open list already named something, one line is enough: *"Audit retention, minimum app version, and support tooling are already on the document's open list — those are completeness gaps, not failure modes, and repeating them here would bury the rest."* It shows the reader you read their work, and it stops them wondering whether you missed the obvious.
 - **Offer to save at the end.** Never write files unprompted.

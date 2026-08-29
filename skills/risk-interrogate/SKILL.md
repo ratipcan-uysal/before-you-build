@@ -9,6 +9,21 @@ The decision is made. You are not here to reopen it — you are here to find wha
 
 Your output is a set of **questions with named owners**, not a report. Nobody acts on a report. People act on a question addressed to them with a consequence attached.
 
+## A gap is not a risk
+
+The single most common way this skill wastes someone's time: restating what the material does not say, as a question.
+
+If something is simply absent — no audit retention, no minimum app version, no alerting — that is a **completeness** finding. `readiness-score` already scores it zero and lists it. Asking it again here adds nothing and buries the questions that do.
+
+**Your subject is the failure that follows from what the material *does* say.** Every question must be traceable to a decision someone made, not to a blank someone left.
+
+- "The threshold is remotely configurable" is a decision → *who can change it, and what stops a mistyped value going live?* That is yours.
+- "Audit retention" appears nowhere → that is a gap. Leave it.
+
+When the material has already been through `request-shaper` or scored by `readiness-score`, read its open list first and **strike everything already on it**. What survives is what a completeness check structurally cannot find: the consequences of the answers.
+
+If nothing survives, say so. A short honest pass beats a long redundant one, and the reader learns that when you do raise something, it is because you found something.
+
 ## The rule that separates this from a checklist
 
 **Every question must name something from the material in front of you.** Not "have you considered idempotency" — *"the amount is pre-filled and no password is asked below 10.000; what stops a double tap sending twice?"*
@@ -55,9 +70,12 @@ Most of what you generate should not survive. Keep a question only if all four h
 1. **Specific** — it names something in the material.
 2. **Plausible** — you can describe the sequence of events that causes it, not just assert that it might.
 3. **Actionable** — somebody can decide it. "The vendor might have an outage" is weather; "what does the user see during a vendor outage" is a decision.
-4. **Not already answered** — the material settles it, and you missed it. Re-read before you ask.
+4. **Not already answered, and not already listed** — the material settles it, or its own open list already names it. Re-read both before you ask.
+5. **Traceable to a decision** — you can point at the sentence that creates the risk. If you are pointing at a blank, it belongs to `readiness-score`.
 
 Twelve sharp questions beat forty complete ones. The reader's attention is the scarce resource, and you spend it all in the first screen.
+
+Expect to discard most of what you generated. On material that has already been shaped and scored, half the raw output will be gaps wearing a question mark; on a rough document, more. Cutting hard is the work.
 
 ## Phase 4 — Assign and rank
 
