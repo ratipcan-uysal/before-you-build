@@ -49,7 +49,7 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 |---|---|---|
 | [`idea-grill`](skills/idea-grill/SKILL.md) | Should we build this at all? | ✅ |
 | `request-shaper` | What exactly are we building? | soon |
-| `readiness-score` | Is it ready to build? (0–100 + verdict) | soon |
+| [`readiness-score`](skills/readiness-score/SKILL.md) | Is it ready to build? (0–100 + verdict) | ✅ |
 | `design-brief` | What should the screens actually do? | soon |
 | `ux-grill` | Is this design right? | soon |
 | `risk-interrogate` | What breaks in production? | planned |
@@ -73,7 +73,7 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v0.1` — `idea-grill` is complete and in use. The rest of wave one (`request-shaper`, `readiness-score`, `design-brief`, `ux-grill`) is being written now; wave two follows. This repo is public from the first commit, so you are seeing it get built.
+`v0.2` — `idea-grill` and `readiness-score` are complete and in use. The rest of wave one (`request-shaper`, `design-brief`, `ux-grill`) is being written now; wave two follows. This repo is public from the first commit, so you are seeing it get built.
 
 Each skill ships with its trigger and boundary tests in [`evals/triggers.yaml`](evals/triggers.yaml), checked in CI. Boundary tests matter more than trigger tests: eleven skills with overlapping descriptions fail by firing the wrong one, and the user never finds out why the answer was off.
 

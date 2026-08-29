@@ -40,3 +40,21 @@ cases:
     expect: none
   - prompt: "Summarise this article for me."
     expect: none
+
+  # --- readiness-score: should fire -------------------------------------
+  - prompt: "Here's the spec. Is this ready for the team to start building?"
+    expect: readiness-score
+  - prompt: "Score this ticket against a definition of ready."
+    expect: readiness-score
+  - prompt: "What's missing from this request before we can estimate it?"
+    expect: readiness-score
+  - prompt: "Bu analiz dokumani gelistirmeye hazir mi, kac puan verirsin?"
+    expect: readiness-score
+
+  # --- readiness-score: should NOT fire (boundary) -----------------------
+  - prompt: "This spec is missing the error cases. Write them for me."
+    expect: request-shaper
+    note: "filling gaps is production, not measurement"
+  - prompt: "Is this spec any good? I mean, is the idea behind it sound?"
+    expect: idea-grill
+    note: "merit of the idea, not completeness of the document"
