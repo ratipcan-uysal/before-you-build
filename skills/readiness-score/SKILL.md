@@ -34,7 +34,7 @@ Before scoring anything:
 
 ## Phase 1 — Classify on two axes
 
-**What the work does:** `transaction` · `data-display` · `input-collection` · `content-config`
+**What the work does:** `transaction` · `data-display` · `input-collection` · `content-config` · `personalization`
 **Where it runs:** `mobile-app` · `web` · `backend` · `multi-surface`
 
 Take every value that applies on each axis; signals are in [`references/rubric.md`](references/rubric.md). Both axes open **conditional items**, because a payment flow and a banner change must not be measured with the same stick — and neither must a mobile release and a server change.

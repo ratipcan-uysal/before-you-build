@@ -37,12 +37,14 @@ Ask in rounds of three to five. Ask only what the input has not already answered
 - **P3** What is deliberately *not* part of this?
 - **P4** Who decided this is worth doing? Who can change that decision?
 - **P5** Which platforms and channels? *(options — and never let "the app" stand for an answer)*
+- **P6** Does anyone internal need a screen for this — an agent, an admin, back office? *(options)*
 
 ### Users and trigger
 - **U1** Who does this? Be specific — a role, not "the user".
 - **U2** What are they doing right before they hit this?
 - **U3** Does it work differently for anyone — a plan tier, a permission level, a new account?
 - **U4** What do they do today instead?
+- **U5** Is the user ever acting for someone else — a second account, a company, a delegated role? What changes when they switch? *(options)*
 
 ### Behaviour and rules
 - **B1** Walk me through it, step by step, when everything works.
@@ -56,12 +58,14 @@ Ask in rounds of three to five. Ask only what the input has not already answered
 - **D2** Which systems or teams are involved?
 - **D3** What else uses the thing you are changing?
 - **D4** Does any existing interface, schema, or contract change shape?
+- **D5** Is a vendor or third party involved, and what does the agreement actually promise?
 
 ### Design and states
 - **S1** Which screens or surfaces are involved?
 - **S2** What is shown while it loads, when there is nothing, and when it fails?
 - **S3** What does it actually say on screen — the labels, the messages, the error text?
-- **S4** Any accessibility or language requirements that are not the default?
+- **S4** What accessibility level is required? *(options)*
+- **S5** How many languages, and who writes and approves the translations?
 
 ### Risk and non-functional
 - **R1** What worries you about the day after this ships? How would you find out it went wrong?
@@ -69,6 +73,8 @@ Ask in rounds of three to five. Ask only what the input has not already answered
 - **R3** How many people, how fast, how much data?
 - **R4** Does this touch personal data, money, or anything a regulator cares about?
 - **R5** Who has to sign this off before it goes live — legal, compliance, security, risk?
+- **R6** Where does the data live, and is there a constraint on that?
+- **R7** What does this cost to run — infrastructure, per-transaction fees, vendor charges?
 
 ### Instrumentation and downstream
 The category most often missing entirely. The feature ships, and three weeks later nobody can say whether it worked.
@@ -77,19 +83,22 @@ The category most often missing entirely. The feature ships, and three weeks lat
 - **N3** Does anyone need a report or a warehouse change out of this — new tables, new fields, a dashboard?
 - **N4** How will you see it working in production? What would alert someone if it stopped?
 - **N5** What do support and operations see when a customer calls about it? Do they need a tool?
+- **N6** When this fails across five systems, can anyone follow one transaction end to end? *(options — shared trace id, per-system logs only, not discussed)*
+- **N7** Who outside the delivery team needs to be ready — branch, call centre, field? Training or a script?
 
 ## Conditional questions
 
 Two axes, both open questions — see the `readiness-score` rubric for the full list.
 
 **By what the work does:**
-- **Transactions:** what happens if they press it twice?
+- **Transactions:** what happens if they press it twice? Is authorisation re-checked on the server at submit? What if the price they saw has changed by then? In what order are discount, tax, and fee applied — and after which step can it no longer be undone?
 - **Lists:** what does it look like empty, and with ten thousand rows?
 - **Forms:** what happens to a half-filled entry?
 - **Content:** what does the surface do if the content is missing?
+- **Personalisation:** which rule wins when someone matches three campaigns at once? When is eligibility re-checked? What does someone who matches nothing see?
 
 **By where it runs** — these are the same every time for a given surface, so ask them every time:
-- **Mobile:** iOS and Android both, or one first? Minimum app version, and what old versions see? Can it be switched off without a store release? What happens with no connectivity?
+- **Mobile:** iOS and Android both, or one first? Minimum app version, and what old versions see? Can it be switched off without a store release? What happens with no connectivity — and what happens if the app is killed halfway through?
 - **Web:** which browsers and viewports? What happens with the same flow open in two tabs? What accessibility level is required?
-- **Backend:** who consumes this today, and does their version keep working? Migration and rollout order?
+- **Backend:** who consumes this today, and does their version keep working? Which ships first, backend or client — and does each survive the other's previous version?
 - **Multi-surface:** must it behave identically everywhere? Which ships first, and what do users see in the gap?
