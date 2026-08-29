@@ -4,6 +4,16 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.6.2
+
+Three holes closed in the validator, all of them ones this repo had named and left open.
+
+- **A retired or planned skill named without backticks** now fails. The token check only ever read backticked terms, so plain prose was a hiding place. Only retired and planned names are chased in bare prose — every other skill name is an ordinary phrase somewhere.
+- **`CHANGELOG.md` is no longer exempt outright.** Entries under a version heading were true at the version they describe, but the intro above the first heading speaks in the present tense and was never checked.
+- **A declared skill count in the README** — the bolded one in the status line — must match the number of skills on disk.
+
+Verified in both directions against a scratch copy: each fires on its own defect, and a retired name under a version heading still passes.
+
 ## 3.6.1
 
 **Heads up — a `decision-memo` asking for a reduction now says what it takes to undo.**

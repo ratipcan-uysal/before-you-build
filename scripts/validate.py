@@ -175,6 +175,20 @@ for md in prose:
         if not (md.parent / target).exists():
             err(f"{rel}: broken link -> {target}")
 
+    # A retired or planned name written without backticks slips past the token
+    # check below. Only those names are chased in bare prose — every other skill
+    # name is an ordinary phrase somewhere ("slice", "flow map").
+    scope = text
+    if rel.name == "CHANGELOG.md":
+        # Not exempt outright: entries under a version heading were true at that
+        # version, but the intro above the first heading speaks in the present.
+        scope = text.split("\n## ", 1)[0]
+    for token in sorted(set(RETIRED) | set(PLANNED)):
+        for m in re.finditer(rf"(?<![`\w/-]){re.escape(token)}(?![`\w/-])", scope):
+            line_no = scope[:m.start()].count("\n") + 1
+            err(f"{rel}:{line_no}: names {token} without backticks — the check "
+                "that would have caught it only reads backticked terms")
+
     if rel.name == "CHANGELOG.md":
         continue
     live = rel.parts[0] in ("skills", "examples", "commands")
@@ -220,6 +234,12 @@ if not re.search(rf"^## {re.escape(plugin['version'])}\b", changelog, re.M):
         "the version was bumped and the changelog was not")
 
 # --- counts stated in prose match what is there ---------------------------
+for m in re.finditer(r"\*\*(\w+) skills?\*\*", readme):
+    word = m.group(1).lower()
+    claimed = int(word) if word.isdigit() else NUMBER_WORD.get(word)
+    if claimed is not None and claimed != len(skill_names):
+        err(f"README.md: declares **{m.group(1)} skills**, the repo has {len(skill_names)}")
+
 principles = len(re.findall(r"^## \d+\. ", (ROOT / "docs/method.md").read_text(), re.M))
 for md in (ROOT / "README.md", ROOT / "docs/method.md"):
     for m in re.finditer(r"\b(\w+) principles\b", md.read_text(), re.I):
