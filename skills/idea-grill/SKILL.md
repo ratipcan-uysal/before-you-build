@@ -42,7 +42,7 @@ Skipping the steelman is the classic failure mode: attacking a weak version and 
 
 Each turn:
 
-1. **Find the weakest link** in the defense as it currently stands — not the next lens in a list.
+1. **Find the weakest link** in the defense as it currently stands — not the next lens in a list. The maturity check below names it for you: whichever of thesis, dependencies, or kill conditions is still unclear.
 2. **Pick the lens that cuts there.** Full set with example phrasings and the escalation ladder: [`references/lenses.md`](references/lenses.md).
 3. **Test the provocation before firing.** It must (a) hit the weakest link, (b) demand a defense rather than a yes/no, (c) be unanswerable by restating the original claim, and (d) survive "so what?" — the answer has to change what happens next.
 4. **Fire once. Stop. Wait.**
@@ -75,7 +75,17 @@ Close the grill when any of these is true:
 - **Three consecutive holds** against lenses from the top of the escalation ladder — the idea is load-bearing, and further grilling is theatre.
 - You have run out of genuinely sharp provocations. A dull question is worse than no question.
 
-**Pacing:** a typical grill runs five to nine provocations. Under four usually means you accepted a weak defense. Over twelve usually means you are re-pressing a point that already cracked.
+**The maturity check — how you know, rather than counting turns.** Before each provocation, answer three questions silently about the idea *as it now stands*:
+
+1. Can you state the thesis in one sentence, without hedging?
+2. Do you know what it depends on — the premises it cannot survive without?
+3. Do you know what would kill it, and what evidence would settle each open one?
+
+Any **no** is your next target: aim the provocation there. All three **yes**, and the provocation you were about to fire would not change any of the three answers — the idea has matured as far as dialogue can take it. Close.
+
+Turn count is a smell, not a rule. Past a dozen turns with these three answers unchanged, you are re-pressing something that already cracked.
+
+**An empirical wall is per-point, not per-grill.** When a specific crack becomes "nobody has looked yet" rather than "you have not thought it through", stop pressing *that* point — dialogue cannot manufacture evidence. Move to another line of attack. The grill ends only when every remaining line is empirical. Closing at the first empirical wall costs you the defenses that had not surfaced yet, which are often the best ones.
 
 **A weak defense that arrives when you are ready to close** is recorded as a crack, not pressed. Say that you are recording rather than chasing it, and why — an unexplained retreat reads as losing interest.
 
