@@ -50,6 +50,14 @@ Each `SKILL.md` stays under 150 lines: when to trigger, the phase flow, the outp
 
 Cheaper to run, easier to maintain, and possible for someone else to contribute to.
 
+## 9. A derived view is checked against its source
+
+Every second representation loses something. A diagram drawn from a step list collapses steps, and the collapse hides a branch. A screen drawn from a decision record honours four decisions and quietly inverts the fifth. Nothing looks wrong in either case, because the derived artefact is internally consistent — it is only inconsistent with the thing it came from, and nobody is holding both.
+
+So a skill that produces a second view of something checks it against the first, item by item, before handing it over. `ux-grill` does this by design — conformance before taste — and it is the reason that skill catches what a general critique cannot.
+
+This is not a rule about being careful. Exhortation does not survive contact with a long task; a named check placed in the phase that produces the artefact does.
+
 ---
 
 ## Why this set critiques more than it generates

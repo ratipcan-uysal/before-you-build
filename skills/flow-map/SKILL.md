@@ -77,6 +77,12 @@ It shows the shape — the spine, the branches with their conditions, and where 
 
 Where a canvas tool is available, the screens themselves can be the nodes. Where one is not, the marking carries the same finding, which is why the marking is the rule and the canvas is a convenience.
 
+**Then check the diagram against the steps, item by item, before handing it over.** A drawing loses what a list holds, and it does so invisibly, because the drawing is internally consistent. Three checks, and each has failed in practice:
+
+- **Every branch and error path in the text appears in the diagram.** Collapsing steps for space is fine; collapsing a step that owns a branch orphans that branch, and the orphan looks like a stray arrow rather than a missing path.
+- **Every decision shows all of its exits, each labelled.** A decision with one drawn exit is the same dangling branch this skill forbids in the text, drawn.
+- **Every path is attached where it actually occurs.** Hanging four unrelated failures off one decision because they fit there is a lie about when they happen, and it is the kind a reader believes.
+
 ## Phase 6 — Report coverage
 
 Counts, in one line, because they say what a wall of steps cannot:
