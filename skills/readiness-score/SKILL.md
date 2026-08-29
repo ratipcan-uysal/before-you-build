@@ -62,7 +62,7 @@ When an entire category is out of scope (a backend-only change genuinely has no 
 
 Every score above 0 must be defensible by pointing at text. If you cannot point, it is 0.
 
-**An item whose evidence is `[ASSUMED]` scores at most 1.** `request-shaper` marks anything it inferred rather than received. An inference is worth something — it is a stated position someone can correct — but never as much as a decision. Without this cap the two skills would quietly agree with each other: one invents, the other scores the invention as content, and the user trusts a number built on nothing.
+**An item whose evidence is `[ASSUMED]` or `[UNVERIFIED]` scores at most 1.** `request-shaper` marks anything it inferred rather than received. An inference is worth something — it is a stated position someone can correct — but never as much as a decision. Without this cap the two skills would quietly agree with each other: one invents, the other scores the invention as content, and the user trusts a number built on nothing.
 
 The cap applies to the **item**, not the line. If everything supporting an item is marked, cap it at 1. If the item also rests on content the author actually gave, score that content normally and ignore the marked line — real evidence is not diluted by an inference sitting next to it. Say in the output which items were capped.
 
@@ -101,7 +101,7 @@ Output has six sections, in this order:
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **No confidence hedges.** Do not write "medium confidence" or "probably". Report coverage as a fact — *"scored against a two-page document; 6 of 27 in-scope items had no evidence either way"* — and let the reader judge.
 - **Never write the missing content.** Naming a gap is this skill's job; filling it belongs to `request-shaper`. Offer the handoff; do not perform it.
 - **Output to chat**, then offer to save. Never write files unprompted.

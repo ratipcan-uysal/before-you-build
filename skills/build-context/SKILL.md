@@ -84,6 +84,7 @@ The spec is a derived view, so it is checked against its sources item by item. E
 | **Defaults** | Same value, and still marked `[DRAFT]` if the source marked it |
 | **Markers** | Present, in English, on the same line they were on |
 | **Anything with no source** | You wrote it. It goes to *Ask before you start*, or it goes |
+| **Every `[UNVERIFIED]`** | Survives with its marker. One that is load-bearing — a decision rests on it — is also listed under *Ask before you start*, because it is a question, not a fact |
 
 **Assembly drifts toward the stricter reading**, and that is the one to hunt. A prohibition scoped to one surface becomes a prohibition on the whole flow; a `[DRAFT]` default becomes a decided one. Both read as more careful, which is why nothing flags them — and a rule broadened during assembly is a decision reversed, usually the one somebody made deliberately in response to a review.
 
@@ -132,7 +133,7 @@ Decisions are necessary and nowhere near sufficient. Without **real copy**, **de
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `BUILDABLE`, `ASK FIRST`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `BUILDABLE`, `ASK FIRST`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **Never fill a gap.** Not with a sensible default, not with the obvious answer, not to make the pack read better. Every gap you close silently is the exact failure the pack exists to prevent, committed by the document meant to prevent it.
 - **Never re-decide.** If a chain document made a call you disagree with, carry it and say once, in one sentence, that you disagree. Reopening decisions here means the pack disagrees with its own sources.
 - **Quote, do not paraphrase**, wherever a decision is load-bearing. A paraphrase is a small rewrite, and small rewrites are how a prohibition loses its edge.

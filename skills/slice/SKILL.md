@@ -94,7 +94,7 @@ A well-cut slice **scores higher** than the request it came from, because the op
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **Never cut to a number.** Cutting to fit a date produces a slice with a hole in the middle. Cut to a job, then say what the job will take to finish; if that does not fit the date, that is the finding.
 - **Never cut something nobody raised.** Removing what the requester never asked for is not slicing, it is quietly narrowing the request, and it is found in the review.
 - **Say when nothing should be cut.** Some requests are already a slice. Saying so is a real answer, and it is more useful than a ceremonial cut that removes the empty state.

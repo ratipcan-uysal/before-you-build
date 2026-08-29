@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "before-you-build",
   "description": "Pressure-test what you are about to build. Adversarial grills, evidence-gated readiness scoring, and design-decision extraction for the work that happens before a single line of code.",
-  "version": "3.8.0",
+  "version": "3.9.0",
   "author": {
     "name": "Ratip Can Uysal"
   },

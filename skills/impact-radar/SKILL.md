@@ -79,8 +79,8 @@ Draw it from the Silent and Deferred rows first — those are precisely what a t
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
-- **Say when you are guessing.** Without access, every dependency is a question with an owner. Mark it, never soften it into a finding.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
+- **Say when you are guessing, with the marker.** Without access, every dependency is a question with an owner: `[UNVERIFIED]`, and the owner named beside it. Never soften one into a finding. Without the token a reader scanning the table cannot tell a traced dependency from a guessed one, and the whole radius reads as a map.
 - **Do not design the migration.** Naming what breaks is yours; deciding how to sequence, flag, or backfill belongs to whoever owns the systems.
 - **Do not reopen the decision.** If the change looks unwise, one sentence at the end, once. `idea-grill` is where that argument belongs.
 - **Output to chat**, then offer to save. Never write files unprompted.

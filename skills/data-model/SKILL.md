@@ -96,7 +96,7 @@ A diagram drawn from the table and never checked back against it drops exactly t
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **No physical schema.** No types, lengths, indexes, engines, migrations or table names. A generator picks those better than you can, from a stack you have not been told about, and putting them in a product document is how the document gets dismissed whole.
 - **Never invent an entity to make the model tidy.** A join table nobody's flow touches is a guess about implementation. If the relationship needs one, whoever builds it will know.
 - **An entity nobody can name is not an entity.** If the material calls it three things, that is a finding — put the three names in front of the user and make them choose one.

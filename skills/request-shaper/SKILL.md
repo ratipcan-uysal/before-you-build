@@ -61,6 +61,8 @@ Ask only what is still open. Question bank by category, marked by whether it tak
 
 **When the user does not know**, offer the choice explicitly: leave it open, or write your best guess as `[ASSUMED]`. Their call, every time.
 
+**Mark what rests on the world, not on the material.** `[ASSUMED]` says *I inferred this from what you gave me*. `[UNVERIFIED]` says *this holds only if the outside world works the way somebody believes it does* — a platform capability, a vendor guarantee, a regulatory requirement, what an integrator will expect. Neither you nor the requester checked, and the second kind is the one nobody goes back to, because it reads as a fact rather than a guess. Name the check beside it.
+
 **Separate the requirement from the mechanism.** Requests arrive describing *how*, and the how is usually one option written as though it were the need. *"An SMS goes out, the customer taps the link, a code appears, they read it to the agent"* is four mechanisms; the requirement underneath is *"the person on the call proves they are the person in the app, and consents."* Write both, on separate lines, and say which one the requester actually decided.
 
 You are not arguing with the mechanism — that is `idea-grill`, and negotiating scope is forbidden here. You are making it **visible as a choice**, so that `slice` can cut it and `design-brief` can pick a different one. A mechanism written as a requirement is never examined again by anyone, and it carries its own failure paths into every document downstream.
@@ -106,7 +108,7 @@ Close with:
 
 ## Operating rules
 
-- **Language:** write in whatever language the user is writing in, including the document itself — but **markers keep their English forms.** `[ASSUMED]` is a token `readiness-score` matches on to cap the item at 1 of 3; translated, it scores as ordinary content and the contract between the two skills silently stops working.
+- **Language:** write in whatever language the user is writing in, including the document itself — but **markers keep their English forms.** `[ASSUMED]` and `[UNVERIFIED]` are tokens `readiness-score` matches on to cap the item at 1 of 3; translated, they score as ordinary content and the contract between the skills silently stops working.
 - **Output to chat**, then offer to save. Never write files unprompted.
 - **Never negotiate scope.** If the user asks for something you think is a bad idea, write it down clearly and say once that you think it is a bad idea. Then write it anyway — arguing the merits is `idea-grill`, and doing it here just makes the document late.
 - **Length follows the work.** A content change gets a page. A payment flow gets five. Padding a small request into a big document helps nobody.

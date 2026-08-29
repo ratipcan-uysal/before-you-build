@@ -1,6 +1,6 @@
 # The method
 
-Nine principles. The skills in this repo are what they look like when they are made executable.
+Ten principles. The skills in this repo are what they look like when they are made executable.
 
 ## 1. Steelman before you strike
 
@@ -59,6 +59,14 @@ So a skill that produces a second view of something checks it against the first,
 This is not a rule about being careful. Exhortation does not survive contact with a long task; a named check placed in the phase that produces the artefact does.
 
 ---
+
+## 10. The set works from the material, and marks where the material rests on the world
+
+Every skill here reads what someone brought. None of them checks whether a platform supports what a decision assumes, what a regulator actually requires, or how anyone else has already solved this.
+
+That boundary is deliberate. A model summarising what it half-remembers about an SDK, a law or a competitor sounds exactly as confident as one reading a document, and telling the two apart afterwards is impossible — which is the failure this whole set is built against.
+
+But a boundary is only safe when it is visible. So a claim about the world outside the material carries `[UNVERIFIED]` and names the check that would settle it: *the platform documentation*, *legal*, *the vendor*, *whoever has built this before*. Unmarked, such a claim is indistinguishable from a decision somebody made, and it is precisely the kind that survives untouched into code — because everyone downstream assumes the person upstream looked.
 
 ## Why this set critiques more than it generates
 

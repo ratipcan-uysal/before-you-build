@@ -87,6 +87,10 @@ It has two layers. The shape layer is always safe. The **concrete layer** — re
 
 This crosses the set's usual line of what and why rather than how. It is deliberate: a product manager arriving with only a list of needs negotiates from a weaker position than one arriving with something concrete to argue against. The risk is that it reads as overreach, which is why the needs never depend on it.
 
+## `Unconfirmed` and `[UNVERIFIED]` are not the same thing
+
+`Unconfirmed` is a feasibility verdict on a named need: *nobody has confirmed the system can do this*. `[UNVERIFIED]` marks any line that rests on how the outside world works — what the platform allows, what the vendor's contract guarantees, what an integrator will expect. A need can be `Unconfirmed` for reasons entirely inside the company; a claim can be `[UNVERIFIED]` even when feasibility is settled.
+
 ## When the thing being built is consumed by other software
 
 An SDK, a library, a widget or a plugin has **two contracts, and the flow only shows one of them.** What the system must provide is the one you have been tracing. The other is what the *integrating developer* must call, supply and declare before any of it runs — and it is the contract that cannot be changed later, because every host has already built against it.
@@ -99,7 +103,7 @@ This is usually the last thing the chain produces, and a list of needs is not a 
 
 ## Operating rules
 
-- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
+- **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **Never invent a field the flow does not require.** Every item traces to a step. A need nobody's flow asks for is you designing.
 - **Never specify transport, storage, or protocol** unless the material already did. "Available when the screen opens" is a need; "GET, cached 60s" is someone else's decision.
 - **Output to chat**, then offer to save. Never write files unprompted.

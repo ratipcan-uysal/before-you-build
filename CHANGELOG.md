@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.9.0
+
+**Heads up — `[UNVERIFIED]` joins the marker vocabulary, and every skill recognises it.**
+
+The set had a marker for *I inferred this from what you gave me* (`[ASSUMED]`) and nothing for *this holds only if the outside world works the way somebody believes it does*. Platform capabilities, vendor guarantees, regulatory requirements, what an integrator will expect — every one of them can sit unmarked in a document and read as a decision somebody made. They are the claims nobody returns to, precisely because they look settled.
+
+This gap had been found once already, during `impact-radar`'s first run, which mandates the distinction and gave no token for it. The marker was improvised in that run, recorded as a defect, and never built. It is now built.
+
+`readiness-score` caps an `[UNVERIFIED]` item at 1 of 3, exactly as it does an `[ASSUMED]` one. `build-context` carries the marker through and lists any load-bearing one under *Ask before you start*, because it is a question rather than a fact. `design-brief` applies it hardest to constraints that **deviate** from what is usually done — a deliberate deviation is an insight, an accidental one is an oversight, and only someone who checked can say which. `api-needs` states the boundary against its own `Unconfirmed`: that is a feasibility verdict on a need, this is a claim about the world.
+
+**A tenth principle** goes with it: *the set works from the material, and marks where the material rests on the world.* No skill here checks a platform, a regulator or a competitor, and that boundary is deliberate — a model summarising what it half-remembers sounds exactly as confident as one reading a document, which is the failure the whole set is built against. A boundary is only safe when it is visible.
+
 ## 3.8.0
 
 The SDK run was audited output by output against how the problem is actually solved in the market. Four defects, and the largest one is a shape the whole set is blind to.
