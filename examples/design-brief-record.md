@@ -107,4 +107,4 @@ This is version two — rewritten after screens were drawn from version one and 
 
 Version one was derived from a request and was reasonable. Version two contains decisions that only became visible once two identical cards sat side by side — *"two people share a name; how does anyone tell them apart"* is not derivable from a request, and nobody thinks of it until they see it.
 
-That is why `design-brief`, `state-matrix` and `ux-grill` are a loop rather than a line, and why the second pass is usually the useful one.
+That is why `design-brief` and `ux-grill` are a loop rather than a line, and why the second pass is usually the useful one.
