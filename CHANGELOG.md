@@ -4,6 +4,16 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 2.0.0 — all twelve
+
+**`impact-radar`** joins the set. What a change to something existing will break, traced across ten dimensions — and the distinction the whole skill turns on: **loud breakage throws and gets fixed in a day; silent breakage keeps working and is wrong.** A report that groups differently outranks a screen that errors, every time. Deferred breakage is worse than both, because release day looks fine.
+
+It also produces the list nobody asks for and everybody needs: **what stays the same.** Half the cost of a change is reviewing everything people feared it touched.
+
+**`decision-memo`** closes the chain. Seven fixed fields, one page, one position, one named person asked to approve one specific thing. It compresses analysis and produces none: a number that is not in the source material does not appear.
+
+Its strongest field is the one most memos leave out — **what happens if nobody decides.** Inaction is a decision that gets made accidentally, and naming the default with the date it becomes irreversible is what turns a memo from information into a request.
+
 ## 1.4.0
 
 **`api-needs`** joins the set. At each point the flow reads or acts, what the system must be able to provide — and crucially **when**: "the app needs the ranked list" is not a requirement, "on every launch before the person has touched anything" is, and only the second one has a cost.

@@ -27,7 +27,7 @@ There is no single front door. What you reach for depends on what landed on your
 | A document from another team, and the question is "is this enough?" | — | `readiness-score` |
 | A decision made above you, with detail | no | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) — nothing needs shaping because nothing can be changed; the failure modes are your whole contribution |
 | A decision made above you, with no detail | no | [`request-shaper`](skills/request-shaper/SKILL.md) first — risk questions need decisions to attach to, and there are none yet |
-| A change to something that already exists | no | `impact-radar` |
+| A change to something that already exists | no | [`impact-radar`](skills/impact-radar/SKILL.md) |
 
 Most of the work inside an organisation is the rows where the answer is *no*. The set is built for those too, not only for the founder defending their own idea.
 
@@ -44,6 +44,7 @@ flowchart TD
     SC -->|ready| FM[flow-map]
     FM --> FG[flow-grill]
     FG --> AN[api-needs]
+    AN --> DM
     FG --> DB[design-brief]
     DB --> SM[state-matrix]
     SM --> UX[ux-grill]
@@ -55,8 +56,7 @@ flowchart TD
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC,RI,DB,UX,SM,FM,FG,AN shipped
-    class IR,DM planned
+    class IG,RS,SC,RI,DB,UX,SM,FM,FG,AN,IR,DM shipped
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
@@ -77,8 +77,8 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`flow-grill`](skills/flow-grill/SKILL.md) | Is the flow logically complete? | ✅ |
 | [`state-matrix`](skills/state-matrix/SKILL.md) | Which states did we forget? | ✅ |
 | [`api-needs`](skills/api-needs/SKILL.md) | What must the system be able to provide? | ✅ |
-| `impact-radar` | If I change this, what do I break? | planned |
-| `decision-memo` | How do I get a decision made? | planned |
+| [`impact-radar`](skills/impact-radar/SKILL.md) | If I change this, what do I break? | ✅ |
+| [`decision-memo`](skills/decision-memo/SKILL.md) | How do I get a decision made? | ✅ |
 
 **Producing** and **grilling** are always separate skills. A model that generates a design and then reviews it will approve its own work — not from vanity, but from the ordinary pull of consistency. `design-brief` decides; `ux-grill` attacks. They never run in the same breath.
 
@@ -101,7 +101,7 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v1.4` — ten skills. Two left: `impact-radar` and `decision-memo`. Still to come: `impact-radar`, `decision-memo`. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another.
+`v2.0` — **all twelve skills are complete.** From here the set changes because it is used, not because it is unfinished. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
 
 What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
 

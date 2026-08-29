@@ -199,3 +199,35 @@ cases:
     note: "designing the backend is not this set's job"
   - prompt: "The flow isn't written down yet — what are the steps?"
     expect: flow-map
+
+  # --- impact-radar: should fire ----------------------------------------
+  - prompt: "If I change this field, what breaks?"
+    expect: impact-radar
+  - prompt: "What's the blast radius of changing this endpoint?"
+    expect: impact-radar
+  - prompt: "Is it safe to change this business rule? What depends on it?"
+    expect: impact-radar
+  - prompt: "Bu kurali degistirirsem neyi bozarim?"
+    expect: impact-radar
+
+  # --- impact-radar: should NOT fire (boundary) --------------------------
+  - prompt: "This new feature ships next sprint. What could go wrong in production?"
+    expect: risk-interrogate
+    note: "new work, not a change to something existing"
+  - prompt: "Should we change this at all? Talk me out of it."
+    expect: idea-grill
+
+  # --- decision-memo: should fire ---------------------------------------
+  - prompt: "Write the one-pager I take to leadership to get this approved."
+    expect: decision-memo
+  - prompt: "I need a memo that gets a yes on this by Friday."
+    expect: decision-memo
+  - prompt: "Bunu onaya goturecek tek sayfalik memo yaz."
+    expect: decision-memo
+
+  # --- decision-memo: should NOT fire (boundary) -------------------------
+  - prompt: "Before I write anything, is this idea actually sound?"
+    expect: idea-grill
+  - prompt: "Write this up so the engineering team can start on it."
+    expect: request-shaper
+    note: "inward-facing request, not an outward-facing decision"
