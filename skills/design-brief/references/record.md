@@ -97,6 +97,17 @@ What the design cannot violate, each with its source — and say whether the sou
 
 An assumed constraint and a mandated one look identical in a brief and are completely different in a review.
 
+**Six that apply to every surface and get decided once, here.** Left to a per-surface sweep they are rediscovered on every screen, late, and answered differently each time.
+
+> **Theme** — is a dark appearance supported, and does anything in this design depend on a colour that inverts badly?
+> **Text scaling** — what happens at the largest system setting, and what must stay legible when everything grows
+> **Minimum viewport** — the smallest width and height the design must hold
+> **Motion** — what a reduced-motion setting changes
+> **Truncation** — what happens to text too long for its space: clip, wrap to a line count, shrink, or reflow. *"It will be fine"* is how a name becomes an ellipsis at the worst moment
+> **Numbers and currency** — the largest value that must fit, the smallest, and how each is formatted
+
+Draft them. Every one has a defensible default, and a drafted answer somebody corrects in ten seconds beats an open question rediscovered on the fourth screen.
+
 ## 9. Non-goals
 
 What this design must **not** do. The section that survives contact with a stakeholder who wants one more thing on the screen, and with a generator that will happily add it.

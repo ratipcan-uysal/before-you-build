@@ -28,6 +28,8 @@ Without this, six dimensions multiply into hundreds of rows, the list becomes un
 
 `design-brief` names the moments that need feedback — in progress, succeeded, failed. You take that list and find everything it left out.
 
+**But not the project-wide ones.** Theme, text scaling, minimum viewport, motion, truncation and number formatting have the same answer on every surface and belong in the brief's constraints, decided once. Check that they *were* decided and point at `design-brief` if they were not — a single line, not a row per surface. Re-finding them on each screen buries the ones that are genuinely specific to this one, which are the reason to run this at all.
+
 ## Phase 0 — Scope it
 
 - **Name the surfaces.** One matrix per surface. A matrix covering a whole flow collapses into uselessness, because a state that matters on one screen is irrelevant on the next.

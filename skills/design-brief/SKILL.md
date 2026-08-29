@@ -79,6 +79,8 @@ Marking a gap and stopping is not enough when you could have filled it. Propose 
 
 **Draft only the states you can derive**, and say so. The moments needing feedback are yours; the exhaustive sweep of every state and edge case belongs to `state-matrix`. Taking that over collapses a boundary that exists for a reason.
 
+**Draft the project-wide constraints.** Theme, text scaling, minimum viewport, motion, truncation, number formatting. Each has a defensible default, each applies to every surface, and each is otherwise rediscovered on the fourth screen by a state sweep — late, and answered differently every time.
+
 **Never draft the design system.** Inventing tokens for someone's existing app is exactly what makes a brief easy to dismiss. Say instead what the generator needs and how to supply it: exported tokens, a screenshot of two existing screens, or a component list.
 
 ## Phase 4 — The generator block (offer, do not assume)
