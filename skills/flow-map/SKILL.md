@@ -69,17 +69,13 @@ You are marking **where**, never **what**. The moment you write a field name or 
 
 **Four or more branches: offer one.** Below that, text is easier to read and easier to keep.
 
-> "Want a Mermaid diagram of the structure?"
+> "Want a diagram of the structure?"
 
 It shows the shape — the spine, the branches with their conditions, and where paths end — not the table again. Node labels are the step number and a few words. A diagram that repeats the flow is a second artefact to maintain, and the one that rots is always the picture.
 
-Mark the endings and the paths whose exit is undecided; a structure where six arrows land in the same undecided box says something a table takes a paragraph to say.
+**Mark every node with whether it has been designed.** Drawn · undecided · nothing yet. This works in any tool — a class in Mermaid, a colour on a board, a pen on a whiteboard — and it is what makes the diagram say something the step table cannot: the happy path runs solid left to right and the bottom two rows are entirely dashed. The product that exists and the product still to be built, in one picture, at different weights.
 
-**When designs already exist, lay the flow over the real screens instead.** A box labelled "5 · confirmation" tells a reader nothing; the confirmation screen tells them everything, and stakeholders engage with screens in a way they never engage with boxes.
-
-Do it as well as the text, not instead of it — a screen flow hides the steps that have no screen, and those are exactly the ones marked `reads` and `acts` that `api-needs` depends on.
-
-**Then count both and report the gap.** Flow nodes against designed screens: 23 against 8 is a finding, and every missing one goes in as a marked placeholder rather than as an absence. A screen flow that shows only what exists reads as complete, which is the opposite of what it is for.
+Where a canvas tool is available, the screens themselves can be the nodes. Where one is not, the marking carries the same finding, which is why the marking is the rule and the canvas is a convenience.
 
 ## Phase 6 — Report coverage
 
