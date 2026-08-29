@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.5.0
+
+Three skills change, all from one question: is the produced spec enough for a backend or a mobile developer?
+
+**Heads up — `api-needs` now covers `emits`, and says what each event must carry.** It had never mentioned events at all, in the skill or its references, while `flow-map` marks `emits` separately and says in as many words that a flow carries analytics to `api-needs` so that the pass will ask for it. One end of that contract was never built. *"Four events on the existing taxonomy"* also cannot be built from — nobody knows what to put in them — so each `emits` need now names the question it exists to answer and the fields that answer it. Naming the events stays with whoever owns the taxonomy.
+
+**Heads up — `flow-map` now asks which failures a person must be able to tell apart.** It is derivable from the table the skill already produces: two errors that leave someone holding the same thing with the same way out do not need separate treatment; two that differ must be distinguishable, and if the interface shows both as *something went wrong*, one of the exits is unreachable. The codes underneath belong to whoever builds the system. Which failures a person is required to distinguish does not, and it had no owner anywhere in the set.
+
+**`build-context` checks its own assembly against its sources.** It was the only producer in the set without that check — `flow-map` checks its diagram, `data-model` checks itself against the flow, `design-brief` checks the generator block against the record. It was needed: assembling this repo's own example, the spec turned a prohibition scoped to one surface into a prohibition on the whole flow, reversing a decision the design record had made deliberately in response to a review finding. **Assembly drifts toward the stricter reading**, because the stricter reading looks more careful and nothing flags it.
+
+Also in `build-context`: the marker check now looks for markers that were **translated**, not only dropped. A translated marker still looks marked, which makes it the harder half.
+
 ## 3.4.0
 
 **Heads up — `build-context` now writes one spec, ordered by what someone is about to build.**

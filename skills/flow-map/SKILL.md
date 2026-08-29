@@ -55,6 +55,10 @@ Sweep for them rather than recalling them: [`references/completeness.md`](refere
 
 Every error path answers two things: **what the person is left holding**, and **how they get out**. An error path with no exit is a trap, and this is the cheapest place to find one.
 
+**Then read the column down and say which of these the person must be able to tell apart.** Two failures that leave someone holding the same thing with the same way out do not need separate treatment, and giving them separate treatment is noise. Two that leave different things, or different exits, **must** be distinguishable — and if the interface shows both as *something went wrong*, one of the exits is unreachable.
+
+This is a product decision and it has no other owner. The codes and statuses underneath belong to whoever builds the system; which failures a person is required to distinguish does not, and a flow that lists nine errors without answering it hands the question to whoever writes the error handler, at the end, alone.
+
 ## Phase 4 — Mark the system touchpoints
 
 Go back through every step and mark the ones where the system must read, write, call something, or decide. Two marks are enough:

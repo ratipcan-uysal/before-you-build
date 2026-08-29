@@ -72,6 +72,21 @@ Six sections, in this order, and the order is the design. Worked wording: [`refe
 5. **Decided now, built later.** `slice`'s second list — the identity rules, the stored-versus-computed calls, the permission model. These go in the build even though the feature they belong to does not.
 6. **Done means.** How anyone can tell it works: the signal, and the error paths that must be reachable. Drawn from the flow, not invented here.
 
+## Phase 2b — Check the assembly against its sources
+
+The spec is a derived view, so it is checked against its sources item by item. Every other producer in this set does this — `flow-map` checks its diagram, `data-model` checks itself against the flow, `design-brief` checks the generator block against the record. You are assembling more than any of them.
+
+**Walk every prohibition, every default and every marker back to the line it came from.** Not a reread: the source open beside it, one at a time, and a count reported.
+
+| | |
+|---|---|
+| **Prohibitions** | Same scope as the source. Not broader |
+| **Defaults** | Same value, and still marked `[DRAFT]` if the source marked it |
+| **Markers** | Present, in English, on the same line they were on |
+| **Anything with no source** | You wrote it. It goes to *Ask before you start*, or it goes |
+
+**Assembly drifts toward the stricter reading**, and that is the one to hunt. A prohibition scoped to one surface becomes a prohibition on the whole flow; a `[DRAFT]` default becomes a decided one. Both read as more careful, which is why nothing flags them — and a rule broadened during assembly is a decision reversed, usually the one somebody made deliberately in response to a review.
+
 ## Phase 3 — The verdict
 
 One line, named, at the very top:

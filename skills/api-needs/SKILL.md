@@ -34,7 +34,9 @@ Sweep for these explicitly. They are invisible in a flow — the step reads perf
 
 ## Phase 0 — Take the touchpoints
 
-Work from the flow's steps marked as reading or acting. If the flow is not marked, mark it yourself and say you did.
+Work from the flow's steps marked **`reads`**, **`acts`** and **`emits`**. If the flow is not marked, mark it yourself and say you did.
+
+**`emits` is the one that gets dropped here**, and `flow-map` marks it separately for exactly this reason: a flow carries the analytics all the way to you, and a pass that reads only `reads` and `acts` ends the chain by losing it. A build then ships without instrumentation and the target nobody can verify is discovered a quarter later. Every `emits` step becomes a need like any other.
 
 Say what you were given and what it limits: a flow alone gives you needs; a flow plus access to the existing system gives you feasibility. Without the second, every need is **unconfirmed** and you say so rather than assuming support.
 
@@ -47,6 +49,10 @@ Fields and worked wording: [`references/needs.md`](references/needs.md).
 Each need carries which step it serves, what must be available or happen, **when** — on open, on action, in the background — how stale it may be, what it must be atomic with, and whether it is safe to repeat.
 
 **"When" is the field that decides the design.** "The app needs the ranked list" and "the app needs the ranked list on every launch, before the person has done anything" are two different problems, and only the second one has a cost.
+
+**An `emits` need says what the event must carry, not that an event exists.** *"Four events on the existing taxonomy"* cannot be built from — nobody knows what to put in them. Each one names the question it exists to answer and the fields that answer it, including the ones that only matter later: which variant, which surface, success or failure and why, and whatever distinguishes this from the volume that was already being counted. Work back from what someone will ask three months in, because that is the only test an event has to pass and it is applied long after the code is written.
+
+**Naming the events is not yours.** The taxonomy belongs to whoever owns it, and inventing names for someone's existing scheme is how the whole document gets dismissed. Say what must be answerable; let them name it.
 
 ## Phase 2 — Anti-requirements
 
