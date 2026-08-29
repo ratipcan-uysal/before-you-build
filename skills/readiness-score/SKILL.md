@@ -17,6 +17,16 @@ An item is marked **out of scope** only when the document positively says so, an
 
 When you are tempted to give partial credit because you can picture what the author meant — that is precisely the moment the score becomes worthless.
 
+## The self-review guard
+
+**If the document you are scoring was produced in this conversation, say so before the score, and say the measurement is compromised.**
+
+A model that wrote a request and then scores it knows what every line was *meant* to say, and scores the intent rather than the text. The `[ASSUMED]` cap is where it shows: the author of an inference is the reader least able to see it as one.
+
+`request-shaper` and this skill are the set's most-run pair and they run back to back. That is exactly when the guard matters — and it matters more here than in the grills, because the output is a number, and a number reads as measurement no matter who produced it.
+
+State it above the verdict, score anyway if the user wants it, and recommend a clean-context repeat. Do not quietly score it and hope.
+
 ## Not this skill
 
 | The user wants… | Use instead |
