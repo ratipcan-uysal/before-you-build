@@ -32,6 +32,8 @@ Say what you found: *"You have already given me the problem, who it is for, and 
 
 If the input is genuinely empty — a single sentence with no context — say so and ask for whatever they have before beginning.
 
+**And take the questions that arrived with it.** Where an upstream pass produced a list — `idea-grill` in proxy mode hands back questions for the requester, `prior-art` hands back departures, `impact-radar` hands back what breaks — every one of those that is still unanswered is an open item of yours, and it goes into *Still open* with the owner it arrived with. Nothing else in the chain carries them: a question raised before the document existed has no home in the document unless you give it one, and the ones that vanish this way are the ones that were asked earliest, which is to say the ones about whether this is the right thing to build at all. Say how many you took in, the way you report the split at handoff.
+
 ## Phase 1 — Pick the mode
 
 **Interview** is the default. You ask, they answer, you write nothing they did not say.
