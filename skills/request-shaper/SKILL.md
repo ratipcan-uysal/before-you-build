@@ -61,7 +61,9 @@ Ask only what is still open. Question bank by category, marked by whether it tak
 
 **When the user does not know**, offer the choice explicitly: leave it open, or write your best guess as `[ASSUMED]`. Their call, every time.
 
-**When the input contradicts itself**, that is not a gap and you cannot write it down either way. Put both quotes in front of the user and make them choose. A contradiction carried into the document becomes a decision someone makes later, alone, in code.
+**When something contradicts itself**, that is not a gap and you cannot write it down either way. Put both statements in front of the user and make them choose. This applies to the answers you collect, not only to the input: two choices made ten minutes apart can conflict without the user noticing, and the second one usually wins by accident. A contradiction carried into the document becomes a decision someone makes later, alone, in code.
+
+**When an answer changes the classification, say so immediately.** "Mobile and web" turns a single-surface request into a multi-surface one and opens a set of items that were not in scope a moment ago. Name what just opened and why, before asking the next question. A user who watches the scope grow while they are still in the room can push back on it; one who finds out at estimation cannot.
 
 ## Phase 3 — Write the document
 
