@@ -78,3 +78,21 @@ cases:
   - prompt: "Write the user stories and acceptance criteria in Jira format."
     expect: none
     note: "a formatting task, not a shaping one"
+
+  # --- risk-interrogate: should fire ------------------------------------
+  - prompt: "This is approved and starts next sprint. What could go wrong in production?"
+    expect: risk-interrogate
+  - prompt: "Run a risk pass over this spec before the team picks it up."
+    expect: risk-interrogate
+  - prompt: "We're shipping the new checkout next month. What am I not thinking about?"
+    expect: risk-interrogate
+  - prompt: "Bu canliya cikarsa ne patlar, riskleri cikar."
+    expect: risk-interrogate
+
+  # --- risk-interrogate: should NOT fire (boundary) ----------------------
+  - prompt: "Is this feature even worth building? Convince me it isn't."
+    expect: idea-grill
+    note: "merit, not failure modes"
+  - prompt: "Does this document cover the risks properly?"
+    expect: readiness-score
+    note: "measuring what the document contains, not generating risk questions"

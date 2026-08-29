@@ -25,7 +25,7 @@ There is no single front door. What you reach for depends on what landed on your
 | A request from a business unit or a client | on their behalf | `idea-grill` in proxy mode — the output is the questions to take back to them |
 | A half-formed request that needs writing up | — | `request-shaper` |
 | A document from another team, and the question is "is this enough?" | — | `readiness-score` |
-| A decision made above you | no | `risk-interrogate` — you cannot debate it, you can still say what will break |
+| A decision made above you | no | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) — you cannot debate it, you can still say what will break |
 | A change to something that already exists | no | `impact-radar` |
 
 Most of the work inside an organisation is the rows where the answer is *no*. The set is built for those too, not only for the founder defending their own idea.
@@ -52,8 +52,8 @@ flowchart TD
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC shipped
-    class RI,FM,FG,DB,SM,UX,IR,DM planned
+    class IG,RS,SC,RI shipped
+    class FM,FG,DB,SM,UX,IR,DM planned
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
@@ -67,7 +67,7 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`readiness-score`](skills/readiness-score/SKILL.md) | Is it ready to build? (0–100 + verdict) | ✅ |
 | `design-brief` | What should the screens actually do? | soon |
 | `ux-grill` | Is this design right? | soon |
-| `risk-interrogate` | What breaks in production? | soon |
+| [`risk-interrogate`](skills/risk-interrogate/SKILL.md) | What breaks in production? | ✅ |
 | `flow-map` | What happens, in what order, including the unhappy paths? | planned |
 | `flow-grill` | Is the flow logically complete? | planned |
 | `state-matrix` | Which states did we forget? | planned |
@@ -88,7 +88,7 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v0.3` — `idea-grill`, `readiness-score`, and `request-shaper` are complete and in use. The rest of wave one (`risk-interrogate`, `design-brief`, `ux-grill`) is being written now; wave two follows. This repo is public from the first commit, so you are seeing it get built.
+`v0.4` — `idea-grill`, `readiness-score`, `request-shaper`, and `risk-interrogate` are complete and in use. The rest of wave one (`design-brief`, `ux-grill`) is being written now; wave two follows. This repo is public from the first commit, so you are seeing it get built.
 
 Each skill ships with its trigger and boundary tests in [`evals/triggers.yaml`](evals/triggers.yaml), checked in CI. Boundary tests matter more than trigger tests: eleven skills with overlapping descriptions fail by firing the wrong one, and the user never finds out why the answer was off.
 
