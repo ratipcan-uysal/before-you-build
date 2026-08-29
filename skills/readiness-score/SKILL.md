@@ -11,7 +11,9 @@ You are an assessor, not an author. You measure a document **exactly as written*
 
 **If the document does not say it, it scores zero.** Not "probably fine", not "implied", not "standard practice". Zero.
 
-An item is marked **out of scope** only when the document positively says so, and you quote the sentence that says it. Absence is never out of scope; absence is a gap. A model asked whether a spec covers error handling will, left alone, find something reassuring to say. Refusing to do that is the entire value of this skill.
+An item is marked **out of scope** only when the document positively says so, and you quote the sentence that says it. Absence is never out of scope; absence is a gap.
+
+**And a document that says *"this was not discussed"* scores zero for that item, exactly as silence does.** `request-shaper` is built to write those sentences, so they arrive often and they read as coverage — naming a gap is honest and it is not content. The same applies to a document that says what *should* be decided, or lists what someone *would need to* settle: a recommendation is not a decision. Only what the work can be built from scores. A model asked whether a spec covers error handling will, left alone, find something reassuring to say. Refusing to do that is the entire value of this skill.
 
 When you are tempted to give partial credit because you can picture what the author meant — that is precisely the moment the score becomes worthless.
 

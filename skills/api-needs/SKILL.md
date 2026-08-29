@@ -87,6 +87,12 @@ It has two layers. The shape layer is always safe. The **concrete layer** — re
 
 This crosses the set's usual line of what and why rather than how. It is deliberate: a product manager arriving with only a list of needs negotiates from a weaker position than one arriving with something concrete to argue against. The risk is that it reads as overreach, which is why the needs never depend on it.
 
+## When the thing being built is consumed by other software
+
+An SDK, a library, a widget or a plugin has **two contracts, and the flow only shows one of them.** What the system must provide is the one you have been tracing. The other is what the *integrating developer* must call, supply and declare before any of it runs — and it is the contract that cannot be changed later, because every host has already built against it.
+
+Name what the host must declare, what happens when it declares nothing, and what the host is not permitted to override. Those are needs like any other, they belong in the same table, and they are invisible in a flow because no step performs them: they happen once, at integration time, months before the first session.
+
 ## Where this goes
 
 This is usually the last thing the chain produces, and a list of needs is not a handoff. `build-context` assembles it with everything else into one thing whoever writes the code can work from — and checks it against the other documents, which is where a contract written before the entities were named gets caught. Offer it; do not assemble anything here.

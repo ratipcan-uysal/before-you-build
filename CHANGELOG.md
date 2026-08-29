@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 3.8.0
+
+The SDK run was audited output by output against how the problem is actually solved in the market. Four defects, and the largest one is a shape the whole set is blind to.
+
+**Heads up — `request-shaper` separates the requirement from the mechanism.** Requests arrive describing *how*, and the how is one option written as though it were the need. In the audited run, *"an SMS goes out, the customer taps the link, a code appears, they read it to the agent"* was carried by every downstream document as the requirement. It is four mechanisms; the requirement underneath is *"the person on the call proves they are the person in the app, and consents."* Comparable products do this without the SMS at all — the customer starts the session themselves. Nobody in the chain could see that, because the mechanism was never written as a choice. It is not this skill's job to argue with it; it is its job to make it visible, so `slice` can cut it and `design-brief` can pick another.
+
+**Heads up — `readiness-score` scores an explicit *"this was not discussed"* as zero.** `request-shaper` is built to write those sentences, so they arrive often and they read as coverage. Naming a gap is honest and it is not content. The same applies to a document that lists what *should* be decided: a recommendation is not a decision. The audit found this rule broken by the skill itself, twice, in the run being reviewed.
+
+**`slice` checks the mechanism against the job**, alongside the headline. Cutting a mechanism is often the largest cut available: it drags its own failure paths, its own secrets and its own surfaces out with it. In the audited run, cutting the SMS removes four error paths and an unnamed shared secret that nobody had noticed the flow needed.
+
+**`api-needs` covers the second contract.** Work consumed by other software has two — what the system must provide, which the flow shows, and what the integrating developer must call, supply and declare, which no step performs and no flow contains. It is also the contract that cannot be changed later, because every host has already built against it.
+
 ## 3.7.0
 
 The set was run end to end on a second, deliberately different request — an SDK, embedded in someone else's app, with a regulated consent flow. Three defects, all from the run.
