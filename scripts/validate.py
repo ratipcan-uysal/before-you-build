@@ -239,6 +239,16 @@ for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
     if not named_by:
         err(f"{name}: no other skill names it — nothing routes here, so nothing "
             "will reach it. Name it from the skill that should hand off")
+    else:
+        # Count callers, not files: one skill naming it twice is still one path
+        # in. That distinction is the whole check — the error above passes on a
+        # skill that is technically named and practically unreachable, which is
+        # how impact-radar sat behind request-shaper alone.
+        callers = {p.parts[p.parts.index("skills") + 1] for p in named_by}
+        if len(callers) == 1:
+            warn(f"{name}: named by `{callers.pop()}` and nothing else — a single "
+                 "caller is a single path in, and a user who does not run that "
+                 "skill never reaches this one")
 
     lang = [l for l in body.splitlines() if l.strip().startswith("- **Language:**")]
     if not lang:
@@ -267,6 +277,18 @@ changelog = (ROOT / "CHANGELOG.md").read_text()
 if not re.search(rf"^## {re.escape(plugin['version'])}\b", changelog, re.M):
     err(f"CHANGELOG.md: no entry for version {plugin['version']} — "
         "the version was bumped and the changelog was not")
+
+# The check above passes while the newest entry is for a version nobody shipped:
+# an entry was written, the manifest was left behind, and README quoted a third
+# number. All three said a different version and CI saw nothing.
+headings = re.findall(r"^## (\d+\.\d+\.\d+)", changelog, re.M)
+if headings and headings[0] != plugin["version"]:
+    err(f"CHANGELOG.md: newest entry is {headings[0]} but the plugin manifest "
+        f"says {plugin['version']} — one of the two was not updated")
+for m in re.finditer(r"`v(\d+(?:\.\d+)*)`", readme):
+    if not plugin["version"].startswith(m.group(1)):
+        err(f"README.md: says v{m.group(1)}, the plugin manifest says "
+            f"{plugin['version']}")
 
 # --- counts stated in prose match what is there ---------------------------
 for m in re.finditer(r"\*\*(\w+) skills?\*\*", readme):
