@@ -25,7 +25,8 @@ There is no single front door. What you reach for depends on what landed on your
 | A request from a business unit or a client | on their behalf | `idea-grill` in proxy mode — the output is the questions to take back to them |
 | A half-formed request that needs writing up | — | `request-shaper` |
 | A document from another team, and the question is "is this enough?" | — | `readiness-score` |
-| A decision made above you | no | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) — you cannot debate it, you can still say what will break |
+| A decision made above you, with detail | no | [`risk-interrogate`](skills/risk-interrogate/SKILL.md) — nothing needs shaping because nothing can be changed; the failure modes are your whole contribution |
+| A decision made above you, with no detail | no | [`request-shaper`](skills/request-shaper/SKILL.md) first — risk questions need decisions to attach to, and there are none yet |
 | A change to something that already exists | no | `impact-radar` |
 
 Most of the work inside an organisation is the rows where the answer is *no*. The set is built for those too, not only for the founder defending their own idea.
