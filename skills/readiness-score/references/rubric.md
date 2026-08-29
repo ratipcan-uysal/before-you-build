@@ -1,20 +1,32 @@
 # Rubric
 
-Twenty-five spine items that apply to every piece of work, plus conditional items opened by work type. Each in-scope item scores 0–3. Items marked ⚑ are blockers: a zero forces NOT READY.
+Thirty-one spine items that apply to every piece of work, plus conditional items opened by work type. Each in-scope item scores 0–3. Items marked ⚑ are blockers: a zero forces NOT READY.
 
-## Work types — signals
+## Two axes — both apply
 
-Take every type that applies; a document can be more than one.
+Every request is classified twice: by **what it does** and by **where it runs**. Both open conditional items, and both matter. A payment flow on mobile carries risks a payment flow on a server does not, and vice versa.
 
-| Type | It is this when the work… | Signals in the text |
+Take every value that applies on each axis. If the document gives no signal for an axis, do not guess — say in the output that it was not determinable, which is itself a finding about the document.
+
+### Axis 1 — what the work does
+
+| Type | It is this when the work… | Signals |
 |---|---|---|
-| `transaction` | changes money or state in a way that is hard to undo | buy, pay, submit, activate, cancel, transfer, confirm, order, book |
+| `transaction` | changes money or state in a way that is hard to undo | buy, pay, submit, activate, cancel, transfer, confirm, order |
 | `data-display` | shows information the user reads | list, dashboard, detail, search, results, report, history |
 | `input-collection` | gathers data from a person | form, sign-up, onboarding, settings, upload, edit profile |
 | `content-config` | changes content or configuration rather than behaviour | copy, banner, campaign, pricing table, feature flag, translation |
-| `backend-only` | has no user interface at all | endpoint, job, migration, integration, webhook, batch, sync |
 
-If the document gives no signal for any type, do not guess one. Score the spine alone and say in the output that no work type was determinable — that is itself a finding about the document.
+### Axis 2 — where it runs
+
+| Surface | Signals |
+|---|---|
+| `mobile-app` | app, iOS, Android, store, push, native screen |
+| `web` | browser, portal, responsive, landing page, desktop |
+| `backend` | endpoint, service, job, migration, integration, webhook, batch |
+| `multi-surface` | two or more of the above named, or "all channels" |
+
+Surface is the axis most often left implicit. "We want this in the app" does not say whether both platforms are in scope, and that single unanswered question can double an estimate.
 
 ## Spine
 
@@ -23,8 +35,9 @@ If the document gives no signal for any type, do not guess one. Score the spine 
 - **P2 ⚑** What success looks like, and how anyone would know it was reached
 - **P3** What is explicitly *not* in scope
 - **P4** Who decided this is worth doing, or who owns the decision
+- **P5** Which platforms and channels are in scope — and which are deliberately not
 
-### K2 — Users and trigger · weight 15
+### K2 — Users and trigger · weight 12
 - **U1** Who uses this
 - **U2** What brings them to it — the entry point, trigger, or moment
 - **U3** How it differs by segment, permission, or account state
@@ -37,27 +50,36 @@ If the document gives no signal for any type, do not guess one. Score the spine 
 - **B4** Business rules, limits, and boundary values
 - **B5** Who is permitted to do this, and what happens when they are not
 
-### K4 — Data and dependencies · weight 15
+### K4 — Data in and dependencies · weight 13
 - **D1** Where the data comes from
 - **D2** Which systems or services are involved
 - **D3** What else consumes or depends on whatever changes
 - **D4** Whether an existing contract, schema, or interface changes
 
-### K5 — Design and states · weight 15
+### K5 — Design and states · weight 12
 - **S1** The surfaces involved
 - **S2** Empty, loading, and error states
 - **S3** The words on screen — labels, messages, error text
 - **S4** Accessibility and localisation requirements
 
-### K6 — Risk and non-functional · weight 10
+### K6 — Risk and non-functional · weight 8
 - **R1** What could go wrong after release, and how it would be noticed
 - **R2** How to undo it
 - **R3** Performance or scale expectations
 - **R4** Privacy, security, or regulatory constraints
+- **R5** What must be signed off before go-live, and by whom — legal, compliance, security, risk
 
-## Conditional items
+### K7 — Instrumentation and downstream · weight 10
+What this work *emits*, and who consumes it. K4 asks where data comes from; this asks where it goes. It is the category most often absent entirely — the feature ships, and three weeks later nobody can answer whether it worked.
+- **N1** Which analytics events fire, with what parameters
+- **N2** What is written to logs or an audit trail, and how long it is kept
+- **N3** What reporting or warehouse work this needs — new tables, new fields, a dashboard
+- **N4** How the team will see it working in production — metrics, alerts, thresholds
+- **N5** What support and operations can see, and whether they need a tool for it
 
-Opened only by the detected type. They join the category named beside them and add to that category's available points.
+## Conditional items — Axis 1, what the work does
+
+They join the category named beside them and add to that category's available points.
 
 ### `transaction`
 - **T1** Idempotency — what happens if the action is submitted twice *(K3)*
@@ -73,18 +95,43 @@ Opened only by the detected type. They join the category named beside them and a
 ### `input-collection`
 - **I1** Validation rules per field, and when they fire *(K3)*
 - **I2** What happens to a partially completed entry *(K3)*
-- **I3** What is done with the data after submission, and for how long it is kept *(K6)*
+- **I3** What is done with the data after submission, and how long it is kept *(K6)*
 
 ### `content-config`
 - **C1** Who can change it, and through which interface *(K2)*
 - **C2** How a change reaches production, and how quickly *(K4)*
 - **C3** What the surface does when the content is missing or malformed *(K5)*
 
-### `backend-only`
+## Conditional items — Axis 2, where it runs
+
+These are the questions that are always the same for a given surface. A mobile request always raises store releases and old app versions; a web request always raises the browser matrix. Ask them every time.
+
+### `mobile-app`
+- **M1** iOS, Android, or both — and if not both at once, which ships first and when the other follows *(K1)*
+- **M2** Minimum supported app version, and what users on older versions see *(K3)*
+- **M3** Whether this can be changed or switched off without a store release *(K4)*
+- **M4** Behaviour on poor or absent connectivity *(K3)*
+- **M5** Whether the surface is reachable from a deep link, push, or SMS *(K2)*
+- **M6** Device permissions needed, and what happens when they are refused *(K3)*
+- **M7** Store review and phased rollout in the release plan *(K6)*
+
+### `web`
+- **W1** Which browsers and viewports are supported, and what happens outside that set *(K1)*
+- **W2** Responsive behaviour across desktop, tablet, and mobile web *(K5)*
+- **W3** Session and multi-tab behaviour — timeout, and the same flow open twice *(K3)*
+- **W4** Accessibility conformance level required *(K5)*
+- **W5** Whether the page is public — indexing, sharing, and what a logged-out visitor sees *(K2)*
+
+### `backend`
 - **E1** Contract — request, response, and error shapes *(K4)*
 - **E2** Backward compatibility for existing consumers *(K4)*
 - **E3** Migration and rollout order *(K4)*
-- **E4** Observability — what is logged, measured, or alerted on *(K6)*
+- **E4** Rate limits and quotas for consumers *(K3)*
+
+### `multi-surface`
+- **X1** Whether behaviour must be identical everywhere, and what is allowed to differ *(K3)*
+- **X2** Rollout order across surfaces, and what users see in the gap *(K1)*
+- **X3** Which surface owns the rule when two disagree *(K4)*
 
 ## Reading items honestly
 

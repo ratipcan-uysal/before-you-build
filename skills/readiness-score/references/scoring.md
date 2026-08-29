@@ -14,15 +14,20 @@ Conditional items opened by the work type are counted in the category they belon
 
 When a category has **no in-scope items at all** — every item exempted by quote — the category drops and its weight is spread across the surviving categories in proportion to their existing weights.
 
-Example: a `backend-only` change where the document says *"no user-facing surface is affected"*, dropping K5 (weight 15). The remaining weights total 85, so each is multiplied by 100 / 85 ≈ 1.176:
+Base weights: K1 20 · K2 12 · K3 25 · K4 13 · K5 12 · K6 8 · K7 10.
+
+Example: a `backend-only` change where the document says *"no user-facing surface is affected"*, dropping K5 (weight 12). The remaining weights total 88, so each is multiplied by 100 / 88 ≈ 1.136:
 
 | | before | after |
 |---|---|---|
-| K1 Problem and scope | 20 | 23.5 |
-| K2 Users and trigger | 15 | 17.6 |
-| K3 Behaviour and rules | 25 | 29.4 |
-| K4 Data and dependencies | 15 | 17.6 |
-| K6 Risk and non-functional | 10 | 11.8 |
+| K1 Problem and scope | 20 | 22.7 |
+| K2 Users and trigger | 12 | 13.6 |
+| K3 Behaviour and rules | 25 | 28.4 |
+| K4 Data in and dependencies | 13 | 14.8 |
+| K6 Risk and non-functional | 8 | 9.1 |
+| K7 Instrumentation and downstream | 10 | 11.4 |
+
+**K7 almost never drops.** "No reporting needed" is a decision that has to be written down and quoted like any other; a document that simply never mentions events or logging scores zero there, which is correct.
 
 A category with *some* in-scope items never drops. It scores against the items that remain.
 

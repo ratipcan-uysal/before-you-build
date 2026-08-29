@@ -38,21 +38,30 @@ If the input is genuinely empty — a single sentence with no context — say so
 
 **Autonomous** happens when the user asks for it — *"just draft it"*, *"fill in the gaps"*, *"I don't have time"*. Then you write the whole document from the input alone, marking every inferred line `[ASSUMED]`, and close with the three assumptions most likely to be wrong. Offer this mode once if the user seems to be running out of patience; never switch to it silently.
 
-## Phase 2 — Interview in ordered rounds
+## Phase 2 — Ask with options, not with prose
 
-Not one question at a time — that is the grills' discipline and it is wrong here. Your job is to extract what the user already knows, efficiently. Ask in **rounds of three to five related questions**, and let them answer in any order.
+Never send a wall of questions. Five open questions look thorough and are exhausting to answer: the user writes two and abandons the rest, and you have lost the three that mattered.
 
-**Order the rounds so that quitting early still leaves something worth having:**
+**One question at a time, with options wherever the answer space is small and closed.** Where the interface offers a native choice prompt, use it; otherwise write a short lettered list. Two to four choice-questions at once is fine — five paragraphs of prose is not.
 
-1. **Blockers first** — the problem being solved, what success looks like, what happens when things go wrong. A user who stops after one round should still have a document that is not automatically NOT READY.
+- **Options when the answer is a decision.** Auth model, list ordering, prefill or ask, who is allowed. Two to four real answers, picked in seconds.
+- **Open when the answer is a fact only they hold.** A threshold amount, current volume, which team owns the data. **Never offer options for a number** — the user picks the nearest one and you have recorded your guess as their decision. That is an unmarked assumption wearing a different costume.
+- **Every option set needs an escape** — "none of these" or "I don't know" — or options quietly manufacture answers.
+- **Write real trade-offs into the options.** A good set teaches: someone who has never thought about idempotency learns what the question means by reading the choices. A set of near-identical options teaches nothing and just anchors.
+
+**Order so that quitting early still leaves something worth having:**
+
+1. **Blockers first** — the problem being solved, what success looks like, what happens when things go wrong. A user who stops after one exchange should still have a document that is not automatically NOT READY.
 2. **Then the heaviest categories** — behaviour and rules, then problem and scope.
 3. **Then the rest**, in whatever order the material makes natural.
 
-Ask only what is still open. Question bank by category, and how to ask so you get a usable answer: [`references/interview.md`](references/interview.md).
+Ask only what is still open. Question bank by category, marked by whether it takes options or stays open: [`references/interview.md`](references/interview.md).
 
 **When an answer is vague**, ask once more, concretely — *"'fast' meaning what, in seconds?"* If it is still vague, write what they said and mark the gap. Do not interrogate; that is a different skill and a different contract.
 
 **When the user does not know**, offer the choice explicitly: leave it open, or write your best guess as `[ASSUMED]`. Their call, every time.
+
+**When the input contradicts itself**, that is not a gap and you cannot write it down either way. Put both quotes in front of the user and make them choose. A contradiction carried into the document becomes a decision someone makes later, alone, in code.
 
 ## Phase 3 — Write the document
 
