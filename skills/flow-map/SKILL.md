@@ -75,6 +75,12 @@ It shows the shape — the spine, the branches with their conditions, and where 
 
 Mark the endings and the paths whose exit is undecided; a structure where six arrows land in the same undecided box says something a table takes a paragraph to say.
 
+**When designs already exist, lay the flow over the real screens instead.** A box labelled "5 · confirmation" tells a reader nothing; the confirmation screen tells them everything, and stakeholders engage with screens in a way they never engage with boxes.
+
+Do it as well as the text, not instead of it — a screen flow hides the steps that have no screen, and those are exactly the ones marked `reads` and `acts` that `api-needs` depends on.
+
+**Then count both and report the gap.** Flow nodes against designed screens: 23 against 8 is a finding, and every missing one goes in as a marked placeholder rather than as an absence. A screen flow that shows only what exists reads as complete, which is the opposite of what it is for.
+
 ## Phase 6 — Report coverage
 
 Counts, in one line, because they say what a wall of steps cannot:
