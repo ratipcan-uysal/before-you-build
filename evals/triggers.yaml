@@ -21,6 +21,10 @@ cases:
   - prompt: "Bu fikri sorgula, kolay kabul etme."
     expect: idea-grill
 
+  - prompt: "The business unit is asking for a loyalty tier. Does it hold up before I commit the team?"
+    expect: idea-grill
+    note: "proxy mode — someone else's request, output is questions for them"
+
   # --- idea-grill: should NOT fire (boundary) ----------------------------
   - prompt: "This feature is approved and starts next sprint. What could break in production?"
     expect: risk-interrogate

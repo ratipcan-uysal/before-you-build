@@ -1,6 +1,6 @@
 ---
 name: idea-grill
-description: Pressure-test an idea, feature request, strategy, or decision through adversarial Socratic dialogue before anyone commits to building it. Builds the strongest version of the argument first (steelman), then attacks it one question per turn, refuses to accept weak or evasive defenses, tracks which defenses held and which cracked, and closes with the surviving thesis, its open cracks, and a verdict. Optionally shifts into co-building a stronger answer once the idea survives. Use when the user says "should we build this", "is this a good idea", "poke holes in this", "challenge my thinking", "talk me out of it", "what am I missing", or brings a proposal, strategy, or decision they have not committed to yet. Do not use to measure whether a request is ready to build (readiness-score), to write the request up properly (request-shaper), to extract design decisions (design-brief), or to critique a screen that already exists (ux-grill).
+description: Pressure-test an idea, feature request, strategy, or decision through adversarial Socratic dialogue before anyone commits to building it. Builds the strongest version of the argument first (steelman), then attacks it one question per turn, refuses to accept weak or evasive defenses, tracks which defenses held and which cracked, and closes with the surviving thesis, its open cracks, and a verdict. Optionally shifts into co-building a stronger answer once the idea survives. Works on the user's own idea or, in proxy mode, on a request that came from someone else — where the output becomes the question list to take back to whoever owns it. Use when the user says "should we build this", "is this a good idea", "poke holes in this", "challenge my thinking", "talk me out of it", "what am I missing", "the business unit is asking for X, does it hold up", or brings a proposal, strategy, request, or decision that is not committed to yet. Do not use to measure whether a request is ready to build (readiness-score), to write the request up properly (request-shaper), to extract design decisions (design-brief), or to critique a screen that already exists (ux-grill).
 ---
 
 # Idea Grill
@@ -32,6 +32,7 @@ If the idea is already decided and the real question is "what breaks in producti
 
 ## Phase 0 — Capture and steelman (mandatory)
 
+0. **Whose idea is it?** If the user brought a request from someone else — a business unit, leadership, a client — you are in **proxy mode**: they defend on the owner's behalf, and the output becomes questions for that owner rather than a verdict on the user's reasoning. Read [`references/proxy.md`](references/proxy.md) before continuing. Everything below still applies; the close and the handling of "I don't know" do not.
 1. **Reduce it to one sentence.** If the idea is fuzzy, ask exactly one clarifying question: *"State the thesis we are arguing, in one sentence."* Attacking a vague idea is a straw man.
 2. **Build the steelman.** Write the strongest, most charitable version — stronger than the user wrote it. Name the best evidence for it and the best reason a smart person would back it.
 3. **Confirm it.** *"Is that your argument at its strongest? Anything to add?"* If corrected, update it.
@@ -52,7 +53,7 @@ Each turn:
 
 - **Strong** → say so plainly ("That holds.") and move to the next weakest link. Acknowledging a good answer is what makes your objections credible.
 - **Weak or evasive** → do not advance. Name the evasion — *"You answered a different question. I asked X."* — and press the same point.
-- **"I don't know"** → that is a crack, not a failure. Log it, say you have logged it, move on. Never punish honesty.
+- **"I don't know"** → that is a crack, not a failure. Log it, say you have logged it, move on. Never punish honesty. In proxy mode it is not even a crack — it is an owner question, which is what you are there to find.
 - **Appeal to authority, momentum, sunk cost, or convention** ("leadership already approved it", "we have spent three months", "doesn't every product do this?") → not defenses of the idea. Name it and re-press.
 - **A misunderstanding** → if they answered a different question because *your* wording was ambiguous, that is your error, not their evasion. Clarify, re-ask the question unchanged, and log nothing.
 - **A second target you spot mid-turn** → log it silently and come back to it. Announcing it ("noting this for later") is firing twice in one turn while pretending not to.
