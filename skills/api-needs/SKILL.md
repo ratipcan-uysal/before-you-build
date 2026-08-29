@@ -107,5 +107,6 @@ This is usually the last thing the chain produces, and a list of needs is not a 
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **Never invent a field the flow does not require.** Every item traces to a step. A need nobody's flow asks for is you designing.
+- **A need the slice's scope list does not contain is an addition, not a derivation.** Trace it to the step *and* say it is outside the cut, with an owner. A contract is the last place scope grows before someone builds it, and it grows by returning things the surfaces upstream never asked to show.
 - **Never specify transport, storage, or protocol** unless the material already did. "Available when the screen opens" is a need; "GET, cached 60s" is someone else's decision.
 - **Output to chat**, then offer to save. Never write files unprompted.

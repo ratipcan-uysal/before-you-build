@@ -23,6 +23,10 @@ The first end-to-end run of the whole chain on one real request, and eight chang
 
 Two more checks, both of them finding what was found by hand that day. **A skill named by exactly one other skill** passes the *named by another skill* rule and is still unreachable in practice — `impact-radar` sat behind `request-shaper` alone. And **the changelog check asked whether an entry existed for the manifest version, not whether it was the newest**: a 4.2.0 entry, a 4.1.0 manifest and a README saying v4.2 all passed at once.
 
+**Two structural gaps, both found by running the whole chain a second time on a different request.** A cut was only half-connected: `slice` wrote quotable exclusions and nothing rewrote the request's open list, so four of fourteen blocking items belonged to parts already removed and every later document counted all fourteen. `slice` is now a source for `request-shaper`'s second pass, with a third outcome — an item that left scope is not an item that closed, and the difference is the quote that retired it.
+
+And scope grows **downstream** of the cut, through good reasoning: a brief decided a screen needed a figure the slice did not contain, the model stored what that implied, the contract returned it, and a risk pass asked a question premised on it being shown. Four documents deep before anything noticed. `design-brief`, `data-model` and `api-needs` now mark an addition as an addition and name who approves it; `build-context` gains the third slice check. Nobody is forbidden from adding — only from adding silently.
+
 **One change in this release reversed a recorded decision and was caught reading the record.** A router row was written telling users to map the flow before writing the brief — from the same evidence the order test had already weighed, and against the threshold it had declared in advance. It is corrected here, and [`docs/decisions.md`](docs/decisions.md) now says to read it before changing the chain's order. Nothing mechanical would have caught this one.
 
 ## 4.1.0

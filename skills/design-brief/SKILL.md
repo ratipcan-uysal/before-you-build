@@ -27,6 +27,8 @@ If a line could appear in a brief for any other product, delete it.
 
 Ask a question only when a decision is both undetermined and load-bearing — the kind that changes the surface inventory rather than one field on it. Two questions is a lot.
 
+**And when the material is a slice, anything you require that its scope list does not contain is an addition.** Say so on the line, and name who approves it. A brief that decides a screen needs something the cut did not include — a comparison figure, a second value, a state that implies new data — has grown the scope of work somebody approved as smaller, and it does it in the most reasonable-sounding way there is: the screen genuinely does not work without it. Measured on a full run, an addition made here was carried into a data model and then into a contract, each step reasonable, and nobody who approved the cut ever saw it. You are not forbidden from adding; you are forbidden from adding silently.
+
 ## Not this skill
 
 | The user wants… | Use instead |

@@ -32,6 +32,8 @@ Work the pairs below. Report a count, the way the other skills do — *"eleven c
 
 **Something the slice kept that nothing downstream covers.** The reverse, and worse: it ships, and no document says what it does.
 
+**Something downstream added that the slice never contained.** The third direction, and the one that reads as diligence: a brief decides a screen needs a figure the cut did not include, a model stores it, a contract returns it. Each step follows from the last and none of them follows from the slice. Check every requirement in the later documents against the *In the slice* list, and treat anything missing from it as an addition with no approver — not as a derivation. On the run this check was written from, that chain ran four documents deep before anything noticed.
+
 ## Every open list ↔ every other
 
 **The same question with two owners.** *"Which account does the money leave from"* appears in the request's open list against the requester and in the flow against the backend. Two owners means neither answers.

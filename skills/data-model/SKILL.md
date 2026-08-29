@@ -55,6 +55,8 @@ Not a field list. Field lists are the part a generator does well without help.
 
 `[DECISION NEEDED]` for what you cannot settle, with an owner. `[ASSUMED]` for what you inferred. An unmarked inference here becomes a migration later.
 
+**A field the slice's scope list does not contain is an addition, however well it follows from the flow.** Mark it as one and name who approves it. Storage decisions are where scope grows most quietly: the field is small, the reasoning is sound, and it arrives already justified by a decision somebody else made. On a measured run a stored value was added here to satisfy a promise the slice had made, and the contract downstream then returned it to a screen that had never asked for it.
+
 Worked answers, and the traps each question catches: [`references/entities.md`](references/entities.md).
 
 ## Phase 2 — Relationships that carry a rule

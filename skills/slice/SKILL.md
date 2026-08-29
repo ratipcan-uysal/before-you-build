@@ -83,6 +83,12 @@ For each cut, ask what **resuming** it costs: reloading the context, a second de
 
 A well-cut slice **scores higher** than the request it came from, because the open items belonging to the deferred parts leave scope with a quote attached. If the score does not move, the cut removed nothing.
 
+**But the request does not update itself, and nothing downstream reads your document as the scope.** Both halves of that are structural, and both were measured on a full run.
+
+Backwards: the request's open list still carries the items belonging to the parts you cut, and a reader four documents later counts fourteen blockers where ten actually block. **Say which open items your exclusions retire, by name, and say that `request-shaper`'s second pass is what rewrites the list** — you do not edit someone else's document, and an exclusion nobody transcribes retires nothing.
+
+Forwards: **the *In the slice* list is the scope of record.** Downstream producers read it and add to it — a reference point a screen needs, a field a model needs, a value a contract returns — each addition reasonable on its own, none of them approved by whoever approved the cut. Say the list is the record, so that a later document adding to it has something to declare against.
+
 ## The output
 
 | Section | What goes in it |
