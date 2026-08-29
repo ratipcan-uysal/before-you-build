@@ -62,3 +62,19 @@ cases:
   - prompt: "Is this spec any good? I mean, is the idea behind it sound?"
     expect: idea-grill
     note: "merit of the idea, not completeness of the document"
+
+  # --- request-shaper: should fire --------------------------------------
+  - prompt: "Here are my notes from the call. Turn them into a proper request."
+    expect: request-shaper
+  - prompt: "This ticket is two lines. Help me flesh it out before I hand it over."
+    expect: request-shaper
+  - prompt: "Bu talebi analist-hazir bir dokumana cevir."
+    expect: request-shaper
+
+  # --- request-shaper: should NOT fire (boundary) ------------------------
+  - prompt: "I already wrote the request. How complete is it?"
+    expect: readiness-score
+    note: "measuring an existing document, not producing one"
+  - prompt: "Write the user stories and acceptance criteria in Jira format."
+    expect: none
+    note: "a formatting task, not a shaping one"

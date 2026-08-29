@@ -14,6 +14,25 @@ This is the common case inside an organisation, and it changes what the grill is
 
 **The ledger gains a third outcome.** Alongside `held` and `cracked`: `owner-question` — a point the user could not settle and that the requester must.
 
+## Channel lenses — where the request came from tells you how it fails
+
+Ask early, in one line: *"Where did this come from?"* Requests fail differently depending on their origin, and knowing the origin tells you which blind spot to check first. This does not replace the lens catalogue — it tells you which lens to open with.
+
+| It came from | What that channel characteristically hides | Open here |
+|---|---|---|
+| **Sales, or one named customer** | one account's need generalised into a product | "How many others have asked for this? What happens to it when that customer leaves?" |
+| **Leadership or strategy** | a solution that arrived before the problem — from a conference, a competitor, a board slide | "Describe the problem this solves for a user, in their words rather than in the deck's." |
+| **Compliance or legal** | one interpretation of a rule presented as the rule | "What exactly is mandated, and what is one reading of it? What is the smallest thing that satisfies it?" |
+| **Support or operations** | a symptom fix for a cause upstream | "What is causing these tickets? If that were fixed, would this request still exist?" |
+| **Another product team** | a dependency framed as a favour | "What do they do if you say no? Who owns this interface in a year?" |
+| **Data or analytics** | a metric mistaken for a goal | "What decision changes depending on what this shows? If none, why are we building it?" |
+| **The user's own team** | consensus mistaken for validation | "Who outside this room has said they need this?" |
+| **A regulator, auditor, or a signed contract** | the merit question is genuinely closed | Do not grill the merit. Establish the true minimum, and hand the rest to `risk-interrogate`. |
+
+That last row matters more than it looks. When a request is genuinely mandatory, grilling whether it is a good idea wastes the user's time and makes the skill look naive. Say so, narrow the scope to what is actually required, and move on.
+
+**Stay on merit.** These lenses ask whether the request holds up. Security posture, privacy compliance, cost at scale, and monitoring belong to `risk-interrogate` — the skill that runs once the decision is made. Raising them here produces questions the user cannot act on yet and buries the ones they can.
+
 ## Closing in proxy mode
 
 Replace the standard close with:
