@@ -20,7 +20,7 @@ The user invoked the before-you-build router. Figure out where they are in the c
 | A request nobody can build in the time available | `slice` |
 | Several documents from this chain, and the question is "can we build now?" | `build-context` |
 
-**Two rows take the same input and are not interchangeable.** A shaped request can go to `design-brief` or to `flow-map`, and the order matters: a brief written before the flow exists is missing most of its error states and says so. If they have not mapped the flow, route there first unless they say otherwise.
+**Two rows take the same input, and routing between them is by what they asked for, not by an order you assert.** A shaped request goes to `design-brief` when the question is what the screens should do, and to `flow-map` when it is what happens step by step. `design-brief` runs ahead of `flow-map` in the chain and that order was measured, not assumed — do not send someone to the flow first on the grounds that the brief would be better for it. Say instead what the brief itself says: written without a mapped flow it will be missing most of its error states, and it will declare itself partial.
 
 **`prior-art` is not a destination.** It is called by another skill when a mechanism or a capability needs checking, and it answers to whoever called it. Never route someone to it cold; name it when the thing in their hand specifies *how* and nobody has asked why that way.
 
