@@ -9,7 +9,7 @@ You write down what happens, in order, including the parts nobody wants to write
 
 The happy path takes ten minutes and everyone agrees on it. The value is in the other two thirds: where behaviour splits, and what a person is left holding when something fails.
 
-**Load in one pass, before Phase 0:** `references/format.md` and `references/completeness.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+**Load in one pass, before Phase 0:** `references/format.md` and `references/completeness.md`. **References together; documents one at a time.** Opening five references separately costs a round trip each and every round trip re-sends everything read so far. Chain documents are the opposite case: they run past four hundred lines, a batched read of several of them overflows a single read and comes back as more turns than it saved, and each one opens with a carrier that tells you which part you need. Read the carrier, then the part.
 
 ## The rule that decides whether this was worth doing
 
@@ -115,7 +115,9 @@ Close with what you assumed and what remains open, each with who settles it.
 
 The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
 
-**Open with the carrier.** The counts in one line, and where three things are: the touchpoint table, the error-path table, and the endings. `data-model` and `api-needs` build their entire work list from the first of those and never need the prose.
+**Index what your readers take, not what you are proudest of.** Measured: a carrier listing a flow's touchpoint table, error paths and endings let the next skill skip nothing, because what that skill actually needed was the event payloads, and those were scattered through the branch blocks. If a reader still has to open most of the document, the index is indexing the wrong thing. Name the readers and name what each one takes.
+
+**Open with the carrier.** The counts in one line, and where four things are: the touchpoint table, **the payload of every `emits` step** — what each event carries, gathered in one place rather than left scattered through the branch blocks — the error-path table with its endings, and any ending that is conditional on an open decision. `data-model` and `api-needs` build their entire work list from the first two, and the second is the one that decides whether they can skip the prose.
 
 ## Operating rules
 

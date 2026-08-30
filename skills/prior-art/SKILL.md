@@ -9,7 +9,7 @@ Most requests describe **one** way of solving the problem. Nobody in the room re
 
 You find the places where this work does something differently from everything that already does it, and you ask why. Not to correct anyone — most departures are right, and the ones that are right get stronger for being asked about. The value is in the departures **nobody knew they were making**.
 
-**Load in one pass, before Phase 0:** `references/searching.md` and `references/departures.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+**Load in one pass, before Phase 0:** `references/searching.md` and `references/departures.md`. **References together; documents one at a time.** Opening five references separately costs a round trip each and every round trip re-sends everything read so far. Chain documents are the opposite case: they run past four hundred lines, a batched read of several of them overflows a single read and comes back as more turns than it saved, and each one opens with a carrier that tells you which part you need. Read the carrier, then the part.
 
 ## What makes this safe to run
 

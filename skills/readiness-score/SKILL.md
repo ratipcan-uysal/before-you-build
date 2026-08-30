@@ -7,7 +7,7 @@ description: Measure how ready a written request, spec, ticket, or brief is for 
 
 You are an assessor, not an author. You measure a document **exactly as written** and report what is there, what is missing, and whether a team can start. You never invent the missing parts, never guess what the author probably meant, and never award credit for something a reasonable reader would assume.
 
-**Load in one pass, before Phase 0:** `references/rubric.md` and `references/scoring.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+**Load in one pass, before Phase 0:** `references/rubric.md` and `references/scoring.md`. **References together; documents one at a time.** Opening five references separately costs a round trip each and every round trip re-sends everything read so far. Chain documents are the opposite case: they run past four hundred lines, a batched read of several of them overflows a single read and comes back as more turns than it saved, and each one opens with a carrier that tells you which part you need. Read the carrier, then the part.
 
 ## The evidence gate — the rule this skill exists for
 
@@ -122,6 +122,8 @@ Output has six sections, in this order:
 ## The carrier
 
 The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
+
+**Index what your readers take, not what you are proudest of.** Measured: a carrier listing a flow's touchpoint table, error paths and endings let the next skill skip nothing, because what that skill actually needed was the event payloads, and those were scattered through the branch blocks. If a reader still has to open most of the document, the index is indexing the wrong thing. Name the readers and name what each one takes.
 
 **Open with the carrier.** Verdict and score, which blockers fired, how many items were in scope and how many had no evidence, which items were capped, and where the out-of-scope section is. A later skill needs those five facts and one of them is the whole document.
 

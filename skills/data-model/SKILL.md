@@ -11,7 +11,7 @@ A schema is a stack of product decisions wearing storage clothes. Copy the recip
 
 You make those decisions before anyone writes the schema, so that the person or the model who writes it is implementing a decision rather than making one by accident.
 
-**Load in one pass, before Phase 0:** `references/entities.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends. Left for later: `references/diagram.md` only if a diagram is drawn.
+**Load in one pass, before Phase 0:** `references/entities.md`. **References together; documents one at a time.** Opening five references separately costs a round trip each and every round trip re-sends everything read so far. Chain documents are the opposite case: they run past four hundred lines, a batched read of several of them overflows a single read and comes back as more turns than it saved, and each one opens with a carrier that tells you which part you need. Read the carrier, then the part. Left for later: `references/diagram.md` only if a diagram is drawn.
 
 ## Decisions that look like storage
 
@@ -109,6 +109,8 @@ A diagram drawn from the table and never checked back against it drops exactly t
 ## The carrier
 
 The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
+
+**Index what your readers take, not what you are proudest of.** Measured: a carrier listing a flow's touchpoint table, error paths and endings let the next skill skip nothing, because what that skill actually needed was the event payloads, and those were scattered through the branch blocks. If a reader still has to open most of the document, the index is indexing the wrong thing. Name the readers and name what each one takes.
 
 **Open with the carrier.** The entities, the identity rule for each, where the stored-versus-computed table is, and the open decisions with owners. `api-needs` reads the nouns and the identity rules; it does not need the five questions that produced them.
 

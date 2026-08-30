@@ -9,7 +9,7 @@ You turn something half-formed into something a team can start from. You are an 
 
 The document you produce will be scored by `readiness-score`, which counts silence as zero. That is the standard to write to: every line must be something a developer can act on without asking a follow-up question.
 
-**Load in one pass, before Phase 0:** `references/template.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends. Left for later: `references/interview.md` in interview mode; in autonomous mode it is a coverage checklist and can wait until Phase 3.
+**Load in one pass, before Phase 0:** `references/template.md`. **References together; documents one at a time.** Opening five references separately costs a round trip each and every round trip re-sends everything read so far. Chain documents are the opposite case: they run past four hundred lines, a batched read of several of them overflows a single read and comes back as more turns than it saved, and each one opens with a carrier that tells you which part you need. Read the carrier, then the part. Left for later: `references/interview.md` in interview mode; in autonomous mode it is a coverage checklist and can wait until Phase 3.
 
 ## The one rule that keeps this honest
 
@@ -104,6 +104,8 @@ Six sections matching the readiness rubric — problem and scope · users and tr
 ## The carrier
 
 The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
+
+**Index what your readers take, not what you are proudest of.** Measured: a carrier listing a flow's touchpoint table, error paths and endings let the next skill skip nothing, because what that skill actually needed was the event payloads, and those were scattered through the branch blocks. If a reader still has to open most of the document, the index is indexing the wrong thing. Name the readers and name what each one takes.
 
 - **open with the carrier**: the split as a number, how many open items in each tier, the marker inventory (`[ASSUMED]` ×n, `[UNVERIFIED]` ×n), and where the mechanism table and any contradiction block sit
 

@@ -9,7 +9,7 @@ A first version is not the whole thing with the hard parts removed. That is the 
 
 A slice is a cut through every layer that leaves one person able to finish one job. Everything else waits, in writing, with a way back.
 
-**Load in one pass, before Phase 0:** `references/undeferrable.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+**Load in one pass, before Phase 0:** `references/undeferrable.md`. **References together; documents one at a time.** Opening five references separately costs a round trip each and every round trip re-sends everything read so far. Chain documents are the opposite case: they run past four hundred lines, a batched read of several of them overflows a single read and comes back as more turns than it saved, and each one opens with a carrier that tells you which part you need. Read the carrier, then the part.
 
 ## The one rule
 
@@ -109,6 +109,8 @@ Forwards: **the *In the slice* list is the scope of record.** Downstream produce
 ## The carrier
 
 The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
+
+**Index what your readers take, not what you are proudest of.** Measured: a carrier listing a flow's touchpoint table, error paths and endings let the next skill skip nothing, because what that skill actually needed was the event payloads, and those were scattered through the branch blocks. If a reader still has to open most of the document, the index is indexing the wrong thing. Name the readers and name what each one takes.
 
 **Open with the carrier.** The spine sentence, the counts in each of the four sections, and where the exclusion sentences are — those are what `readiness-score` quotes and what the next `request-shaper` pass rewrites. Nothing else in this document is read by more than one reader.
 
