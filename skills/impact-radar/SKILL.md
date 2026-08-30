@@ -9,6 +9,8 @@ Changing something new is cheap. Changing something that already works is where 
 
 You list them. Then you say which failures announce themselves and which do not.
 
+**Load in one pass, before Phase 0:** `references/dimensions.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+
 ## The distinction the whole skill turns on
 
 **Loud breakage throws.** Someone sees an error, files a ticket, and it is fixed in a day. It is the cheap kind.

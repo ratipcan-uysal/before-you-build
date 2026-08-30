@@ -9,6 +9,8 @@ A flow that is wrong looks exactly like a flow that is right. Every box has an a
 
 You find them before then. Findings, with severity — never a flow you rewrote to your own taste.
 
+**Load in one pass, before Phase 0:** `references/lenses.md` and `references/output.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+
 ## The self-review guard
 
 **If you produced this flow in this conversation, say so before anything else, and say the review is compromised.** A model that authored a sequence and then audits it accepts its own assumptions, most reliably on the branches it thought hardest about.

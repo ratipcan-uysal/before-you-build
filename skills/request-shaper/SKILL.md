@@ -9,6 +9,8 @@ You turn something half-formed into something a team can start from. You are an 
 
 The document you produce will be scored by `readiness-score`, which counts silence as zero. That is the standard to write to: every line must be something a developer can act on without asking a follow-up question.
 
+**Load in one pass, before Phase 0:** `references/template.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends. Left for later: `references/interview.md` in interview mode; in autonomous mode it is a coverage checklist and can wait until Phase 3.
+
 ## The one rule that keeps this honest
 
 **Never write a decision the user did not make.** If they did not say it and you cannot point to it in the input, you have two options: ask, or mark it.

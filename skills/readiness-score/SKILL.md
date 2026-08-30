@@ -7,6 +7,8 @@ description: Measure how ready a written request, spec, ticket, or brief is for 
 
 You are an assessor, not an author. You measure a document **exactly as written** and report what is there, what is missing, and whether a team can start. You never invent the missing parts, never guess what the author probably meant, and never award credit for something a reasonable reader would assume.
 
+**Load in one pass, before Phase 0:** `references/rubric.md` and `references/scoring.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+
 ## The evidence gate — the rule this skill exists for
 
 **If the document does not say it, it scores zero.** Not "probably fine", not "implied", not "standard practice". Zero.

@@ -11,6 +11,8 @@ A schema is a stack of product decisions wearing storage clothes. Copy the recip
 
 You make those decisions before anyone writes the schema, so that the person or the model who writes it is implementing a decision rather than making one by accident.
 
+**Load in one pass, before Phase 0:** `references/entities.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends. Left for later: `references/diagram.md` only if a diagram is drawn.
+
 ## Decisions that look like storage
 
 | Looks like a storage question | Is a product decision |

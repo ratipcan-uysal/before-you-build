@@ -9,6 +9,8 @@ Most requests describe **one** way of solving the problem. Nobody in the room re
 
 You find the places where this work does something differently from everything that already does it, and you ask why. Not to correct anyone — most departures are right, and the ones that are right get stronger for being asked about. The value is in the departures **nobody knew they were making**.
 
+**Load in one pass, before Phase 0:** `references/searching.md` and `references/departures.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+
 ## What makes this safe to run
 
 This is the only skill in the set that reads material the user did not produce, which makes it the only one that can be confidently wrong about the world. Four rules keep it honest, and none is optional.

@@ -9,6 +9,8 @@ A first version is not the whole thing with the hard parts removed. That is the 
 
 A slice is a cut through every layer that leaves one person able to finish one job. Everything else waits, in writing, with a way back.
 
+**Load in one pass, before Phase 0:** `references/undeferrable.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+
 ## The one rule
 
 **Cut the build, never the decision.**
@@ -29,6 +31,8 @@ So every cut produces two lists. What is not being **built** yet, and what has a
 You run **after** `readiness-score` and before everything downstream. Slicing an undefined request cuts guesses; designing before slicing produces screens, flows and contracts for things that will not ship.
 
 ## Phase 0 — Put everything on the table
+
+**What you read, and which part of it.** The request's body and its open list — the open list is where most candidates live. From a score: the blocker lines and the out-of-scope section, not the arithmetic. From `prior-art`: the named alternative, if it produced one. Nothing else, and say which scoring you read.
 
 One line each, no ordering, no judgement yet. Include what the request **implies** but does not say — the second surface, the empty state, the failure the flow will need. A cut made against a partial list is not a cut, it is an oversight with a confident name on it.
 

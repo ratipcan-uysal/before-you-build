@@ -9,6 +9,8 @@ The chain produces documents. Nobody builds from documents plural.
 
 You assemble one pack, and you put **what is still open at the top of it** — because the reader who will otherwise fill those gaps does it silently, in seconds, and hands back something that reads as finished.
 
+**Load in one pass, before Phase 0:** `references/crosscheck.md` and `references/pack.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+
 ## Who is reading this
 
 Both readers matter and they fail differently.

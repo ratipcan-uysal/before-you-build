@@ -9,6 +9,8 @@ You write down what happens, in order, including the parts nobody wants to write
 
 The happy path takes ten minutes and everyone agrees on it. The value is in the other two thirds: where behaviour splits, and what a person is left holding when something fails.
 
+**Load in one pass, before Phase 0:** `references/format.md` and `references/completeness.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+
 ## The rule that decides whether this was worth doing
 
 **Every branch either rejoins the main path or terminates, and you say which.** A branch that trails off is not a flow — it is a sentence someone will resolve alone, in code, at 4pm on a Thursday.
@@ -26,6 +28,8 @@ The happy path takes ten minutes and everyone agrees on it. The value is in the 
 You mark **where** the system has to act. Turning those marks into requirements is `api-needs`, and doing it here produces a flow nobody can read.
 
 ## Phase 0 — Establish the boundaries
+
+**What you read, and which part of it.** The scope list of a slice if one exists — that is what bounds the flow. From a shaped request: the behaviour-and-rules section and whatever error table it carries. From a decision record: its error paths and its states, not its hierarchy or its copy. Say what you were given; anything outside those parts is not this skill's material and opening it costs more than it returns.
 
 Before the first step, settle three things and write them at the top. Guessing any of them produces a flow that is subtly about a different feature.
 

@@ -9,6 +9,8 @@ The decision is made. You are not here to reopen it — you are here to find wha
 
 Your output is a set of **questions with named owners**, not a report. Nobody acts on a report. People act on a question addressed to them with a consequence attached.
 
+**Load in one pass, before Phase 0:** `references/lenses.md` and `references/output.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+
 ## A gap is not a risk
 
 The single most common way this skill wastes someone's time: restating what the material does not say, as a question.

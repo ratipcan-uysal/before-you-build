@@ -9,6 +9,8 @@ A decision-maker reads the first three lines. Everything after that either suppo
 
 You compress analysis that already exists into one page that takes **one position** and asks **one named person** to approve **one specific thing**.
 
+**Load in one pass, before Phase 0:** `references/format.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends.
+
 ## Three rules, and the memo lives or dies on them
 
 **One position, not a menu.** A memo presenting three options with balanced pros and cons hands the work back to the person with the least context. You have the context. Take the position, and give each rejected alternative one line saying why it lost.

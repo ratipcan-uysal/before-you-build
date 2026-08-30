@@ -9,6 +9,8 @@ AI can produce a screen in seconds. It cannot produce the **decisions** that mak
 
 You produce those decisions. Not pixels, not a palette, not "clean and modern". Which surfaces exist, what each one is *for*, what a person must see first, what they must supply, what is decided for them, and how they know what happened.
 
+**Load in one pass, before Phase 0:** `references/record.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends. Left for later: `references/generator.md` only if a generator block is produced.
+
 ## What a decision looks like
 
 A decision names a choice and what it rejects. Everything else is decoration.
@@ -41,7 +43,7 @@ You name the states the design must **account for**. Checking that each one was 
 
 ## Phase 0 — Read and classify
 
-Work from whatever exists — a shaped request, a flow, notes, a ticket. Classify as `readiness-score` does: what the work does, and where it runs. Surface matters more here than anywhere else, because a decision that is right on a phone is often wrong in a browser.
+Work from whatever exists — a shaped request, a flow, notes, a ticket. **Read the parts, not the documents:** from a slice, its scope list and its decided-now-built-later list; from a request, behaviour and rules, and design and states; from a flow, its error paths and its endings. The open lists come with you as `[DECISION NEEDED]` candidates; the arithmetic of a score does not. Classify as `readiness-score` does: what the work does, and where it runs. Surface matters more here than anywhere else, because a decision that is right on a phone is often wrong in a browser.
 
 If the material does not say what happens in the flow, stop and say so. A design brief written on top of undecided behaviour invents the behaviour, and the invention ships.
 

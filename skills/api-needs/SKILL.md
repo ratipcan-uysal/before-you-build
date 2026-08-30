@@ -11,6 +11,8 @@ You ask it. Per touchpoint, in the flow's own terms, before either team commits.
 
 Despite the name, this is not about HTTP. A need can be met by an endpoint, a cache, a push, a local store, or a precomputed table. You state the need; who owns the system chooses how.
 
+**Load in one pass, before Phase 0:** `references/needs.md`, and every document named in the arguments. Opening them one at a time costs a round trip each, and a round trip re-sends everything read so far — on a long pass that is most of what a run spends. Left for later: `references/draft-contract.md` only if a draft contract is produced.
+
 ## Work from the flow, not from the screens
 
 Screens tell you about **reads** — what has to appear. Flows tell you about **writes, sequencing and failure**, which is where the expensive questions live: what has to happen together, what can be retried, what state the system is in when step four succeeded and step five did not.
