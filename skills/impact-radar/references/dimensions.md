@@ -14,6 +14,8 @@ Trace each against the change. Most yield one or two dependents; some yield none
 
 **4. Stored data written under the old rule** — rows that exist now and were correct under the previous behaviour. After the change, are they wrong, ambiguous, or fine? A rule change usually leaves history behind it, and history is what reports read.
 
+**4b. Existing data that starts being read for a new purpose** — the inverse of the row above, and invisible to it. A change that writes nothing can still take rows nobody ever quality-assured and make them the input to a decision: the retention window that quietly truncates the history a rule depends on, the field that was normalised differently before a migration, the accounts that arrived from an acquisition, the records created and never completed. Dimension 4 asks whether old rows are still correct after the change; this one asks whether they were ever good enough for the job they have just been given. On a control that decides from history, this is where the findings are.
+
 **5. Work in flight** — anything mid-process when the change lands. A half-finished flow, a queued job, a scheduled item, a session that started under the old rule. Deployment is not a moment; it is a window with people inside it.
 
 **6. Reporting and analytics** — dashboards, funnels, cohort definitions, finance reconciliation, anything feeding a model. This dimension is almost entirely **silent** breakage: numbers keep arriving and quietly mean something else. Ask who compares this month to last month, and whether the comparison survives.

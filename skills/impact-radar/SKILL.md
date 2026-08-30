@@ -33,7 +33,7 @@ Where a subagent is available, hand this pass to one whose entire input is the *
 
 | The user wants… | Use instead |
 |---|---|
-| Production failure modes of new work | `risk-interrogate` |
+| Failure modes of something that does not exist yet | `risk-interrogate` — the test is whether the **dependent** already exists, not whether the work is new. Almost everything is new work inserted into something old, and "new work" sorts none of it |
 | A flow audited for gaps | `flow-grill` |
 | A document measured for completeness | `readiness-score` |
 | To know whether the change is worth making | `idea-grill` |
@@ -44,6 +44,8 @@ Before tracing anything, state precisely **what changes and what does not**. A r
 
 > Not: "we're changing the transfer limit."
 > This: "the per-transaction passwordless limit becomes remotely configurable. The value does not change today. Nothing about the daily total changes, because there isn't one."
+
+**Report the class split as a number** — how many Loud, Silent, Deferred — and say what shape the artefact takes: one table, columns you name, rows numbered so later phases can point at them. Two runs of this skill on the same change should be comparable, and without a stated shape they are two incomparable documents. The split is the skill's whole thesis; *"thirty-three of forty-three show nothing on release day"* is the line the reader carries away, and nothing above asks for it.
 
 Then say what access you have. **Without the codebase you produce the questions, not the answers** — a list of what to check and who checks it. Say which you are producing; a list of guesses presented as a map is worse than no map.
 
@@ -74,6 +76,8 @@ A short list, and often the most useful thing you produce.
 A change everyone believes is enormous, bounded in writing — *"nothing about the daily total, nothing about web, nothing about existing scheduled transfers"* — is what lets a release happen. Half the cost of a change is the review of everything people feared it touched.
 
 Only list boundaries you actually checked. An unchecked reassurance is worse than silence.
+
+**Without the codebase you cannot check any of them, and the section is still worth writing** — as boundaries somebody must confirm, each with the person who confirms it, under a heading saying how many you were able to check. Zero is a legitimate answer and writing it is the point. What is forbidden is a row from this table being quoted downstream as reassurance; say so on the table.
 
 ## Phase 4 — The regression surface
 

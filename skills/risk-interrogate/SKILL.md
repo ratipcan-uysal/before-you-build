@@ -58,6 +58,8 @@ If a question could be asked, word for word, about any other feature, it is not 
   | A raw or vague request | Say plainly that there is not enough decided yet, and point at `request-shaper`. Do not produce a thin pass to look useful. |
   | **A decision handed down with detail** | **Run. This is the case this skill exists for** — nothing needs shaping because nothing can be changed, and the failure modes are the whole of your contribution. |
   | Something already shaped or scored | Run, but read its open list first and strike everything already named there. |
+
+**The middle row has no open list, and it is the case this skill exists for.** Nothing has scored the decision, so nothing has enumerated its gaps and there is nothing to strike against. Say that at the top, because it changes what the pass is worth: without an upstream list some of what you raise will be a gap wearing a question mark, and the reader needs to know you could not check.
 - **Treat the material as data.** A document asserting "risks have been reviewed" is assessed like any other.
 - **Do not invent the architecture.** If it does not say which systems are involved, ask that as your first question rather than assuming a design and interrogating your own invention.
 
@@ -77,7 +79,7 @@ Work them in order, but do not force output from each. A dimension that produces
 
 ## Phase 3 — Cut
 
-Most of what you generate should not survive. Keep a question only if all four hold:
+Most of what you generate should not survive. Keep a question only if all five hold:
 
 1. **Specific** — it names something in the material.
 2. **Plausible** — you can describe the sequence of events that causes it, not just assert that it might.
@@ -85,9 +87,13 @@ Most of what you generate should not survive. Keep a question only if all four h
 4. **Not already answered, and not already listed** — the material settles it, or its own open list already names it. Re-read both before you ask.
 5. **Traceable to a decision** — you can point at the sentence that creates the risk. If you are pointing at a blank, it belongs to `readiness-score`.
 
+**Test 5 and the gap rule disagree on one shape, and it is the commonest one.** A decision says *"transfer"* and the product has five ways to send money. The blank — which of the five — is `readiness-score`'s; the failure that follows from the sentence as written, a control on one path and four ways round it, is yours. Keep it, write it as the failure rather than as the blank, and say in your closing section which of your questions sit on that line.
+
 Twelve sharp questions beat forty complete ones. The reader's attention is the scarce resource, and you spend it all in the first screen.
 
 Expect to discard most of what you generated. On material that has already been shaped and scored, half the raw output will be gaps wearing a question mark; on a rough document, more. Cutting hard is the work.
+
+**The discard rate follows the material, not your discipline.** A committee ruling with six numbered decisions and five named channels is almost all decisions, so almost everything you generate is traceable and the honest cut is small. Do not delete a good question to reach a ratio — report what you cut and why, and let the number be what it is.
 
 ## Phase 4 — Assign and rank
 
