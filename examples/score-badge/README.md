@@ -1,4 +1,4 @@
-# Worked example — the one that gets a yes
+# Worked example — the one that gets a yes, and then loses it
 
 The other two examples in this repository end `NOT READY` and `ASK FIRST`. Four readiness scores across them: 12, 39, 25, 25. Until this one, **no run published here had ever reached `READY`, `CONDITIONAL` or `BUILDABLE`**, which left an honest question open: is the 80-point threshold a real bar, or one nothing can clear?
 
@@ -11,7 +11,16 @@ This example exists to answer that, and it answers it in a way that was not plan
 | 3 | [`readiness-score`](02-readiness-score.md) | **`CONDITIONAL`, 62/100**, no blocker fired. The first uncompromised scoring in the repository — the document came from outside the session |
 | 4 | [The answers](03-answers.md) | Two questions, put to the requester, answered the same afternoon. What closing a question actually looks like |
 | 5 | [`design-brief`](04-design-brief.md) | Six renderings, one open decision carried as an interim — and **the generator block**, which no example had ever produced |
-| 6 | [`build-context`](05-build-context.md) | **`BUILDABLE`** — 0 blocking questions, 0 disagreements across 13 pairs |
+| 6 | [`build-context`](05-build-context.md) | **`BUILDABLE`** — 0 blocking questions, 0 disagreements. **This verdict did not survive** |
+| 7 | [The uncompromised check](06-uncompromised-check.md) | The same six files, handed to a reviewer with **nothing but their paths**. Fourteen findings in a pack that reported zero — and the reason the guard became a mechanism |
+
+## The result that matters most
+
+The pack in step 6 was written by a chain that carried the self-review guard and opened by naming its own compromise. It still reported **zero disagreements in a set of documents holding at least four**, and got its own arithmetic wrong twice. Step 7 is the same six files given to a reviewer with only their paths: fourteen findings, twelve of them invisible from inside and obvious from outside.
+
+`BUILDABLE` is withdrawn; the corrected verdict is `ASK FIRST`. `CONDITIONAL` stands — that scoring was of a document from outside the session and its arithmetic reconciles.
+
+This is the clearest evidence in the repository for why the guard became a delegation at 4.4.0. The confession was true every single time it was written, and it never once produced a clean review.
 
 ## What it turned out to show
 
@@ -21,7 +30,7 @@ Nothing was exempted, because an item leaves scope only when the document positi
 
 So `CONDITIONAL` here does not mean "not good enough". It means the two things genuinely missing were worth a sentence each, and the score is the wrong instrument for saying so.
 
-**`BUILDABLE` is not the absence of open questions.** One decision is still undecided at the end — whether two kinds of missing value should look different — and the pack is buildable anyway, because the record decided the interim behaviour rather than leaving a hole. That is the distinction the verdict is for: not *everything is settled*, but *nothing open would be invented on the first day*.
+**`BUILDABLE` was not the absence of open questions — and here it was not even the absence of disagreements.** One decision is still undecided at the end — whether two kinds of missing value should look different — and the pack is buildable anyway, because the record decided the interim behaviour rather than leaving a hole. That is the distinction the verdict is for: not *everything is settled*, but *nothing open would be invented on the first day*.
 
 ## What this example does not have
 

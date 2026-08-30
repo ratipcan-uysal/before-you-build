@@ -22,6 +22,6 @@
 - **B4** goes from 2 to 3: the rounding rule is stated, and it was the reason the component exists.
 - `idea-grill`'s narrowing **still stands.** This is a rendering-consistency component; the reason the four-defect claim survives is that source migration was made a precondition of adoption, which is the strongest answer the grill said was available and nobody had given.
 
-Re-scored on those two items alone the document moves to **65**, still CONDITIONAL. The threshold did not move because the gap was never these two items — it is K6 and K7, eighteen points a read-only component cannot earn without exempting sentences the requester did not think to write. That finding stands and it belongs to the rubric.
+Re-scored on those two items alone: K1 goes to 16/21 and K3 to 16/24, which is **64**, still CONDITIONAL. The threshold did not move because the gap was never these two items — it is K6 and K7, eighteen points a read-only component cannot earn without exempting sentences the requester did not think to write. That finding stands and it belongs to the rubric.
 
 **The two answers matter anyway**, and the score is the wrong instrument for saying why: both were things the first line of code would otherwise have invented.

@@ -1,5 +1,9 @@
 # BUILD CONTEXT — Seller score badge
 
+> **This verdict did not survive.** The same six documents were handed to a reviewer who had only their file paths, and it found fourteen things this pack reports as zero — four of them contradictions a builder would have to resolve by picking a side. The corrected verdict is `ASK FIRST`. See [`06-uncompromised-check.md`](06-uncompromised-check.md).
+>
+> This document is left exactly as it was written, because a pack that quietly becomes right teaches nobody anything about how it was wrong.
+
 # Verdict: BUILDABLE — 0 blocking questions, 0 unresolved disagreements
 
 > The request arrived from outside this session. The grill, the score and the record were produced here, so the cross-check between them is compromised in the usual way and says so — but the document all three were checked **against** is not this chain's work, which is the one thing that makes this pack lighter than the others in this repository.
