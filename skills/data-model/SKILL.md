@@ -102,7 +102,7 @@ Report the counts the way `flow-map` reports coverage. Unmatched rows are findin
 
 ## Phase 5 — Offer the diagram
 
-At four or more entities, ask once whether they want one. **With nobody to ask, draw it** — the threshold is the judgement, and an unanswered offer produces nothing. Conventions, and the same check applied to the drawing: [`references/diagram.md`](references/diagram.md).
+At four or more entities, ask once whether they want one. **With nobody to ask, draw it only if something downstream reads a diagram** — a pack being assembled, a handoff to people rather than to a generator. The entity count says a diagram would be legible; it does not say anyone wants one, and an unread diagram costs its own reference file to produce. Conventions, and the same check applied to the drawing: [`references/diagram.md`](references/diagram.md).
 
 A diagram drawn from the table and never checked back against it drops exactly the rules Phase 2 exists to record — cardinality survives the redraw, the prohibition attached to it does not.
 
