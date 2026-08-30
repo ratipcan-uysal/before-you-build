@@ -61,6 +61,8 @@ Every item in the rubric is either **in scope** or **out of scope**.
 
 Out of scope requires a quote. Write the quote next to the item. No quote, no exemption — the item is in scope and scores on its evidence like everything else.
 
+**And a quote requires somebody behind it.** `slice` writes exclusion sentences in the grammar of a decision, and they are proposals until a named owner has approved them. An exemption whose sentence carries no owner, or carries one who has not agreed, is not an exemption: score the item and say in *Out of scope* that the sentence exists and is unapproved. Otherwise a cut nobody signed raises the score, which is the same trade the evidence gate exists to refuse.
+
 When an entire category is out of scope (a backend-only change genuinely has no screens), the category drops and its weight redistributes across the remaining categories proportionally.
 
 ## Phase 3 — Score each in-scope item, 0–3

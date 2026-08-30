@@ -78,6 +78,8 @@ For each cut, ask what **resuming** it costs: reloading the context, a second de
 
 `readiness-score` marks an item out of scope only when the document positively says so, and quotes the sentence that says it. **Your exclusions are those sentences.** Write them as declarations, not intentions.
 
+**And sign every one of them.** A declaration you wrote is a proposal in the grammar of a decision — it reads as the organisation speaking, and downstream it becomes a scoring exemption with evidence attached. Each exclusion carries who proposed it (you), who has to approve it, and whether they have. Unapproved is the normal state and saying so costs nothing; leaving it off is how a cut nobody agreed to arrives four documents later as settled scope.
+
 > Not: *"we'll probably do web later"*
 > This: *"This slice is mobile only. Web is out of scope for this release."*
 
@@ -95,7 +97,7 @@ Forwards: **the *In the slice* list is the scope of record.** Downstream produce
 |---|---|
 | **In the slice** | The spine, and what survived Phase 2 |
 | **Decided now, built later** | Phase 3 — the decision, not the feature |
-| **Out of this slice** | Each with its quotable sentence, and what brings it back |
+| **Out of this slice** | Each with its quotable sentence, who approves it, whether they have, and what brings it back |
 | **Not doing** | Permanent cuts, said out loud once so nobody re-proposes them monthly |
 
 ## Operating rules
