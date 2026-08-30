@@ -1,6 +1,6 @@
 # BUILD CONTEXT — Seller score badge
 
-> **This verdict did not survive.** The same six documents were handed to a reviewer who had only their file paths, and it found fourteen things this pack reports as zero — four of them contradictions a builder would have to resolve by picking a side. The corrected verdict is `ASK FIRST`. See [`06-uncompromised-check.md`](06-uncompromised-check.md).
+> **This verdict did not survive.** The same six documents were handed to a reviewer holding only their file paths. It returned fourteen findings — of which twelve hold, six are contradictions between documents, and two attack figures this pack reports as zero. A second audit later added four more contradictions that both passes had missed. The corrected verdict is `ASK FIRST`. See [`06-uncompromised-check.md`](06-uncompromised-check.md) and [`07-second-audit.md`](07-second-audit.md).
 >
 > This document is left exactly as it was written, because a pack that quietly becomes right teaches nobody anything about how it was wrong.
 

@@ -13,22 +13,27 @@ This example exists to answer that, and it answers it in a way that was not plan
 | 5 | [`design-brief`](04-design-brief.md) | Six renderings, one open decision carried as an interim — and **the generator block**, which no example had ever produced |
 | 6 | [`build-context`](05-build-context.md) | **`BUILDABLE`** — 0 blocking questions, 0 disagreements. **This verdict did not survive** |
 | 7 | [The uncompromised check](06-uncompromised-check.md) | The same six files, handed to a reviewer with **nothing but their paths**. Fourteen findings in a pack that reported zero — and the reason the guard became a mechanism |
+| 8 | [The check, checked](07-second-audit.md) | The write-up of that audit, audited. **Two of its fourteen no longer describe the files, one is backwards, four are overstated — and four real contradictions were missed by both passes** |
 
 ## The result that matters most
 
-The pack in step 6 was written by a chain that carried the self-review guard and opened by naming its own compromise. It still reported **zero disagreements in a set of documents holding at least four**, and got its own arithmetic wrong twice. Step 7 is the same six files given to a reviewer with only their paths: fourteen findings, twelve of them invisible from inside and obvious from outside.
+The pack in step 6 was written by a chain that carried the self-review guard and opened by naming its own compromise. It still reported **zero disagreements in a set of documents holding at least six**, and got its own arithmetic wrong twice. Step 7 is the same six files given to a reviewer with only their paths: fourteen findings, twelve of which hold.
 
 `BUILDABLE` is withdrawn; the corrected verdict is `ASK FIRST`. `CONDITIONAL` stands — that scoring was of a document from outside the session and its arithmetic reconciles.
 
-This is the clearest evidence in the repository for why the guard became a delegation at 4.4.0. The confession was true every single time it was written, and it never once produced a clean review.
+**Then step 8 audited step 7, and that is the part worth reading.** The delegated review was sound; the write-up of it, produced back inside the chain, was not. Two findings were left standing after the defects they named had been fixed, one was inverted, four were overstated or blamed the wrong document, and the count was repeated downstream into the repository's changelog. None of those errors were in the reviewer's report. **They entered when the findings came home.**
+
+The lesson is narrower than "delegate the review" and less comfortable: **the delegation has to survive the return trip.** This set already knows a finding cannot be written in by the skill that produced it, and it never noticed that the skill receiving it is the compromised one.
+
+Step 8 also found four contradictions both earlier passes missed, the sharpest being that the component is required to mark a value as out of range while being forbidden to know what the range is.
 
 ## What it turned out to show
 
-**The bar is reachable, and the rubric is still wrong about this shape.** A request that answers nearly everything a `capability` needs — the integration contract closed, every default failing safe, the versioning window stated, the copy approved, accessibility named with its source — scores **62**. Not because it is thin, but because `readiness-score` asks it about data residency, running cost, end-to-end traceability and go-live sign-off, and a read-only render component earns zero on all of them.
+**A request that answers nearly everything a `capability` needs scores 62** — the integration contract closed, every default failing safe, the versioning window stated, the copy approved, accessibility named with its source. Nothing was exempted, because an item leaves scope only when a document positively says so, and this one has a precise *Not this* section that exempts no rubric item.
 
-Nothing was exempted, because an item leaves scope only when the document positively says so. This request has a precise *Not this* section and **not one of its sentences exempts a rubric item**. The finding belongs to the rubric rather than to the request, and it is testable: the same request with four exempting sentences would score in the high seventies without changing the work by one line.
+The first reading was that the finding belonged to the rubric, and **the arithmetic did not support it.** Exempting the four items in question moves 62 to 64.3. Exempting every zero-scored item in the whole rubric gives 77.1. The largest single shortfall is not the categories a component cannot speak to — it is K3, behaviour and rules, where the request scored 15 of 24 on its own merits.
 
-So `CONDITIONAL` here does not mean "not good enough". It means the two things genuinely missing were worth a sentence each, and the score is the wrong instrument for saying so.
+What survives is narrower: a request of this shape pays an unavoidable tax of roughly **twelve points** on categories it has nothing true to say about. Whether twelve points makes the bar wrong needs a second `capability` scoring, not a stronger sentence.
 
 **`BUILDABLE` was not the absence of open questions — and here it was not even the absence of disagreements.** One decision is still undecided at the end — whether two kinds of missing value should look different — and the pack is buildable anyway, because the record decided the interim behaviour rather than leaving a hole. That is the distinction the verdict is for: not *everything is settled*, but *nothing open would be invented on the first day*.
 

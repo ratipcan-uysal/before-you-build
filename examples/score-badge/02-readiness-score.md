@@ -57,9 +57,13 @@ Worth naming, because the other examples in this repository only show the opposi
 
 **Nothing was exempted, because nothing could be.** An item leaves scope only when the document positively says so, quoted. This request has a precise *Not this* section — no fetching, no links, no tooltip, no write path — and not one of those sentences exempts a rubric item. So a read-only component is scored on data residency, running cost, end-to-end traceability, and what must be signed off before go-live, and scores zero on all of them, correctly.
 
-The effect is arithmetic: **K6 and K7 together are 18 points that a request of this shape can almost never earn**, and the ceiling for a well-written component request sits somewhere near 80 rather than at it. This is the first evidence the repository has about whether the READY threshold is reachable, and it points at the rubric rather than at the request.
+The obvious next move is to ask what exempting them would buy, and **the answer is less than it looks — which is the finding.**
 
-Two readings, and the difference matters. Either a shape like this should be allowed to exempt items with one quoted sentence — *"no data is stored, so residency and retention do not apply"* — which the gate already permits and which the requester simply did not think to write. Or the threshold is calibrated for `transaction` work and is the wrong bar for everything else. **The first is more likely**, and it is testable: the same request with four exempting sentences would score in the high seventies without changing the work by one line.
+Exempting the four items named above moves 62 to **64.3**. Exempting all five of K6's zeros gives **65.4**. Exempting *every* zero-scored item in the whole rubric — twelve of them, including two this scoring calls genuine gaps — gives **77.1**, and holding those two honestly gives **74.9**. **Not one of those reaches 80.**
+
+And the shortfall is not where the story wanted it. The largest single loss is **K3 at 9.38 points**, larger than K6 (5.63) or K7 (5.71) alone, and it stays largest after the two answers arrive. K3 is behaviour and rules, where this request genuinely scored 15 of 24 — a fact about the request, not about the rubric.
+
+So the honest reading is narrower than "the threshold is wrong for this shape". A request of this kind pays a real and unavoidable tax on categories it cannot speak to, worth about **twelve points**; the rest of the distance to 80 is work the request did not do. Whether a twelve-point tax makes the bar wrong is a question the arithmetic does not settle, and it needs a second `capability` scoring rather than a stronger sentence here.
 
 ---
 

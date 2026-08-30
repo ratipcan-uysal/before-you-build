@@ -104,7 +104,7 @@ Then [one fictional request carried through twelve skills](examples/README.md), 
 
 And [a second request, a different shape](examples/seller-score/README.md) — a marketplace wants to change what a seller's score means, and twenty documents later the release being proposed does not change the score at all. It starts where most work inside an organisation starts, with something that already exists, so it enters at `impact-radar` rather than `idea-grill`.
 
-And [the one that gets a yes, and then loses it](examples/score-badge/README.md) — seven documents on a shared component. It reaches `CONDITIONAL` and then `BUILDABLE`, and then the same six files are handed to a reviewer holding nothing but their paths, which returns **fourteen findings in a pack that reported zero**. The `BUILDABLE` is withdrawn. The `CONDITIONAL` stands, because that scoring was of a document from outside the session.
+And [the one that gets a yes, and then loses it](examples/score-badge/README.md) — eight documents on a shared component. It reaches `CONDITIONAL` and then `BUILDABLE`; a reviewer holding nothing but the file paths returns **fourteen findings in a pack that reported zero**, and the `BUILDABLE` is withdrawn. Then that reviewer's write-up is audited too, and **two of its findings no longer describe the files, one is backwards, and four contradictions were missed by both passes.** The delegated review was sound. What degraded it was writing the findings up back inside the chain they were about.
 
 They are deliberately unflattering. The score comes back NOT READY twice. The design violates its own brief and nothing looks wrong. Two of the reviews open by declaring themselves compromised, because the same session produced what they are reviewing.
 
