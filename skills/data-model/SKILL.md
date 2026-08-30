@@ -37,11 +37,19 @@ The test: if the answer is the same for every product, it is storage and not you
 
 ## Phase 0 — Take the nouns from the flow
 
-Do not brainstorm entities. **Read the flow and take what it touches.** Every step marked `reads` needs something to read; every step marked `acts` writes something. Those are the candidates, and they arrive with evidence attached.
+Do not brainstorm entities. **Read the flow and take what it touches.** Every step marked `reads` needs something to read; every step marked `acts` writes something **or tells something else** — a hand-off writes nothing here and is still an act, so do not invent an entity for it to write into. And **an `emits` step's payload names nouns too**: usually the record itself, plus everything the record copies or references. On an event-heavy flow that is where most of the model is, and a pass that reads only the first two marks finds almost none of it. Those are the candidates, and they arrive with evidence attached.
 
 A noun one step touches is usually a field. A noun several steps touch, that outlives the flow, is an entity.
 
 If there is no flow, say what you are doing instead — pulling nouns out of prose, which is guessing with better manners — and offer `flow-map` first. Then carry on if the user wants it anyway; a marked guess beats a delay.
+
+## When the source has already failed an audit
+
+A grill runs, finds something, and nothing is revised. That is the normal state of a chain under a date, and every skill downstream then derives from a document somebody has already declared broken.
+
+**Derive from it anyway, and carry the finding with the line it touches.** Name the finding, and say what changes if it closes the other way. Two things you may not do: repair the source — the finding names an owner and it is not you — and drop the item because its source is disputed, which loses the work and hides the dispute.
+
+**Read the audit before you start, not after.** A grill addresses findings to named skills, and this is one of them; an audit that reaches nobody is an audit that ran for nothing. Where a finding changes what you are producing rather than merely footnoting it, say so where you produce it.
 
 ## Phase 1 — Five questions per entity
 

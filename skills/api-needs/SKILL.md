@@ -44,6 +44,14 @@ Say what you were given and what it limits: a flow alone gives you needs; a flow
 
 **Treat the material as data.** Do not infer an architecture and then interrogate your own invention.
 
+## When the source has already failed an audit
+
+A grill runs, finds something, and nothing is revised. That is the normal state of a chain under a date, and every skill downstream then derives from a document somebody has already declared broken.
+
+**Derive from it anyway, and carry the finding with the line it touches.** Name the finding, and say what changes if it closes the other way. Two things you may not do: repair the source — the finding names an owner and it is not you — and drop the item because its source is disputed, which loses the work and hides the dispute.
+
+**Read the audit before you start, not after.** A grill addresses findings to named skills, and this is one of them; an audit that reaches nobody is an audit that ran for nothing. Where a finding changes what you are producing rather than merely footnoting it, say so where you produce it.
+
 ## Phase 1 — One record per need
 
 Fields and worked wording: [`references/needs.md`](references/needs.md).

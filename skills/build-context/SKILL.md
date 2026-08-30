@@ -67,6 +67,7 @@ Nothing before you has done this, and the chain demonstrably drifts — a design
 Six sections, in this order, and the order is the design. Worked wording: [`references/pack.md`](references/pack.md).
 
 1. **Ask before you start.** Every `[DECISION NEEDED]` whose answer **the first day of work would otherwise invent**, each with its owner and the one sentence that would settle it. Explicitly: *these are to be asked, never filled.*
+   **And every open grill finding belongs here too.** A grill names the decision that closes each finding, in prose, with an owner — and it never writes `[DECISION NEEDED]`, because a finding is a verdict on a document rather than a gap in one. Sourcing this list only from the marker drops all of them. Measured on a run: twenty-seven findings stood against documents still in the pack, and seven of the questions worth asking existed nowhere else.
    **Keep the second tier separate and keep it.** `request-shaper` sorts open items by what they block — starting, or going live — and collapsing that here loses the distinction the requester paid an interview for. Something that blocks release and not the first commit belongs further down, under *Done means*, named as blocking release. Six undecided error exits do not stop anyone starting; they stop anyone shipping, and a pack that files them alongside the identity rule gets both ignored.
 2. **The job.** One paragraph — who finishes what, end to end. From `slice`'s spine if there is one.
 3. **Decided.** Facts, unhedged, in the words the chain used. Anything carrying `[ASSUMED]` keeps the marker.
@@ -96,11 +97,15 @@ One line, named, at the very top:
 
 | | |
 |---|---|
-| **`BUILDABLE`** | Nothing undeferrable is open **and no disagreement is unresolved.** Assumptions may remain, marked |
-| **`ASK FIRST`** | *n* questions and *m* disagreements must be settled before the first line of code. Both are listed above everything else |
-| **`NOT BUILDABLE`** | The chain has not produced enough. Say which skill closes the gap |
+| **`BUILDABLE`** | Nothing undeferrable is open, **no disagreement is unresolved, and no `Critical` audit finding stands against a document in this pack.** Assumptions may remain, marked |
+| **`ASK FIRST`** | *n* questions, *m* disagreements and *k* open findings must be settled before the first line of code. All three are listed above everything else |
+| **`NOT BUILDABLE`** | The chain has not produced enough — including **produced, then failed its own audit, then never revised.** Say which skill closes the gap |
 
-**Count both, and let either one hold the verdict.** A pack with nothing open and nine places where two documents disagree is not buildable — whoever builds picks a side per contradiction, silently, and no two picks have to agree with each other. Counting only open questions is how a pack full of contradictions reads as finished, which is the failure this skill exists against, committed by this skill.
+**Count three things, and let any one of them hold the verdict.** The third is open audit findings: a grill ran, found something, and the document it found it in is still the one you are assembling from. On a measured run those outnumbered both the other two — twenty-seven against twenty-nine questions and seventeen disagreements — and five were `Critical`. Counting only questions and disagreements returns `BUILDABLE` on a pack whose own flow has been declared broken, which is this skill's own failure mode reached through the rule written to prevent it. **One standing `Critical` forbids `BUILDABLE`.**
+
+**Say what a count counts.** *n* questions is a number somebody can move by merging rows. Say what one question is here — one owner, one sentence, one decision — and use it consistently, so the figure survives being recounted by the next reader.
+
+A pack with nothing open and nine places where two documents disagree is not buildable — whoever builds picks a side per contradiction, silently, and no two picks have to agree with each other. Counting only open questions is how a pack full of contradictions reads as finished, which is the failure this skill exists against, committed by this skill.
 
 Never soften the verdict because the user is in a hurry. `ASK FIRST` with four questions is a ten-minute conversation; the same four invented is a rewrite.
 
