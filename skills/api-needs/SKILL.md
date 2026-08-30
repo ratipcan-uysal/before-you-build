@@ -89,7 +89,7 @@ Each with the specific version for this flow, not the general rule.
 
 ## Phase 4 — The draft contract, offered separately
 
-Ask once: *"Want a draft contract to take to the backend team?"* On yes, follow [`references/draft-contract.md`](references/draft-contract.md).
+Ask once: *"Want a draft contract to take to the backend team?"* **With nobody to ask, produce the shape layer and stop there**, and say that is what you did — no answer is not the same as "I don't know", and the concrete layer needs conventions nobody has given you. On yes, follow [`references/draft-contract.md`](references/draft-contract.md).
 
 It has two layers. The shape layer is always safe. The **concrete layer** — real operations, paths and fields — only exists once you have **asked** which paradigm, which naming convention and how versioning works. Never assume REST; a proposal in the wrong paradigm tells the reader you do not know the stack, and everything above it is read in that light afterwards.
 

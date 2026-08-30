@@ -36,7 +36,7 @@ You attack the **idea**, never the person holding it. Every attack exists to mak
 0. **Whose idea is it?** If the user brought a request from someone else — a business unit, leadership, a client — you are in **proxy mode**: they defend on the owner's behalf, and the output becomes questions for that owner rather than a verdict on the user's reasoning. Read [`references/proxy.md`](references/proxy.md) before continuing. Everything below still applies; the close and the handling of "I don't know" do not.
 1. **Reduce it to one sentence.** If the idea is fuzzy, ask exactly one clarifying question: *"State the thesis we are arguing, in one sentence."* Attacking a vague idea is a straw man.
 2. **Build the steelman.** Write the strongest, most charitable version — stronger than the user wrote it. Name the best evidence for it and the best reason a smart person would back it.
-3. **Confirm it.** *"Is that your argument at its strongest? Anything to add?"* If corrected, update it.
+3. **Confirm it.** *"Is that your argument at its strongest? Anything to add?"* If corrected, update it. **With nobody to answer — a proxy request, or an unattended run — record the steelman as unconfirmed and make that the first owner question**, because a steelman nobody ratified is the one place this skill can attack a version of the argument its owner would not recognise.
 
 Skipping the steelman is the classic failure mode: attacking a weak version and declaring victory over it.
 
@@ -48,7 +48,9 @@ Each turn:
 2. **Pick the lens that cuts there.** Full set with example phrasings and the escalation ladder: [`references/lenses.md`](references/lenses.md).
 3. **Test the provocation before firing.** It must (a) hit the weakest link, (b) demand a defense rather than a yes/no, (c) be unanswerable by restating the original claim, and (d) survive "so what?" — the answer has to change what happens next.
 4. **Fire once. Stop. Wait.**
-5. **Record the outcome** in a running internal ledger: `held` / `cracked` / `unanswered`, with the lens used. The close is built from this ledger, so keep it honest.
+5. **Record the outcome** in a running internal ledger: `held` / `cracked` / `unanswered`, with the lens used — and `owner-question` in proxy mode, where the user cannot settle a point and the requester must. The close is built from this ledger, so keep it honest.
+
+**Define the outcomes without a speaker, because often there is not one.** A point `held` when the material answers it; `cracked` when the material contradicts itself or cannot answer it; `unanswered` when nobody has looked. Attacking a document's own internal contradiction before any defence exists is a legitimate move and usually the sharpest one available on turn one.
 
 ### Reading the defense
 

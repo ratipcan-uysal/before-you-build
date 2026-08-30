@@ -1,6 +1,6 @@
 # The method
 
-Ten principles. The skills in this repo are what they look like when they are made executable.
+Eleven principles. The skills in this repo are what they look like when they are made executable.
 
 ## 1. Steelman before you strike
 
@@ -67,6 +67,18 @@ Almost every skill here reads only what someone brought. Exactly one does not: `
 That boundary is deliberate. A model summarising what it half-remembers about an SDK, a law or a competitor sounds exactly as confident as one reading a document, and telling the two apart afterwards is impossible — which is the failure this whole set is built against.
 
 But a boundary is only safe when it is visible. So a claim about the world outside the material carries `[UNVERIFIED]` and names the check that would settle it: *the platform documentation*, *legal*, *the vendor*, *whoever has built this before*. Unmarked, such a claim is indistinguishable from a decision somebody made, and it is precisely the kind that survives untouched into code — because everyone downstream assumes the person upstream looked.
+
+## 11. A rule that needs a person needs a branch for when there is none
+
+Half of these skills are run unattended — piped from another skill, scheduled, or invoked by someone who has gone to bed. Measured across one full chain, **eight skills carried a rule that hands the decision to a user who is not there**: *their call, every time* · *let the user choose* · *ask once, then proceed* · *put both statements in front of the user and make them choose*.
+
+None of them is wrong. All of them stop.
+
+What happens next is worse than stopping: the run invents the answer, silently, and nothing in the output says a default was taken. On the measured chain the largest single decision in a document — whether forty unanswerable items became open questions or capped assumptions, which moves the score without moving what anyone knows — was taken that way, by a rule that had delegated it to nobody.
+
+**So every rule that requires an answer states what happens when no answer comes**, and the run says which default it took. The default is not always the same: leave it open, declare the record partial, draw the diagram, stop at the shape layer. Choosing it is a design decision and belongs in the file, not in whoever happens to be running.
+
+The same applies to a guard. `build-context`'s self-review guard covers the cross-check and stops one phase short of the pass that walks the assembly back against its own sources — which is self-review by definition, performed by the only reader it has.
 
 ## Why this set critiques more than it generates
 

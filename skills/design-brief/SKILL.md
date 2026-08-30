@@ -47,7 +47,7 @@ If the material does not say what happens in the flow, stop and say so. A design
 
 **Name the error paths before you decide anything.** List every failure the material describes and, for each, what the person is left holding and how they get out. This is the input that decides the quality of the brief: a measured pass on a real feature put every finding about an error state — the retry that stays enabled, the message ordering an action the screen does not offer, the value hidden by a prohibition the exit needs — in the half of the review that a mapped flow would have answered first, while the identity, placement and contrast findings were untouched by it.
 
-**A request's error table is usually shorter than the flow's.** If the material lists fewer than a handful, say plainly that running `flow-map` first will change what this brief contains, and let the user choose. Do not map the flow yourself — that is a different skill and doing it here means the producer invents the behaviour it then designs for.
+**A request's error table is usually shorter than the flow's.** If the material lists fewer than a handful, say plainly that running `flow-map` first will change what this brief contains, and let the user choose. **With nobody to choose, carry on and declare the record partial** — the paragraph below is then the rule rather than the fallback. Do not map the flow yourself — that is a different skill and doing it here means the producer invents the behaviour it then designs for.
 
 **If they choose to carry on without one, the record says so at the top and calls itself partial.** Not a hedge — a scope line: *"written without a mapped flow; the states below are the ones the material named, and a second version will be needed."* A record that is missing most of its error states and does not say so is read as the finished set of decisions, and the states nobody wrote are then the states nobody draws. Measured on a full chain run, the second version's largest section was error states, every one of them traceable to the flow rather than to the request — that section is what the silent version of this document leaves out.
 
@@ -92,7 +92,7 @@ Marking a gap and stopping is not enough when you could have filled it. Propose 
 
 ## Phase 4 — The generator block (offer, do not assume)
 
-Ask once: *"Want this as a constraint block for a UI generator?"* On yes, follow [`references/generator.md`](references/generator.md).
+Ask once: *"Want this as a constraint block for a UI generator?"* On yes, follow [`references/generator.md`](references/generator.md). **With nobody to ask, produce it and say it was not requested**: the next step in the chain is somebody handing this block to a generator, and a brief without one sends them to improvise from prose.
 
 It is not the brief reformatted. Generators obey structure, order, and prohibitions; they ignore adjectives and quietly invent around gaps. The block states surfaces, the primary job, ranked element order, required states, and explicit prohibitions — and never contains a style adjective, because "modern and clean" is the instruction that produces the generic result the user is trying to escape.
 
