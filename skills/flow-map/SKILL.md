@@ -61,17 +61,19 @@ This is a product decision and it has no other owner. The codes and statuses und
 
 ## Phase 4 — Mark the system touchpoints
 
-Go back through every step and mark the ones where the system must read, write, call something, or decide. Two marks are enough:
+Go back through every step and mark the ones where the system must read, write, or call something. Three marks, and a step may carry more than one:
 
 - **reads** — the step needs information it does not already have
 - **acts** — the step changes state, spends money, or tells something else
 - **emits** — the step produces an analytics or business event
 
+**A step that only decides carries none of them** — comparing two values it already holds is not a touchpoint, and stretching a mark to cover it double-counts the read that fetched them. Where such a step is what the whole feature turns on, say so in words; it belongs in the flow, not in the marks.
+
 `emits` earns its own mark rather than folding into `acts` because analytics is the thing that gets left out. A flow with no way to carry it produces an `api-needs` pass that never asks for it, a build that ships without it, and a target nobody can verify three months later.
 
 You are marking **where**, never **what**. The moment you write a field name or an endpoint, you have started designing a contract, and that belongs to `api-needs` and to the people who own the system.
 
-**Count the marks by walking the table, and report marks and steps as separate numbers.** A step can carry two or three, so the two totals differ and mixing them is the most common error in this document — *"nine touchpoints"* over a table holding nineteen marks on ten steps reads as precision and is arithmetic. Branches carry marks too, and they are the ones left out of the count.
+**Count the marks by walking the table, and report marks and steps as separate numbers.** A step can carry two or three, so the two totals differ and mixing them is the most common error in this document — *"nine touchpoints"* over a table holding nineteen marks on ten steps reads as precision and is arithmetic. **Branches and error paths carry marks too, and they are the ones left out of the count** — on a measured run they held six of fourteen. And say what you counted: marks, carriers, or write sites are three different numbers, and the next skill builds its work list from whichever one you published.
 
 **Show the working, not the total.** List each mark type with the step numbers that carry it — `acts 2, 6, 9, 12, 13, 16 = 6` — and the count of marked steps beside the count of marks. A total on its own is a number nobody can check, and this is the line of the document most likely to be wrong: the warning above has not been enough on its own, because a wrong total looks exactly like a right one. Written as step numbers it cannot drift from the table without the table being wrong too, and the next two skills both build their work list from these marks.
 
