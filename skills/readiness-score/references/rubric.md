@@ -1,6 +1,6 @@
 # Rubric
 
-Forty spine items that apply to every piece of work, plus conditional items opened by work type. Each in-scope item scores 0–3. Items marked ⚑ are blockers: a zero forces NOT READY.
+Forty-one spine items that apply to every piece of work, plus conditional items opened by work type. Each in-scope item scores 0–3. Items marked ⚑ are blockers: a zero forces NOT READY.
 
 ## Two axes — both apply
 
@@ -41,6 +41,7 @@ Surface is the axis most often left implicit. "We want this in the app" does not
 - **P4** Who decided this is worth doing, or who owns the decision
 - **P5** Which platforms and channels are in scope — and which are deliberately not
 - **P6** Whether an internal surface is part of this — an agent, admin, or back-office screen or capability
+- **P7** Why *this* mechanism, where the document specifies one: that it was chosen rather than inherited, and how it departs from how the problem is solved elsewhere
 
 ### K2 — Users and trigger · weight 12
 - **U1** Who uses this
@@ -172,6 +173,7 @@ Every item belongs to exactly one place. If a conditional item restates a spine 
 ## Reading items honestly
 
 - An item is about **presence of a decision**, not about whether you agree with it. A rule you think is wrong still scores 3 if it is written clearly.
+- **Item P7 has a subject only where the document specifies a mechanism** — a named channel, sequence, handshake, threshold or interaction chosen over an alternative. Where the document describes a need and leaves the how open, P7 is out of scope and the sentence describing the need is the quote. Where a mechanism *is* specified and no reason is given, that is a zero like any other: a mechanism written as a requirement is the most expensive unexamined thing a request can carry, because nothing downstream ever asks about it again.
 - **One sentence can satisfy two items.** That is fine; score both.
 - **A heading with nothing under it scores 0.** "Error handling: TBD" is an admission of absence, not a partial answer.
 - **A link to another document is not content.** Unless the linked material is in front of you, the item is 0 and you say why.
