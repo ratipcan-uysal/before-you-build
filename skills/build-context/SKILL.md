@@ -60,7 +60,7 @@ Nothing before you has done this, and the chain demonstrably drifts — a design
 
 **Do not only check neighbours.** The pairs above are adjacent in the chain and they are the easy half. The expensive disagreements run between documents three or four steps apart — an assumption marked in the request and treated as settled in the contract, a prohibition in the brief that the model contradicts. Read the earliest document last, against everything.
 
-**A disagreement is a finding, not something to reconcile.** Put both statements in front of the user and make them choose. Picking the more recent one is how a decision gets made by filing order.
+**A disagreement is a finding, not something to reconcile.** Put both statements in front of the user and make them choose — and with nobody to choose, quote both and resolve neither. Picking the more recent one is how a decision gets made by filing order.
 
 ## Phase 2 — Assemble, open items first
 
@@ -113,7 +113,7 @@ Never soften the verdict because the user is in a hurry. `ASK FIRST` with four q
 
 ## Phase 4 — Offer it as project files
 
-Ask once: *"Want this as files in the repo rather than a document?"*
+Ask once: *"Want this as files in the repo rather than a document?"* With nobody to ask, do not write them: files are a side effect nobody asked for.
 
 On yes, **two files, and the second is assembled by subject.**
 

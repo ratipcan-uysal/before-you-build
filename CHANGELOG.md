@@ -4,6 +4,32 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.5.0
+
+**A third full chain run, and this time the request was a bank's.** A risk committee's decision handed down to a product team that could not change it — which meant the chain entered at `risk-interrogate` rather than `idea-grill`, a row in the README's own routing table that no published example had ever exercised. Fifteen skills ran in fifteen separate clean sessions, each one returning the document *and* an adversarial critique of the skill file that produced it. What follows is what those critiques found, verified against the files.
+
+**`prior-art` can now report what is published about whether a mechanism works.** Its rule against saying which approach is better was also blocking sourced empirical results — a regulator reporting that four supervised banks could not evidence the control's effect, a study finding a third of victims skip the warning. `idea-grill` was the named destination for that question and cannot read the world, because its method is dialogue. New section, same evidence gate, questions only.
+
+**`idea-grill` stops handing off cases it should take.** "Already decided" is not the test; "nobody may reopen it" is. A business unit's request is decided by them and open to whoever carries it — proxy mode, and the commonest shape there is. `risk-interrogate` is now in the boundary table with the merit-closed condition, and the description no longer claims the skill is for what is "not committed to yet" while listing a business unit's request as a trigger.
+
+**Heads up — the rubric gained two items and three scoring rules, so the same document scores differently.**
+- **P7** asks why *this* mechanism, where one is specified. Measured: seven sourced departures entering a request moved its score by one raw point out of 225, because no item asked about them.
+- **R8** asks when it has to land and what somebody outside the team has committed to by then. A request with a hard freeze and two undelivered dependencies scored exactly what a request with no date would.
+- **A rule the document itself contradicts scores as absent.** The rubric was paying 0.7 points for inventing an answer an author had explicitly refused to invent.
+- **A success criterion that cannot distinguish the thing working from the thing being bypassed scores as absent.**
+- **Classification is published with a sensitivity line.** Four defensible readings of one request gave 18, 17, 20 and 22, and both independent scorings invented the table themselves.
+- **Not applicable joins in-scope and out-of-scope**, so a fraud interstitial is no longer asked about the order fees are applied in.
+
+**The set knows what to do with an audit nobody acted on.** `flow-grill` addressed findings to `api-needs` by name and `api-needs` had no inbox. Two independent sessions invented the same patch. `build-context` also could not see grill findings at all — it sources its ask-list from `[DECISION NEEDED]` and a grill never writes that marker — and its verdict counted questions and disagreements only, so a pack could return `BUILDABLE` with five `Critical` findings standing against its own flow. One standing `Critical` now forbids it.
+
+**An unapproved sentence could become a scoring exemption.** `slice` writes exclusions as declarations because that is what `readiness-score` can quote, and neither end asked who was entitled to declare. Both carry provenance now.
+
+**Principle 11: a rule that needs a person needs a branch for when there is none.** Eight skills stopped dead on *their call, every time* · *let the user choose* · *ask once* · *make them choose*. The runs did not stop — they invented defaults silently, one of which decided whether forty items became open questions or capped assumptions. Every such rule now states its default, and CI checks that it does.
+
+**Two new checks, both proven by putting the fault back.** A count word followed by a list of a different length — live in `risk-interrogate`, which said "keep a question only if all four hold" above five. And the unattended-branch check, which found three cases this release had missed.
+
+Also: `flow-map` had no mark for a step that only decides, which on this run left the step the whole feature turns on carrying nothing; `impact-radar` had no dimension for existing data that starts being read for a new purpose, and no described output shape; `data-model`'s Phase 0 contradicted its own Phase 4 on what an `acts` step writes; `design-brief` drafted copy that a named approver exists to sign, and `generator.md` had nowhere to put navigation, which is why two decisions fell out of the block; `pack.md` turned out to be two documents stapled together.
+
 ## 4.4.0
 
 **The guard becomes a mechanism.** Principle 7 says critique and creation must not share a context. Four skills carried the guard and all four discharged it by recommending a clean-context repeat — measured across two full chain runs, that produced fifteen compromised reviews and zero repeats, because the recommendation is addressed to a user who would have to open a new session and re-attach everything. The grills now hand the pass to a subagent whose input is the artefact's **file paths** and the skill's instructions. Paths, never pasted content; the verdict is the subagent's; inline review is unchanged when the material came from outside. The confession survives as the fallback, which is the only honest place for it. The guard also reached `risk-interrogate`, `prior-art` and `impact-radar`, which assess another skill's output and had never carried it.

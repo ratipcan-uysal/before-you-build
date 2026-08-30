@@ -239,6 +239,18 @@ for md in prose:
 # marker its own language rule does not cover, and a skill with no boundary.
 # A checklist was tried and forgotten three times. This runs every commit.
 MARKER = re.compile(r"`(\[[A-Z][A-Z ]+\])`")
+
+NUMBER_WORDS = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+                "seven": 7, "eight": 8, "nine": 9, "ten": 10}
+COUNT_INTRO = re.compile(
+    r"\b(?:all |only |exactly )?(two|three|four|five|six|seven|eight|nine|ten)\b"
+    r"[^.:]{0,60}(?:hold|are enough|apply|follow)\s*:\s*$", re.I)
+NEEDS_A_PERSON = re.compile(
+    r"(their call, every time|let the user choose|and make them choose|"
+    r"ask once[,:]? \*?\"|ask the user which)", re.I)
+HAS_DEFAULT = re.compile(
+    r"(with nobody|no answer is not|unattended|autonomous mode|"
+    r"nobody (?:is )?(?:there|in the room)|nobody to (?:ask|choose|answer))", re.I)
 for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
     name = skill_md.parent.name
     rel = skill_md.relative_to(ROOT)
@@ -276,6 +288,35 @@ for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
         err(f"{rel}: carries the self-review guard and never names the subagent "
             "that discharges it — the guard without the mechanism is the version "
             "that recommends a clean repeat nobody performs")
+
+    # A rule that requires an answer, in a set whose skills are mostly run
+    # unattended. Measured on one full chain: eight of these stopped dead, and
+    # each run then invented a default and did not say which. The branch has to
+    # be in the file, because choosing it is a design decision.
+    for line_no, line in blocks_of(body):
+        if not NEEDS_A_PERSON.search(line):
+            continue
+        if not HAS_DEFAULT.search(line):
+            err(f"{rel}:{line_no}: asks the user to decide and never says what "
+                "happens when nobody answers — an unattended run invents the "
+                "default silently (method principle 11)")
+
+    # "Keep a question only if all four hold:" followed by five items. Live in
+    # risk-interrogate until a bank run counted them.
+    lines = body.splitlines()
+    for i, line in enumerate(lines):
+        m = COUNT_INTRO.search(line)
+        if not m:
+            continue
+        claimed = NUMBER_WORDS[m.group(1).lower()]
+        n = 0
+        for nxt in lines[i + 1:]:
+            if re.match(r"^\s*(?:\d+\.|[-*])\s+\S", nxt):
+                n += 1
+            elif nxt.strip():
+                break
+        if n and n != claimed:
+            err(f"{rel}:{i+1}: says {m.group(1)} and the list below it has {n}")
 
     lang = [l for l in body.splitlines() if l.strip().startswith("- **Language:**")]
     if not lang:
