@@ -56,6 +56,9 @@ cases:
     expect: readiness-score
 
   # --- readiness-score: should NOT fire (boundary) -----------------------
+  - prompt: "Give this ticket a story point estimate."
+    expect: none
+    note: "estimation is not in this set, however numeric the ask sounds"
   - prompt: "This spec is missing the error cases. Write them for me."
     expect: request-shaper
     note: "filling gaps is production, not measurement"
@@ -90,6 +93,9 @@ cases:
     expect: risk-interrogate
 
   # --- risk-interrogate: should NOT fire (boundary) ----------------------
+  - prompt: "Run a penetration test against the staging environment."
+    expect: none
+    note: "this skill asks questions about decided work; it never tests a system"
   - prompt: "Is this feature even worth building? Convince me it isn't."
     expect: idea-grill
     note: "merit, not failure modes"
@@ -114,6 +120,9 @@ cases:
     expect: design-brief
 
   # --- design-brief: should NOT fire (boundary) --------------------------
+  - prompt: "Pick the colours and the type scale for this screen."
+    expect: none
+    note: "no visual specification - the brief decides what must be true"
   - prompt: "Here's the mockup we built. What's wrong with it?"
     expect: ux-grill
     note: "critique of an existing design"
@@ -130,6 +139,9 @@ cases:
     expect: ux-grill
 
   # --- ux-grill: should NOT fire (boundary) ------------------------------
+  - prompt: "Redraw this screen the way you would have designed it."
+    expect: none
+    note: "findings, never a redesign"
   - prompt: "Nobody has decided what these screens should do yet. Work it out."
     expect: design-brief
     note: "deciding, not critiquing"
@@ -149,6 +161,9 @@ cases:
     expect: flow-map
 
   # --- flow-map: should NOT fire (boundary) ------------------------------
+  - prompt: "Draw me a sequence diagram of the services calling each other."
+    expect: none
+    note: "a flow is what happens to a person, not a call graph"
   - prompt: "Here's our existing flow diagram. What's missing from it?"
     expect: flow-grill
     note: "auditing an existing flow, not producing one"
@@ -165,6 +180,9 @@ cases:
     expect: flow-grill
 
   # --- flow-grill: should NOT fire (boundary) ----------------------------
+  - prompt: "Rewrite this flow so the branches all resolve."
+    expect: none
+    note: "no rewritten flow, not even a small one"
   - prompt: "Nobody has written the flow yet. Work out what happens step by step."
     expect: flow-map
     note: "producing, not auditing"
@@ -290,6 +308,9 @@ cases:
     expect: impact-radar
 
   # --- impact-radar: should NOT fire (boundary) --------------------------
+  - prompt: "Plan the migration and the rollout order for this change."
+    expect: none
+    note: "naming what breaks is the job; sequencing the migration is not"
   - prompt: "This new feature ships next sprint. What could go wrong in production?"
     expect: risk-interrogate
     note: "new work, not a change to something existing"
@@ -305,6 +326,9 @@ cases:
     expect: decision-memo
 
   # --- decision-memo: should NOT fire (boundary) -------------------------
+  - prompt: "Book the meeting with the director and send the invite."
+    expect: none
+    note: "producing the memo is the job; running the meeting is theirs"
   - prompt: "Before I write anything, is this idea actually sound?"
     expect: idea-grill
   - prompt: "Write this up so the engineering team can start on it."

@@ -47,11 +47,15 @@ PLANNED = {
 }
 
 SKILL_SHAPED = re.compile(r"`([a-z][a-z0-9]*(?:-[a-z0-9]+)+)`")
-LINK = re.compile(r"\]\((?!https?://)([^)#\s]+)\)")
+LINK = re.compile(r"\]\((?!https?://)([^)#\s]+?)(?:#[^)\s]*)?\)")
 HISTORY_MARKER = re.compile(r"remov|retire|supersed|replac|\bdropped\b|\bv\d+\.\d+", re.I)
 NUMBER_WORD = {w: i for i, w in enumerate(
     "zero one two three four five six seven eight nine ten eleven twelve "
     "thirteen fourteen fifteen sixteen".split())}
+NUMBER_WORD.update({f"{t}-{u}": v + i for t, v in
+                    (("twenty", 20), ("thirty", 30), ("forty", 40), ("fifty", 50))
+                    for u, i in NUMBER_WORD.items() if 1 <= i <= 9})
+NUMBER_WORD.update({"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50})
 
 errors, warnings = [], []
 
@@ -111,10 +115,23 @@ def blocks_of(text):
 
 
 # --- manifests -----------------------------------------------------------
-plugin = json.loads((ROOT / ".claude-plugin/plugin.json").read_text())
-market = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text())
-listed = {p["name"] for p in market["plugins"]}
-if plugin["name"] not in listed:
+def load_manifest(rel):
+    """A malformed manifest is the one failure that stops the plugin installing.
+    It has to report like everything else, not end the run in a traceback."""
+    path = ROOT / rel
+    try:
+        return json.loads(path.read_text())
+    except FileNotFoundError:
+        err(f"{rel}: missing — the plugin cannot be installed without it")
+    except json.JSONDecodeError as e:
+        err(f"{rel}: not valid JSON: {e}")
+    return {}
+
+
+plugin = load_manifest(".claude-plugin/plugin.json")
+market = load_manifest(".claude-plugin/marketplace.json")
+listed = {p["name"] for p in market.get("plugins", [])}
+if plugin.get("name") and plugin["name"] not in listed:
     err(f"marketplace.json does not list the plugin '{plugin['name']}'")
 
 # --- skills --------------------------------------------------------------
@@ -250,6 +267,16 @@ for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
                  "caller is a single path in, and a user who does not run that "
                  "skill never reaches this one")
 
+    # Seven skills now carry the self-review guard, hand-copied, and the rule it
+    # states is only worth anything if it says what to do rather than what to
+    # confess. A copy that has lost the delegation has quietly reverted to the
+    # version that never once produced a clean review across two full runs.
+    delegates = "subagent" in body and "input is the" in body
+    if "in this conversation" in body and not delegates:
+        err(f"{rel}: carries the self-review guard and never names the subagent "
+            "that discharges it — the guard without the mechanism is the version "
+            "that recommends a clean repeat nobody performs")
+
     lang = [l for l in body.splitlines() if l.strip().startswith("- **Language:**")]
     if not lang:
         err(f"{rel}: no Language operating rule")
@@ -293,7 +320,10 @@ for sub in sorted(d for d in (ROOT / "examples").iterdir() if d.is_dir()):
             err(f"examples/{sub.name}/README.md: does not link {example.name}")
 
 changelog = (ROOT / "CHANGELOG.md").read_text()
-if not re.search(rf"^## {re.escape(plugin['version'])}\b", changelog, re.M):
+if not plugin.get("version"):
+    err(".claude-plugin/plugin.json: no version — nothing downstream can be checked")
+    plugin["version"] = ""
+if plugin["version"] and not re.search(rf"^## {re.escape(plugin['version'])}\b", changelog, re.M):
     err(f"CHANGELOG.md: no entry for version {plugin['version']} — "
         "the version was bumped and the changelog was not")
 
@@ -310,11 +340,31 @@ for m in re.finditer(r"`v(\d+(?:\.\d+)*)`", readme):
             f"{plugin['version']}")
 
 # --- counts stated in prose match what is there ---------------------------
-for m in re.finditer(r"\*\*(\w+) skills?\*\*", readme):
+# Any prose that counts the skills, wherever it is written. The bolded form in
+# README was guarded and docs/ was not, so decisions.md sat on "eleven skills"
+# through four releases while the bolded line one directory up stayed correct.
+# The bold is the convention that marks a sentence as counting the set rather
+# than saying "one skill, one job" or naming how many an example ran. Guarding
+# the convention is what is checkable; a bare sentence is not.
+COUNTS_SKILLS = re.compile(r"\*\*(\w+) skills?\*\*")
+for md in (ROOT / "README.md", ROOT / "docs/method.md", ROOT / "docs/decisions.md"):
+    for m in COUNTS_SKILLS.finditer(strip_fences(md.read_text())):
+        word = m.group(1).lower()
+        claimed = int(word) if word.isdigit() else NUMBER_WORD.get(word)
+        if claimed is not None and claimed != len(skill_names):
+            err(f"{md.relative_to(ROOT)}: says {m.group(1)} skills, "
+                f"the repo has {len(skill_names)}")
+
+# The rubric counts its own spine, and got it wrong from the day it was written:
+# thirty-nine claimed against forty listed, in the reference belonging to the
+# skill whose whole job is refusing to credit what is not there.
+rubric = (ROOT / "skills/readiness-score/references/rubric.md").read_text()
+spine = len(re.findall(r"^- \*\*[PUBDSRN]\d+", rubric, re.M))
+for m in re.finditer(r"\b([\w-]+) spine items\b", rubric):
     word = m.group(1).lower()
     claimed = int(word) if word.isdigit() else NUMBER_WORD.get(word)
-    if claimed is not None and claimed != len(skill_names):
-        err(f"README.md: declares **{m.group(1)} skills**, the repo has {len(skill_names)}")
+    if claimed is not None and claimed != spine:
+        err(f"rubric.md: says {m.group(1)} spine items, it lists {spine}")
 
 principles = len(re.findall(r"^## \d+\. ", (ROOT / "docs/method.md").read_text(), re.M))
 for md in (ROOT / "README.md", ROOT / "docs/method.md"):
@@ -324,6 +374,34 @@ for md in (ROOT / "README.md", ROOT / "docs/method.md"):
         if claimed is not None and claimed != principles:
             err(f"{md.relative_to(ROOT)}: says {m.group(1)} principles, "
                 f"docs/method.md has {principles}")
+
+# --- the chain diagram, which no other check can see ----------------------
+# strip_fences blanks every fenced block before the prose checks, so the most
+# read map in the repo has never been compared against the skills on disk. It
+# is quoted content everywhere else and a claim about this repo here.
+mermaid = re.search(r"```mermaid\n(.*?)```", readme, re.S)
+if not mermaid:
+    err("README.md: no mermaid chain diagram — the map the README promises")
+else:
+    block = mermaid.group(1)
+    # Node declarations sit inside edge lines, not on lines of their own.
+    nodes = dict(re.findall(r"(\w+)[\[\{(]+\(?([^\]\}\)]+)", block))
+    drawn = {i: t.strip() for i, t in nodes.items() if t.strip() in skill_names}
+    for text in nodes.values():
+        t = text.strip()
+        if SKILL_SHAPED.fullmatch(f"`{t}`") and t not in skill_names:
+            err(f"README.md: the chain diagram draws '{t}', which is not a skill")
+    edges = [(m.group(1), m.group(2)) for m in re.finditer(
+        r"(\w+)(?:[\[\{(][^\n]*?[\]\})])?\s*-[.-]*->\s*(?:\|[^|]*\|)?\s*(\w+)", block)]
+    for src, dst in edges:
+        if src not in drawn or dst not in drawn:
+            continue
+        a_name, b_name = drawn[src], drawn[dst]
+        a_body = (ROOT / "skills" / a_name / "SKILL.md").read_text()
+        b_body = (ROOT / "skills" / b_name / "SKILL.md").read_text()
+        if f"`{b_name}`" not in a_body and f"`{a_name}`" not in b_body:
+            warn(f"README.md: the diagram draws {a_name} -> {b_name} and neither "
+                 "SKILL.md names the other — an edge nothing implements")
 
 # --- trigger coverage ----------------------------------------------------
 cases = yaml.safe_load((ROOT / "evals/triggers.yaml").read_text())["cases"]
