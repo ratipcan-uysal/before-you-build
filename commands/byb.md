@@ -19,6 +19,10 @@ The user invoked the before-you-build router. Figure out where they are in the c
 | A change to something that already exists | `impact-radar` |
 | A request nobody can build in the time available | `slice` |
 | Several documents from this chain, and the question is "can we build now?" | `build-context` |
+| A scored request that is clearly bigger than one release | `slice` |
+| A flow, diagram, or journey to be attacked | `flow-grill` |
+| A flow, and nobody has worked out what the backend must supply | `api-needs` |
+| Analysis done, and one named person has to approve one thing | `decision-memo` |
 
 **Two rows take the same input, and routing between them is by what they asked for, not by an order you assert.** A shaped request goes to `design-brief` when the question is what the screens should do, and to `flow-map` when it is what happens step by step. `design-brief` runs ahead of `flow-map` in the chain and that order was measured, not assumed — do not send someone to the flow first on the grounds that the brief would be better for it. Say instead what the brief itself says: written without a mapped flow it will be missing most of its error states, and it will declare itself partial.
 

@@ -92,7 +92,13 @@ Marking a gap and stopping is not enough when you could have filled it. Propose 
 
 **Draft the project-wide constraints.** Theme, text scaling, minimum viewport, motion, truncation, number formatting. Each has a defensible default, each applies to every surface, and each is otherwise rediscovered on the fourth screen by a state sweep — late, and answered differently every time.
 
-**Never draft the design system.** Inventing tokens for someone's existing app is exactly what makes a brief easy to dismiss. Say instead what the generator needs and how to supply it: exported tokens, a screenshot of two existing screens, or a component list.
+**Never draft the design system for an app that already exists.** Inventing tokens for someone's product is exactly what makes a brief easy to dismiss. Say what the generator needs and how to supply it: exported tokens, a screenshot of two existing screens, a component list.
+
+**When nothing exists yet, draft the minimum set and mark it `[DRAFT]`.** Ask for exported tokens from a product that has none and the chain stops there — while the generator invents a visual language anyway, differently in every session, which is the outcome the rule above exists to prevent. Greenfield is the case where the absolute version of that rule inverts.
+
+The minimum is small and it is all product decisions rather than taste: **a type scale** with the number of steps and what each is for · **a spacing rhythm** as one base unit and its multiples · **colour roles**, not colours — surface, text, accent, danger, disabled — and which of them carry meaning · **the component inventory** this feature needs, by name · **one shape decision**, radius and border weight, applied everywhere.
+
+Five lines, approved in minutes, and they are the difference between a product and a set of screens that were each designed alone. **Still no palette, no font, no pixel values.** Naming that the accent colour exists and carries the primary action is yours; choosing that it is teal is not, and a brief that picks it gets argued with instead of used.
 
 ## Phase 4 — The generator block (offer, do not assume)
 
