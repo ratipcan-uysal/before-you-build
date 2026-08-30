@@ -68,7 +68,7 @@ Six sections, in this order, and the order is the design. Worked wording: [`refe
 
 1. **Ask before you start.** Every `[DECISION NEEDED]` whose answer **the first day of work would otherwise invent**, each with its owner and the one sentence that would settle it. Explicitly: *these are to be asked, never filled.*
    **And every open grill finding belongs here too.** A grill names the decision that closes each finding, in prose, with an owner — and it never writes `[DECISION NEEDED]`, because a finding is a verdict on a document rather than a gap in one. Sourcing this list only from the marker drops all of them. Measured on a run: twenty-seven findings stood against documents still in the pack, and seven of the questions worth asking existed nowhere else.
-   **Keep the second tier separate and keep it.** `request-shaper` sorts open items by what they block — starting, or going live — and collapsing that here loses the distinction the requester paid an interview for. Something that blocks release and not the first commit belongs further down, under *Done means*, named as blocking release. Six undecided error exits do not stop anyone starting; they stop anyone shipping, and a pack that files them alongside the identity rule gets both ignored.
+   **Keep the second tier separate and keep it.** `request-shaper` sorts open items by what they block — starting, or going live — and collapsing that here loses the distinction the requester paid an interview for. **That sorting is usually stale by the time you read it**, because `slice` ran afterwards and retired part of it; re-tier it against the cut rather than carrying the old tiers forward. Something that blocks release and not the first commit belongs further down, under *Done means*, named as blocking release. Six undecided error exits do not stop anyone starting; they stop anyone shipping, and a pack that files them alongside the identity rule gets both ignored.
 2. **The job.** One paragraph — who finishes what, end to end. From `slice`'s spine if there is one.
 3. **Decided.** Facts, unhedged, in the words the chain used. Anything carrying `[ASSUMED]` keeps the marker.
 4. **Must not.** Prohibitions from the brief's non-goals, the slice's permanent cuts, the contract's anti-requirements. **The section a generator actually obeys**, and the shortest one to write.
@@ -86,7 +86,7 @@ The spec is a derived view, so it is checked against its sources item by item. E
 | **Prohibitions** | Same scope as the source. Not broader |
 | **Defaults** | Same value, and still marked `[DRAFT]` if the source marked it |
 | **Markers** | Present, in English, on the same line they were on |
-| **Anything with no source** | You wrote it. It goes to *Ask before you start*, or it goes |
+| **Anything with no source** | You wrote it. It goes to *Ask before you start*, or it goes. **Unless it is a mechanical join** — one carried source applied row by row to another, present in neither, inventing nothing. Say that is what it is, and that the application is yours |
 | **Every `[UNVERIFIED]`** | Survives with its marker. One that is load-bearing — a decision rests on it — is also listed under *Ask before you start*, because it is a question, not a fact |
 
 **Assembly drifts toward the stricter reading**, and that is the one to hunt. A prohibition scoped to one surface becomes a prohibition on the whole flow; a `[DRAFT]` default becomes a decided one. Both read as more careful, which is why nothing flags them — and a rule broadened during assembly is a decision reversed, usually the one somebody made deliberately in response to a review.
@@ -136,7 +136,7 @@ Never write files unasked, and never write code.
 
 Always the last section, always written.
 
-Decisions are necessary and nowhere near sufficient. Without **real copy**, **deliberately awkward example data**, **the design system**, and **the actual stack constraints**, a generator invents all four and returns something that looks finished. Say which of the four you have and which you do not, and say that supplying the missing ones changes the output more than any further decision would.
+Decisions are necessary and nowhere near sufficient. Without **real copy**, **deliberately awkward example data**, **the design system**, and **the actual stack constraints**, a generator invents all four and returns something that looks finished. Open each one before you tick it, and allow a third answer: present but incomplete. Say which of the four you have, which you do not, and which are half — awkward data that covers three variables and misses the one the record calls the real breaking point is not a tick. Supplying the missing ones changes the output more than any further decision would.
 
 ## Operating rules
 

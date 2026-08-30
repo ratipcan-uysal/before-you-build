@@ -1,6 +1,8 @@
 # The pack, section by section
 
-The spec below is one document ordered by what someone is about to build. It is **not** ordered by which skill produced what: that shape serves the process, and it makes whoever writes a screen open five files to assemble a fifth of the answer from each.
+**Two artefacts live in this file and they are not the same shape.** The outline immediately below is the **project spec** — Phase 4's second file, written only when the user asks for files in the repo. Everything after the rule is the **chat pack**, which is what Phase 2 assembles by default. Do not merge them: the spec is organised per surface for somebody about to build one screen, and the pack is organised so that whoever reads top to bottom meets what is unsettled first.
+
+The spec is one document ordered by what someone is about to build. It is **not** ordered by which skill produced what: that shape serves the process, and it makes whoever writes a screen open five files to assemble a fifth of the answer from each.
 
     1  Ask first                     open decisions, with owners
     2  What this is                  the job, and what is in this release
@@ -16,8 +18,11 @@ The spec below is one document ordered by what someone is about to build. It is 
 
 Sections 4 to 7 are the shape that matters. Surface-bound material gathers per surface; flow, data and contract are cross-cutting and stay whole. Everything else is scaffolding around them.
 
+---
 
-One document, six sections, in this order. The order is the design: whoever reads top to bottom meets what is unsettled before they meet anything they could start building from.
+## The chat pack
+
+One document, six sections, in this order — **and on `ASK FIRST` or `NOT BUILDABLE`, the disagreements go immediately after section 1**, before the job. They are half of what the verdict was counted from, and filing them near the end contradicts the rule that puts what is unsettled first. The order is the design: whoever reads top to bottom meets what is unsettled before they meet anything they could start building from.
 
 Open with the verdict on its own line — `BUILDABLE`, `ASK FIRST` or `NOT BUILDABLE` — and, in one sentence, which chain documents this was assembled from and which are missing.
 
@@ -28,6 +33,8 @@ Open with the verdict on its own line — `BUILDABLE`, `ASK FIRST` or `NOT BUILD
 Not a list of everything open. **Only what cannot be deferred** — the things whose answer the first day of work will otherwise invent. `slice`'s *decided now, built later* list is where most of them come from; the rest are `[DECISION NEEDED]` items that survived the chain.
 
 Each one gets three things: the question in one sentence, who can answer it, and what happens if it is guessed.
+
+**Where a chain document ships an artefact — a drawing, a deck, a rendered screen — say what standing it has** and carry its audit beside it. A reader given a pack and a set of screens takes the screens for the design; a set of screens generated from a constraint block, with fourteen findings open against them, is a layout study. Nothing on the file itself says which.
 
 > **Which account does money leave from when a customer has several?** — the requester. Guessed, every screen showing money picks its own answer and they will not agree.
 
