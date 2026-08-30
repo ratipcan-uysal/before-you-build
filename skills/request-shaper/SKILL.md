@@ -110,7 +110,7 @@ Close with:
 
 ## Phase 6 — The second pass
 
-Findings arrive **after** the document is written. `prior-art` reads how the problem is already solved and comes back with departures. `impact-radar` comes back with what a change breaks. `slice` comes back with a smaller scope and a set of quotable exclusions. `idea-grill` in proxy mode raises questions before the document exists at all. Every one of them belongs in the request, and the request has already been handed over.
+Findings arrive **after** the document is written. `prior-art` reads how the problem is already solved and comes back with departures. `impact-radar` comes back with what a change breaks. `slice` comes back with a smaller scope and a set of quotable exclusions. `risk-interrogate` and `flow-grill` come back with questions and findings that name something the request left undecided. `idea-grill` in proxy mode raises questions before the document exists at all. Every one of them belongs in the request, and the request has already been handed over.
 
 **You write the second version. Nobody else can.** The skills that produce these findings are forbidden from rewriting anything — that separation is the whole reason their findings are worth reading — so a departure with nowhere to be written is a departure that dies where it was raised. Measured on a full chain run: `prior-art`'s three most decision-changing findings never re-entered the request, and the pack assembled ten documents later was where they surfaced. By then the flow, the model and the contract had all been written over the unamended version.
 

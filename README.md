@@ -56,7 +56,7 @@ flowchart TD
     DB --> FM[flow-map]
     FM --> FG[flow-grill]
     FG -->|error paths the brief needs| DB
-    FG --> DMO[data-model]
+    FM -->|touchpoint marks| DMO[data-model]
     DMO -->|nouns before verbs| AN[api-needs]
     AN --> BC[build-context]
     UX --> BC

@@ -102,6 +102,12 @@ If the idea survived and the user wants to move forward, offer exactly once: *"W
 
 Never enter co-build early. Building before the grill finishes destroys the entire value of the skill — and the pull to do it is strong, because agreeing feels more helpful than pressing. It is not.
 
+## Where this goes
+
+The close is the output, and it needs somewhere to live or it stays in a transcript. **`SURVIVES` or `SURVIVES, NARROWED` goes to `request-shaper`, and the narrowed thesis is what gets written up — not the one the conversation opened with.** `UNRESOLVED` goes there too, with the open cracks entering the *still open* list; the evidence that would close each one is the point of writing them down. In proxy mode the question list goes to `request-shaper` as well, and it says so in that skill's Phase 0, because a question raised before the document exists has no home unless somebody gives it one.
+
+`FATAL FLAW` goes nowhere. That is the result.
+
 ## Operating rules
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
