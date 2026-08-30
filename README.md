@@ -104,6 +104,8 @@ Then [one fictional request carried through twelve skills](examples/README.md), 
 
 And [a second request, a different shape](examples/seller-score/README.md) — a marketplace wants to change what a seller's score means, and twenty documents later the release being proposed does not change the score at all. It starts where most work inside an organisation starts, with something that already exists, so it enters at `impact-radar` rather than `idea-grill`.
 
+And [the one that gets a yes](examples/score-badge/README.md) — six documents on a shared component, reaching `CONDITIONAL` and then `BUILDABLE`. It went looking for whether the 80-point threshold is reachable and came back with something better: a request that answers nearly everything scores 62, because the rubric asks a read-only component about data residency and running cost. The finding belongs to the rubric.
+
 They are deliberately unflattering. The score comes back NOT READY twice. The design violates its own brief and nothing looks wrong. Two of the reviews open by declaring themselves compromised, because the same session produced what they are reviewing.
 
 ## The method
@@ -114,7 +116,7 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v4.3` — **fifteen skills**, none planned. The three added at 3.1 to 3.3 all come from one correction: the set was built for a PM handing a request to a team, and it also has to serve someone handing it to a model that writes the whole product. `data-model` because an undefined schema gets invented, `slice` because the chain was being run across scope that would not ship, and `build-context` because the chain ended in nine documents and nobody builds from nine documents. `state-matrix` was removed at v3.0 after three rounds of narrowing left it doing what `ux-grill` and `design-brief` already covered; [why](docs/decisions.md). From here the set changes because it is used. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
+`v4.4` — **fifteen skills**, none planned. The three added at 3.1 to 3.3 all come from one correction: the set was built for a PM handing a request to a team, and it also has to serve someone handing it to a model that writes the whole product. `data-model` because an undefined schema gets invented, `slice` because the chain was being run across scope that would not ship, and `build-context` because the chain ended in nine documents and nobody builds from nine documents. `state-matrix` was removed at v3.0 after three rounds of narrowing left it doing what `ux-grill` and `design-brief` already covered; [why](docs/decisions.md). From here the set changes because it is used. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
 
 What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
 

@@ -20,6 +20,12 @@ Read in this order:
 | 12 | [`decision-memo`](decision-memo-slice-approval.md) | One page asking one named person to approve one thing — shipping without the part the feature is named after. **The last skill in the set to be run, because no skill in the chain named it** |
 | 13 | [`build-context`](build-context-pack.md) | All eleven documents checked against each other and assembled. **Ten disagreements in fifteen checks** — including one the design and the flow each held consistently, and the request's most expensive marked assumption read as fact by three later documents |
 
+## The one that gets a yes
+
+[**Seller score badge**](score-badge/README.md) — six documents on a shared component, and the first run published here that reaches `CONDITIONAL` and then `BUILDABLE`. It exists because the other two both end `NOT READY` and `ASK FIRST`, which left an honest question open: is the threshold a real bar or an unreachable one?
+
+The answer was not the one it went looking for. A request that answers nearly everything a `capability` needs scores **62**, because the rubric asks a read-only component about data residency, running cost and go-live sign-off and it earns zero on all of them. The finding belongs to the rubric. It is also the only scoring in this repository that is not compromised, because the document being scored came from outside the session.
+
 ## A second example, a different shape
 
 [**Changing a seller score**](seller-score/README.md) — twenty documents on a marketplace that wants to change what a seller's score means, and a release that ends up not changing the score at all. It starts where most work inside an organisation starts: something already exists and somebody wants it changed, so the entry point is `impact-radar` rather than `idea-grill`.
