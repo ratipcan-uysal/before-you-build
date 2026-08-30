@@ -1,6 +1,6 @@
 # Rubric
 
-Thirty-nine spine items that apply to every piece of work, plus conditional items opened by work type. Each in-scope item scores 0–3. Items marked ⚑ are blockers: a zero forces NOT READY.
+Forty spine items that apply to every piece of work, plus conditional items opened by work type. Each in-scope item scores 0–3. Items marked ⚑ are blockers: a zero forces NOT READY.
 
 ## Two axes — both apply
 

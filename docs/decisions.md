@@ -30,7 +30,7 @@ Kept in the repo rather than in anyone's head, because the most reliable reader 
 
 **Tone is fixed: sharp but constructive.** Configurable intensity was considered and rejected — it adds mode handling to every skill and requires the harshest setting to be tested separately, for a preference most users would set once and forget.
 
-**CI tests triggers and boundaries, not output quality.** Eleven skills with adjacent descriptions fail by firing the wrong one, and the user never learns why the answer was off. Output-quality evals need fixtures that cost as much as the skills do; they wait until the set stops changing weekly.
+**CI tests triggers and boundaries, not output quality.** Fifteen skills with adjacent descriptions fail by firing the wrong one, and the user never learns why the answer was off. Output-quality evals need fixtures that cost as much as the skills do; they wait until the set stops changing weekly.
 
 **Verdicts come from a closed set with published definitions.** `READY / CONDITIONAL / NOT READY`, `SURVIVES / SURVIVES, NARROWED / UNRESOLVED / FATAL FLAW`. A summary drifts toward whoever spoke last; a label can be argued with.
 

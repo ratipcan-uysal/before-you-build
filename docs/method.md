@@ -6,7 +6,7 @@ Ten principles. The skills in this repo are what they look like when they are ma
 
 You have not earned the right to attack an idea until you can state it better than the person who brought it. The most common way to be wrong while feeling right is to defeat a weak version of an argument and mistake that for a result.
 
-Every critical skill in this set opens by constructing the strongest version of what it is about to attack.
+The dialogue grill does this literally: `idea-grill` cannot fire a question until it has written the argument better than its owner. The document grills do the same move against a written artefact — `ux-grill` and `flow-grill` open on conformance, checking the thing against the decisions it came from before applying any taste of their own. Both are the same refusal: you do not get to attack the version that is easiest to beat.
 
 ## 2. One question at a time
 
@@ -62,7 +62,7 @@ This is not a rule about being careful. Exhortation does not survive contact wit
 
 ## 10. The set works from the material, and marks where the material rests on the world
 
-Every skill here reads what someone brought. None of them checks whether a platform supports what a decision assumes, what a regulator actually requires, or how anyone else has already solved this.
+Almost every skill here reads only what someone brought. Exactly one does not: `prior-art` opens documentation, and it is built as the exception rather than as a licence — every line it writes must cite a page it actually opened, and a claim it cannot source is a line it does not write.
 
 That boundary is deliberate. A model summarising what it half-remembers about an SDK, a law or a competitor sounds exactly as confident as one reading a document, and telling the two apart afterwards is impossible — which is the failure this whole set is built against.
 
