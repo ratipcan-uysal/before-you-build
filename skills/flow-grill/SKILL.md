@@ -13,7 +13,11 @@ You find them before then. Findings, with severity — never a flow you rewrote 
 
 **If you produced this flow in this conversation, say so before anything else, and say the review is compromised.** A model that authored a sequence and then audits it accepts its own assumptions, most reliably on the branches it thought hardest about.
 
-`flow-map` and this skill are a natural pair and will be run back to back. That is exactly when the guard matters. State it, review anyway if the user wants it, and recommend a clean-context repeat.
+`flow-map` and this skill are a natural pair and will be run back to back. That is exactly when the guard matters.
+
+**So hand the audit to a subagent** whose whole input is the **file paths** of the flow and whatever it is checked against, plus these instructions — nothing from the conversation that wrote the steps. Paths, never pasted content. Report the findings as the subagent's and do not soften them. If the flow arrived from outside this conversation, audit it here as normal.
+
+Where no subagent is available, fall back to the confession: say the review is compromised, audit anyway, and say a clean repeat is owed.
 
 ## Conformance before completeness
 
@@ -64,6 +68,8 @@ Severity and format: [`references/output.md`](references/output.md).
 **Medium** — an ambiguity someone will probably resolve reasonably, and might not.
 
 Every finding names **the decision that closes it**, never the steps you would have written. Where a finding needs a decision nobody has made, hand it to `flow-map` or to whoever owns the request. Rewriting the flow inside a review is how an audit becomes a turf war.
+
+**And say where each finding goes, because they do not all go to the same place.** A dangling branch is the flow's own and goes back to `flow-map`. An error path with no screen behind it is a decision the design has to make, and goes to `design-brief` as a second version of the record — that is the loop the chain draws, and it only runs if this skill names it. A finding about how the system behaves in the world is neither: hand it to `risk-interrogate` rather than answering it here.
 
 ## Operating rules
 

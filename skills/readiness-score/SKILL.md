@@ -25,7 +25,9 @@ A model that wrote a request and then scores it knows what every line was *meant
 
 `request-shaper` and this skill are the set's most-run pair and they run back to back. That is exactly when the guard matters — and it matters more here than in the grills, because the output is a number, and a number reads as measurement no matter who produced it.
 
-State it above the verdict, score anyway if the user wants it, and recommend a clean-context repeat. Do not quietly score it and hope.
+**So do not score it here.** Hand the scoring to a subagent whose entire input is the **document's path** and these instructions — nothing from the conversation that wrote it. A reader who never saw the intent can only score the text, which is the whole of this skill's job. Report the score as the subagent's and do not adjust it.
+
+If the document arrived from outside this conversation, score it here as normal. Where no subagent is available, fall back to the confession: state it above the verdict, score anyway, and say a clean repeat is owed.
 
 ## Not this skill
 

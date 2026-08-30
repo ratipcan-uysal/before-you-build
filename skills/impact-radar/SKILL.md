@@ -23,6 +23,12 @@ Nobody forgets the screen showing the field. Everybody forgets the monthly repor
 
 **Direct dependents are found by looking. Indirect ones are found by asking**, and they are where the incidents come from — the thing that reads something derived from the thing you changed, two systems away, owned by a team that was not in the meeting.
 
+## The self-review guard
+
+**If the material you are working from was produced in this conversation, say so before your first dependency, and say the pass is compromised.** This pass is usually run on a request from outside, and then none of this applies. When the change was described in this conversation, the dependencies you thought about while describing it are the ones you will list, and the rest is what the radius is for.
+
+Where a subagent is available, hand this pass to one whose entire input is the **file paths** and these instructions — paths, never pasted content. That is what the guard asks for; saying it and carrying on is the fallback, not the plan.
+
 ## Not this skill
 
 | The user wants… | Use instead |

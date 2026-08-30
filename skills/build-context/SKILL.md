@@ -34,7 +34,9 @@ Write for the second. The first is not harmed by it.
 
 If the documents you are checking were produced in this conversation, **open with that.** A model that wrote a brief, a flow and a contract, and then looks for disagreements between them, finds fewer than a stranger would — it recognises its own reasoning on both sides of every pair and reads agreement into it. This is the same guard `ux-grill` and `flow-grill` carry, and it bites harder here, because you are checking several documents rather than one and the pull is toward every one of them.
 
-Say which documents you wrote and which arrived, and recommend the check be repeated in a clean context. Then do the pass properly anyway — a compromised check that names its compromise still finds most of what is there.
+**So hand the cross-check to a subagent** whose input is the **paths** of the documents and these instructions, and assemble the pack from what it finds. Paths, never pasted content; report its disagreements as its own and do not reconcile them. Say which documents you wrote and which arrived either way.
+
+Where no subagent is available, do the pass here and say the check is compromised — a compromised check that names its compromise still finds most of what is there.
 
 ## Phase 0 — Take stock, out loud
 

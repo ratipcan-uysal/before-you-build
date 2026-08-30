@@ -21,6 +21,12 @@ This is the only skill in the set that reads material the user did not produce, 
 
 **Marketing pages are not documentation.** A feature page says what someone wants you to believe; a docs page says what the thing does. Cite the second. Where only the first exists, say so and mark the line `[UNVERIFIED]`.
 
+## The self-review guard
+
+**If the material you are working from was produced in this conversation, say so before your first departure, and say the pass is compromised.** A departure is a claim that the work does something differently from what is documented elsewhere. Written by whoever chose the mechanism, that comparison bends: the reasons for the choice are still in mind, and they read as answers to the question being asked.
+
+Where a subagent is available, hand this pass to one whose entire input is the **file paths** and these instructions — paths, never pasted content. That is what the guard asks for; saying it and carrying on is the fallback, not the plan.
+
 ## Not this skill
 
 | The user wants… | Use instead |
