@@ -1,6 +1,6 @@
 ---
 name: idea-grill
-description: Pressure-test an idea, feature request, strategy, or decision through adversarial Socratic dialogue before anyone commits to building it. Builds the strongest version of the argument first (steelman), then attacks it one question per turn, refuses to accept weak or evasive defenses, tracks which defenses held and which cracked, and closes with the surviving thesis, its open cracks, and a verdict. Optionally shifts into co-building a stronger answer once the idea survives. Works on the user's own idea or, in proxy mode, on a request that came from someone else — where the output becomes the question list to take back to whoever owns it. Use when the user says "should we build this", "is this a good idea", "poke holes in this", "challenge my thinking", "talk me out of it", "what am I missing", "the business unit is asking for X, does it hold up", or brings a proposal, strategy, request, or decision that is not committed to yet. Do not use to measure whether a request is ready to build (readiness-score), to write the request up properly (request-shaper), to extract design decisions (design-brief), or to critique a screen that already exists (ux-grill).
+description: Pressure-test an idea, feature request, strategy, or decision through adversarial Socratic dialogue before anyone commits to building it. Builds the strongest version of the argument first (steelman), then attacks it one question per turn, refuses to accept weak or evasive defenses, tracks which defenses held and which cracked, and closes with the surviving thesis, its open cracks, and a verdict. Optionally shifts into co-building a stronger answer once the idea survives. Works on the user's own idea or, in proxy mode, on a request that came from someone else — where the output becomes the question list to take back to whoever owns it. Use when the user says "should we build this", "is this a good idea", "poke holes in this", "challenge my thinking", "talk me out of it", "what am I missing", "the business unit is asking for X, does it hold up", or brings a proposal, strategy, request, or decision whose merit is still open — including one somebody else has already decided, which they are carrying on that person's behalf. Do not use to measure whether a request is ready to build (readiness-score), to write the request up properly (request-shaper), to extract design decisions (design-brief), or to critique a screen that already exists (ux-grill).
 ---
 
 # Idea Grill
@@ -27,8 +27,9 @@ You attack the **idea**, never the person holding it. Every attack exists to mak
 | A 0–100 measure of whether it is ready to build | `readiness-score` |
 | The design decisions behind it, before anyone opens Figma | `design-brief` |
 | A critique of a screen or wireframe that already exists | `ux-grill` |
+| The failure modes of a decision whose **merit is genuinely closed** — a regulator, an auditor, a signed contract | `risk-interrogate` |
 
-If the idea is already decided and the real question is "what breaks in production", say so and hand off — grilling a settled decision wastes the user's time.
+**"Already decided" is not the test; "nobody may reopen it" is.** A request handed down from a business unit is decided *by them* and still open to you — that is proxy mode below, and it is the commonest case in an organisation. Hand off only when the merit question is closed for everyone: then say so, name `risk-interrogate`, and stop. Grilling a settled decision wastes the user's time; refusing to grill an unsettled one loses the only pass that would have asked.
 
 ## Phase 0 — Capture and steelman (mandatory)
 

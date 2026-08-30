@@ -31,7 +31,7 @@ Where a subagent is available, hand this pass to one whose entire input is the *
 
 | The user wants… | Use instead |
 |---|---|
-| To know whether the work is worth doing | `idea-grill` |
+| To argue whether the work is worth doing at all | `idea-grill` — but not whether this *kind of mechanism* is documented to work. That is a reading question and it is yours; see *Does this kind of thing work* below |
 | Production failure modes | `risk-interrogate` |
 | A document measured for completeness | `readiness-score` |
 | A vendor chosen, or build-versus-buy settled | Not this set. Say so and stop |
@@ -77,6 +77,24 @@ Three kinds, because each has a different owner and a different consequence: [`r
 | **Capability** | The work assumes a platform, vendor or standard can do something | Nobody, usually — which is the point |
 
 **A departure is not a defect.** Say what is different and what it costs; never say which is better. A team that deviated deliberately answers in one sentence and the question has cost them nothing.
+
+That rule governs **your** opinion. It does not govern what a regulator or a study has published about the mechanism, which is evidence and belongs below.
+
+## Does this kind of thing work — the published record
+
+Sometimes the request does not rest on a mechanism being *different*. It rests on the mechanism **working** — a warning that is meant to be read, a confirmation step meant to make someone stop, a nudge meant to change what people do. Nothing above finds that: the three kinds are all differences, and a mechanism everybody uses has no departure to report while still being one nobody has shown to work.
+
+**So when the work rests on a claim about human behaviour, read what has been published about that class of mechanism** and give it its own section. Regulators who supervised it, evaluations of it, studies that measured it.
+
+It is bound by every rule above and by one more.
+
+- **Sourced or absent.** Same gate: the page was opened, or the line is not written.
+- **Questions, never findings.** *"The supervisor of four banks running this control published that none could evidence its effect — was that weighed?"* is the output. *"This will not work"* is not yours, at any strength of evidence.
+- **Say when the record is thin, and say when it is absent.** An honest *"nobody appears to have measured this"* is a result, and on a control that exists to change behaviour it is a large one.
+
+**It goes back to whoever asked the merit question** — the grill that ran, or the requester if none did. Not into the request as a departure: it is not one, and filing it there makes it look like a difference from a named product.
+
+Skip it when nothing turns on behaviour. Most content changes and most internal workflows have nothing here, and saying so costs a line.
 
 ## Phase 3 — One question each, with an owner
 
