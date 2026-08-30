@@ -57,7 +57,9 @@ Surface is the axis documents leave implicit most often. "We want this in the ap
 
 ## Phase 2 — Classify scope
 
-Every item in the rubric is either **in scope** or **out of scope**.
+Every item in the rubric is **in scope**, **out of scope**, or **not applicable**.
+
+**Not applicable is not an exemption and needs no quote — it needs a reason.** An item with no subject in this work (the order fees are applied in, on a screen that has no money on it; a vendor agreement where no vendor exists) is removed from the denominator and listed with the sentence saying why it cannot apply. Without this state such an item sits in the denominator and earns a number that means nothing in either direction. Use it sparingly: an item that *could* apply and simply was not written is a gap, not an N/A, and that is most of them.
 
 Out of scope requires a quote. Write the quote next to the item. No quote, no exemption — the item is in scope and scores on its evidence like everything else.
 
@@ -78,7 +80,7 @@ Every score above 0 must be defensible by pointing at text. If you cannot point,
 
 **An item whose evidence is `[ASSUMED]` or `[UNVERIFIED]` scores at most 1.** `request-shaper` marks anything it inferred rather than received. An inference is worth something — it is a stated position someone can correct — but never as much as a decision. Without this cap the two skills would quietly agree with each other: one invents, the other scores the invention as content, and the user trusts a number built on nothing.
 
-**Say which skill closes an `[UNVERIFIED]` item.** A marked assumption is settled by whoever wrote it; a marked *claim about the outside world* — what a platform permits, what a vendor guarantees — is settled by reading what already exists, and `prior-art` is the skill that does it. Naming it turns a capped item into an afternoon's work instead of a permanent 1.
+**Say which skill closes an `[UNVERIFIED]` item.** A marked assumption is settled by whoever wrote it; a marked *claim about the outside world* — what a platform permits, what a vendor guarantees — is settled by reading what already exists, and `prior-art` is the skill that does it. **Most capped items are neither**: a claim about the organisation's own systems goes to `api-needs` if it is about what they can provide, to `impact-radar` if it is about what else depends on them, and to a named team if it is neither. Naming only `prior-art` leaves the majority with no destination. Naming it turns a capped item into an afternoon's work instead of a permanent 1.
 
 The cap applies to the **item**, not the line. If everything supporting an item is marked, cap it at 1. If the item also rests on content the author actually gave, score that content normally and ignore the marked line — real evidence is not diluted by an inference sitting next to it. Say in the output which items were capped.
 
@@ -92,7 +94,7 @@ Three conditions force **NOT READY** regardless of the total:
 2. **No success criterion** — nothing says what would count as this having worked.
 3. **No failure paths** — only the happy path is written. Development turns into guesswork at the first error.
 
-A blocker fires when its item scores 0. Report it by name and quote nothing — the absence *is* the finding.
+A blocker fires when its item scores 0. Report it by name and quote nothing — the absence *is* the finding. **Unless the document names its own gap**, in which case quote that sentence: a document admitting *"there is not a single error path in the decision"* is a different artefact from one that never noticed, and the reader needs to know which they are holding.
 
 **Two things a score is often mistaken for, and the skill that actually does them.** A document can be complete and still far too large for one release: measuring definition is not measuring size, and `slice` is what cuts it — offer it whenever the scope is obviously more than one release, whatever the verdict. And when a gap is open because a named person has not decided, the fix is not more writing: `decision-memo` is how that decision gets made. Name both rather than leaving a NOT READY that reads as *go and write more*.
 
@@ -110,9 +112,9 @@ Output has six sections, in this order:
 
 1. **Verdict and score** — plus coverage: how many items were in scope, and how many of those had any evidence at all.
 2. **Score table** by category: points earned, points available, weight.
-3. **The five most critical gaps** — each with what specifically would close it. Not "needs detail": the actual missing sentence.
+3. **The five most critical gaps** — each with what specifically would close it. Not "needs detail": the actual missing sentence, **written with the decision left blank** — *"the warning appears when the recipient meets __, and does not when they meet __"*. That is the shape that satisfies both rules at once: it is the sentence the document needs, and it does not decide anything, which you are forbidden to do.
 4. **What to do next** — one line, the cheapest action that moves the verdict.
-5. **Arithmetic** — the full breakdown, so the score can be argued with rather than believed.
+5. **Arithmetic** — the full breakdown, so the score can be argued with rather than believed, **plus the classification you took and what the score would be under the nearest defensible alternative.** Classification sets the denominator and is worth more than any single piece of evidence in the document: on a measured run four defensible readings of one request gave 18, 17, 20 and 22. A score published without its denominator is a number nobody can check.
 6. **Out of scope** — every exemption with its quote. If this section is empty, say so.
 
 ## Operating rules

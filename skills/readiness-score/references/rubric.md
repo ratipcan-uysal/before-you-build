@@ -1,10 +1,12 @@
 # Rubric
 
-Forty-one spine items that apply to every piece of work, plus conditional items opened by work type. Each in-scope item scores 0–3. Items marked ⚑ are blockers: a zero forces NOT READY.
+Forty-two spine items that apply to every piece of work, plus conditional items opened by work type. Each in-scope item scores 0–3. Items marked ⚑ are blockers: a zero forces NOT READY.
 
 ## Two axes — both apply
 
 Every request is classified twice: by **what it does** and by **where it runs**. Both open conditional items, and both matter. A payment flow on mobile carries risks a payment flow on a server does not, and vice versa.
+
+**Where two readings are both defensible, take the narrower one and publish the wider one's total beside it.** Classification sets the denominator, so it moves the score further than any single piece of evidence: taking a value the document only gestures at imports items that all score zero and charges the document for honesty it was not asked for. A value belongs in the classification when the document commits to it, not when it mentions it.
 
 Take every value that applies on each axis. If the document gives no signal for an axis, do not guess — say in the output that it was not determinable, which is itself a finding about the document.
 
@@ -36,7 +38,7 @@ Surface is the axis most often left implicit. "We want this in the app" does not
 
 ### K1 — Problem and scope · weight 20
 - **P1 ⚑** The problem being solved, stated as a problem rather than as the solution
-- **P2 ⚑** What success looks like, and how anyone would know it was reached
+- **P2 ⚑** What success looks like, and how anyone would know it was reached — a measure that cannot distinguish the thing working from the thing being bypassed is not one, and scores as absent
 - **P3** What is explicitly *not* in scope
 - **P4** Who decided this is worth doing, or who owns the decision
 - **P5** Which platforms and channels are in scope — and which are deliberately not
@@ -79,6 +81,7 @@ Surface is the axis most often left implicit. "We want this in the app" does not
 - **R5** What must be signed off before go-live, and by whom — legal, compliance, security, risk
 - **R6** Where the data is stored and processed, and whether that is constrained
 - **R7** What this costs to run — infrastructure, per-transaction fees, vendor charges
+- **R8** When it has to land, what is fixed about that date — a freeze, a campaign, a regulatory deadline — and what somebody outside the team has committed to delivering by then
 
 ### K7 — Instrumentation and downstream · weight 10
 What this work *emits*, and who consumes it. K4 asks where data comes from; this asks where it goes. It is the category most often absent entirely — the feature ships, and three weeks later nobody can answer whether it worked.
@@ -173,6 +176,7 @@ Every item belongs to exactly one place. If a conditional item restates a spine 
 ## Reading items honestly
 
 - An item is about **presence of a decision**, not about whether you agree with it. A rule you think is wrong still scores 3 if it is written clearly.
+- **But a rule the document itself contradicts scores as absent**, and so does one whose condition the document says cannot be evaluated. That is not disagreement, it is the document telling you there is no decision here yet. Without this line the score rewards a request for stating a rule and then, one paragraph later, showing it cannot hold — and it charges an honest author who quoted the contradiction and refused to resolve it, because resolving it with an invented `[ASSUMED]` would have scored higher. Refusing to invent is the behaviour this whole rubric exists to protect.
 - **Item P7 has a subject only where the document specifies a mechanism** — a named channel, sequence, handshake, threshold or interaction chosen over an alternative. Where the document describes a need and leaves the how open, P7 is out of scope and the sentence describing the need is the quote. Where a mechanism *is* specified and no reason is given, that is a zero like any other: a mechanism written as a requirement is the most expensive unexamined thing a request can carry, because nothing downstream ever asks about it again.
 - **One sentence can satisfy two items.** That is fine; score both.
 - **A heading with nothing under it scores 0.** "Error handling: TBD" is an admission of absence, not a partial answer.
