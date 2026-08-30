@@ -25,9 +25,13 @@ ELEMENTS, IN RANK ORDER:
 
 REQUIRED STATES:
 - default: <what is shown>
-- empty: <what is shown, and the way forward>
+- empty: <what is shown, and the way forward — or `NONE`, with a MUST NOT line saying not to invent one>
 - loading: <what is shown>
 - error: <what is shown, and whether it interrupts>
+
+NAVIGATION:
+- how this surface is reached, and every way out of it — including the platform gesture nobody writes down
+- which controls stay live while another is disabled
 
 INPUT:
 - required: <fields>
@@ -53,6 +57,7 @@ Drafted copy goes **into** the block, flagged. Leaving it out to be safe does no
 ## Rules
 
 - **MUST NOT is the highest-value section.** It is the only reliable control over what a generator invents. Write the specific things: no contacts import, no avatars, no bulk actions, no promotional banner, no onboarding carousel.
+- **Seed the mandatory prohibitions into the record's non-goals at Phase 1, not here.** Every rule below is required in the block, and the record is checked against the block afterwards — so a prohibition first written at this stage is guaranteed to fail that check as something the record does not contain. Decide them where the decisions live.
 - **Ban real-world entities by name.** Generators reach for real banks, airlines, brands and logos to make sample content feel plausible, and a mockup carrying a real institution's name is a mockup someone will screenshot into an external deck. Put it in MUST NOT and supply fictional names in the example data.
 - **Carry the rank mechanism, not the rank.** "1. recipient" tells a generator the order and nothing about the means, and it will happily make item 2 the largest thing on the screen. Write how rank 1 wins — largest, isolated, contained, first — or the order is decorative.
 - **Rank order, never "prominent".** "Make the recipient prominent" produces bold text. "1. recipient name" produces a layout.

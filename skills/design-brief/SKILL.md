@@ -27,7 +27,7 @@ If a line could appear in a brief for any other product, delete it.
 
 Ask a question only when a decision is both undetermined and load-bearing — the kind that changes the surface inventory rather than one field on it. Two questions is a lot.
 
-**And when the material is a slice, anything you require that its scope list does not contain is an addition.** Say so on the line, and name who approves it. A brief that decides a screen needs something the cut did not include — a comparison figure, a second value, a state that implies new data — has grown the scope of work somebody approved as smaller, and it does it in the most reasonable-sounding way there is: the screen genuinely does not work without it. Measured on a full run, an addition made here was carried into a data model and then into a contract, each step reasonable, and nobody who approved the cut ever saw it. You are not forbidden from adding; you are forbidden from adding silently.
+**And when the material is a slice, anything you require that its scope list does not contain is an addition — where an addition is something that creates work, data, an event, a dependency or an approval for somebody outside the team that owns this surface.** Not the necessary rendering of a line already in scope: applied without that floor every element on the frame is an addition, the register becomes noise, and nobody finishes reading it. Say so on the line, and name who approves it. A brief that decides a screen needs something the cut did not include — a comparison figure, a second value, a state that implies new data — has grown the scope of work somebody approved as smaller, and it does it in the most reasonable-sounding way there is: the screen genuinely does not work without it. Measured on a full run, an addition made here was carried into a data model and then into a contract, each step reasonable, and nobody who approved the cut ever saw it. You are not forbidden from adding; you are forbidden from adding silently.
 
 ## Not this skill
 
@@ -61,7 +61,9 @@ Two tests do most of the work:
 
 **The primary-job test.** For each surface: *if someone did exactly one thing here and left, what was it?* One verb phrase. If you need two, either it is two surfaces or one job is secondary — say which.
 
-**The hierarchy test.** Rank what appears, 1 to n. If two things are rank 1, neither is. Ranking forces the decision that "prominent" avoids.
+**The hierarchy test.** Rank what appears, 1 to n. If two things are rank 1, neither is. Ranking forces the decision that "prominent" avoids — and **name the mechanism that carries each rank**, because a list of ranks is decorative until something enforces it. Where rank 1 is not the largest thing on the surface, say what compensates and say how a reviewer checks it survived.
+
+**The point-of-no-return test.** Where is the irreversible step, and where is that announced? A surface inserted into a flow that already had an ending is the shape this catches: the person reads *"this cannot be undone"* and then meets one more confirmation. It decides what the primary action may be called, whether the surface may frame itself as the last step, and whether a progress indicator can exist at all.
 
 ## Phase 2 — Mark what you could not decide
 
@@ -80,9 +82,9 @@ Marking a gap and stopping is not enough when you could have filled it. Propose 
 | `[DECISION NEEDED]` | You cannot decide this. It is a product or business call whose consequences you are not positioned to weigh. Someone must answer it. |
 | `[DRAFT]` | You have proposed something usable. It needs a nod, not a meeting. |
 
-**Draft the copy.** Every label, button, error, empty state, and confirmation string. Copy is a product decision, not a visual one, so it is yours to propose. Approving twelve strings takes three minutes; writing them from nothing takes a meeting that does not get scheduled. Mark the block `[DRAFT]` and say plainly that unapproved copy which reaches a screenshot becomes approved copy by default.
+**Draft the copy — except any string with a named approver.** Where the material says who writes and who signs a particular piece of text, drafting it manufactures the exact artefact the paragraph below warns about, with an owner standing beside it who was appointed to prevent that. Give that one a marked placeholder and a length budget, make *do not write your own* an explicit prohibition in the generator block, and draft everything else. Every other label, button, error, empty state, and confirmation string. Copy is a product decision, not a visual one, so it is yours to propose. Approving twelve strings takes three minutes; writing them from nothing takes a meeting that does not get scheduled. Mark the block `[DRAFT]` and say plainly that unapproved copy which reaches a screenshot becomes approved copy by default.
 
-**Draft the example content.** Three records, and at least one deliberately awkward for this domain — the name that is far too long, the single-word entry, the two entries that look identical. Generators design for the convenient case unless handed the inconvenient one.
+**Draft the example content.** Three records, and at least one deliberately awkward for this domain — and where the surface displays no records at all, the awkward case is the content stress rather than a row: the longest number, the largest text setting, the smallest screen. Inventing three records for a screen that shows none is itself a scope addition — the name that is far too long, the single-word entry, the two entries that look identical. Generators design for the convenient case unless handed the inconvenient one.
 
 **Draft only the states you can derive**, and say so. Naming the moments that need feedback is yours; checking that each one was actually drawn belongs to `ux-grill`, and taking it over means the producer marks its own work.
 

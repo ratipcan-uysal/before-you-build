@@ -21,7 +21,9 @@ Where no subagent is available, fall back to the confession: say the review is c
 
 ## Conformance before completeness
 
-**If a request, brief, or decision record exists, check the flow against it first.** A flow that drifted from what was asked looks whole — nothing dangles, everything connects — and it is building something else.
+**If a request, brief, or decision record exists, check the flow against it first.**
+
+**A record that declares itself partial is a standard for what it decided, not for what it did not reach.** Briefs written before the flow say so at the top and name the questions they could not answer. Treat those as drift and you write a review that punishes the flow for doing its job — the gaps the record predicted the flow would fill are exactly what it filled. Check its decisions; leave its declared gaps alone. And where two records disagree, say which you took as authority and why: scope and decisions-within-scope are different kinds of document. A flow that drifted from what was asked looks whole — nothing dangles, everything connects — and it is building something else.
 
 Two directions, both worth checking: the flow quietly **covers** something the request put out of scope, or it quietly **drops** something the request included. The second is the one nobody notices, because the missing thing leaves no gap in the diagram.
 
@@ -47,6 +49,10 @@ The line against `risk-interrogate`: you audit **the flow as written** — a bra
 
 **The finger test.** Start at the beginning and walk every path to an ending. Any path that stops, loops without an exit, or arrives somewhere the flow never defined is a Critical finding, and this test alone finds most of them.
 
+**A branch whose ending is marked `[DECISION NEEDED]` is not automatically dangling.** It is complete when the candidate endings are steps the flow already defines, the consequence of each is written, and an owner is named — a developer is then stopped and told whom to ask, which is what the test protects. Missing any of the three, it dangles. Say which rule you applied; without the distinction the review is unusable in both directions.
+
+**And walk what points at a conditional ending.** An ending that exists only if some open question is answered one way takes every path attached to it when the answer goes the other way — including paths that never consented to its condition. That is the finding a diagram hides best.
+
 **The stranger test.** Could someone who was not in the meeting build this without asking a question? Every question they would have to ask is a finding, and the answer lives in somebody's head rather than in the flow.
 
 **The unhappy ratio.** Count happy-path steps against error paths. There is no correct ratio, but a payment flow with two error paths did not have two failures — it had two that came to mind.
@@ -57,9 +63,13 @@ Then the twelve lenses: [`references/lenses.md`](references/lenses.md) — dangl
 
 Keep a finding only if it is **specific** (it names a step or a branch), **consequential** (you can say what a developer or a user does wrong because of it), and **not a preference** about how you would have drawn it.
 
-Most of what you generate should not survive. A flow review that returns forty items is read as a wall and dismissed as pedantry.
+A flow review that returns forty items is read as a wall and dismissed as pedantry. That is the rule; a survival rate is not. On chain material every object already has an identifier, so *specific* filters nothing and most of what you generate can legitimately survive — cutting a real finding to look disciplined is the failure, not the fix.
 
 ## Phase 3 — Report
+
+**Recount whatever the flow reported.** Steps, branches, error paths, endings, marks: derive them from the tables rather than repeating the claim above them. The claim that fails is rarely a total — it is the flow's account of its own sweep, *"asked of every step"* over a table where three of fourteen carry the question.
+
+**Say what is sound, specifically, and put it after the findings.** A lens you applied and found clean is not a lens you could not apply, and the format's *not assessable* section is for the second. Collapsing them is how a reviewer ends up unable to say the one thing that makes the rest believable.
 
 Severity and format: [`references/output.md`](references/output.md).
 
