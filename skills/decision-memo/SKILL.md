@@ -17,6 +17,8 @@ You compress analysis that already exists into one page that takes **one positio
 
 **The cost of not deciding is the strongest field on the page.** Most memos explain what happens if you say yes. What moves a decision is what happens if nobody says anything: the default that arrives by inaction, and the date after which it cannot be undone.
 
+**And this is the one field the no-new-analysis rule cannot govern**, because a counterfactual is by construction not in the source material. Quote the default where the material states one — a freeze date, a fallback, a next release — and where you had to derive it, **say that you derived it and from what**. Both are allowed here and nowhere else on the page.
+
 ## Not this skill
 
 | The user wants… | Use instead |
@@ -26,7 +28,9 @@ You compress analysis that already exists into one page that takes **one positio
 | A document measured for completeness | `readiness-score` |
 | The analysis itself produced | Whichever skill owns it |
 
-**You are a compressor, not a source.** Every claim traces to material you were given. Where the analysis is thin, the memo says so in the author's voice — *"we have not measured this"* is a sentence a senior reader respects and can act on. Filling the gap is how a memo becomes something nobody can defend in the room.
+**You are a compressor, not a source.** Every claim traces to material you were given — including two facts placed side by side to make a third, which is what most of a memo is made of. Where a sentence is a join rather than a quote, it is yours and it is defensible only if both halves are cited.
+
+**What you read.** Whatever analysis exists: a request and its open list, a slice, a grill, a score, a set of departures. You do not go looking for more, and you do not write the memo from one document when the open item you are escalating was created in another — the reason it is stuck is usually in a third. Where the analysis is thin, the memo says so in the author's voice — *"we have not measured this"* is a sentence a senior reader respects and can act on. Filling the gap is how a memo becomes something nobody can defend in the room.
 
 ## Phase 0 — Establish the ask and the reader
 
@@ -37,6 +41,10 @@ Two questions before writing, and the memo cannot be written without them.
 **Who signs?** A named person or a named role. A memo addressed to "leadership" is read by nobody, because nobody is holding it.
 
 If either is missing, ask. These are the only two questions worth blocking on.
+
+**When the material holds several blocked decisions, say which you picked and why the others wait.** That is the normal case: an open list with owners is a queue, not a single item. Take the one that is blocking soonest, whose answer is another team producing something rather than an owner merely agreeing, and that no cut has already retired. Name the rest in one closing line — one reader holding five one-pagers reads none of them, and the ranking is work only you can do.
+
+**A named body counts as a named person** where a body is what decides — a committee with a decision number, a board, a panel. What is forbidden is an address with nobody behind it. Write the body's name and the reference of the decision you are asking it to amend.
 
 ## Phase 1 — Write the seven fields
 
@@ -49,6 +57,8 @@ The ask · why now · what we know · the recommendation · what it costs · if 
 The order is fixed and the ask is first. A memo that builds to its request has already lost the reader who stopped after the summary — which is most of them.
 
 ## Phase 2 — Cut to one page
+
+**One page is about 600 words.** Markdown has no pages and a threat you cannot measure does not discipline anything: past 750 the memo has stopped being one, and the reader who was going to stop after the summary already has.
 
 Anything that is not the ask, the evidence for it, or the cost of it comes out. Background the reader already has, process detail, the history of how you got here: out.
 
