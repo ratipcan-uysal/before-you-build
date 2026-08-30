@@ -53,7 +53,7 @@ The common failure is a spine drawn **along** a layer rather than through them. 
 Four questions per candidate. A cut that fails one is not made yet.
 
 1. **Does anyone still get whole value?** Half a job delivered is nothing delivered. If cutting it leaves someone unable to finish, it was spine and you mislabelled it.
-2. **Could you tell whether it worked?** Name the signal *before* the cut — and **check that the signal exists**, rather than that one is nameable. A measure with no current value and no target is not a signal, it is a sentence: *"first-contact resolution will improve"* answers nothing after release, because nothing says what it is now. If `readiness-score` has already scored the success criterion zero, this test **fails** and the cut is made anyway with that said out loud. Passing it on a metric another skill has already called missing is how two skills quietly agree that an unmeasurable slice is measurable.
+2. **Could you tell whether it worked?** Name the signal *before* the cut — and **check that the signal exists**, rather than that one is nameable. A measure with no current value and no target is not a signal, it is a sentence: *"first-contact resolution will improve"* answers nothing after release, because nothing says what it is now. If `readiness-score` scored the success criterion **0 or 1**, or scored it higher without a current value and a target being named, this test **fails** and the cut is made anyway with that said out loud. Zero alone is the wrong trigger: a metric that is named and has no baseline is the textbook 1, and that is exactly the shape this test exists to catch. **Say which scoring you read**, too — a chain scores more than once, and slicing the second version against the first version's score is a measurement of a document you are not cutting. Passing it on a metric another skill has already called missing is how two skills quietly agree that an unmeasurable slice is measurable.
 3. **Does it come back cheaply, or as a migration?** A deferred screen is a screen. A deferred decision about what is stored is a migration — see the rule above.
 4. **Who notices it is missing, and how?** *"They see nothing"* is a design decision nobody has made, not a cut.
 
@@ -83,7 +83,7 @@ For each cut, ask what **resuming** it costs: reloading the context, a second de
 > Not: *"we'll probably do web later"*
 > This: *"This slice is mobile only. Web is out of scope for this release."*
 
-A well-cut slice **scores higher** than the request it came from, because the open items belonging to the deferred parts leave scope with a quote attached. If the score does not move, the cut removed nothing.
+A well-cut slice **moves the out-of-scope section from empty to full**, because the open items belonging to the deferred parts leave scope with a quote attached. The total may not move at all: a blocker pins the verdict regardless, and part of any rise is the denominator shrinking rather than evidence appearing. Judge the cut by the exclusions it produced, not by the number.
 
 **But the request does not update itself, and nothing downstream reads your document as the scope.** Both halves of that are structural, and both were measured on a full run.
 
@@ -100,10 +100,12 @@ Forwards: **the *In the slice* list is the scope of record.** Downstream produce
 | **Out of this slice** | Each with its quotable sentence, who approves it, whether they have, and what brings it back |
 | **Not doing** | Permanent cuts, said out loud once so nobody re-proposes them monthly |
 
+**Every row of Phase 0's list ends in one of these four**, and the last thing you do is check that. A row that appears on the opening table and nowhere else is not a decision, it is an oversight with a table around it — and downstream nothing will ever quote it out of scope, so it sits in the score at zero forever.
+
 ## Operating rules
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
 - **Never cut to a number.** Cutting to fit a date produces a slice with a hole in the middle. Cut to a job, then say what the job will take to finish; if that does not fit the date, that is the finding.
-- **Never cut something nobody raised.** Removing what the requester never asked for is not slicing, it is quietly narrowing the request, and it is found in the review.
+- **Never cut something nobody raised.** Removing what the requester never asked for is not slicing, it is quietly narrowing the request, and it is found in the review. **And never widen one either.** Replacing a mechanism with another — a substitution rather than a subtraction — is the most powerful move here and the four tests do not cover it: none of them asks who the change now reaches who never asked to be reached. Add that question by hand, and say plainly that a substitution needs the requester's assent in a way a cut does not.
 - **Say when nothing should be cut.** Some requests are already a slice. Saying so is a real answer, and it is more useful than a ceremonial cut that removes the empty state.
 - **Output to chat**, then offer to save. Never write files unprompted.

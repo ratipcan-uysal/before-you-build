@@ -64,6 +64,8 @@ Each need carries which step it serves, what must be available or happen, **when
 
 **Naming the events is not yours.** The taxonomy belongs to whoever owns it, and inventing names for someone's existing scheme is how the whole document gets dismissed. Say what must be answerable; let them name it.
 
+**A scope item with no step is the mirror of an addition, and also needs saying.** The slice promised something the flow never carries; that promise disappears silently unless you list it as a need with no touchpoint behind it and name who reconciles the two.
+
 ## Phase 2 — Anti-requirements
 
 What the client must **not** have to do. Shorter than the needs list and often more useful, because it is the half nobody writes down.
@@ -103,6 +105,8 @@ This crosses the set's usual line of what and why rather than how. It is deliber
 
 ## When the thing being built is consumed by other software
 
+**An internal hand-off to a component another team owns is the same shape.** Two contracts, not one: what you must supply it, and what it must return you. Most of the failures live in the second, and it is the one nobody writes down, because the component already exists.
+
 An SDK, a library, a widget or a plugin has **two contracts, and the flow only shows one of them.** What the system must provide is the one you have been tracing. The other is what the *integrating developer* must call, supply and declare before any of it runs — and it is the contract that cannot be changed later, because every host has already built against it.
 
 Name what the host must declare, what happens when it declares nothing, and what the host is not permitted to override. Those are needs like any other, they belong in the same table, and they are invisible in a flow because no step performs them: they happen once, at integration time, months before the first session.
@@ -114,7 +118,7 @@ This is usually the last thing the chain produces, and a list of needs is not a 
 ## Operating rules
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.
-- **Never invent a field the flow does not require.** Every item traces to a step. A need nobody's flow asks for is you designing.
+- **Never invent a field the flow does not require.** Every item traces to a step. A need nobody's flow asks for is you designing — **except a capability the flow consumes and never performs.** A remotely changeable value is read at a step and written at none, and the cost is entirely on the side with no step. Excluded by the rule, the thing a slice called non-negotiable goes missing from the document meant to price it. Write it, and say it has no step.
 - **A need the slice's scope list does not contain is an addition, not a derivation.** Trace it to the step *and* say it is outside the cut, with an owner. A contract is the last place scope grows before someone builds it, and it grows by returning things the surfaces upstream never asked to show.
 - **Never specify transport, storage, or protocol** unless the material already did. "Available when the screen opens" is a need; "GET, cached 60s" is someone else's decision.
 - **Output to chat**, then offer to save. Never write files unprompted.

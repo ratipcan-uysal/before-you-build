@@ -12,13 +12,13 @@ One per touchpoint. Examples come from a one-tap repeat transfer; rewrite them a
 | **Freshness** | How stale it may be before it is wrong, and what happens if it is |
 | **Atomic with** | What must succeed or fail together with it |
 | **Repeatable** | Whether running it twice is safe, and what happens if it does |
-| **Feasibility** | Supported · Unconfirmed *(who confirms)* · Gap |
+| **Feasibility** | Supported *(who confirmed it, against what)* · Unconfirmed *(who confirms)* · Gap *(and known by whom — you can prove no document requires it; only somebody with the systems can say it cannot be built)* |
 
 ## Worked
 
 > **Steps 1** · **Need:** the people this customer sends to most often, ranked · **When:** on every app open, before any interaction · **Freshness:** a day old is fine; a recipient removed yesterday still appearing is not · **Atomic with:** nothing · **Repeatable:** yes · **Feasibility:** **Unconfirmed** — the transfer service owner. Settled by: is "most frequent, ranked" something it can produce, over what window, at launch-traffic volume?
 
-> **Steps 5** · **Need:** move an amount from one account to another · **When:** on action · **Freshness:** the balance check must be at the moment of the move, not at the moment of render · **Atomic with:** the debit and the credit are one thing or nothing · **Repeatable:** **no** — a repeat must be recognised and refused, not performed · **Feasibility:** **Supported** — the existing transfer flow does this.
+> **Steps 5** · **Need:** move an amount from one account to another · **When:** on action · **Freshness:** the balance check must be at the moment of the move, not at the moment of render · **Atomic with:** the debit and the credit are one thing or nothing · **Repeatable:** **no** — a repeat must be recognised and refused, not performed · **Feasibility:** **Supported** — the payments team confirmed against the running service. *(This verdict needs a source outside the flow documents. A document mentioning that something exists is not one: the documents also mention the confirmation step this hands off to, and an audit found nobody had ever written down what is inside it.)*
 
 ## Why "when" carries the most weight
 

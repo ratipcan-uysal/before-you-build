@@ -51,15 +51,17 @@ The tiers are about **urgency**, not about whether you asked. An item you never 
 
 **Blocks starting** — a developer or designer cannot produce the thing without it. Any unresolved blocker item lives here by definition. Mark anything the interview never reached with °.
 
-| Question | Who settles it |
-|---|---|
-| … | … |
+| Question | Who settles it | Where it came from |
+|---|---|---|
+| … | … | … |
+
+**Where it came from** carries the origin of any line you did not collect yourself — `prior-art`, `risk-interrogate`, an earlier version. Phase 6 requires every incorporated line to keep its origin, and without the column there is nowhere for it to live; a finding that loses its source becomes an assertion, and a reader cannot tell an opened page from an opinion.
 
 **Blocks go-live** — work can begin, the product cannot ship. Sign-offs, monitoring, audit retention, support tooling, training, release planning.
 
-| Question | Who settles it |
-|---|---|
-| … | … |
+| Question | Who settles it | Where it came from |
+|---|---|---|
+| … | … | … |
 
 **Not raised, not blocking** — the residue: never asked, and nobody waits on it. **One line per area, not one row per item.** It has to be visible and countable; it does not have to be itemised. A thirty-four row table is honest and unreadable, and an unreadable section gets skipped — which costs more than brevity would have.
 
