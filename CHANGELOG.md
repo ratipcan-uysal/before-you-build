@@ -4,6 +4,16 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.6.0
+
+**Heads up — two rules that were written absolute now branch on whether the product exists.** Asked whether the chain can run end to end for an app that does not exist yet, the answer was no, and the block was in reasoning that is correct for something already shipping.
+
+`design-brief` said *never draft the design system*, because inventing tokens for someone's app is what makes a brief easy to dismiss. From zero there is nothing to export, no two screens to screenshot and no component list, so the rule asked for something that cannot be supplied — the chain stopped, and the generator invented a visual language anyway, differently in every session, which is the outcome the rule exists to prevent. Greenfield now gets a minimum set marked `[DRAFT]`: type scale, spacing rhythm, colour **roles**, component inventory, one shape decision. Still no palette, no font, no pixel values. Naming that an accent colour exists and carries the primary action is a product decision; choosing that it is teal is not.
+
+`api-needs` graded feasibility as Supported, Unconfirmed or Gap, where Supported means you can point at where it already works. With no system behind the work nothing can be, every need is a Gap, and the column carries no information. It now says that once, drops the column, and answers what replaces it: **which needs are ordinary and which are the ones the product is actually made of.** Fourteen ordinary and two hard is a different estimate, a different risk and a different first slice from sixteen ordinary.
+
+**The router covered eleven of fifteen skills.** `slice`, `flow-grill`, `api-needs` and `decision-memo` had no row, so `/byb` routed to none of them — the same failure that left `decision-memo` unrun for weeks, repeated on three more.
+
 ## 4.5.0
 
 **A third full chain run, and this time the request was a bank's.** A risk committee's decision handed down to a product team that could not change it — which meant the chain entered at `risk-interrogate` rather than `idea-grill`, a row in the README's own routing table that no published example had ever exercised. Fifteen skills ran in fifteen separate clean sessions, each one returning the document *and* an adversarial critique of the skill file that produced it. What follows is what those critiques found, verified against the files.
