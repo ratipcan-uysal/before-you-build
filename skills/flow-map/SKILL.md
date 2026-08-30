@@ -111,6 +111,12 @@ A flow with twelve happy steps and one error path is not a flow that went well. 
 
 Close with what you assumed and what remains open, each with who settles it.
 
+## The carrier
+
+The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
+
+**Open with the carrier.** The counts in one line, and where three things are: the touchpoint table, the error-path table, and the endings. `data-model` and `api-needs` build their entire work list from the first of those and never need the prose.
+
 ## Operating rules
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.

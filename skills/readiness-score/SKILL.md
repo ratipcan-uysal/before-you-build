@@ -119,6 +119,12 @@ Output has six sections, in this order:
 5. **Arithmetic** — the full breakdown, so the score can be argued with rather than believed, **plus the classification you took and what the score would be under the nearest defensible alternative.** Classification sets the denominator and is worth more than any single piece of evidence in the document: on a measured run four defensible readings of one request gave 18, 17, 20 and 22. A score published without its denominator is a number nobody can check.
 6. **Out of scope** — every exemption with its quote. If this section is empty, say so.
 
+## The carrier
+
+The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
+
+**Open with the carrier.** Verdict and score, which blockers fired, how many items were in scope and how many had no evidence, which items were capped, and where the out-of-scope section is. A later skill needs those five facts and one of them is the whole document.
+
 ## Operating rules
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.

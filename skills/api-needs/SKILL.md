@@ -113,6 +113,12 @@ An SDK, a library, a widget or a plugin has **two contracts, and the flow only s
 
 Name what the host must declare, what happens when it declares nothing, and what the host is not permitted to override. Those are needs like any other, they belong in the same table, and they are invisible in a flow because no step performs them: they happen once, at integration time, months before the first session.
 
+## The carrier
+
+The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
+
+**Open with the carrier.** The need count and the `supported` / unconfirmed / `Gap` split, the assumed capabilities, the anti-requirements, and where the draft contract is if there is one.
+
 ## Where this goes
 
 This is usually the last thing the chain produces, and a list of needs is not a handoff. `build-context` assembles it with everything else into one thing whoever writes the code can work from — and checks it against the other documents, which is where a contract written before the entities were named gets caught. Offer it; do not assemble anything here.

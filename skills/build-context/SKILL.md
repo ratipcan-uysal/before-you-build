@@ -42,7 +42,7 @@ Where no subagent is available, do the pass here and say the check is compromise
 
 ## Phase 0 — Take stock, out loud
 
-Say what you have and what is missing. A pack assembled from four of nine documents is legitimate; one that does not say so is not.
+Say what you have and what is missing. A pack assembled from four of nine documents is legitimate; one that does not say so is not. **Read every carrier first, then the bodies you need.** Each chain document opens with an index of its own counts, tables and markers; reading thirteen of those is what tells you which pairs are worth opening in full. You still open the body wherever you quote, and Phase 2b's walk-back still needs the source line beside you — an index is a map, never the evidence.
 
 Missing pieces are not errors. **A missing `slice` means the pack covers scope that will not ship. A missing `data-model` means the schema gets invented.** Name the consequence, not the absence, and offer the skill.
 

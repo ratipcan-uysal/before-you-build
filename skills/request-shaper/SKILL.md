@@ -101,6 +101,12 @@ Six sections matching the readiness rubric — problem and scope · users and tr
 
 **A section with nothing in it says so.** "Not discussed" is honest and scores zero, which is correct. Never pad a thin section to make the document look finished — that is precisely the failure this whole set exists to prevent.
 
+## The carrier
+
+The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
+
+- **open with the carrier**: the split as a number, how many open items in each tier, the marker inventory (`[ASSUMED]` ×n, `[UNVERIFIED]` ×n), and where the mechanism table and any contradiction block sit
+
 ## Phase 5 — Hand off
 
 Close with:

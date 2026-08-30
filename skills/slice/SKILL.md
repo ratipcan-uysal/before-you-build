@@ -106,6 +106,12 @@ Forwards: **the *In the slice* list is the scope of record.** Downstream produce
 
 **Every row of Phase 0's list ends in one of these four**, and the last thing you do is check that. A row that appears on the opening table and nowhere else is not a decision, it is an oversight with a table around it — and downstream nothing will ever quote it out of scope, so it sits in the score at zero forever.
 
+## The carrier
+
+The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
+
+**Open with the carrier.** The spine sentence, the counts in each of the four sections, and where the exclusion sentences are — those are what `readiness-score` quotes and what the next `request-shaper` pass rewrites. Nothing else in this document is read by more than one reader.
+
 ## Operating rules
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents.

@@ -104,6 +104,12 @@ It is not the brief reformatted. Generators obey structure, order, and prohibiti
 
 **And it always closes with what it cannot control.** Decisions are necessary and not sufficient: without real copy, awkward example data, the full state set, and access to the design system, a generator invents all four and the result reads as finished. Ten minutes of strings and three deliberately awkward records change the output more than anything else the user can do — and they will skip it unless told.
 
+## The carrier
+
+The chain carries documents forward and nothing indexes them, so a document read by three skills is opened three times in full. Open yours with a short index — **not a summary.** A summary is a rewrite, and a rewrite is where a prohibition loses its edge; an index is a map to what a later skill will quote, and it sends them to the line rather than through the document.
+
+**Open with the carrier.** The surfaces, the states with their status against each (decided · `[DECISION NEEDED]` · `[DRAFT]` · declared absent), the non-goals, and where the generator block is if there is one. A drawing is checked against the states and the non-goals; the rest of the record is read once, by whoever draws.
+
 ## Where this goes
 
 The record is one document and nobody builds from documents plural. When the chain has produced others — a flow, a data model, a set of needs — `build-context` assembles them into one pack and checks them against each other, which is where a design that quietly contradicts its own flow gets caught. Offer it; do not assemble anything here.
