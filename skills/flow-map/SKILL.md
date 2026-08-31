@@ -51,6 +51,8 @@ For every step, one question: **can this go more than one way?**
 
 Each branch gets a condition ("if the amount is above the threshold"), its own steps, and an ending — rejoins at step N, or terminates here. Conditions are testable: "if the user is new" is a category; "if the account was created less than 30 days ago" is a condition.
 
+**A third ending exists and this skill already asks for it.** Where the branch's ending waits on a decision nobody has taken — the offer stays open or it dies, and no document says — writing *terminates* buries the decision and leaving it blank is the finding you were sent to make. Write the ending as conditional, name the decision and its owner, and count it in coverage as an ending that does not exist yet.
+
 ## Phase 3 — Error paths
 
 Not an appendix. Numbered alongside the branches, because they are where the work is.
@@ -105,7 +107,9 @@ Where a canvas tool is available, the screens themselves can be the nodes. Where
 
 Counts, in one line, because they say what a wall of steps cannot:
 
-> 9 happy-path steps · 4 branches · 6 error paths · 11 system touchpoints · 2 endings
+> 9 happy-path steps · 4 branches · 6 error paths · 2 endings · 7 marked steps carrying 11 marks (`reads` 1, 3, 8 = 3 · `acts` 2, 6, 9, 12 = 4 · `emits` 2, 6, 9, 12 = 4)
+
+**Marks and marked steps are two numbers and the line carries both.** Phase 4 says mixing them is the most common error in this document, and this is the line a later skill copies: `api-needs` builds its work list from it. One combined figure sends it looking for eleven touchpoints on eleven steps.
 
 A flow with twelve happy steps and one error path is not a flow that went well. Say so plainly when you see it — that ratio is the single most reliable sign the unhappy paths were skipped rather than absent.
 
@@ -123,7 +127,10 @@ The chain carries documents forward and nothing indexes them, so a document read
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents. In a language that inflects, the token keeps its shape and the suffix hangs off it: `READY`'dir, `[ASSUMED]`'lı. What costs a reader is half-translation. `Kritik` in one paragraph and `Critical` in the next is two labels to them and two terms to a grep.
 - **One word per thing, chosen once.** The markers are fixed; the rest of the vocabulary is yours. Whatever word you settle on for `touchpoint`, for a carrier, for a blast radius, hold it to the end of the document, and name it in the carrier — a chain that renames the same thing in every document gets read once.
+- **When two documents you were given disagree, the later one does not automatically win.** Scope outranks decisions taken inside it, an approved sentence outranks an unapproved one, and a document that declares itself partial cannot settle what it declared open. Where the order is genuinely unclear, write both statements, quoted, name which you worked from and why, and leave it where `build-context` will read it. Nothing in the chain arbitrates before that point, so a disagreement resolved quietly here is a product decision made by filing order.
 - **A cell is a line, not a paragraph.** Past roughly fifteen words a table stops being scannable and turns into prose with pipes in it. This set's own examples reached 84 words in one cell and 748 characters in one row, which neither a terminal nor a phone renders readably. Keep the claim in the cell and number the rows so anything downstream can point at one. When the reasoning will not fit, write those rows as blocks instead: the identifier and the claim as a heading line, each column as a labelled line under it. Do not cut what you found down to fit a grid.
+- **Which rows become blocks is a decision, so make it on a rule and say what the rule was.** Every row stays in the index. A row earns a block when its reasoning changes what somebody does, not when it is long. Forty blocks is a document nobody finishes and none is a document that lost its findings, and a run left without a rule here picks a number and cannot defend it. Report how many you wrote out and what the rest are carrying.
+- **Identifiers are unique to your document, not to the chain.** `F1` from a grill and `F1` from a flow are two things, so cite across documents with the skill named — `flow-grill F3`, never a bare `F3`. If a document you were given already uses your letter, take another one and say so in the carrier rather than making the reader guess which set a citation belongs to.
 - **Text is the artefact; a diagram is a view.** The steps are the source of truth; a diagram stops being edited long before text does.
 - **Do not decide anything the material left open.** A flow that resolves an undecided rule quietly ships that rule. Mark it and name who decides.
-- **Output to chat**, then offer to save. Never write files unprompted.
+- **Output to chat**, then offer to save. Never write files unprompted — **unless you were called with somewhere to put it.** A chain step handed an output path writes there and says so. The rule exists to stop a skill littering someone's repo, not to stop the chain the rest of this file assumes.

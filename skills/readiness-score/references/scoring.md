@@ -62,7 +62,7 @@ A `transaction` document. K3 has five spine items plus three conditional (T1, T2
 |---|---|---|
 | B1 main path | 3 | six numbered steps, each with the screen and the action |
 | B2 branches | 2 | two branches written; the guest-checkout case is mentioned but not specified |
-| B3 failure paths ⚑ | 1 | "handle errors gracefully" — mentioned, not specified |
+| B3 failure paths ⚑ | 0 | "handle errors gracefully" names no path and no behaviour — a heading with nothing under it |
 | B4 rules and limits | 2 | minimum order value given; no upper bound, no currency rounding rule |
 | B5 permissions | 0 | not mentioned |
 | T1 idempotency | 0 | not mentioned |
@@ -70,7 +70,9 @@ A `transaction` document. K3 has five spine items plus three conditional (T1, T2
 | T4 reversal | 1 | "refunds handled by support" — a routing decision, not a defined path |
 
 ```
-K3 = (3+2+1+2+0+0+0+1) / (3 × 8) × 25 = 9/24 × 25 = 9.4 of 25
+K3 = (3+2+0+2+0+0+0+1) / (3 × 8) × 25 = 8/24 × 25 = 8.3 of 25
 ```
 
-B3 scored 1, not 0, so the blocker does not fire — but it is the first line of the critical-gaps section, because a 1 here is worth less than the number suggests. Say that in the output rather than letting the arithmetic speak alone.
+**B3 scored 0 and the blocker fires, and the reason is the whole gate.** *"Handle errors gracefully"* is an intention, not a decision: it names no path, no state and nobody's behaviour, so a developer reading it knows exactly what they knew before. Scoring it 1 for being *mentioned* is where this rubric quietly stops measuring. It also produces the outcome the skill exists to refuse — a document admitting *"we have not worked out the error paths"* would score 0 and be blocked, while this one buys its way past the blocker with four words that say nothing. **Contentless text is silence with a heading on it.**
+
+B2 and T4 are what a real 1 looks like: *"the guest-checkout case"* and *"refunds handled by support"* each name a thing that exists and stop short of saying how it behaves. A 1 needs a subject.
