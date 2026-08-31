@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.7.0
+
+**Heads up — findings and questions now come back as identified blocks rather than four-column tables.** Every skill in the set writes its findings into a table and nothing ever said how wide a cell may be. Measured across the published examples: one cell of 84 words, one row of 748 characters. A row that long renders as four narrow columns of squeezed prose on GitHub and wraps into noise in a terminal, so the owner it was addressed to reads the first column and stops.
+
+The rule is in all fifteen skills now. A cell holds a line. Where the reasoning will not fit, the section keeps a one-line index and writes the rows underneath as blocks, each column a labelled line. `ux-grill`, `flow-grill`, `risk-interrogate`, `api-needs` and `data-model` carry the worked shape, the published examples were rewritten into it, and the longest row in the set fell from 748 characters to 529.
+
+**Findings, questions and needs now carry identifiers:** `F1`, `Q1`, `N1`, `AC1`. A later document cites one instead of quoting it back, and the person answering can answer by number. `impact-radar` already asked for numbered rows for exactly this reason and nothing else in the set did. Entities stay cited by name, because the flow's own steps and error paths are already `A1`, `E4` and `EA2`, and a second meaning for one of those letters costs more than it saves.
+
+**The language rule now says what to do with an English token inside an inflected sentence.** It said keep the markers in English and stopped, which left a Turkish document deciding per paragraph. The token keeps its shape and the suffix hangs off it: `READY`'dir. The rest of the vocabulary is the author's to translate once and hold, named in the carrier where the skill writes one and taken from the document in front of you where it does not. Half-translation is the failure that costs a reader, not the English: `Kritik` in one paragraph and `Critical` in the next is two labels to them and two terms to a grep.
+
+Two things the rewrite turned up in the bank example, both invisible while the findings were rows: `13-risk-interrogate.md` announced six surviving questions and listed seven, and one of its cells ended mid-sentence.
+
 ## 4.6.0
 
 **Heads up — two rules that were written absolute now branch on whether the product exists.** Asked whether the chain can run end to end for an app that does not exist yet, the answer was no, and the block was in reasoning that is correct for something already shipping.
