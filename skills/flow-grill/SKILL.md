@@ -17,7 +17,7 @@ You find them before then. Findings, with severity — never a flow you rewrote 
 
 `flow-map` and this skill are a natural pair and will be run back to back. That is exactly when the guard matters.
 
-**So hand the audit to a subagent** whose whole input is the **file paths** of the flow and whatever it is checked against, plus these instructions — nothing from the conversation that wrote the steps. Paths, never pasted content. Report the findings as the subagent's and do not soften them. If the flow arrived from outside this conversation, audit it here as normal.
+**So hand the audit to a subagent** whose whole input is the **file paths** of the flow and whatever it is checked against, plus these instructions — nothing from the conversation that wrote the steps. Paths, never pasted content. Report the findings as the subagent's and do not soften them. If the flow arrived from outside this conversation, audit it here as normal. **Called as a chain step whose entire input is a set of file paths, you are already that reader** — say so in one line and carry on, rather than confessing to a compromise you do not have. *"This conversation"* means the context you are running in, not the chain you belong to.
 
 Where no subagent is available, fall back to the confession: say the review is compromised, audit anyway, and say a clean repeat is owed.
 
@@ -25,11 +25,13 @@ Where no subagent is available, fall back to the confession: say the review is c
 
 **If a request, brief, or decision record exists, check the flow against it first.**
 
+**And read the partial record for what it settled, not only for what it declared open.** The guard below points attention at declared gaps and quietly moves it away from decisions a thin record did take and filed badly — on a measured run the sharpest drift sat under a heading that read *"the two additions we did not make"*. A decision is a decision wherever it is filed.
+
 **A record that declares itself partial is a standard for what it decided, not for what it did not reach.** Briefs written before the flow say so at the top and name the questions they could not answer. Treat those as drift and you write a review that punishes the flow for doing its job — the gaps the record predicted the flow would fill are exactly what it filled. Check its decisions; leave its declared gaps alone. And where two records disagree, say which you took as authority and why: scope and decisions-within-scope are different kinds of document. A flow that drifted from what was asked looks whole — nothing dangles, everything connects — and it is building something else.
 
 Two directions, both worth checking: the flow quietly **covers** something the request put out of scope, or it quietly **drops** something the request included. The second is the one nobody notices, because the missing thing leaves no gap in the diagram.
 
-Report drift as **High** at minimum, quoting what was asked.
+Report drift as **High** at minimum, quoting what was asked — **at minimum, and drift inherits the severity of what it causes.** Six drifts pinned at High is six different problems reported as one. Where the thing dropped is a path a person can reach and the flow does not define, that is Critical by this skill's own definition, and the floor was never meant to be a ceiling.
 
 ## Not this skill
 
@@ -87,7 +89,10 @@ Every finding names **the decision that closes it**, never the steps you would h
 
 - **Language:** reply in whatever language the user is writing in — but **markers, verdicts and status labels keep the English forms given here.** `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]`, `[DRAFT]`, `READY`, `Critical`, `Open`, `reads`, `acts` and the rest are tokens the next skill matches on and a reader learns once. Translating them breaks the chain, and makes one finding look like two different things across two documents. In a language that inflects, the token keeps its shape and the suffix hangs off it: `READY`'dir, `[ASSUMED]`'lı. What costs a reader is half-translation. `Kritik` in one paragraph and `Critical` in the next is two labels to them and two terms to a grep.
 - **One word per thing, chosen once.** The markers are fixed; the rest of the vocabulary is yours. Whatever word you settle on for `touchpoint`, for a carrier, for a blast radius, hold it to the end of the document, and where the document in front of you already chose one, use theirs rather than coining a second.
+- **When two documents you were given disagree, the later one does not automatically win.** Scope outranks decisions taken inside it, an approved sentence outranks an unapproved one, and a document that declares itself partial cannot settle what it declared open. Where the order is genuinely unclear, write both statements, quoted, name which you worked from and why, and leave it where `build-context` will read it. Nothing in the chain arbitrates before that point, so a disagreement resolved quietly here is a product decision made by filing order.
 - **A cell is a line, not a paragraph.** Past roughly fifteen words a table stops being scannable and turns into prose with pipes in it. This set's own examples reached 84 words in one cell and 748 characters in one row, which neither a terminal nor a phone renders readably. Keep the claim in the cell and number the rows so anything downstream can point at one. When the reasoning will not fit, write those rows as blocks instead: the identifier and the claim as a heading line, each column as a labelled line under it. Do not cut what you found down to fit a grid.
+- **Which rows become blocks is a decision, so make it on a rule and say what the rule was.** Every row stays in the index. A row earns a block when its reasoning changes what somebody does, not when it is long. Forty blocks is a document nobody finishes and none is a document that lost its findings, and a run left without a rule here picks a number and cannot defend it. Report how many you wrote out and what the rest are carrying.
+- **Identifiers are unique to your document, not to the chain.** `F1` from a grill and `F1` from a flow are two things, so cite across documents with the skill named — `flow-grill F3`, never a bare `F3`. If a document you were given already uses your letter, take another one and say so in the carrier rather than making the reader guess which set a citation belongs to.
 - **Attack the flow, never the author.** Say what breaks, not what someone overlooked.
 - **Say what is right, specifically.** A reviewer who never finds anything sound is not believed about anything broken.
-- **Output to chat**, then offer to save. Never write files unprompted.
+- **Output to chat**, then offer to save. Never write files unprompted — **unless you were called with somewhere to put it.** A chain step handed an output path writes there and says so. The rule exists to stop a skill littering someone's repo, not to stop the chain the rest of this file assumes.

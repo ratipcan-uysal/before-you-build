@@ -16,6 +16,8 @@ Only when a brief exists. Each decision the design contradicts, quoted, with wha
 
 This section goes first because it is the one nobody else runs. A screen that contradicts its own brief passes review — nothing looks broken, and everyone assumes the decision was followed.
 
+**A third column, because two of these are not the same finding.** A design that contradicts its record is the designer's to fix. A design that followed its record into something wrong is the record's, and it needs an owner and a return path to `design-brief` — not a severity. Mark which each row is. Without the distinction the sharpest findings on a faithful drawing read as criticism of the drawing, and go to the person who cannot act on them.
+
 ## 3. Findings
 
 Grouped by surface, ordered by severity inside each group. A reader should be able to work through one screen at a time.

@@ -56,7 +56,7 @@ Catches: a back control and a cancel button doing undefined and possibly differe
 Catches: contrast below threshold, hit targets under 44px, meaning carried by colour alone, an unreadable focus order, text that breaks when scaled, an icon-only control with no label.
 
 > "Turn it greyscale. Double the text size. Now which parts stop working?"
-> If no conformance level was specified, say so — a finding against an unstated standard is a suggestion.
+> If no conformance level was specified, say so — a finding against an unstated standard is a suggestion. **A measurement is not a suggestion, and the two travel together:** report the contrast you read, then say which level it would fail and that no level is set. The number is a fact about the drawing; only the verdict waits on somebody.
 
 ## 10. Content under stress — does it survive real material?
 Catches: layouts built for the short name and the round number, truncation with no rule, placeholder copy that reads as final, invented real-world brands and institutions, two identical entries that cannot be told apart.

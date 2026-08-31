@@ -19,6 +19,7 @@ The phrasings below are illustrations, not scripts. Rewrite each one in the user
 
 **4. Definition audit** — the load-bearing word nobody defined.
 > "You said this makes onboarding 'better'. Better measured how? If you cannot name the number, how will you know this worked?"
+> **And where they did name numbers, divide them by each other before you accept them.** A total over its own base — per store, per week, per person — turns a headline into a rate somebody has to recognise, and a rate nobody recognises is a definition problem the total was hiding. On a measured run every sharp finding in the session came out of one such division.
 
 **5. Prior art** — has someone already solved this?
 > "Who has built this already, and what did they learn? If a product exists that does 80% of it, what makes building beat buying?"
@@ -67,4 +68,5 @@ The phrasings below are illustrations, not scripts. Rewrite each one in the user
 - **Do not repeat a lens that already landed cleanly.** Re-asking a question the user answered well reads as not listening.
 - **Escalate only when the lower tiers hold.** Reaching Tier 3 on an idea that already failed Tier 1 is piling on.
 - **One lens per turn.** Two lenses in one message is two questions wearing a coat.
+- **Merit only — and merit includes the mechanism the value rests on.** Where the thing being sold *is* a calculation, a rule, or an eligibility test, whether that test can be computed at all is not an operational question to be handed on: an idea whose central mechanism cannot be performed has failed here, not downstream. The boundary holds for what happens around a working mechanism.
 - **Merit only.** These lenses ask whether the idea should exist. Security posture, privacy compliance, operational cost at scale, and monitoring are execution questions — they belong to `risk-interrogate`, which runs after the decision, not instead of it. The exception is when one of them is fatal rather than merely hard: "we would not be permitted to do this at all" kills an idea and belongs here.

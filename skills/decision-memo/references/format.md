@@ -66,6 +66,8 @@ Say what happens **by default**, and when the default becomes irreversible. Inac
 
 Named person, specific act, date.
 
+**The date is yours to derive, and you say that it is.** No skill invents a figure, and a memo with no date is a memo with no answer — so where the material carries only a horizon (*"end of Q2"*), work back from what the answer unblocks and write the date you reached, marked as derived. Repeating the horizon is the one option that fails: *"answer by the end of Q2"* asks for the reply on the day the reply was needed.
+
 > **Ayşe — approve the 10,000 limit with no daily cap for this release, by Friday the 8th.** Risk has signed off on the kill switch; this is the one open approval.
 
 If more than one person must sign, list each with what each is approving. A memo where two people each assume the other is deciding is a memo that dies quietly.

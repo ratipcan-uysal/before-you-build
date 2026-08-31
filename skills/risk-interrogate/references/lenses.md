@@ -92,3 +92,13 @@ Catches: a remotely-set limit typed with the wrong number of zeros, a flag enabl
 - **Chain the dimensions.** The strongest findings sit where two meet — a dependency failure that also leaves data inconsistent, an abuse path opened by a human error.
 - **Prefer the mechanism to the category.** "Security risk" is a label. "A stolen unlocked phone can move the balance in sub-threshold taps" is a finding.
 - **Do not write the fix.** Naming the failure is the job. The owner decides what to do about it, and skipping that step is how a risk pass turns into a design nobody signed up for.
+
+## 13. The rule the system now decides
+
+**Asks:** where the work computes a legal or contractual outcome and stamps it, what happens when the stamp is wrong?
+
+Lens 5 covers exposure — whose data, held how long, seen by whom. It has nothing for the commoner enterprise shape: a rule that used to live in a person's judgement, now evaluated by code, recorded as checked, and relied on by everyone downstream. The failure is not a leak. It is a decision that was never made being indistinguishable from one that was.
+
+Catches: a rule set with no version, so nobody can say which rule a past decision was taken under · a stamp that survives the rule changing · an override with no record of who took it · a check that passes because its input was missing rather than because it held · the absence of an appeal path once the system is the decider.
+
+**And say which kind of rule broke.** Severity treats *a rule is broken* as one thing. Here the product's own rule and the law are both rules, and only one of them ends in a fine. Name the source in the question — a threshold the product chose, or a limit somebody legislated — because the two get different owners and different urgency.
