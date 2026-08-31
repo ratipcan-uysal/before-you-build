@@ -37,6 +37,7 @@ VOCABULARY = {
     "data-display", "input-collection", "content-config",  # work-type axis
     "mobile-app", "multi-surface", "backend-only",         # surface axis
     "owner-question",                                      # idea-grill proxy outcome
+    "skill-installer",                                     # Codex's own installer, docs/codex.md
 }
 
 # Skills that do not exist yet. Nameable where the set records its direction;
@@ -175,7 +176,7 @@ if not skill_names:
 # skill when the reason is in the same block or the one before. CHANGELOG.md is
 # exempt: every entry sits under a version heading, so it is scoped already.
 prose = sorted(
-    [ROOT / "README.md", ROOT / "CHANGELOG.md"]
+    [ROOT / "README.md", ROOT / "CHANGELOG.md", ROOT / "AGENTS.md"]
     + list((ROOT / "docs").glob("*.md"))
     + list((ROOT / "examples").rglob("*.md"))
     + list((ROOT / "commands").glob("*.md"))

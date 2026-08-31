@@ -2,7 +2,7 @@
 
 **Building is cheap now. Deciding what to build is still the bottleneck.**
 
-A set of Claude Code skills for the work that happens before a single line of code: challenge the idea, shape the request, measure whether it is actually ready, and extract the decisions that make the difference between a thing that looks right and one that *is* right.
+A set of skills for the work that happens before a single line of code: challenge the idea, shape the request, measure whether it is actually ready, and extract the decisions that make the difference between a thing that looks right and one that *is* right.
 
 It serves two builders. One writes a request and hands it to a team. The other hands it to a model that will write the whole product. **The second needs this more, not less** — a team asks when something is missing, and a generator fills the gap silently and confidently, in a way that reads as finished.
 
@@ -16,6 +16,8 @@ These skills are deliberately hard to please. A model asked to review something 
 ```
 
 Then just describe what you have. The skills trigger on their own, or run `/byb` to be routed.
+
+**Codex reads the same format.** `SKILL.md` frontmatter, detail in `references/` — the skills install and run there unchanged, one command for all fifteen. Install path and the two things that behave differently: [`docs/codex.md`](docs/codex.md).
 
 ## Where to start
 

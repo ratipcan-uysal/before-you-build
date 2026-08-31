@@ -4,6 +4,16 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.8.1
+
+**The skills run in Codex, and it turned out to need documentation rather than a port.** Codex reads the same layout — `SKILL.md` with `name` and `description` frontmatter, detail in `references/` — so nothing about the set had to change. What was missing was any way for a Codex user to know that, and the install path. [`docs/codex.md`](docs/codex.md) carries both, and the README says it in the place someone would look.
+
+Installation was run against this repo rather than described from memory: single skill and fifteen at once, into a scratch destination, with the reference files arriving intact and the relative links inside each `SKILL.md` still resolving. **Selection behaviour was not measured** and the page says so — whether Codex reaches for the right skill out of fifteen as reliably as Claude Code does is open, and only use will answer it.
+
+**`AGENTS.md`, because the repo had nothing telling an agent how to work in it.** The invariants CI enforces, the house rules an edit has to keep, and the failure this repo keeps having: a rule gets tightened and the example under it does not. Three of those shipped and were caught by a run rather than by CI, so the file says plainly that nothing automated catches the class and the examples are part of every rule change.
+
+**`agents/openai.yaml` was reconsidered and declined again**, for a reason the last two releases earned. It is optional — Codex runs a skill without one — and it buys a display name and a default prompt. Fifteen copies of metadata with no check keeping them in step with the descriptions they mirror is the drift this set has now paid for three times. If it goes in later, the sync check goes in first.
+
 ## 4.8.0
 
 **A sixteen-agent run on a new fictional request, and what it found is mostly in the seams.** The request was written to be strong on purpose — a measured problem, three numeric success criteria, a six-rule eligibility list, five declared non-goals, and the author's own section listing what she had not decided. It ran in Turkish, on `transaction` · `mobile-app`, an axis pair no published example had exercised. Every skill ran in its own clean context and returned its document plus an attack on the skill file that produced it.
