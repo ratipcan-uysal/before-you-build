@@ -8,12 +8,17 @@
 ## Needs
 
 ### N1 — The set of sellers to compute
-- **Step:** A2 (`reads`) · **When:** nightly, at the start of the run · **Freshness:** that night's set, from that night's data
-- **Atomic with:** nothing · **Repeatable:** yes
+- **Step:** A2 (`reads`)
+- **When:** nightly, at the start of the run
+- **Freshness:** that night's set, from that night's data
+- **Atomic with:** nothing
+- **Repeatable:** yes
 - **Feasibility:** **Unconfirmed** — Marketplace Core. Until the set is defined (`flow-grill`, High) the size of this need is unknown too: "all sellers" and "sellers with orders in the window" are two different jobs.
 
 ### N2 — The inputs of the three components, per seller and date range
-- **Step:** A3 (`reads`) · **When:** nightly, per seller · **Freshness:** data closed to the end of yesterday
+- **Step:** A3 (`reads`)
+- **When:** nightly, per seller
+- **Freshness:** data closed to the end of yesterday
 - **Atomic with:** the three sources need not be read together, but all three **must cover the same date range**. Components drawn from different ranges and combined into one row mean nothing
 - **Repeatable:** yes, and it **has to be** — because of late-arriving data (`flow-map` EA5) the same range read twice can produce different results
 - **Feasibility:** three sources, three different situations:
@@ -22,23 +27,28 @@
   - **Cancellations held classified as seller-caused — `Unconfirmed — no owner`.** `request-shaper` marked this `[UNVERIFIED]`; no document names an owner. **30% of the score comes from this data.** If the classification does not exist today, this is not a score project but a data classification project — and a need with no owner is neither confirmed nor refused. It is forgotten, and comes back as the thing nobody built
 
 ### N3 — Writing the component values
-- **Step:** A5 (`acts`, `emits`) · **When:** as soon as the computation finishes
+- **Step:** A5 (`acts`, `emits`)
+- **When:** as soon as the computation finishes
 - **What is written:** the value, **its numerator and denominator**, a reference to the definition version, the date range, a reference to the run, and — where no value could be produced — **the reason** (insufficient data / could not compute), which are two distinct states the design requires to be distinguishable
 - **Atomic with:** are a seller's three components written **together** or one at a time? `flow-map` BA2 left this open; **the atomicity decision is that branch**
 - **Repeatable:** `[DECISION NEEDED]` — the identity question in `11-data-model.md`. A second write for the same seller-day-type must be either refused or versioned; overwriting silently breaks the slice's explicit rule
 - **Feasibility:** **Unconfirmed** — Marketplace Core
 
 ### N4 — Writing the run's state
-- **Step:** A6 (`acts`, `emits`) · **When:** as the run ends, **and as it dies**
+- **Step:** A6 (`acts`, `emits`)
+- **When:** as the run ends, **and as it dies**
 - **What is written:** state (started / complete / partial / failed), timestamps, how many sellers were processed
-- **Atomic with:** nothing · **Repeatable:** yes
+- **Atomic with:** nothing
+- **Repeatable:** yes
 - **Feasibility:** **Unconfirmed** — Marketplace Core. `flow-grill`'s EA2 Critical closes here: if the run's state is not written, a half-finished day is visible nowhere
 
 ### N5 — The panel's read
-- **Step:** B3 (`reads`) · **When:** when the seller opens the section, in a single request
+- **Step:** B3 (`reads`)
+- **When:** when the seller opens the section, in a single request
 - **What comes back:** the latest value of each of the three components, its numerator and denominator, the date range, the reason where there is no value, and **the time of the last completed run**
 - **Freshness:** values may be up to a day old by design; **the last run time has to be current** — it is the only thing that shows staleness
-- **Atomic with:** nothing · **Repeatable:** yes
+- **Atomic with:** nothing
+- **Repeatable:** yes
 - **Feasibility:** **Unconfirmed** — Marketplace Core + the panel team
 
 ### N6 — The view event
@@ -53,11 +63,15 @@
 
 Invisible in a flow: the step reads perfectly.
 
-| Assumption | What settles it |
-|---|---|
-| **A comparison reference can be computed.** `08-design-brief-v1.md`'s central `[DECISION NEEDED]`: what tells a seller a value is bad? If the answer is "a peer group average" (`prior-art` K1 found that documented elsewhere), that means **a distribution computed per category, per component, per day** — and there is no such step in the flow and no such entity in the model | Nothing closes this line until the reference is decided. "Fixed target" costs nothing; "peer group" is a **second computation job** and `Unconfirmed — no owner`. A whole system workload hiding behind one design decision |
-| All three sources use the same date range with the same meaning | The source owners. "An order on 3 August" may mean the order date on the delivery side and the cancellation date on the other |
-| Late-arriving data can be detected | The source owners. `flow-map` EA5 asks how often this happens and has no answer |
+> **AC1 — a comparison reference can be computed.**
+> `08-design-brief-v1.md`'s central `[DECISION NEEDED]`: what tells a seller a value is bad? If the answer is "a peer group average" (`prior-art` K1 found that documented elsewhere), that means **a distribution computed per category, per component, per day** — and there is no such step in the flow and no such entity in the model.
+> **What settles it:** nothing closes this line until the reference is decided. "Fixed target" costs nothing; "peer group" is a **second computation job** and `Unconfirmed — no owner`. A whole system workload hiding behind one design decision.
+
+> **AC2 — all three sources use the same date range with the same meaning.**
+> **What settles it:** the source owners. "An order on 3 August" may mean the order date on the delivery side and the cancellation date on the other.
+
+> **AC3 — late-arriving data can be detected.**
+> **What settles it:** the source owners. `flow-map` EA5 asks how often this happens and has no answer.
 
 ---
 

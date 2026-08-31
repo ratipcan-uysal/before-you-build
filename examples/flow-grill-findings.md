@@ -24,20 +24,20 @@ Both High findings are the **dropped** direction — the one nobody catches, bec
 
 ### The diagram contradicts the text
 
-| | Finding | What goes wrong | Decision that closes it |
-|---|---|---|---|
-| **Critical** | **The B5 → B2 → B3 chain is invented.** All three are separate branches off step 5. The diagram asserts a sequence between them | A developer reading the diagram builds a flow where abandoning leads to editing the amount | Branches are drawn from their source; no arrow exists for layout convenience |
-| **Critical** | **Abandonment never terminates.** B5 is drawn as a process box flowing into B2, while the text says it ends | The most common ending is not an ending in the picture | Abandonment is an ending and takes a terminator |
-| **High** | **E2's rejoin to step 5 is missing from the diagram.** The text has it | Where a customer lands after an insufficient balance cannot be read from the picture | — *(the text is right; the diagram was wrong)* |
-| **High** | **E2 → E4 and E3 → E5 are invented too.** All four are separate outcomes of one decision | Same fault, three places | Same decision |
+| | | Finding | What goes wrong | Decision that closes it |
+|---|---|---|---|---|
+| **F1** | **Critical** | **The B5 → B2 → B3 chain is invented.** All three are separate branches off step 5. The diagram asserts a sequence between them | A developer reading the diagram builds a flow where abandoning leads to editing the amount | Branches are drawn from their source; no arrow exists for layout convenience |
+| **F2** | **Critical** | **Abandonment never terminates.** B5 is drawn as a process box flowing into B2, while the text says it ends | The most common ending is not an ending in the picture | Abandonment is an ending and takes a terminator |
+| **F3** | **High** | **E2's rejoin to step 5 is missing from the diagram.** The text has it | Where a customer lands after an insufficient balance cannot be read from the picture | — *(the text is right; the diagram was wrong)* |
+| **F4** | **High** | **E2 → E4 and E3 → E5 are invented too.** All four are separate outcomes of one decision | Same fault, three places | Same decision |
 
 ### The text
 
-| | Finding | What goes wrong | Decision that closes it |
-|---|---|---|---|
-| **Medium** | **Is step 7 a step or a state?** *"Exit control is removed"* — nobody acts, and what triggers step 8 is unstated | A developer skips it, or builds a separate waiting screen | Is 7 the outcome of 6, or the opening state of 8 |
-| **Medium** | **"Did the list arrive?" is not testable.** Timeout, error and empty response are three different paths | Three situations collapse into one branch | The condition: which timeout, which error classes |
-| **Medium** | **B1's handoff is marked `acts` and was never asked the double-run question** | Two taps on *Continue* either open the flow twice or not — unknown | — |
+| | | Finding | What goes wrong | Decision that closes it |
+|---|---|---|---|---|
+| **F5** | **Medium** | **Is step 7 a step or a state?** *"Exit control is removed"* — nobody acts, and what triggers step 8 is unstated | A developer skips it, or builds a separate waiting screen | Is 7 the outcome of 6, or the opening state of 8 |
+| **F6** | **Medium** | **"Did the list arrive?" is not testable.** Timeout, error and empty response are three different paths | Three situations collapse into one branch | The condition: which timeout, which error classes |
+| **F7** | **Medium** | **B1's handoff is marked `acts` and was never asked the double-run question** | Two taps on *Continue* either open the flow twice or not — unknown | — |
 
 ## Coverage
 

@@ -18,36 +18,36 @@ What survives is traceable to a **decision someone made**, not to a blank someon
 
 ### Backend
 
-| | Question | Prevents |
-|---|---|---|
-| **Critical** | Is the 10,000 threshold — and the "no passwordless on web" rule — enforced **server-side**, or is it a client difference? If one endpoint serves both surfaces, would it accept a mobile-shaped request originating from web? | A modified client, or a direct API call, bypassing the threshold entirely |
-| **Critical** | The counterparty responds at **minute six**, after the five-minute auto-return has already refunded. Does the late confirmation race the reversal? | The same transfer landing twice, and manual reconciliation to unpick it |
-| **High** | What is the idempotency key — recipient plus amount plus a time window? If a customer genuinely wants to send 500 twice in a row, does the second get swallowed? | A legitimate transfer silently dropped, and the customer trying a third time |
+| | | Question | Prevents |
+|---|---|---|---|
+| **Q1** | **Critical** | Is the 10,000 threshold — and the "no passwordless on web" rule — enforced **server-side**, or is it a client difference? If one endpoint serves both surfaces, would it accept a mobile-shaped request originating from web? | A modified client, or a direct API call, bypassing the threshold entirely |
+| **Q2** | **Critical** | The counterparty responds at **minute six**, after the five-minute auto-return has already refunded. Does the late confirmation race the reversal? | The same transfer landing twice, and manual reconciliation to unpick it |
+| **Q3** | **High** | What is the idempotency key — recipient plus amount plus a time window? If a customer genuinely wants to send 500 twice in a row, does the second get swallowed? | A legitimate transfer silently dropped, and the customer trying a third time |
 
 ### Security and Risk
 
-| | Question | Prevents |
-|---|---|---|
-| **Critical** | The threshold is **remotely adjustable**. Who can change it, is there a second pair of eyes, and what stops 100,000 going live in place of 10,000? | One mistyped value propagating to production in minutes |
-| **Critical** | On a stolen unlocked device: per-transaction cap, no daily total, amounts pre-filled, failures invisible. What is the maximum extractable in ten minutes, and does that number sit inside the bank's fraud tolerance? | Discovering the answer from an incident rather than from a model |
+| | | Question | Prevents |
+|---|---|---|---|
+| **Q4** | **Critical** | The threshold is **remotely adjustable**. Who can change it, is there a second pair of eyes, and what stops 100,000 going live in place of 10,000? | One mistyped value propagating to production in minutes |
+| **Q5** | **Critical** | On a stolen unlocked device: per-transaction cap, no daily total, amounts pre-filled, failures invisible. What is the maximum extractable in ten minutes, and does that number sit inside the bank's fraud tolerance? | Discovering the answer from an incident rather than from a model |
 
 ### Legal and Compliance
 
-| | Question | Prevents |
-|---|---|---|
-| **High** | Recipient names are rendered on the **home screen** — visible to anyone glancing at an unlocked phone, and in every screenshot and screen share. Does the existing privacy notice cover displaying one customer's transfer history back to them this way? | A compliance objection arriving after the home screen is designed and built |
+| | | Question | Prevents |
+|---|---|---|---|
+| **Q6** | **High** | Recipient names are rendered on the **home screen** — visible to anyone glancing at an unlocked phone, and in every screenshot and screen share. Does the existing privacy notice cover displaying one customer's transfer history back to them this way? | A compliance objection arriving after the home screen is designed and built |
 
 ### Mobile
 
-| | Question | Prevents |
-|---|---|---|
-| **High** | The list query runs on **every app open**, not every transfer. If it degrades, what happens to the home screen — does the app still open? | An optional widget taking down the entry point of the whole app |
+| | | Question | Prevents |
+|---|---|---|---|
+| **Q7** | **High** | The list query runs on **every app open**, not every transfer. If it degrades, what happens to the home screen — does the app still open? | An optional widget taking down the entry point of the whole app |
 
 ### Data and Analytics
 
-| | Question | Prevents |
-|---|---|---|
-| **High** | Does the existing transfer taxonomy distinguish **failed** transfers from successful ones? If not, the +30% target counts failures as wins. | Declaring success from a number that cannot support the claim |
+| | | Question | Prevents |
+|---|---|---|---|
+| **Q8** | **High** | Does the existing transfer taxonomy distinguish **failed** transfers from successful ones? If not, the +30% target counts failures as wins. | Declaring success from a number that cannot support the claim |
 
 ## Answer these five first
 

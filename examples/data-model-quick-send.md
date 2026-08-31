@@ -18,21 +18,17 @@ And the pass stops on the first one, because a name on that list may not be a th
 
 ### `Recipient`
 
-| | |
-|---|---|
-| **Identity** | **`[DECISION NEEDED]`** — account number alone, or account number and name? This is the decision underneath [`ux-grill`'s](ux-grill-findings.md) critical finding. *"Two people called Ayşe Demir, separated by a twelve-pixel account suffix at 3.67:1"* reads as a rendering fault. It is not. The design could not distinguish them because nothing had said what makes two recipients the same recipient |
-| **Lifecycle** | Created by a completed transfer. Changed by the next one. **Ended by nothing** — someone you stopped sending to never leaves, they fall below rank ten |
-| **Copy or reference** | **`[DECISION NEEDED]`** — is the name on the card frozen from the last transfer, or read live from the account? Frozen, and a person who changes their name shows as the old one. Live, and every past receipt changes with them |
-| **Existence** | An account identifier is required; **a name is not** — sends to a bare IBAN are possible. What the card shows then is undecided |
+> **Identity:** **`[DECISION NEEDED]`** — account number alone, or account number and name? This is the decision underneath [`ux-grill`'s](ux-grill-findings.md) critical finding. *"Two people called Ayşe Demir, separated by a twelve-pixel account suffix at 3.67:1"* reads as a rendering fault. It is not. The design could not distinguish them because nothing had said what makes two recipients the same recipient
+> **Lifecycle:** Created by a completed transfer. Changed by the next one. **Ended by nothing** — someone you stopped sending to never leaves, they fall below rank ten
+> **Copy or reference:** **`[DECISION NEEDED]`** — is the name on the card frozen from the last transfer, or read live from the account? Frozen, and a person who changes their name shows as the old one. Live, and every past receipt changes with them
+> **Existence:** An account identifier is required; **a name is not** — sends to a bare IBAN are possible. What the card shows then is undecided
 
 ### `Transfer`
 
-| | |
-|---|---|
-| **Identity** | Is the idempotency key. `api-needs` left N5 **Unconfirmed**; the same question asked from the data side is *what makes two submissions the same transfer* |
-| **Lifecycle** | Created at step 7. **Changed by E4's five-minute automatic reversal** — so a transfer changes state after it exists. That is a state machine: pending → completed / reversed / failed. **No document in the chain contains it** |
-| **Copy or reference** | Recipient name and amount: copies, because a receipt must not change. And one more nobody wrote down — **the applied threshold is stored on the transfer.** Otherwise *"was this within the limit at the time"* has no answer a year later, and E8 makes that concrete: the threshold can change between the screen and the send |
-| **Retention** | **`[DECISION NEEDED]`** — a financial record with a statutory period. Owner: compliance |
+> **Identity:** Is the idempotency key. `api-needs` left N5 **Unconfirmed**; the same question asked from the data side is *what makes two submissions the same transfer*
+> **Lifecycle:** Created at step 7. **Changed by E4's five-minute automatic reversal** — so a transfer changes state after it exists. That is a state machine: pending → completed / reversed / failed. **No document in the chain contains it**
+> **Copy or reference:** Recipient name and amount: copies, because a receipt must not change. And one more nobody wrote down — **the applied threshold is stored on the transfer.** Otherwise *"was this within the limit at the time"* has no answer a year later, and E8 makes that concrete: the threshold can change between the screen and the send
+> **Retention:** **`[DECISION NEEDED]`** — a financial record with a statutory period. Owner: compliance
 
 ## Phase 2 — Relationships that carry a rule
 

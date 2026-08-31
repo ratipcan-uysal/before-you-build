@@ -22,40 +22,40 @@ Eight phone artboards at mockup fidelity, against the decision record. **The ren
 
 ### Home screen
 
-| | Finding | What a user does | Decision that closes it |
-|---|---|---|---|
-| **Critical** | Two recipients named *Ayşe Demir* are separated only by a **12px account tail at 3.67:1 contrast** — the least readable text on the card, in the one place it is load-bearing | Sends to the wrong Ayşe and cannot undo it | How same-named recipients are distinguished |
-| **High** | The list holds ten, about two and a half cards are visible, and **nothing indicates there are more** — no cue, no count, no *see all* | Looks for the fourth person, does not find them, uses the full flow; the feature goes unused | How many are shown and how the rest are reached |
-| **Medium** | The dashed *existing home content* block occupies about 40% of the screen. A real bank home screen carries balance cards, shortcuts and campaigns | A stakeholder reads the region as far more prominent than it will be | Where the region sits on the home screen |
+| | | Finding | What a user does | Decision that closes it |
+|---|---|---|---|---|
+| **F1** | **Critical** | Two recipients named *Ayşe Demir* are separated only by a **12px account tail at 3.67:1 contrast** — the least readable text on the card, in the one place it is load-bearing | Sends to the wrong Ayşe and cannot undo it | How same-named recipients are distinguished |
+| **F2** | **High** | The list holds ten, about two and a half cards are visible, and **nothing indicates there are more** — no cue, no count, no *see all* | Looks for the fourth person, does not find them, uses the full flow; the feature goes unused | How many are shown and how the rest are reached |
+| **F3** | **Medium** | The dashed *existing home content* block occupies about 40% of the screen. A real bank home screen carries balance cards, shortcuts and campaigns | A stakeholder reads the region as far more prominent than it will be | Where the region sits on the home screen |
 
 ### Confirmation
 
-| | Finding | What a user does | Decision that closes it |
-|---|---|---|---|
-| **High** | The finality notice — *money is sent immediately, no password* — is the **smallest text on the screen**. The signal is weakest at the moment of highest stakes | Taps without reading it; learns there was no password after the money has gone | How the point of no return is announced |
-| **High** | The amount's edit affordance is an 18px icon **with no padded target**, and nothing marks the amount itself as tappable | Cannot change the amount; restarts | The amount field's tap target |
-| **Medium** | The source account renders at `#A39D93` on white — **2.69:1**, far below AA | Cannot read which account it leaves from | Accessibility conformance level |
+| | | Finding | What a user does | Decision that closes it |
+|---|---|---|---|---|
+| **F4** | **High** | The finality notice — *money is sent immediately, no password* — is the **smallest text on the screen**. The signal is weakest at the moment of highest stakes | Taps without reading it; learns there was no password after the money has gone | How the point of no return is announced |
+| **F5** | **High** | The amount's edit affordance is an 18px icon **with no padded target**, and nothing marks the amount itself as tappable | Cannot change the amount; restarts | The amount field's tap target |
+| **F6** | **Medium** | The source account renders at `#A39D93` on white — **2.69:1**, far below AA | Cannot read which account it leaves from | Accessibility conformance level |
 
 ### In progress
 
-| | Finding | What a user does | Decision that closes it |
-|---|---|---|---|
-| **High** | The back control is **faded but present**, occupying a 44px target, while the caption below says going back is closed | Presses it, nothing happens, concludes the app has frozen | Does the exit disappear, appear disabled, or cancel the send |
-| **Medium** | The progress indicator is a **static SVG arc** with no animation | Reads it as a broken icon and assumes nothing is happening | — *(execution, not a decision)* |
+| | | Finding | What a user does | Decision that closes it |
+|---|---|---|---|---|
+| **F7** | **High** | The back control is **faded but present**, occupying a 44px target, while the caption below says going back is closed | Presses it, nothing happens, concludes the app has frozen | Does the exit disappear, appear disabled, or cancel the send |
+| **F8** | **Medium** | The progress indicator is a **static SVG arc** with no animation | Reads it as a broken icon and assumes nothing is happening | — *(execution, not a decision)* |
 
 ### Insufficient balance
 
-| | Finding | What a user does | Decision that closes it |
-|---|---|---|---|
-| **Critical** | The error says *choose another account* and **there is no account selector on the screen** — the source account block is read-only with a marked badge. The text commands an action the screen does not offer | Hunts for the path, fails, calls support | Can the source account be changed from the confirmation |
-| **High** | The primary button still reads *Send* and looks fully enabled. Pressing it again with the same amount fails again | Presses three times | What the primary action does after an error |
-| **Medium** | No balance is shown — correct against the brief's non-goal — so **the customer cannot tell how much to reduce it by** | Trial and error | Does *no balance* cover error messages too |
+| | | Finding | What a user does | Decision that closes it |
+|---|---|---|---|---|
+| **F9** | **Critical** | The error says *choose another account* and **there is no account selector on the screen** — the source account block is read-only with a marked badge. The text commands an action the screen does not offer | Hunts for the path, fails, calls support | Can the source account be changed from the confirmation |
+| **F10** | **High** | The primary button still reads *Send* and looks fully enabled. Pressing it again with the same amount fails again | Presses three times | What the primary action does after an error |
+| **F11** | **Medium** | No balance is shown — correct against the brief's non-goal — so **the customer cannot tell how much to reduce it by** | Trial and error | Does *no balance* cover error messages too |
 
 ### The undecided screens
 
-| | Finding | What a user does | Decision that closes it |
-|---|---|---|---|
-| **Medium** | The two placeholders have **no title bar and no navigation** — they read as documentation cards rather than screens in the flow, breaking the set's visual grammar | A stakeholder skips them as *not part of this* rather than *not yet designed* | Are undecided states marked inside the flow or set aside |
+| | | Finding | What a user does | Decision that closes it |
+|---|---|---|---|---|
+| **F12** | **Medium** | The two placeholders have **no title bar and no navigation** — they read as documentation cards rather than screens in the flow, breaking the set's visual grammar | A stakeholder skips them as *not part of this* rather than *not yet designed* | Are undecided states marked inside the flow or set aside |
 
 ## What works
 

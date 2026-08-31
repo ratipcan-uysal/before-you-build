@@ -12,33 +12,88 @@ Reviewed: two flows (A the nightly calculation, B the seller reading), 12 steps,
 
 ## 2. Drift from what was asked
 
-| What was asked | What the flow does | |
+| | | Drift |
 |---|---|---|
-| `08-design-brief-v1.md` section 7: **"One component could not be computed → the other two are shown and the missing one says it is missing. It is not silently hidden."** | BA2 opens the same question as **`[DECISION NEEDED]`**: write nothing, or write partially | **High.** The record decided; the flow is undecided. A designer reading only the record believes it settled and draws the partial state; a developer working from the flow may choose to write nothing. **The decision that closes it:** the write-side decision, and then confirming section 7 of the record still matches it |
-| `08-design-brief-v1.md`: "no data", "cannot be computed" and "stale" **must be distinguishable** | BB1: two different causes land in the same empty state, and the flow says so itself: *"the data that would distinguish them is not written at A5"* | **High.** The design requires a distinction the flow does not produce. The record asks for three texts; the data cannot separate two states. **The decision that closes it:** whether A5 writes "insufficient data" and "could not compute" as distinct values |
-| `07-slice.md` decision 5: **"'why was my value X on 3 November' has to be answerable from the stored rows"** | A5 writes only the **value and the date range**. What the value was computed from — how many orders, how many on time — is stored at no step | **High — dropped.** "Why was it 61%" is answered with "because the range was 3 August to 1 November", which is not an answer. The slice's own decision is not met by the flow. **The decision that closes it:** whether the component row also carries the numerator and denominator. Goes to `data-model` |
-| `07-slice.md` decision 4: "no daily value is ever overwritten" | A5 does not say so; the prohibition appears only as a tension in EA4 | **Medium.** The happy path does not carry the rule, so a reader of the happy path never sees it |
+| **D1** | **High** | The record decided the partial state; the flow left it open |
+| **D2** | **High** | The design requires a distinction the flow does not produce |
+| **D3** | **High — dropped** | The slice's answerability decision is not met by the flow |
+| **D4** | **Medium** | The no-overwrite rule is not carried by the happy path |
+
+> **D1 · High — the record decided the partial state; the flow left it open.**
+> **Asked:** `08-design-brief-v1.md` section 7 — **"One component could not be computed → the other two are shown and the missing one says it is missing. It is not silently hidden."**
+> **What the flow does:** BA2 opens the same question as **`[DECISION NEEDED]`**: write nothing, or write partially.
+> **What goes wrong:** a designer reading only the record believes it settled and draws the partial state; a developer working from the flow may choose to write nothing.
+> **Decision that closes it:** the write-side decision, and then confirming section 7 of the record still matches it.
+
+> **D2 · High — the design requires a distinction the flow does not produce.**
+> **Asked:** `08-design-brief-v1.md` — "no data", "cannot be computed" and "stale" **must be distinguishable**.
+> **What the flow does:** BB1 lands two different causes in the same empty state, and says so itself: *"the data that would distinguish them is not written at A5"*.
+> **What goes wrong:** the record asks for three texts; the data cannot separate two states.
+> **Decision that closes it:** whether A5 writes "insufficient data" and "could not compute" as distinct values.
+
+> **D3 · High, dropped — the slice's answerability decision is not met by the flow.**
+> **Asked:** `07-slice.md` decision 5 — **"'why was my value X on 3 November' has to be answerable from the stored rows"**.
+> **What the flow does:** A5 writes only the **value and the date range**. What the value was computed from — how many orders, how many on time — is stored at no step.
+> **What goes wrong:** "Why was it 61%" is answered with "because the range was 3 August to 1 November", which is not an answer.
+> **Decision that closes it:** whether the component row also carries the numerator and denominator. Goes to `data-model`.
+
+> **D4 · Medium — the no-overwrite rule is not carried by the happy path.**
+> **Asked:** `07-slice.md` decision 4 — "no daily value is ever overwritten".
+> **What the flow does:** A5 does not say so; the prohibition appears only as a tension in EA4.
+> **What goes wrong:** a reader of the happy path never sees the rule.
 
 ---
 
 ## 3. Findings
 
+| | | Finding |
+|---|---|---|
+| **F1** | **Critical** | Four branches lead nowhere |
+| **F2** | **Critical** | EA2 has no ending |
+| **F3** | **High** | A2's condition cannot be tested |
+| **F4** | **High** | Assumed success between A5 and A6 |
+| **F5** | **Medium** | What is held between A4 and A5 is unstated |
+| **F6** | **High** | B3 is one read answering two different questions |
+| **F7** | **Medium** | B4 is marked `emits` and nothing says what it emits |
+
 ### Flow A
 
-| | Finding | What goes wrong | Decision that closes it |
-|---|---|---|---|
-| **Critical** | **Four branches lead nowhere:** BA3 (overlapping runs), EA4 (second run same day), EA5 (late data), EB2 (reading during a write). The flow marks them itself — marking does not close them | In all four the developer decides, and picks the easiest: allow parallel runs, overwrite, ignore late data, read a half-written run. All four are silent | One sentence each: is a second run refused · what the no-overwrite rule means on a rerun · is late data corrected · does a read see the completed run. Owner Marketplace Core, and Deniz on EA5 |
-| **Critical** | **EA2 has no ending.** *"Never reaches A6"* is not an ending: it neither rejoins a step nor terminates. And nothing leads to "partially written", one of the three endings the flow declares | A half-written day exists and **nothing marks it as partial**; the next night's run starts normally and that day stays half-done forever | What a dead run does: is it rolled back, marked partial, or completed the next day |
-| **High** | **A2's condition cannot be tested.** "Determines the set of sellers to compute for" — which sellers? All, active ones, those with orders in the window? | The set definition decides whether the job takes ten minutes or six hours, and it directly drives the likelihood of EA2. A developer writes "all" | The definition of the seller set. Owner Deniz + Marketplace Core |
-| **High** | **Assumed success between A5 and A6.** A6 marks the run complete; there is no path where A5 partially succeeded | A run that wrote 90% is marked complete and monitoring looks green | What A6 checks before saying complete: rows written, or absence of errors |
-| **Medium** | **What is held between A4 and A5 is unstated.** How many sellers' values accumulate in memory before a write? | That number is EA2's blast radius: written in one go it is all-or-nothing, per seller it is half a day | The grain of the write — per seller or batched |
+> **F1 · Critical — four branches lead nowhere.**
+> BA3 (overlapping runs), EA4 (second run same day), EA5 (late data), EB2 (reading during a write). The flow marks them itself; marking does not close them.
+> **What goes wrong:** in all four the developer decides, and picks the easiest — allow parallel runs, overwrite, ignore late data, read a half-written run. All four are silent.
+> **Decision that closes it:** one sentence each. Is a second run refused · what the no-overwrite rule means on a rerun · is late data corrected · does a read see the completed run. Owner Marketplace Core, and Deniz on EA5.
+
+> **F2 · Critical — EA2 has no ending.**
+> *"Never reaches A6"* is not an ending: it neither rejoins a step nor terminates. And nothing leads to "partially written", one of the three endings the flow declares.
+> **What goes wrong:** a half-written day exists and **nothing marks it as partial**; the next night's run starts normally and that day stays half-done forever.
+> **Decision that closes it:** what a dead run does — rolled back, marked partial, or completed the next day.
+
+> **F3 · High — A2's condition cannot be tested.**
+> "Determines the set of sellers to compute for" — which sellers? All, active ones, those with orders in the window?
+> **What goes wrong:** the set definition decides whether the job takes ten minutes or six hours, and it directly drives the likelihood of EA2. A developer writes "all".
+> **Decision that closes it:** the definition of the seller set. Owner Deniz + Marketplace Core.
+
+> **F4 · High — assumed success between A5 and A6.**
+> A6 marks the run complete; there is no path where A5 partially succeeded.
+> **What goes wrong:** a run that wrote 90% is marked complete and monitoring looks green.
+> **Decision that closes it:** what A6 checks before saying complete — rows written, or absence of errors.
+
+> **F5 · Medium — what is held between A4 and A5 is unstated.**
+> How many sellers' values accumulate in memory before a write?
+> **What goes wrong:** that number is EA2's blast radius. Written in one go it is all-or-nothing; per seller it is half a day.
+> **Decision that closes it:** the grain of the write — per seller or batched.
 
 ### Flow B
 
-| | Finding | What goes wrong | Decision that closes it |
-|---|---|---|---|
-| **High** | **B3 is one read answering two different questions:** "does this seller have values" and "are the values fresh". BB1 and BB2 come off the same step but need different data — the second needs the run's timestamp, the first needs row existence | If the empty state and the stale state are both derived from one read, "never ran" cannot be told from "never reached this seller" — which is exactly what `design-brief` wants separated | Whether the panel also reads the last run time independently of the seller |
-| **Medium** | **B4 is marked `emits` and nothing anywhere says what it emits.** It is the only event point in this slice, and the measurement gap already scored 0 | `api-needs` will derive an event need from this one mark with nobody having said what goes in it | What question a view of the performance section has to be able to answer. Owner Deniz |
+> **F6 · High — B3 is one read answering two different questions.**
+> "Does this seller have values" and "are the values fresh". BB1 and BB2 come off the same step but need different data: the second needs the run's timestamp, the first needs row existence.
+> **What goes wrong:** if the empty state and the stale state are both derived from one read, "never ran" cannot be told from "never reached this seller" — which is exactly what `design-brief` wants separated.
+> **Decision that closes it:** whether the panel also reads the last run time independently of the seller.
+
+> **F7 · Medium — B4 is marked `emits` and nothing anywhere says what it emits.**
+> It is the only event point in this slice, and the measurement gap already scored 0.
+> **What goes wrong:** `api-needs` will derive an event need from this one mark with nobody having said what goes in it.
+> **Decision that closes it:** what question a view of the performance section has to be able to answer. Owner Deniz.
 
 ---
 

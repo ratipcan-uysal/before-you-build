@@ -17,8 +17,10 @@ Read in this order:
 | 9 | [`api-needs`](api-needs-contract.md) | What the system must provide — 1 supported, 7 unconfirmed — and a draft contract |
 | 10 | [`data-model`](data-model-quick-send.md) | What the system must remember. Four mismatches against the flow it was derived from, and one is whether the central noun is even a thing |
 | 11 | [`slice`](slice-quick-send.md) | What ships first. The part the feature is named after turns out not to be load-bearing |
-| 12 | [`decision-memo`](decision-memo-slice-approval.md) | One page asking one named person to approve one thing — shipping without the part the feature is named after. **Nothing routed to it on that run, and it was the last skill in the set to be executed.** Two skills name it now — `request-shaper` when an open item is waiting on a person, `readiness-score` when a gap is a decision rather than a hole — and on a later run that sentence chose which of six blocked decisions to escalate |
-| 13 | [`build-context`](build-context-pack.md) | All eleven documents checked against each other and assembled. **Ten disagreements in fifteen checks** — including one the design and the flow each held consistently, and the request's most expensive marked assumption read as fact by three later documents |
+| 12 | [`decision-memo`](decision-memo-slice-approval.md) | One page asking one named person to approve shipping without the part the feature is named after |
+| 13 | [`build-context`](build-context-pack.md) | All eleven documents checked against each other and assembled: **ten disagreements in fifteen checks** |
+
+**Two of those steps carry more than the line above holds.** Nothing routed to `decision-memo` on that run and it was the last skill in the set to be executed; two skills name it now — `request-shaper` when an open item is waiting on a person, `readiness-score` when a gap is a decision rather than a hole — and on a later run that sentence chose which of six blocked decisions to escalate. And of `build-context`'s ten disagreements, one was held consistently by the design and the flow alike, and the request's most expensive marked assumption was read as fact by three later documents.
 
 ## The one that gets a yes
 

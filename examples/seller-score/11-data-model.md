@@ -10,13 +10,11 @@
 
 The slice's central entity. A5 writes it, B3 reads it.
 
-| | |
-|---|---|
-| **When are two records the same thing** | Same seller, same day, same component type. **And here the slice's own rule collides with a branch of the flow:** `07-slice.md` says "no daily value is ever overwritten", and `flow-map` EA4 leaves open what a second run that day does. `[DECISION NEEDED]` owner Marketplace Core: does a second run write a **new version** for the same triple (which then needs a "which one is current" field), or is it refused? There is no third option, and the code will pick one on day one |
-| **Who does it belong to, and what happens when they leave** | The seller. If a seller leaves the platform, are the values deleted, anonymised, kept — `[DECISION NEEDED]` owner Legal, who also supplies the retention period. The appeal window and a deletion obligation can collide in the same row; no number is invented here |
-| **What creates it, changes it, ends it** | Creates: A5. **Nothing changes it** — the slice's rule. Ends: retention only |
-| **When something it copied changes, does this change too** | The seller is a **reference**. The component definition is a **reference to a version**, and because versions are immutable, history is not rewritten. The computed number itself is a **copy** — it is the result of a computation |
-| **What must be true for it to exist** | A component value cannot exist without its seller, its day, its component type, **which definition version** produced it, and the date range it came from. **It can exist without a value** — and that is by design: "insufficient data" is not an absence, it is a stored state. `design-brief` requires three states to be distinguishable; this is the data side of that distinction |
+> **Identity:** seller, day and component type all match. **And here the slice's own rule collides with a branch of the flow:** `07-slice.md` says "no daily value is ever overwritten", and `flow-map` EA4 leaves open what a second run that day does. `[DECISION NEEDED]` owner Marketplace Core — does a second run write a **new version** for the same triple, which then needs a "which one is current" field, or is it refused? There is no third option, and the code will pick one on day one.
+> **Ownership:** the seller. If a seller leaves the platform, are the values deleted, anonymised, kept — `[DECISION NEEDED]` owner Legal, who also supplies the retention period. The appeal window and a deletion obligation can collide in the same row; no number is invented here.
+> **Lifecycle:** created by A5 · **nothing changes it**, by the slice's rule · ended by retention only.
+> **Copy or reference:** the seller is a **reference**. The component definition is a **reference to a version**, and because versions are immutable, history is not rewritten. The computed number itself is a **copy** — it is the result of a computation.
+> **Existence:** its seller, its day, its component type, **which definition version** produced it, and the date range it came from. **It can exist without a value** — and that is by design: "insufficient data" is not an absence, it is a stored state. `design-brief` requires three states to be distinguishable; this is the data side of that distinction.
 
 **And one field has to be added, because the slice's own decision demands it.** `07-slice.md` decision 5: the answer to *"why was my value X on 3 November"* must be producible from the stored rows. `flow-grill` recorded as a High finding that the flow drops this: A5 writes only the value and the date range. A value is a rate; without its **numerator and denominator** the answer becomes "because the range was this", which is not an answer. **The numerator and denominator are stored** — not a storage preference, but the only form the slice's promise can take.
 
@@ -24,12 +22,10 @@ The slice's central entity. A5 writes it, B3 reads it.
 
 **The flow never names this entity, and A6 changes it.** `flow-grill`'s EA2 Critical — a half-written day that nothing marks — is precisely the absence of this entity.
 
-| | |
-|---|---|
-| **When are two records the same** | `[DECISION NEEDED]` owner Marketplace Core: one run per day, or one per trigger? If per trigger, "the current run for that day" becomes a concept, and EA4 and BA3 both resolve from it |
-| **What creates it, changes it, ends it** | Creates: A1. Changes: A6. **And it has to have a state** — started / complete / partial / failed. The flow has no such field, which is why a half-finished day in EA2 stays silent |
-| **Log or record** | Record. It changes (start → end), so it is not a log |
-| **What must be true for it to exist** | A start time and a target day. The end time and state arrive later |
+> **Identity:** `[DECISION NEEDED]` owner Marketplace Core — one run per day, or one per trigger? If per trigger, "the current run for that day" becomes a concept, and EA4 and BA3 both resolve from it.
+> **Lifecycle:** created by A1 · changed by A6 · **and it has to have a state** — started / complete / partial / failed. The flow has no such field, which is why a half-finished day in EA2 stays silent.
+> **Log or record:** record. It changes, start → end, so it is not a log.
+> **Existence:** a start time and a target day. The end time and state arrive later.
 
 ### 3. Component definition version
 
@@ -66,8 +62,10 @@ B4 is marked `emits`. **What it emits appears in no document** (`flow-grill`, Me
 | Its numerator and denominator | **Stored** | The only form the slice's decision 5 can take. It cannot be produced later: the source data changes (EA5) |
 | Which definition version produced it | **Stored (reference)** | If the definition changes, the meaning of the historical value survives |
 | The date range | **Stored** | The window length may change; when it does, the old row must keep saying what it was |
-| **The blended score** | **Computed, and never shown in this slice** | Because the daily components are stored, it can be produced later at any weighting for any date. **This is the only thing that makes `07-slice.md`'s promise — "blending comes back cheaply" — true.** Had components not been stored daily, that promise would have been false |
+| **The blended score** | **Computed, and never shown in this slice** | Produced later at any weighting for any date, because the components are stored daily |
 | Last calculation time | **Read from the run** | Copying it onto every value keeps the same fact in two places at different ages |
+
+Storing the components daily is **the only thing that makes `07-slice.md`'s promise — "blending comes back cheaply" — true.** Had they not been stored daily, that promise would have been false.
 
 ---
 
