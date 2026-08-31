@@ -247,10 +247,24 @@ COUNT_INTRO = re.compile(
     r"[^.:]{0,60}(?:hold|are enough|apply|follow)\s*:\s*$", re.I)
 NEEDS_A_PERSON = re.compile(
     r"(their call, every time|let the user choose|and make them choose|"
-    r"ask once[,:]? \*?\"|ask the user which)", re.I)
+    r"ask once[,:]? \*?\"|ask the user which|"
+    # Added after a run in which prior-art's "ask which of the three you are
+    # doing" walked past the list above. This is a tripwire on phrasings that
+    # have appeared, not a proof: a rule worded a new way still gets through. A
+    # general pattern was tried — a person-word near an asking verb — and gave
+    # seven false positives against one real hit, because interrogating material
+    # in the second person is this set's ordinary voice. See docs/decisions.md.
+    r"ask the caller|ask which of the|"
+    r"ask (?:the user|the caller|the requester) (?:what|whether|who|how))", re.I)
 HAS_DEFAULT = re.compile(
     r"(with nobody|no answer is not|unattended|autonomous mode|"
-    r"nobody (?:is )?(?:there|in the room)|nobody to (?:ask|choose|answer))", re.I)
+    r"nobody (?:is )?(?:there|in the room)|nobody to (?:ask|choose|answer)|"
+    # A fallback is a fallback however it is worded. These were written before
+    # the check existed and flagged as missing on the run that broadened it,
+    # which is the check calling correct files wrong.
+    r"if (?:they|it) (?:are|is) not available|carry on if|where none comes)", re.I)
+
+
 for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
     name = skill_md.parent.name
     rel = skill_md.relative_to(ROOT)
@@ -301,6 +315,7 @@ for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
                 "happens when nobody answers — an unattended run invents the "
                 "default silently (method principle 11)")
 
+
     # "Keep a question only if all four hold:" followed by five items. Live in
     # risk-interrogate until a bank run counted them.
     lines = body.splitlines()
@@ -330,6 +345,18 @@ for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
                 "name them — a translated marker breaks the chain silently")
 
 # --- indexes point at what is on disk -------------------------------------
+# The loop above reads SKILL.md only, so a rule that requires an answer became
+# invisible the moment it moved one file across into references/ — which is
+# where most of this set's procedure actually lives.
+for ref_md in sorted((ROOT / "skills").glob("*/references/*.md")):
+    rel = ref_md.relative_to(ROOT)
+    for line_no, line in blocks_of(ref_md.read_text()):
+        if NEEDS_A_PERSON.search(line) and not HAS_DEFAULT.search(line):
+            err(f"{rel}:{line_no}: asks the user to decide and never says what "
+                "happens when nobody answers — an unattended run invents the "
+                "default silently (method principle 11)")
+
+
 readme = (ROOT / "README.md").read_text()
 for name in sorted(skill_names):
     if f"](skills/{name}/SKILL.md)" not in readme:
