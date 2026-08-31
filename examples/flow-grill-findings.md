@@ -41,7 +41,7 @@ Both High findings are the **dropped** direction — the one nobody catches, bec
 
 ## Coverage
 
-> **9 happy-path steps · 5 branches · 9 error paths · 4 endings** *(one missing from the diagram)* · **5 system touchpoints**, 2 marked `acts` — **one asked the concurrency question, one not**
+> **9 happy-path steps · 5 branches · 9 error paths · 4 endings** *(one missing from the diagram)* · **5 marks across 4 marked steps**, 2 of them `acts` — **one asked the concurrency question, one not**
 
 The unhappy ratio is healthy for a transaction: nine against nine.
 

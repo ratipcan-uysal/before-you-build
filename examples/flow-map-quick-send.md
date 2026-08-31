@@ -102,7 +102,7 @@ Every node carries whether that step has been designed — solid, undecided, not
 ## Coverage
 
 > **8 happy-path steps · 4 decisions · 5 branches · 9 error paths · 4 endings**
-> **9 system touchpoints** — 3 `reads` · 2 `acts` · 4 `emits`
+> **9 marks across 7 marked steps** — `reads` 2, 5, 8 = 3 · `acts` 7, 9 = 2 · `emits` 3, 4, 6, 8 = 4
 > Both `acts` steps were asked the double-run question and answered.
 > **Six error paths still have no defined exit.**
 

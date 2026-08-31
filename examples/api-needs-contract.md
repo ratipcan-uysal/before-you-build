@@ -1,6 +1,6 @@
 # Worked example — `api-needs`
 
-Input: [the Quick Send flow](flow-map-quick-send.md), nine touchpoints — 3 `reads` · 2 `acts` · 4 `emits`.
+Input: [the Quick Send flow](flow-map-quick-send.md), 9 marks across 7 marked steps — 3 `reads` · 2 `acts` · 4 `emits`.
 
 **No access to the system.** The request says *"the existing transfer infrastructure will be used"* — that is the requester's expectation, not a confirmation. Until something says otherwise, every need is **Unconfirmed**, and that is not softened: a list where everything is quietly assumed to work is the document that produces the week-three conversation.
 
