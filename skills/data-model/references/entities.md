@@ -2,6 +2,19 @@
 
 Each question below catches a specific failure. The failure is named first, because a question whose failure you cannot picture gets answered carelessly.
 
+## The shape of an entity record
+
+Five labelled lines under the entity's name, which is what a later document cites. Do not number entities. The flow's own steps and error paths are already `A1`, `E4`, `EA2`, and a second meaning for one of those letters costs more than it saves. The labels are the five questions in short form, so a reader looking for retention finds it without reading the record:
+
+> **Component value** — *(seller × day × component type)*
+> **Identity:** seller, day and component type all match. `[DECISION NEEDED]` owner Marketplace Core — a second run the same day writes a new version or is refused, and the code will pick one on day one.
+> **Ownership:** the seller. What happens to the values when a seller leaves is Legal's, along with the retention period.
+> **Lifecycle:** created by step A5 · nothing changes it · ended by retention only.
+> **Copy or reference:** the seller is a reference, the definition is a reference to an immutable version, the number itself is a copy of a computation.
+> **Existence:** seller, day, component type, definition version, date range. It can exist without a value — "insufficient data" is a stored state, not an absence.
+
+Two columns of key and value do the same job until an answer runs long, and these answers run long: a measured run put 84 words in one of these cells, which renders as a narrow column of squeezed prose beside a one-word label. The labels are worth keeping; the grid is not.
+
 ## 1. What makes two records the same thing?
 
 **Catches:** duplicates that arrive quietly and are never merged, because nothing ever said they were the same.

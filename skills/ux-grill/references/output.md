@@ -20,9 +20,20 @@ This section goes first because it is the one nobody else runs. A screen that co
 
 Grouped by surface, ordered by severity inside each group. A reader should be able to work through one screen at a time.
 
-| | Finding | What a user does | Decision that closes it |
-|---|---|---|---|
-| **Critical** | … | the wrong thing they do, or where they stop | the decision, never the layout |
+Number the findings `F1` upward. A later document can then cite one instead of quoting it back. Open with the index, one line each, no wrapping:
+
+| | | Finding |
+|---|---|---|
+| **F1** | **Critical** | Three numbers, nothing saying which direction is good |
+
+Where every cell fits on a line, that table is the whole section. Where the finding needs a paragraph, which is what real material produces, keep the index and write the rows as blocks, the three fields as labelled lines:
+
+> **F1 · Critical — three numbers side by side, and nothing says which direction is good.**
+> `98.2%` is good high, `0.4%` is good low, `4.7` is out of five, and all three carry the same size and weight.
+> **What a user does:** reads a high cancellation rate as a target and fixes the wrong number.
+> **Decision that closes it:** how each component's direction is carried on screen. The record never discussed it — goes to `design-brief`.
+
+The three fields are the discipline, not the grid. A row carrying all three runs past seven hundred characters, wraps into four narrow columns of prose, and gets skipped by the person it was written for.
 
 **Severity**
 
@@ -32,9 +43,9 @@ Grouped by surface, ordered by severity inside each group. A reader should be ab
 | **High** | A stated decision is contradicted, or a state that is needed does not exist |
 | **Medium** | Friction, inconsistency, or something a reviewer will raise anyway |
 
-The **what a user does** column is the discipline. If you cannot name the behaviour, you have a preference rather than a finding — cut it.
+**What a user does** is where a finding proves itself. If you cannot name the behaviour, you have a preference rather than a finding — cut it.
 
-The **decision that closes it** column names what has to be decided, never what it should look like. Handing a designer a layout from a screenshot is doing their job badly; handing them the open decision is doing yours.
+**Decision that closes it** names what has to be decided, never what it should look like. Handing a designer a layout from a screenshot is doing their job badly; handing them the open decision is doing yours.
 
 ## 4. What works
 

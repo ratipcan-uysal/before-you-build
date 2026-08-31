@@ -21,9 +21,20 @@ The second row is the one nobody catches unaided. A flow that covers too much ha
 
 Grouped by path — the happy path, then each branch, then each error path — so the reader can work through one at a time and fix as they go.
 
-| | Finding | What goes wrong | Decision that closes it |
-|---|---|---|---|
-| **Critical** | … | what a developer builds, or a person hits | the decision, never the steps |
+Give every finding an identifier, `F1` upward, so the flow's author can answer by number. Open with the index, one line each:
+
+| | | Finding |
+|---|---|---|
+| **F1** | **Critical** | Branch 3 has no ending — the condition is written, the path is not |
+
+Where every cell fits on a line, that table is the whole section. Where a finding needs a paragraph, keep the index and write the rows as blocks:
+
+> **F1 · Critical — branch 3 has no ending.**
+> Step 6 splits on whether the recipient is registered, and the unregistered side stops after the lookup.
+> **What goes wrong:** the developer builds whatever the last screen happened to be, and a real person lands there.
+> **Decision that closes it:** what an unregistered recipient is offered, or that the transfer is refused.
+
+The fields are the discipline; the grid is not. Four columns of paragraph become a seven-hundred-character row, and the reader who has to fix it stops at the second one.
 
 **Severity**
 
@@ -33,7 +44,7 @@ Grouped by path — the happy path, then each branch, then each error path — s
 | **High** | Behaviour is assumed rather than written, or a condition cannot be tested |
 | **Medium** | An ambiguity somebody will probably resolve reasonably, and might not |
 
-**What goes wrong** is the discipline. A finding that cannot name what a developer builds or what a person hits is a preference about drawing style — cut it.
+**What goes wrong** is where a finding proves itself. One that cannot name what a developer builds or what a person hits is a preference about drawing style — cut it.
 
 ## 4. Coverage
 

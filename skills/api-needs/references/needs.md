@@ -16,9 +16,23 @@ One per touchpoint. Examples come from a one-tap repeat transfer; rewrite them a
 
 ## Worked
 
-> **Steps 1** · **Need:** the people this customer sends to most often, ranked · **When:** on every app open, before any interaction · **Freshness:** a day old is fine; a recipient removed yesterday still appearing is not · **Atomic with:** nothing · **Repeatable:** yes · **Feasibility:** **Unconfirmed** — the transfer service owner. Settled by: is "most frequent, ranked" something it can produce, over what window, at launch-traffic volume?
+One field per line. Seven fields strung along a single line with separators read as one long sentence, and the reader who came for **Freshness** has to walk the whole thing to find it.
 
-> **Steps 5** · **Need:** move an amount from one account to another · **When:** on action · **Freshness:** the balance check must be at the moment of the move, not at the moment of render · **Atomic with:** the debit and the credit are one thing or nothing · **Repeatable:** **no** — a repeat must be recognised and refused, not performed · **Feasibility:** **Supported** — the payments team confirmed against the running service. *(This verdict needs a source outside the flow documents. A document mentioning that something exists is not one: the documents also mention the confirmation step this hands off to, and an audit found nobody had ever written down what is inside it.)*
+> **N1 · Steps 1 — the people this customer sends to most often, ranked.**
+> **When:** on every app open, before any interaction
+> **Freshness:** a day old is fine; a recipient removed yesterday still appearing is not
+> **Atomic with:** nothing
+> **Repeatable:** yes
+> **Feasibility:** **Unconfirmed** — the transfer service owner. Settled by: is "most frequent, ranked" something it can produce, over what window, at launch-traffic volume?
+
+> **N2 · Steps 5 — move an amount from one account to another.**
+> **When:** on action
+> **Freshness:** the balance check must be at the moment of the move, not at the moment of render
+> **Atomic with:** the debit and the credit are one thing or nothing
+> **Repeatable:** **no** — a repeat must be recognised and refused, not performed
+> **Feasibility:** **Supported** — the payments team confirmed against the running service. *(This verdict needs a source outside the flow documents. A document mentioning that something exists is not one: the documents also mention the confirmation step this hands off to, and an audit found nobody had ever written down what is inside it.)*
+
+Number them `N1` upward. `build-context` and the backend team can then answer one without quoting it back.
 
 ## Why "when" carries the most weight
 
@@ -44,7 +58,12 @@ Where you cannot tell whether two things must be atomic, that is a **question**,
 
 A separate short list, because these are invisible in a flow — the step reads perfectly and nothing in the sequence looks wrong.
 
-> **"Ranked by how often you send"** — assumes something computes and stores send frequency per customer. Nothing in the request says anything does.
-> **"The amount you last sent to this person"** — assumes per-recipient history is retrievable, not just per-account history.
+> **AC1 — "ranked by how often you send"** assumes something computes and stores send frequency per customer. Nothing in the request says anything does.
+> **What settles it:** the transfer service owner.
+
+> **AC2 — "the amount you last sent to this person"** assumes per-recipient history is retrievable, not just per-account history.
+> **What settles it:** the transfer service owner.
+
+`AC`, not `A`, because the flow's own steps are already numbered `A1`, `A2` and a document with two meanings for `A1` is a document nobody can cite from.
 
 Each one names what is assumed, and what would confirm it. These are the items most likely to send a design back for rework after the backend team reads it, and finding them is the cheapest hour in the whole exercise.

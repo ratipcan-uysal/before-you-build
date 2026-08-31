@@ -12,12 +12,21 @@ Two or three lines. What material you read, how you classified it, and — impor
 
 One block per owner. Inside a block, order by severity, never by dimension — the reader is a person with a job, not a taxonomy.
 
+Number the questions `Q1` upward, straight through the whole output rather than restarting per owner. Section 3 and every reply can then point at one without naming the block. Open each block with its index, one line per question:
+
 ### Backend
 
-| | Question | Prevents |
+| | | Question |
 |---|---|---|
-| **Critical** | … | the failure that follows if it goes unanswered |
-| **High** | … | … |
+| **Q1** | **Critical** | What stops a nightly run that produces plausible but wrong values |
+
+Where every cell fits on a line, that table is the whole block. Where the question and its consequence each need a sentence, which is usual, write them out below the index:
+
+> **Q1 · Critical — what stops a plausible but wrong run, and what corrects it once written?**
+> Values are written unconditionally every night and never overwritten.
+> **Prevents:** an irreversible wrong day. Nothing blocks the write, several hundred thousand rows land, the no-overwrite rule forbids the correction, and no alert exists, so nobody finds out.
+
+A question and its consequence both need a sentence each. Put them in one row and the row runs past six hundred characters, which is the length at which the owner it was addressed to stops reading.
 
 Owners: product · backend · mobile · web · security and risk · legal and compliance · operations and support · data and analytics. Use the roles the material names where it names them — a question addressed to "Elif" gets answered faster than one addressed to "product".
 
@@ -29,7 +38,7 @@ Owners: product · backend · mobile · web · security and risk · legal and co
 | **High** | users hit something broken or unrecoverable, or nobody can tell it happened |
 | **Medium** | degraded experience, avoidable support load, or rework |
 
-The **Prevents** column is not decoration. It is the difference between a question that gets answered this week and one that gets moved to the next agenda four times. Write the actual consequence, in the reader's terms: money, customers, hours, a regulator.
+**Prevents** is not decoration. It is the difference between a question that gets answered this week and one that gets moved to the next agenda four times. Write the actual consequence, in the reader's terms: money, customers, hours, a regulator.
 
 ## 3. Answer these five first
 
