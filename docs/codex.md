@@ -28,6 +28,16 @@ Or ask Codex in words: *"install idea-grill and slice from ratipcan-uysal/before
 
 **The chain is yours to sequence.** Nothing carries a document from one skill to the next automatically in either tool. Save each output, hand it to the next skill by path, and let the carrier index at the top of each document tell that skill what to read.
 
+## Why there is no Codex plugin
+
+Codex has a plugin system that mirrors Claude Code's: `codex plugin marketplace add owner/repo`, then `codex plugin add`. A plugin bundles skills through a `.codex-plugin/plugin.json` with a `skills` pointer, and shipping one here would replace the command above with two short ones, plus version pinning and upgrades.
+
+It is not shipped, and the reason is a constraint that was measured rather than assumed. **A plugin cannot live at the marketplace root.** Pointing the marketplace entry at `.`, `./` or an empty path finds nothing; the same manifest in a subdirectory is found immediately. And installing copies only that subdirectory — a `skills` pointer of `../../skills/` resolves, the plugin installs, and it arrives carrying no skills at all.
+
+So a plugin means the fifteen skills live under `plugins/before-you-build/skills/`: either a second copy with nothing keeping it in step with the first, or a move that changes every path in this repo and the Claude Code marketplace that reads them. A duplicated tree is the drift this set has already paid for three times, and it would be the whole product rather than a metadata file. The move is defensible and is not being made for one install command.
+
+Reopen it if Codex allows a root-level plugin, or if enough people are installing skill by skill for the ergonomics to be worth the churn.
+
 ## What was verified, and what was not
 
 Installation was run against this repo at v4.8.0: single and multi-skill, into a scratch destination, with `references/` arriving intact and frontmatter unchanged. The relative links inside each `SKILL.md` resolve after install, because the reference files travel with it.
