@@ -61,6 +61,8 @@ Direct consumers · indirect consumers · published contracts · stored data wri
 
 The last four are where the misses are. A codebase search finds the first three and nothing else — support scripts, a partner's integration, and an app version from last year are not in the repository.
 
+**The request's own open questions are dependants too, and they are not yours.** A source that lists what it has not decided has handed you rows: each open question is a thing that breaks somewhere when it stays open. Take them in, mark each `[DECISION NEEDED]` with the owner the source gave it, and say in one line under the table that these were forwarded rather than found. Restated silently they inflate what the radar discovered; dropped, a real Silent dependant leaves the document because its author was honest enough to name it first.
+
 ## Phase 2 — Classify each
 
 | | |
