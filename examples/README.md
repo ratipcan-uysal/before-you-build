@@ -28,6 +28,10 @@ Read in this order:
 
 The answer was not the one it went looking for. A request that answers nearly everything a `capability` needs scores **62**, because the rubric asks a read-only component about data residency, running cost and go-live sign-off and it earns zero on all of them. The finding belongs to the rubric. It is also the only scoring in this repository that is not compromised, because the document being scored came from outside the session.
 
+## A third example, the strongest request in the set
+
+[**A shift swap for store staff**](vardiya-takasi/README.md) — seventeen documents, in Turkish, on a request written to be good: a measured problem, three numeric success criteria, a legal rule list, and the author's own list of what she had not decided. Two independent scorings returned the same **44/100, NOT READY**, and the run's attacks on the skill files became v4.8.0. It does not run `build-context`, and it does not tidy the faults it found.
+
 ## A second example, a different shape
 
 [**Changing a seller score**](seller-score/README.md) — twenty documents on a marketplace that wants to change what a seller's score means, and a release that ends up not changing the score at all. It starts where most work inside an organisation starts: something already exists and somebody wants it changed, so the entry point is `impact-radar` rather than `idea-grill`.
