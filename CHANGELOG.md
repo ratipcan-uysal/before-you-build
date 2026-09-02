@@ -4,6 +4,14 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.9.0
+
+**Heads up — five rules were added, one per skill, each closing a gap the shift-swap run left recorded rather than fixed.** `impact-radar` takes the request's own open questions in as forwarded rows, marked as such, rather than restating them as discoveries or dropping them. `slice` says what to do when the only score in hand is of an earlier version: cut the document in front of you, treat the score as evidence about the metric, and owe a re-score. `api-needs` grades each need by the plane it lands on — a live system carries the feasibility column, the service being built gets ordinary-or-hard, and a plane nobody has asserted exists is a `[DECISION NEEDED]` before it is anything else. `request-shaper` counts questions by answers rather than by lines, and derives every carrier count from the body. `design-brief` checks each rank order against the mechanism sentences on the same surface before the generator block goes out, and the mechanism wins.
+
+**A third worked example, in Turkish, on the strongest request in the set.** [Seventeen documents](examples/vardiya-takasi/README.md) on an in-app shift swap for supermarket staff, run unattended in clean contexts on v4.7.0 and published as they came back — including the faults the run found in the skills, which v4.8.0 then closed. Two independent scorings returned the same 44/100. It does not run `build-context`, on cost, and says so.
+
+**The set's central claim was tested against a plain prompt, and the result is not the one the README implies.** [`docs/control-group.md`](docs/control-group.md) runs the three published requests through a strong one-shot review with no rubric, in clean contexts, and compares. On finding gaps the prompt is broader every time — forty to fifty against five — and it caught a date contradiction in a fixture that sixteen agents read in full and missed. What the rubric adds is not discovery. It is a number that reproduces, a verdict a paragraph cannot argue with, a published denominator, gaps written as the sentence the author must add, and a next step that names a mechanism. It also costs a third to a half more. The README's opening paragraph has been read against this and left alone: it claims the skills are hard to please, which held, and does not claim they see more, which did not.
+
 ## 4.8.1
 
 **The skills run in Codex, and it turned out to need documentation rather than a port.** Codex reads the same layout — `SKILL.md` with `name` and `description` frontmatter, detail in `references/` — so nothing about the set had to change. What was missing was any way for a Codex user to know that, and the install path. [`docs/codex.md`](docs/codex.md) carries both, and the README says it in the place someone would look.
