@@ -8,6 +8,10 @@ It serves two builders. One writes a request and hands it to a team. The other h
 
 These skills are deliberately hard to please. A model asked to review something will usually find a way to approve it — that is the failure this repo is built against.
 
+## PM / BA workspace — early product
+
+The repository now also contains a persistent analysis workspace in [`apps/workspace`](apps/workspace/README.md): source and Teams VTT intake, questions, PM approvals, document revisions and guarded agent handoff. It uses exported work packets with your existing LLM; automatic AI and enterprise connectors are not yet implemented. See the [product direction](docs/product-direction.md) and the application's tested boundaries before using it with real institutional data. The portable skills below remain independently usable.
+
 ## Install
 
 ### Claude Code
