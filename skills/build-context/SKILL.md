@@ -1,6 +1,6 @@
 ---
 name: build-context
-description: Assemble everything the chain decided into one pack whose reader is whoever writes the code, human or model, and lead it with what is still open so nothing gets invented quietly. Reads across the chain's outputs rather than one document, names every place two of them disagree, and separates what was decided from what was assumed from what nobody has settled. Ends with a verdict — BUILDABLE, ASK FIRST or NOT BUILDABLE — and with what the pack cannot control, because a generator handed decisions and no copy, no awkward example data and no design system invents all three and returns something that reads as finished. Use when the user says "put it all together", "write the handoff", "give this to the team", "make the spec", "I'm ready to build", "set up the context for Claude to build this", or has run the chain and is holding several documents. Do not use to write any one of those documents, to design the architecture or choose the stack, or to estimate anything — and never to fill a gap so that the pack looks complete.
+description: Assemble several before-you-build outputs into one implementation handoff, exposing open decisions, assumptions, contradictions, and a BUILDABLE / ASK FIRST / NOT BUILDABLE verdict. Use for "put it all together", "write the handoff", or "I'm ready to build" after the chain ran. Do not use to create missing source documents, choose architecture or stack, estimate, or fill gaps to make a pack look complete.
 ---
 
 # Build Context

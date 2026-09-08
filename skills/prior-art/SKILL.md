@@ -1,6 +1,6 @@
 ---
 name: prior-art
-description: Find where a piece of work departs from how the problem is already solved elsewhere, and turn each departure into a question for whoever decided it. Reads documentation, specifications and published behaviour of things that already do this, then asks about three kinds of departure — a different mechanism, a constraint nobody else imposes, and a capability nobody has confirmed the platform has. Every line cites a source that was actually opened; a claim with no source is not written. Produces questions, never recommendations, and never names a product to buy. Use when the user says "has anyone solved this", "is this how it is normally done", "are we reinventing something", "check this against how others do it", or has a request that specifies a mechanism nobody has examined. Do not use to argue whether the work is worth doing (idea-grill), to find production failure modes (risk-interrogate), to measure a document (readiness-score), or to choose a vendor — the moment it recommends a product it is a procurement paper and gets dismissed whole.
+description: Research how a problem is already solved, identify sourced departures in mechanism, constraints, or assumed platform capability, and turn them into decision-owner questions rather than recommendations. Use for "has anyone solved this?", "is this normally done this way?", or an unexamined mechanism. Do not use to judge merit, find production risks, score readiness, recommend products, or choose a vendor.
 ---
 
 # Prior Art

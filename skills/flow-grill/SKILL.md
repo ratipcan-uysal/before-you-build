@@ -1,6 +1,6 @@
 ---
 name: flow-grill
-description: Audit a flow that already exists — a diagram, a written sequence, a board export, or the output of flow-map — for the paths that lead nowhere, the branches nobody ended, the steps that assume the previous one worked, and the conditions nobody can test. Returns findings with severity, never a rewritten flow. Checks the flow against whatever was asked for before applying general lenses, because a flow that quietly drifted from its request looks complete. Use when the user says "review this flow", "what's missing from this journey", "grill this flow", "did we cover all the paths", "is this flow complete", or shows a diagram and wants it attacked. Do not use to produce a flow in the first place (flow-map), to critique a screen (ux-grill), or to ask how the system fails in production (risk-interrogate).
+description: Audit an existing flow or diagram for dead ends, unfinished branches, assumed success, untestable conditions, and drift from its source request; return severity-ranked findings, never a rewrite. Use for "review this flow", "what paths are missing?", or "is this journey complete?" Do not use to create the flow, critique screens, or run a broader production failure-mode review.
 ---
 
 # Flow Grill

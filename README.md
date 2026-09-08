@@ -10,6 +10,8 @@ These skills are deliberately hard to please. A model asked to review something 
 
 ## Install
 
+### Claude Code
+
 ```bash
 /plugin marketplace add ratipcan-uysal/before-you-build
 /plugin install before-you-build
@@ -17,7 +19,9 @@ These skills are deliberately hard to please. A model asked to review something 
 
 Then just describe what you have. The skills trigger on their own, or run `/byb` to be routed.
 
-**Codex reads the same format.** `SKILL.md` frontmatter, detail in `references/` — the skills install and run there unchanged, one command for all fifteen. Install path and the two things that behave differently: [`docs/codex.md`](docs/codex.md).
+### Codex
+
+Open this repository in Codex and all fifteen skills are discovered automatically through `.agents/skills`; no install or second copy is involved. To use them from every repository, install all fifteen from GitHub in one run. The command, scope rules, and the two behaviour differences are in [`docs/codex.md`](docs/codex.md).
 
 ## Where to start
 
@@ -120,7 +124,7 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v4.9` — **fifteen skills**, none planned. A third worked example, in Turkish, on the strongest request in the set; five rules closing the gaps that run left recorded; and a control group that measures what the rubric adds over a plain prompt, which is not discovery. It runs from zero as well as inside an existing product: two rules that were written absolute now branch on whether the thing exists, because a brief that asks a greenfield team to export tokens they do not have stops the chain and lets the generator invent a visual language instead. The three skills added at 3.1 to 3.3 all come from one correction: the set was built for a PM handing a request to a team, and it also has to serve someone handing it to a model that writes the whole product. `data-model` because an undefined schema gets invented, `slice` because the chain was being run across scope that would not ship, and `build-context` because the chain ended in nine documents and nobody builds from nine documents. `state-matrix` was removed at v3.0 after three rounds of narrowing left it doing what `ux-grill` and `design-brief` already covered; [why](docs/decisions.md). From here the set changes because it is used. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
+`v4.10` — **fifteen skills**, none planned. Codex now discovers the same canonical skill tree directly when this repository is open; no mirror tree and no separate repository. All descriptions were tightened after a measured Codex run exposed only ten of fifteen within its initial discovery budget; the same check now exposes fifteen. A third worked example, in Turkish, on the strongest request in the set; five rules closing the gaps that run left recorded; and a control group that measures what the rubric adds over a plain prompt, which is not discovery. It runs from zero as well as inside an existing product: two rules that were written absolute now branch on whether the thing exists, because a brief that asks a greenfield team to export tokens they do not have stops the chain and lets the generator invent a visual language instead. The three skills added at 3.1 to 3.3 all come from one correction: the set was built for a PM handing a request to a team, and it also has to serve someone handing it to a model that writes the whole product. `data-model` because an undefined schema gets invented, `slice` because the chain was being run across scope that would not ship, and `build-context` because the chain ended in nine documents and nobody builds from nine documents. `state-matrix` was removed at v3.0 after three rounds of narrowing left it doing what `ux-grill` and `design-brief` already covered; [why](docs/decisions.md). From here the set changes because it is used. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
 
 What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
 

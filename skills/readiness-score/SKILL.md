@@ -1,6 +1,6 @@
 ---
 name: readiness-score
-description: Measure how ready a written request, spec, ticket, or brief is for a team to start building, as a 0-100 score with a READY / CONDITIONAL / NOT READY verdict and an evidence-quoted list of what is missing. Scores only what the document actually says — silence counts as zero, and nothing is marked out of scope without a quote proving it. Use when the user asks "is this ready to build", "can the team start on this", "is this spec complete", "score this ticket", "definition of ready", "what is missing from this", or hands over a request document and asks whether it is good enough. Do not use to fill in what is missing (request-shaper), to argue whether the idea is worth doing at all (idea-grill), to extract design decisions (design-brief), or to critique a screen (ux-grill). This skill measures; it never writes the missing content.
+description: Score a written request, spec, ticket, or brief 0–100 with a READY / CONDITIONAL / NOT READY verdict and evidence-quoted gaps; silence scores zero and out-of-scope needs a quote. Use for "is this ready to build?", "score this ticket", "is the spec complete?", or "what is missing?" Do not use to fill gaps, judge whether the idea is worthwhile, extract design decisions, or critique a screen.
 ---
 
 # Readiness Score

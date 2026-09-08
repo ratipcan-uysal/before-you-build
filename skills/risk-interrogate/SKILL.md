@@ -1,6 +1,6 @@
 ---
 name: risk-interrogate
-description: Surface the production failure modes of work that has already been decided, as specific questions grouped by who has to answer them. Reads the request, flow, or spec, classifies it, and works through twelve risk dimensions — concurrency, dependency failure, data integrity, abuse, privacy, scale and cost, operations, reversibility, migration, detection, blast radius, human error — keeping only questions that name something in the actual material. Use when the user says "what could go wrong", "what breaks in production", "we're building this, what should I worry about", "run a risk pass", "pre-mortem this launch", "what am I missing before the team starts", or brings a decided feature and wants the failure modes before it ships. Do not use to argue whether the work is worth doing (idea-grill), to measure how complete a document is (readiness-score), to write the request up (request-shaper), or to critique a screen (ux-grill).
+description: Surface concrete production failure modes in decided work as questions grouped by the people who must answer them, covering concurrency, dependencies, integrity, abuse, privacy, scale, operations, reversibility, migration, detection, and human error. Use for "what could go wrong?", "pre-mortem this launch", or "what breaks in production?" Do not use to debate merit, score completeness, write the request, or critique screens.
 ---
 
 # Risk Interrogate

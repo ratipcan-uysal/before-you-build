@@ -1,6 +1,6 @@
 ---
 name: data-model
-description: Decide what the system must remember, before anyone writes a schema — the entities, what makes two records the same thing, who owns them, what creates and ends them, which relationships carry a rule, and what is stored rather than computed. Takes its nouns from a mapped flow rather than from brainstorming, and checks itself back against that flow step by step — every step that reads must have something to read, every step that acts must have something it writes. Product decisions only, no physical schema. Use when the user says "what are the entities", "what do we need to store", "design the data model", "what does the database need to hold", "what tables do we need", or is about to hand a build to a generator that will otherwise invent the schema and encode the wrong product decisions in it. Do not use to decide what the system must provide (api-needs), to map what happens in what order (flow-map), to write the request itself (request-shaper), or to choose types, indexes, engines or migrations — those belong to whoever builds it.
+description: Define the product-level entities, identity, ownership, lifecycle, relationships, and stored-versus-computed choices implied by a mapped flow. Use for "what must the system remember?", "what are the entities?", or "what does the database need to hold?" Do not use for API capabilities, flow mapping, request writing, or physical schema choices such as types, indexes, engines, and migrations.
 ---
 
 # Data Model

@@ -1,6 +1,6 @@
 ---
 name: ux-grill
-description: Critique a design that already exists — a wireframe, mockup, screenshot, Figma frame, or a screen a generator produced — and return findings with severity, not a redesign. Checks conformance to whatever decisions were already made before applying general lenses, because a screen that quietly contradicts its own brief looks fine and passes review. Covers hierarchy, affordance, states, error paths, adjacency, irreversibility, correction, exits, accessibility, content under stress, and consistency. Use when the user says "critique this design", "what's wrong with this screen", "review this mockup", "tear this apart", "UX review", "does this design work", or shows a screen and wants an independent read. Do not use to decide what the screens should do in the first place (design-brief), or to measure how complete a written document is (readiness-score).
+description: Critique an existing wireframe, mockup, screenshot, Figma frame, or generated screen for conformance, hierarchy, affordance, states, errors, exits, accessibility, stress content, and consistency; return severity-ranked findings, not a redesign. Use for "review this mockup", "what is wrong with this screen?", or "UX review". Do not use to decide screen behaviour from scratch or score a written product document.
 ---
 
 # UX Grill

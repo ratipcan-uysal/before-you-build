@@ -1,6 +1,6 @@
 ---
 name: flow-map
-description: Turn a shaped request, notes, or a described feature into the flow a team can build from — the happy path as numbered steps, every branch with its condition, every error path with what the user is left holding, and a mark at each point where the system has to do something. Reports coverage as counts, so a flow with twelve happy steps and one error path says so out loud. Use when the user says "map the flow", "what are the steps", "turn this into a user journey", "what happens step by step", "draw the flow for this", or has a request and nobody has written down what actually happens. Do not use to audit a flow that already exists (flow-grill), to decide what the screens should do (design-brief), or to derive what the system must provide (api-needs).
+description: Turn a shaped request or notes into a buildable flow with numbered happy-path steps, conditional branches, explicit error exits, system touchpoints, and coverage counts. Use for "map the flow", "what happens step by step?", "draw the journey", or when no flow exists yet. Do not use to audit an existing flow, decide screen behaviour, or derive backend/API needs.
 ---
 
 # Flow Map

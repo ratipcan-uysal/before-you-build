@@ -1,6 +1,7 @@
 ---
 name: design-brief
-description: Extract the design decisions behind a feature before anyone opens Figma or asks an AI to generate a screen — surface inventory, the single primary job of each surface, information hierarchy, navigation and input models, defaults, system feedback, binding constraints, and explicit non-goals. Implementation-independent — no pixels, no colours, no adjectives. Optionally emits a second output, a constraint block a UI generator will actually obey. Use when the user says "what should the screens do", "what screens do we need", "write the brief for the designer", "turn this into a design spec", "before we open Figma", "make a prompt for v0 or Figma Make", or has a shaped request and nobody has decided how it should be experienced. Do not use to critique a design that already exists (ux-grill), to write the request itself (request-shaper), or to measure completeness (readiness-score).
+description: >-
+  Extract implementation-independent screen and interaction decisions before Figma or UI generation: surfaces, primary jobs, hierarchy, navigation, inputs, defaults, feedback, constraints, and non-goals. Use for "what should the screens do?", "write the designer brief", or a UI-generator constraint block. Do not use to critique an existing design, write the product request, or score document completeness.
 ---
 
 # Design Brief

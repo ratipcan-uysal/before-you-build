@@ -1,6 +1,6 @@
 ---
 name: slice
-description: Cut a defined request down to a first slice worth shipping on its own, and say precisely what falls out and what brings it back. Finds the one job a person must be able to finish end to end, then tests every candidate cut against whether anyone still gets whole value, whether you could tell it worked, and whether the deferred part comes back cheaply or comes back as a migration. Separates cutting the build from cutting the decision — a deferred feature is a smaller build, a deferred decision is one made silently by whoever writes the code. Writes its exclusions as quotable declarations so readiness-score can mark them out of scope with evidence. Use when the user says "what ships first", "cut this down", "what is in v1", "this is too big", "what is the MVP", "help me scope this", or has a request nobody can build in the time available. Do not use to argue whether the thing is worth building at all (idea-grill), to measure whether it is defined enough (readiness-score), to write the request itself (request-shaper), or to estimate how long any of it takes.
+description: Cut a defined request to a first end-to-end slice worth shipping, state quotable exclusions, and distinguish deferred scope from deferred decisions and future migration. Use for "what ships first?", "cut this down", "what is v1/MVP?", or "this is too big". Do not use to judge whether the product is worthwhile, score readiness, write the request, or estimate delivery time.
 ---
 
 # Slice

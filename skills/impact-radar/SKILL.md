@@ -1,6 +1,6 @@
 ---
 name: impact-radar
-description: Map what a change to something that already exists will break — the screens, contracts, stored data, reports, jobs, integrations, support scripts and old clients that depend on it, directly and indirectly. Separates loud breakage, which someone fixes in a day, from silent breakage, which surfaces at quarter end, and says for each who finds out and how long it takes. Ends with the regression surface — what to test that is not the thing you changed. Use when the user says "if I change this what breaks", "what depends on this", "blast radius", "is it safe to change", "what will this affect", or is about to modify an existing field, endpoint, rule, screen, or event. Do not use for the production failure modes of new work (risk-interrogate), to audit a flow (flow-grill), or to measure a document (readiness-score).
+description: Map the direct and silent blast radius of changing an existing field, endpoint, rule, screen, event, or stored meaning across consumers, integrations, reports, jobs, support, and old clients; end with the regression surface. Use for "if I change this, what breaks?", "what depends on this?", or "is it safe to change?" Do not use for risks in new work, flow audits, or document-readiness scoring.
 ---
 
 # Impact Radar

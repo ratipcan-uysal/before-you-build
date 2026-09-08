@@ -4,6 +4,14 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 4.10.0
+
+**Codex discovers the same canonical skill tree directly from the repository.** A checked-in `.agents/skills` link exposes all fifteen directories through Codex's documented repo-skill location without copying them or changing their contracts. The validator now fails if that link disappears or points anywhere other than `skills/`.
+
+**Heads up — all fifteen trigger descriptions are shorter.** The first Codex prompt-input check exposed only ten descriptions before exhausting the host's initial skill-list budget; `build-context`, `data-model`, `idea-grill`, `prior-art`, and `slice` were absent. The descriptions now front-load the task, preserve a positive trigger and an explicit boundary, and fit as a complete set. The validator caps their aggregate at 6,500 characters so the failure cannot return one edit at a time. This changes selection metadata rather than any skill's procedure, but it can change which skill an ambiguous prompt activates, so the release is minor.
+
+[`docs/codex.md`](docs/codex.md) now separates repository discovery from global installation and records the 15/15 CLI verification. No separate repository and no Codex marketplace plugin were added: both would create a second distribution surface for identical skill content, while the repo link and existing `skill-installer` path already cover the two usage scopes.
+
 ## 4.9.0
 
 **Heads up — five rules were added, one per skill, each closing a gap the shift-swap run left recorded rather than fixed.** `impact-radar` takes the request's own open questions in as forwarded rows, marked as such, rather than restating them as discoveries or dropping them. `slice` says what to do when the only score in hand is of an earlier version: cut the document in front of you, treat the score as evidence about the metric, and owe a re-score. `api-needs` grades each need by the plane it lands on — a live system carries the feasibility column, the service being built gets ordinary-or-hard, and a plane nobody has asserted exists is a `[DECISION NEEDED]` before it is anything else. `request-shaper` counts questions by answers rather than by lines, and derives every carrier count from the body. `design-brief` checks each rank order against the mechanism sentences on the same surface before the generator block goes out, and the mechanism wins.

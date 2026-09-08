@@ -1,6 +1,6 @@
 ---
 name: request-shaper
-description: Turn a raw idea, a pile of notes, a thin ticket, or a half-formed ask into a written request a team could actually start from. Reads whatever exists, then either interviews the user in short ordered rounds until the gaps are closed, or — when asked to work alone — drafts the document with every inferred line explicitly marked as an assumption. Output is structured to the same six categories readiness-score measures, so it can be scored immediately. Use when the user says "write this up properly", "turn these notes into a request", "flesh out this ticket", "make this analyst-ready", "help me document what we're asking for", or hands over messy material and wants a document out of it. Do not use to score a document that already exists (readiness-score), to argue whether the idea is worth doing (idea-grill), to decide what the screens should do (design-brief), or to surface production risks (risk-interrogate).
+description: Turn a raw idea, notes, or a thin ticket into a structured request by interviewing in short rounds or drafting autonomously with every inference marked. Use for "write this up properly", "turn these notes into a request", "flesh out this ticket", or messy material that needs a document. Do not use to score an existing document, argue whether the idea is worthwhile, decide screen behaviour, or run a production-risk pass.
 ---
 
 # Request Shaper

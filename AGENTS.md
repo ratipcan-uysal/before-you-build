@@ -18,6 +18,7 @@ Green is the bar, and the checks are not decoration. Each one exists because the
 |---|---|
 | `SKILL.md` body ≤ 150 lines | Everything else goes in `references/`. Progressive disclosure is the budget, not a preference |
 | Description 200–1600 chars, with a stated boundary | The description is what a model matches on. A skill with no *"Do not use"* fires on its neighbours' work |
+| Aggregate descriptions ≤ 6,500 chars | Codex exposed only 10 of 15 when this reached 13,985; the host's initial list is a real discovery budget |
 | Every skill named by at least two others | One caller is one path in, and a user who does not run that skill never reaches this one |
 | Links resolve, backticked kebab-case terms exist | Prose rots quietly; a retired name in an example passed CI for a whole release once |
 | A rule needing an answer says what happens when none comes | Method principle 11. Matching is a tripwire on phrasings that have appeared, not a proof — a new wording still gets through, and a reader is the only real catch |

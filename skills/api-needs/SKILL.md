@@ -1,6 +1,6 @@
 ---
 name: api-needs
-description: Derive what the system must be able to provide for a flow to work — at each point the flow reads or acts, what data or operation is needed, at what moment, how fresh it must be, what has to be atomic, and what has to be safe to repeat. Marks each need as supported, unconfirmed with an owner, or a known gap, and names the capabilities a design has assumed that nobody has verified. Optionally follows with a clearly separated draft contract for the backend team to argue with. Use when the user says "what does the frontend need from the backend", "what APIs do we need", "what data does this screen need", "can our services even do this", or has a flow and nobody has worked out what the system must supply. Do not use to write the flow (flow-map), to audit it (flow-grill), to design the backend implementation, or to surface production failure modes (risk-interrogate).
+description: Derive the backend data, operations, freshness, atomicity, and retry guarantees an existing product flow requires; optionally draft a contract. Use for "what APIs do we need?", "what does this screen need from the backend?", or feasibility checks. Do not use to map or audit the flow, design implementation, or run a production-risk review; use flow-map, flow-grill, or risk-interrogate instead.
 ---
 
 # API Needs

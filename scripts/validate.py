@@ -23,6 +23,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 MAX_BODY_LINES = 150
 MIN_DESC, MAX_DESC = 200, 1600
+MAX_DISCOVERY_CHARS = 6500
 
 # Skills that once existed. A live document must not describe the set as still
 # having one; a history document may name it, with the reason nearby.
@@ -135,8 +136,18 @@ listed = {p["name"] for p in market.get("plugins", [])}
 if plugin.get("name") and plugin["name"] not in listed:
     err(f"marketplace.json does not list the plugin '{plugin['name']}'")
 
+# Codex discovers repository skills under .agents/skills. Keep that entry as a
+# link to the canonical tree: copying fifteen skills here would create a mirror
+# whose drift this validator could only notice after users had installed it.
+codex_skills = ROOT / ".agents" / "skills"
+if not codex_skills.is_symlink():
+    err(".agents/skills: missing symlink to the canonical skills/ tree")
+elif codex_skills.resolve() != (ROOT / "skills").resolve():
+    err(".agents/skills: does not resolve to the canonical skills/ tree")
+
 # --- skills --------------------------------------------------------------
 skill_names = set()
+description_chars = 0
 for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
     rel = skill_md.relative_to(ROOT)
     raw = skill_md.read_text()
@@ -146,6 +157,7 @@ for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
 
     name = fm.get("name")
     desc = fm.get("description", "")
+    description_chars += len(desc)
     if name != skill_md.parent.name:
         err(f"{rel}: frontmatter name '{name}' != directory '{skill_md.parent.name}'")
     if name in skill_names:
@@ -170,6 +182,9 @@ for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
 
 if not skill_names:
     err("no skills found under skills/")
+if description_chars > MAX_DISCOVERY_CHARS:
+    err(f"skill descriptions total {description_chars} chars (max "
+        f"{MAX_DISCOVERY_CHARS}) — Codex may omit skills from initial discovery")
 
 # --- prose: links resolve, and every skill named still exists -------------
 # Live surfaces describe the set as it is. History surfaces may name a retired

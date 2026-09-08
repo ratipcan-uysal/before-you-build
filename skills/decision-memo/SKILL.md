@@ -1,6 +1,6 @@
 ---
 name: decision-memo
-description: Compress existing analysis into a one-page memo that takes a single position and asks one named person to approve one specific thing. Seven fixed fields — the ask, why now, what is known, the recommendation, what it costs, what happens if nobody decides, and what is needed from the reader. Produces no new analysis and invents no numbers; a figure that is not in the source material does not appear. Use when the user says "write the memo", "I need approval for this", "make the case to leadership", "one-pager for the decision", "how do I get a yes on this", or has analysis and needs a decision out of it. Do not use to pressure-test whether the idea is sound (idea-grill), to write the request for the team (request-shaper), to measure a document (readiness-score), or to generate the analysis being summarised.
+description: Compress existing analysis into a one-page memo that takes one position and asks one named person to approve one specific thing, without inventing analysis or numbers. Use for "write the decision memo", "I need approval", or "make the case to leadership" when the evidence already exists. Do not use to test the idea, write the request, score readiness, or generate the missing analysis.
 ---
 
 # Decision Memo
