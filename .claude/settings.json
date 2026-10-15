@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/validate.py:*)",
+      "Bash(python3 -m unittest:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(mkdir -p:*)"
+    ]
+  }
+}
