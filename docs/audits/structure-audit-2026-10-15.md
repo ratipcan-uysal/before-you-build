@@ -121,3 +121,9 @@ Bulgu çürümüyor: üç itirazın hiçbiri `none`/`release` olaylarının büt
 
 [ASSUMED] işaretli varsayımlar: kullanıcının karar sorusu "v7'den önce yapı mı içerik mi" (görev metninden) ve `claude plugin eval`'ın kullanılabilir durumda olması (bu makinede `--help` çalışıyor, GA durumu doğrulanmadı).
 
+## Ek: uygulama (2026-10-16, 6.1.0)
+
+PM önerilen beş adımın hepsini istedi. Cevaplanmamış üç karar için rapordaki önerilerle ilerlendi.
+- **Z1:** Geçersizleştirme artık `workspace.py` içinde bir tablo. Soru eklemek, danışma açmak, `release`/`none` kararları ve `clear`/`unknown` cevapları onay düşürmüyor. Yeni kaynak için `reconcile.propose` ve `reconcile.approve` eklendi. Schema 3'e gerek kalmadı: yeni anahtarlar yokken varsayılan değer alıyor.
+- **Z2:** Tablo, işlem işlem testli (`tests/test_invalidation.py`). Kaldırılan her bump geri konunca en az bir test düşüyor. `CONDITIONAL` koddaki gibi geçiyor; delivery.md buna göre düzeltildi ve iki yön de testli. Canlı yönlendirme `scripts/routing_eval.py` ile ölçülüyor. Codex'te 18 skill'in 18'i tam açıklamasıyla görünüyor.
+- **Z3:** Bekliyor. Koşulu [BEKLEYENLER.md](../../BEKLEYENLER.md)'de.

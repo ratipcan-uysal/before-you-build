@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 6.1.0
+
+**Heads up — the ledger invalidates by content, not by event.** A late question, a stakeholder consultation request, a `release` or `none` decision and a `clear` or `unknown` answer no longer make every artifact in the request stale. Before, one informational question staled all nine artifacts of a full profile and a launch-only consultation blocked development delivery. An open `start` question or unsettled `start` consultation still blocks production and delivery. What invalidates is now a table in `workspace.py`, tested operation by operation. No schema change; existing stores keep working.
+
+**New sources can be reconciled once.** A new source still makes every artifact, decision approval, profile approval and consultation response stale. `reconcile.propose` lists the records the new source leaves unaffected, each citing it, and one PM `reconcile.approve` carries them forward with a note naming the reconciliation. Before, a single unrelated reply on a fully approved request meant roughly thirty operations, four new independent reviews and about thirteen PM approvals.
+
+**Heads up — `CONDITIONAL` passes the request gate, as the code already did.** The delivery protocol said only `READY` passed; the helper accepted `CONDITIONAL` with zero blockers and nothing tested either. The protocol now matches the code, and both directions are tested.
+
+**Unattended runs may draft ahead.** With no PM present, the guide may draft the next analysis on current but unapproved inputs as an unregistered `[DRAFT]`, registered only once its inputs are approved and unchanged.
+
+**Routing is measured live.** `scripts/routing_eval.py` turns `evals/triggers.yaml` into a `claude plugin eval` suite in the ignored `routing-eval/` directory, generated rather than copied. Codex prompt input was re-measured for eighteen skills. Results are in [the quality report](examples/work-guide/quality-report.md).
+
 ## 6.0.0
 
 **Eighteen skills; two new bounded producers.** `acceptance-spec` derives observable scenarios with requirement/flow traceability and explicit blocked decisions. `contract-spec` completes decided API needs with authorization, failure/retry, timeout, consistency and compatibility guarantees plus validated success/error examples. Neither chooses missing business rules or implements software. BYB contract JSON is deliberately not OpenAPI.

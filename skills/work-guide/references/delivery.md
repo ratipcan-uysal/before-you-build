@@ -30,13 +30,13 @@ Setting or approving a profile changes analysis context. Do this before producin
 
 This illustrative quote only establishes context, not an authorization requirement; actual work must quote the relevant rule. `start` blocks development, `release` blocks launch, `none` is informational. Distinguish security, legal, fraud, operations and business questions by actual owners, not invented names or obligatory departments for every task.
 
-Import the actual response as source evidence. Show its interpretation to the PM. Only after explicit PM direction:
+Import the actual response as source evidence, then reconcile it ([protocol](protocol.md#reconciling-a-new-source)) before recording the response. Show its interpretation to the PM. Only after explicit PM direction:
 
 ```json
 {"op":"consultation.respond","id":"C1","response":"The actual supplied response and its scope.","outcome":"clear","evidence":[{"source":"S2","locator":"L1","quote":"Exact wording from the actual response."}],"actor":"Configured PM name","statement":"The PM's actual statement accepting this interpretation."}
 ```
 
-Outcomes: `clear`, `changes_required`, `unknown`. Responses retain history and source epochs; later sources require rechecking. A PM's local record does not impersonate a stakeholder or replace a required corporate approval system. If no response/PM confirmation exists, keep the consultation open. The helper never sends messages to stakeholders.
+Outcomes: `clear`, `changes_required`, `unknown`. Responses retain history and source epochs; later sources require rechecking or reconciliation. A `clear` or `unknown` answer leaves artifacts current; only `changes_required` on a `start` consultation makes them stale. A PM's local record does not impersonate a stakeholder or replace a required corporate approval system. If no response/PM confirmation exists, keep the consultation open. The helper never sends messages to stakeholders.
 
 ## 3. Validate and review the selected scope
 
@@ -50,7 +50,7 @@ Standalone validation checks format and contract success/error examples. Managed
 
 Register portable JSON in `artifact.put.structured`; its readable `content` retains decisions, citations and limitations. Exact input ids/revisions identify its source manifest. Final independent `build-context` review must compare JSON to prose and both to the underlying evidence, including exclusions, stakeholder conditions and meaningful acceptance. For a required design artifact, supply an actual design for `ux-grill`; a prose brief alone is not a reviewed mockup. Missing visuals can remain a draft but cannot be presented as a passing UX review.
 
-Passing review verdicts: request `READY`, flow/design `PASS`, handoff `BUILDABLE`, all with zero blocking findings. `CONDITIONAL` is not silently promoted. Approval remains separate and names the exact artifact revision. Review after approval withdraws that approval; producing a dependent artifact before upstream review/approval completes will make that dependent stale.
+Passing review verdicts: request `READY` or `CONDITIONAL`, flow/design `PASS`, handoff `BUILDABLE`, all with zero blocking findings. `CONDITIONAL` passes because its definition already excludes blockers and no published request has reached `READY`; report it as `CONDITIONAL`, never relabel it `READY`, and show its gaps to the PM with the approval request. Approval remains separate and names the exact artifact revision. Review after approval withdraws that approval; producing a dependent artifact before upstream review/approval completes will make that dependent stale.
 
 ## 4. Approve the snapshot, then export
 
@@ -82,7 +82,7 @@ python3 SCRIPT --root ROOT doctor
 python3 SCRIPT --root ROOT migrate --backup NEW_BACKUP.sqlite3
 ```
 
-`impact` follows tracked dependencies. Source/question/decision/consultation changes conservatively affect all analyses in this request. It does not discover external consumers; that is `impact-radar` work. New artifacts invalidate dependents through revision and attestation snapshots. Re-run only relevant production/review work, but never carry stale approval forward as current.
+`impact` follows tracked dependencies. A source, a `start` decision or a `start` consultation conservatively affects all analyses in this request; see the invalidation table in [the protocol](protocol.md). A new source can be reconciled instead of redoing every record. It does not discover external consumers; that is `impact-radar` work. New artifacts invalidate dependents through revision and attestation snapshots. Re-run only relevant production/review work, but never carry stale approval forward as current.
 
 Migration supports schema 1 → 2 only and requires a new backup path. It makes a consistent SQLite backup before changing rows, preserves records/history and advances each request revision. Existing drafts can resume; final delivery requires the new profile, structured indexes and explicit verdicts. Unsupported future schemas fail closed. Backup collisions/failures abort migration. Never delete the old store to make an upgrade succeed. To restore, stop all writers, preserve the failed database separately, and use the explicit chosen backup; do not overwrite a user's database without authorization.
 

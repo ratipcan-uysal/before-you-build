@@ -11,6 +11,9 @@ Observed on the local development environment during this implementation. This i
 | Original meeting replay | Resume, conflict, stale approval, duplicate no-op and draft export checks pass | Synthetic source/PM data only |
 | Copied skill CLI | Standalone copied scripts checked and delivered a synthetic approved archive | Not live automatic editor discovery or every operating system |
 | Portable acceptance/contract | Both actual agent outputs validate | Shape/examples, not semantic truth or readiness |
+| Invalidation policy (6.1) | 10 new tests; each operation checked against the `INVALIDATION` table after a full approval; every removed bump, reinserted, fails at least one test | Synthetic fixture, one requirement and one flow step |
+| Live routing, Claude Code (6.1) | 97 of 121 cases fired the expected skill; 19 of 19 `expect: none` cases fired nothing; no case fired a wrong skill; the wrong-skill control failed as it must | Claude Code 2.1.284, one run per case, $11.42, 2026-10-16. 21 of the 24 misses asked for material the prompt refers to and the suite does not attach; 1 is a clear miss (`idea-grill` on "Talk me out of rewriting the billing service"); 2 hit the turn limit with no reply |
+| Codex discovery (6.1) | 18 of 18 skills visible with full descriptions in `codex debug prompt-input`, beside 77 other installed skills | Codex CLI 0.162.0-alpha.2; visibility, not selection |
 | HTML presentation | 25 sections; script syntax and six file links valid; no external assets | Browser navigation, simulation and 390px/1280px widths checked; print layout not rendered |
 
 Commands:
@@ -62,6 +65,7 @@ The trial also exposed over-blocking wording: a separate slice/data-model filena
 - New automatic host selection, all current Claude/Codex combinations, Windows and corporate deployment are not certified.
 - Lenses are investigation prompts, not banking/telecom legal policies. No live legal/security/fraud sign-off was obtained.
 - Local actor/context identifiers can be fabricated by an operator; hashes are not signatures. Semantic claims remain dependent on actual review and evidence.
-- New source invalidation is deliberately conservative within one request; its cost has not been benchmarked on large real projects.
+- New source invalidation is deliberately conservative within one request. On the synthetic fixture, re-approving after one unrelated source cost about thirty operations before 6.1; reconciliation reduces the PM side to one approval, but neither cost has been measured on a real project.
+- Routing prompts that point at absent material ("this spec", "the mockup") mostly ask for it instead of firing a skill. Whether they route correctly with the material attached is not yet measured.
 
 Confidence: high for observed mechanical invariants; moderate for the narrow agent behaviors exercised; unknown for broad institutional effectiveness and relative quality/cost. See [the implementation roadmap](../../docs/plugin-roadmap.md) for the external validation still required.

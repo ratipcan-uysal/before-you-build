@@ -29,6 +29,36 @@ KINDS = {"request", "scope", "design", "flow", "data", "api", "contract", "accep
 REVIEWERS = {"request": "readiness-score", "flow": "flow-grill", "design": "ux-grill", "handoff": "build-context"}
 VERDICTS = {"request": {"READY", "CONDITIONAL", "NOT READY"}, "flow": {"PASS", "FAIL"},
             "design": {"PASS", "FAIL"}, "handoff": {"BUILDABLE", "ASK FIRST", "NOT BUILDABLE"}}
+# What each operation makes stale, keyed by (operation, tier of the questions or consultation it touches;
+# a start consultation is keyed by its outcome too, since only "changes_required" changes what artifacts say).
+# "artifacts": every artifact in the request; "approvals": decision approvals, profile approval and
+# consultation responses, which then need revision or a PM-approved reconciliation.
+# Artifact revisions and reviews invalidate their own dependents through input snapshots instead.
+INVALIDATION = {
+    ("source.add", None): {"artifacts", "approvals"},
+    ("profile.set", None): {"artifacts"},
+    ("profile.approve", None): {"artifacts"},
+    ("question.add", None): set(),
+    ("consultation.request", None): set(),
+    ("decision.propose", None): set(),
+    ("decision.revise", "start"): {"artifacts"},
+    ("decision.revise", "release"): set(),
+    ("decision.revise", "none"): set(),
+    ("decision.record", "start"): {"artifacts"},
+    ("decision.record", "release"): set(),
+    ("decision.record", "none"): set(),
+    ("consultation.respond", "start/changes_required"): {"artifacts"},
+    ("consultation.respond", "start/clear"): set(),
+    ("consultation.respond", "start/unknown"): set(),
+    ("consultation.respond", "release"): set(),
+    ("consultation.respond", "none"): set(),
+    ("artifact.put", None): set(),
+    ("review.record", None): set(),
+    ("artifact.approve", None): set(),
+    ("handoff.approve", None): set(),
+    ("reconcile.propose", None): set(),
+    ("reconcile.approve", None): set(),
+}
 
 
 class Invalid(ValueError):
@@ -135,7 +165,8 @@ def initial(identifier, title, pm):
     return {"schema": SCHEMA, "id": identifier, "title": text(title), "pm": text(pm),
             "revision": 0, "source_epoch": 0, "context_revision": 0,
             "sources": [], "questions": [], "decisions": [], "artifacts": [], "events": [],
-            "profiles": [], "consultations": [], "deliveries": []}
+            "profiles": [], "consultations": [], "deliveries": [],
+            "pending_reconcile": None, "reconciliations": []}
 
 
 def find(items, identifier):
@@ -302,6 +333,38 @@ def handoff_check(state):
             "approval_boundary": "Local operator attestations, not authenticated institutional sign-offs or a proof of semantic truth."}
 
 
+def invalidation(state, op, result):
+    """Look up what an applied operation makes stale; an operation missing from the table is a defect."""
+    action, tier = op["op"], None
+    if action in {"decision.revise", "decision.record"}:
+        decision = find(state["decisions"], result["id"])
+        ids = set(current(decision)["questions"])
+        if action == "decision.revise":
+            ids |= set(decision["versions"][-2]["questions"])
+        tiers = {find(state["questions"], q)["blocking"] for q in ids}
+        tier = "start" if "start" in tiers else "release" if "release" in tiers else "none"
+    elif action == "consultation.respond":
+        tier = find(state["consultations"], op["id"])["blocking"]
+        tier += "/" + op["outcome"] if tier == "start" else ""
+    require((action, tier) in INVALIDATION, "operation has no invalidation policy: " + action)
+    return INVALIDATION[(action, tier)]
+
+
+def reconcilable(state, pending, identifier):
+    """The stamp a record carries if only the pending sources made it stale, else None."""
+    if identifier == "profile":
+        profile = state["profiles"][-1] if state["profiles"] else None
+        return profile if profile and profile["approval"] and profile["source_epoch"] == pending["source_epoch"] else None
+    if identifier.startswith("D"):
+        version = current(find(state["decisions"], identifier))
+        return version if version["source_epoch"] == pending["source_epoch"] else None
+    if identifier.startswith("C"):
+        responses = find(state["consultations"], identifier)["responses"]
+        return responses[-1] if responses and responses[-1]["source_epoch"] == pending["source_epoch"] else None
+    version = current(find(state["artifacts"], identifier))
+    return version if version["context_revision"] == pending["context_revision"] else None
+
+
 def apply(state, op):
     """Pure state transition; callers persist only on success."""
     state = copy.deepcopy(state)
@@ -329,7 +392,6 @@ def apply(state, op):
                                   "product": text(op["product"]), "context": text(op["context"]), "required_artifacts": required,
                                   "exclusions": op["exclusions"], "lenses": lenses, "evidence": evidence(state, op["evidence"]),
                                   "source_epoch": state["source_epoch"], "approval": None})
-        state["context_revision"] += 1
         result = {"profile_revision": state["profiles"][-1]["revision"]}
     elif action == "profile.approve":
         fields(op, {"op", "profile_revision", "actor", "statement"})
@@ -339,7 +401,6 @@ def apply(state, op):
         require(profile["source_epoch"] == state["source_epoch"], "profile predates current sources")
         require(profile["approval"] is None, "profile already approved")
         profile["approval"] = pm_record(state, op)
-        state["context_revision"] += 1
         result = {"profile_revision": profile["revision"]}
     elif action == "consultation.request":
         fields(op, {"op", "owner", "question", "blocking", "evidence"})
@@ -347,7 +408,6 @@ def apply(state, op):
         item = {"id": "C" + str(len(state["consultations"]) + 1), "owner": text(op["owner"]),
                 "question": text(op["question"]), "blocking": op["blocking"], "evidence": evidence(state, op["evidence"]), "responses": []}
         state["consultations"].append(item)
-        state["context_revision"] += 1
         result = {"id": item["id"]}
     elif action == "consultation.respond":
         fields(op, {"op", "id", "response", "outcome", "evidence", "actor", "statement"})
@@ -356,7 +416,6 @@ def apply(state, op):
         item["responses"].append({"response": text(op["response"]), "outcome": op["outcome"],
                                    "evidence": evidence(state, op["evidence"]), "pm_record": pm_record(state, op),
                                    "source_epoch": state["source_epoch"]})
-        state["context_revision"] += 1
         result = {"id": item["id"]}
     elif action == "handoff.approve":
         fields(op, {"op", "fingerprint", "actor", "statement"})
@@ -378,8 +437,13 @@ def apply(state, op):
         record = {"id": "S" + str(len(state["sources"]) + 1), "label": text(op["label"]),
                   "format": op["format"], "sha256": sha, "content": content, "anchors": parsed}
         state["sources"].append(record)
-        state["source_epoch"] += 1
-        state["context_revision"] += 1
+        pending = state.get("pending_reconcile")
+        if pending:
+            pending["sources"].append(record["id"])
+            pending["proposal"] = None
+        else:
+            state["pending_reconcile"] = {"sources": [record["id"]], "source_epoch": state["source_epoch"],
+                                          "context_revision": state["context_revision"], "proposal": None}
         result = {"id": record["id"], "anchors": len(parsed)}
     elif action == "question.add":
         fields(op, {"op", "text", "owner", "blocking", "evidence"}, {"recommendation"})
@@ -392,7 +456,6 @@ def apply(state, op):
                   "owner": owner, "blocking": op["blocking"], "evidence": refs,
                   "recommendation": text(op["recommendation"]) if "recommendation" in op else None}
         state["questions"].append(record)
-        state["context_revision"] += 1
         result = {"id": record["id"]}
     elif action in {"decision.propose", "decision.revise"}:
         keys = {"op", "text", "rationale", "alternatives", "questions", "resolution", "evidence"}
@@ -412,7 +475,6 @@ def apply(state, op):
         if action.endswith("revise"):
             item = find(state["decisions"], op["id"])
             # A revised proposal withdraws the old approval, but preserves its history.
-            state["context_revision"] += 1
         else:
             item = {"id": "D" + str(len(state["decisions"]) + 1), "versions": []}
             state["decisions"].append(item)
@@ -433,7 +495,6 @@ def apply(state, op):
             require(all(question_status(state, find(state["questions"], q)) == "OPEN"
                         for q in version["questions"]), "another approved decision already answers this question")
         version["record"] = dict(pm_record(state, op), outcome=op["outcome"])
-        state["context_revision"] += 1
         result = {"id": item["id"], "outcome": op["outcome"]}
     elif action == "artifact.put":
         fields(op, {"op", "kind", "content", "producer_context", "inputs"}, {"structured"})
@@ -497,8 +558,57 @@ def apply(state, op):
             version["approvals"].append(dict(version["approval"]))
         version["attestation_revision"] += 1
         result = {"id": item["id"]}
+    elif action == "reconcile.propose":
+        fields(op, {"op", "sources", "unaffected"})
+        pending = state.get("pending_reconcile")
+        require(pending is not None, "no source change is waiting for reconciliation")
+        require(isinstance(op["sources"], list) and sorted(op["sources"]) == sorted(pending["sources"]),
+                "a reconciliation must name exactly the new sources: " + ", ".join(pending["sources"]))
+        require(isinstance(op["unaffected"], list) and op["unaffected"], "name at least one unaffected record")
+        listed = set()
+        for entry in op["unaffected"]:
+            fields(entry, {"id", "reason", "evidence"})
+            identifier = text(entry["id"], "record id")
+            require(identifier not in listed, "duplicate unaffected record")
+            listed.add(identifier)
+            require(reconcilable(state, pending, identifier) is not None,
+                    identifier + " was not current before these sources; revise it instead")
+            text(entry["reason"], "reason")
+            refs = evidence(state, entry["evidence"])
+            require(all(ref["source"] in pending["sources"] for ref in refs), "cite the new source that leaves the record unaffected")
+        for entry in op["unaffected"]:
+            if entry["id"].startswith("A"):
+                for ref in current(find(state["artifacts"], entry["id"]))["inputs"]:
+                    require(ref["id"] in listed, entry["id"] + " depends on " + ref["id"] + ", which is not listed as unaffected")
+        pending["proposal"] = {"id": "R" + str(len(state.get("reconciliations", [])) + 1),
+                               "unaffected": copy.deepcopy(op["unaffected"]), "at": now()}
+        result = {"id": pending["proposal"]["id"]}
+    elif action == "reconcile.approve":
+        fields(op, {"op", "id", "actor", "statement"})
+        pending = state.get("pending_reconcile")
+        require(pending is not None and pending["proposal"] is not None and pending["proposal"]["id"] == op["id"],
+                "no current reconciliation proposal with this id")
+        approval = pm_record(state, op)
+        for entry in pending["proposal"]["unaffected"]:
+            stamp = reconcilable(state, pending, entry["id"])
+            key = "context_revision" if entry["id"].startswith("A") else "source_epoch"
+            stamp.setdefault("carried", []).append({"reconcile": op["id"], "from": stamp[key]})
+            stamp[key] = state[key]
+        state.setdefault("reconciliations", []).append({"id": op["id"], "sources": pending["sources"],
+                                                        "unaffected": pending["proposal"]["unaffected"], "approval": approval})
+        state["pending_reconcile"] = None
+        result = {"id": op["id"], "carried": len(pending["proposal"]["unaffected"])}
     else:
         raise Invalid("unknown operation: " + action)
+    effects = invalidation(state, op, result)
+    if effects and action != "source.add" and state.get("pending_reconcile"):
+        # Reconciliation compares records with the sources alone; any other change forfeits it.
+        state["pending_reconcile"] = None
+        result = dict(result, reconcile_forfeited=True)
+    if "approvals" in effects:
+        state["source_epoch"] += 1
+    if "artifacts" in effects:
+        state["context_revision"] += 1
     state["revision"] += 1
     state["events"].append({"revision": state["revision"], "at": now(), "op": action, "result": result})
     return state, result
@@ -515,7 +625,7 @@ def status(state):
         next_step = {"action": "import_source", "reason": "No source material is registered."}
     elif any(d["proposal"]["source_epoch"] != state["source_epoch"] and
              (d["proposal"]["record"] is None or d["proposal"]["record"]["outcome"] == "approved") for d in decisions):
-        next_step = {"action": "reconcile_sources", "skill": "request-shaper", "reason": "Sources changed; compare old decisions before requesting fresh approval."}
+        next_step = {"action": "reconcile_sources", "skill": "request-shaper", "reason": "Sources changed; compare old records with the new sources, then propose a reconciliation for the unaffected ones or revise the affected ones."}
     elif any(q["status"] == "OPEN" and q["blocking"] == "start" for q in questions):
         next_step = {"action": "clarify", "skill": "request-shaper", "reason": "Start-blocking questions remain unanswered."}
     elif not latest(state, "request") or not fresh(state, latest(state, "request")):
@@ -536,6 +646,7 @@ def status(state):
             "source_epoch": state["source_epoch"], "sources": [{k: s[k] for k in ("id", "label", "format", "sha256")} for s in state["sources"]],
             "questions": questions, "decisions": decisions, "artifacts": artifacts, "next": next_step,
             "profiles": state["profiles"], "consultations": state["consultations"],
+            "pending_reconcile": state.get("pending_reconcile"),
             "handoff": "PM_APPROVED_HANDOFF" if state["deliveries"] and state["deliveries"][-1]["valid_revision"] == state["revision"] else "DRAFT_ONLY",
             "limitations": ["Recorded PM and reviewer identities are operator attestations, not authenticated identities.",
             "Semantic readiness remains a separately reviewed analysis, not a computed guarantee."]}
@@ -554,9 +665,17 @@ def record_view(state, identifier, revision=None):
 def impact(state, identifier):
     record_view(state, identifier)
     affected = {identifier}
-    if identifier.startswith(("S", "Q", "D", "C")):
-        affected.update(a["id"] for a in state["artifacts"])
+    if identifier.startswith("D"):
+        record = find(state["decisions"], identifier)
+        tiers = {find(state["questions"], q)["blocking"] for v in record["versions"] for q in v["questions"]}
+        spreads = "start" in tiers
+    elif identifier.startswith("C"):
+        spreads = find(state["consultations"], identifier)["blocking"] == "start"
     else:
+        spreads = identifier.startswith("S")
+    if spreads:
+        affected.update(a["id"] for a in state["artifacts"])
+    elif identifier.startswith("A"):
         changed = True
         while changed:
             before = len(affected)

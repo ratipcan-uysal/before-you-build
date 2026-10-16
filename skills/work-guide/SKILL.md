@@ -37,14 +37,14 @@ Read the anchors and separate facts stated by the source, proposals, unresolved 
 
 Pass messy source material and questions to `request-shaper`; retain `[ASSUMED]`, `[UNVERIFIED]`, `[DECISION NEEDED]` and `[DRAFT]`. Source interpretation stays with the agent; the parser does not extract semantic decisions.
 
-On new material, compare it with earlier sources and decisions before rewriting. New sources conservatively make the request's analyses stale and reopen questions whose approvals relied on older sources; unrelated requests are untouched. Old sources and approvals remain in history.
+On new material, compare it with earlier sources and decisions before rewriting. New sources conservatively make the request's analyses stale and reopen questions whose approvals relied on older sources; unrelated requests are untouched. Propose a reconciliation for what the new source leaves unaffected, so the PM confirms one list instead of re-approving every record ([protocol](references/protocol.md#reconciling-a-new-source)). Without an answer, everything stays stale. Old sources and approvals remain in history.
 
 ## Ask, recommend, and record decisions
 
 - Use `request-shaper` for the interview. Read existing answers first. Ask the highest-impact outstanding question, with the best supported recommendation, trade-offs and a genuine unknown option. Never suggest a guessed threshold as institutional fact.
 - Record a question once, with its owner and start/release/nonblocking tier. Reuse its id. Exact duplicate wording is rejected, but semantically equivalent questions still require human-quality reconciliation.
 - A proposal includes rationale, alternatives, evidence, and the questions it addresses. Proposed is not approved. A rejection leaves the questions open; a deferral remains distinct from an answer.
-- Before recording a decision, show the precise proposal id, revision and scope to the PM. Only their explicit direction authorizes `decision.record`; “continue”, silence, and source quotations do not. If nobody answers, leave it pending and continue only independent work.
+- Before recording a decision, show the precise proposal id, revision and scope to the PM. Only their explicit direction authorizes `decision.record`; “continue”, silence, and source quotations do not. If nobody answers, leave it pending and continue only independent work. Unattended, independent work includes drafting the next analysis on current but unapproved inputs as an unregistered `[DRAFT]`, in chat and at the caller's path when one was given; register it only after its inputs are approved and unchanged, and never present it as approved.
 - Preserve the PM's actual approval statement. Never fabricate a confirmation or substitute the agent as actor. The CLI checks the configured actor name but cannot authenticate a person; this is a local operator attestation, not institutional sign-off.
 - Revision revokes applicability of the previous approval. Revising a decision requires the full new proposal and renewed PM direction, not an edit to the stored approved text.
 

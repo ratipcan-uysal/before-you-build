@@ -1,6 +1,6 @@
 # Plugin-first PM/BA implementation roadmap
 
-Status: v6.0 local plugin workflow implemented. Broad institutional and cross-host quality claims remain unproven. The separate application is parked. No new repository, UI runtime, provider adapter or marketplace mirror was introduced.
+Status: v6.1 local plugin workflow implemented. Broad institutional and cross-host quality claims remain unproven. The separate application is parked. No new repository, UI runtime, provider adapter or marketplace mirror was introduced.
 
 ## Product contract
 

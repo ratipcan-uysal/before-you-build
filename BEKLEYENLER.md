@@ -1,0 +1,6 @@
+# Bekleyenler
+
+- **Z3 bekliyor (2026-10-16).** contract ve acceptance, PM onayından önce bağımsız bir review'dan geçmiyor; tek kontrol sondaki build-context geçişi. Ele alma koşulu: gerçek bir dilimde build-context'in final geçişi contract ↔ acceptance çelişkisini kaçırırsa, ya da kasıtlı çelişki ekilmiş bir pakette tekrarlı koşumda kaçırdığı ölçülürse. Kaynak: [denetim](docs/audits/structure-audit-2026-10-15.md), Z3.
+- **Cevapsız soru: gerçek bir dilimde ilk karar ile final onay arasında kaç yeni kaynak geliyor?** Uzlaştırma kaydı (6.1.0) bu sayı 2'den büyük varsayılarak yapıldı. 0–1 ise mekanizma kullanılmayabilir; ilk gerçek koşumda sayılsın.
+- **Gerçek kullanıcı koşumu:** PM uzlaştırma listesini tek tek mi okuyor, topluca mı onaylıyor? Taşınan review'lar yeniden doğrulanmıyor; topluca onay görülürse liste formatı yeniden düşünülmeli.
+- **Yönlendirme suite'ine materyal eki.** 6.1.0 koşumunda 24 düşüşün 21'i "bu spec / bu mockup" diyen prompt'un ekini bulamayıp materyal istemesiydi. Bu case'lere `scaffold_script` ya da `case.yaml` `context.add_dirs` ile kurgusal bir dosya verilmeli; ancak o zaman bu case'lerin yönlendirmesi ölçülmüş olur. Tek net kaçırma: `idea-grill`, "Talk me out of rewriting the billing service." (route-015).

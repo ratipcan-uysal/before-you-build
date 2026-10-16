@@ -120,7 +120,13 @@ Kod yazan agent'a:
 
 > Bu toplantıyı eklemeden etkilenecek kayıtları göster. Sonra çelişkileri çıkar; eski onayları yeni kapsamda geçerli sayma.
 
-`impact` kayıtlı bağımlılıkları gösterir, dış sistemleri otomatik keşfetmez. Kaynak/karar değişiklikleri ilgili talebin analizlerini temkinli olarak eski sayar. Belge/inceleme değişiklikleri bağımlı çıktıları etkiler. Eski sürümler silinmez; gönderilmiş ZIP kendiliğinden geri çağrılamaz.
+`impact` kayıtlı bağımlılıkları gösterir, dış sistemleri otomatik keşfetmez. Yeni kaynak, başlangıç engeli olan bir sorunun kararı ve `changes_required` paydaş cevabı ilgili talebin analizlerini temkinli olarak eski sayar. Yeni soru eklemek, paydaşa soru açmak, canlıya çıkış ya da bilgi kademesindeki kararlar ve `clear` cevabı onaylı belgeleri düşürmez. Açık bir başlangıç sorusu yine teslimi bloklar. Belge/inceleme değişiklikleri bağımlı çıktıları etkiler.
+
+Yeni kaynak geldiğinde her kaydı tek tek yeniden onaylamanız gerekmez:
+
+> Yeni e-postayı mevcut kararlar ve belgelerle karşılaştır. Etkilemediklerini gerekçe ve alıntıyla listele, etkilediklerini ayrı göster.
+
+Agent bir uzlaştırma önerisi (`reconcile.propose`) hazırlar. Listeyi okuyup onaylarsanız (`reconcile.approve`), etkilenmeyen karar ve belgeler önceki inceleme ve onaylarıyla güncel sayılır. Listede olmayanlar normal yoldan revize edilir, incelenir ve onaylanır. Cevap vermezseniz hiçbir şey taşınmaz. Uzlaştırmayı başka bir karar değişikliğinden önce yapın; araya giren değişiklik onu geçersiz kılar. Eski sürümler silinmez; gönderilmiş ZIP kendiliğinden geri çağrılamaz.
 
 > work-guide ile [talep adı] analizine devam et. Mevcut cevapları ve açık kararları oku. Cevapladıklarımı tekrar sorma. Kaynaklarda soru dizinine geçmemiş açık varsa ayrıca belirt. Sıradaki en önemli adımı öner.
 

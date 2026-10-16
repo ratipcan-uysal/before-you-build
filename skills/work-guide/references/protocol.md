@@ -92,7 +92,17 @@ The outcome may be `approved` or `rejected`. The actor must equal the configured
 
 Kinds: `request`, `scope`, `design`, `flow`, `data`, `api`, `contract`, `acceptance`, `risk`, `handoff`. There is one current artifact per kind; replacements add immutable content revisions. Use separate requests for separate delivery slices. Optional `structured` carries the portable request/flow/acceptance/contract representation; its schema is validated before storage. Request evidence must match exact source anchors.
 
-Dependencies are explicit objects such as `{"id":"A1","revision":1}`. The ledger captures their current review/approval generation as well. Changing an upstream artifact or its review invalidates dependent artifacts recursively. New sources, questions, decision revisions and recorded decisions conservatively invalidate analysis across the selected request. Identical source reimports do not.
+Dependencies are explicit objects such as `{"id":"A1","revision":1}`. The ledger captures their current review/approval generation as well. Changing an upstream artifact or its review invalidates dependent artifacts recursively. What else invalidates is a table in the script (`INVALIDATION`), tested operation by operation:
+
+| Event | Effect across the selected request |
+|---|---|
+| New source | Every artifact stale; every decision approval, profile approval and consultation response predates the sources until reconciled or revised |
+| Profile set or approved | Every artifact stale |
+| Decision revised or recorded for a `start` question | Every artifact stale |
+| Consultation answered `changes_required` on a `start` consultation | Every artifact stale |
+| Question added, consultation requested, `release`/`none` decisions and answers, `clear`/`unknown` answers | Nothing stale; an open `start` question or unsettled `start` consultation still blocks downstream production and delivery |
+
+Identical source reimports change nothing. A later question is a blocker, not evidence that approved work is wrong, so it does not discard approvals; the decision that answers a `start` question does.
 
 Mechanical prerequisites:
 
@@ -126,6 +136,29 @@ Record the specialist's full report:
 Review owners: request → `readiness-score`; flow → `flow-grill`; design → `ux-grill`; handoff → `build-context`. Verdicts are respectively `READY` / `CONDITIONAL` / `NOT READY`, `PASS` / `FAIL`, `PASS` / `FAIL`, and `BUILDABLE` / `ASK FIRST` / `NOT BUILDABLE`. Map a grill's actual findings to PASS only when no blocking issue stands; preserve the full report. Any upstream producer context also compromises independence. Final delivery requires explicit passing verdicts and zero blockers. Legacy reviews without verdicts cannot pass final delivery. The helper cannot authenticate context isolation or detect a dishonest report.
 
 `artifact.approve` requires `id`, `artifact_revision`, `actor`, `statement`. The reviewed kinds additionally require an independent review with zero development-blocking findings. New reviews clear active approval; old review and approval attestations remain in history. A revision number alone never means approval.
+
+## Reconciling a new source
+
+A new source opens a pending reconciliation (`status` shows `pending_reconcile`). Read the new source against each record it made stale. For the records it leaves unaffected, propose a reconciliation, citing the new source for each:
+
+```json
+{
+  "op": "reconcile.propose",
+  "sources": ["S2"],
+  "unaffected": [
+    {"id": "D1", "reason": "The reply concerns authorization only; the limit decision is untouched.", "evidence": [{"source": "S2", "locator": "L1", "quote": "Security: the boundary is fine."}]},
+    {"id": "A1", "reason": "The request text states nothing the reply contradicts.", "evidence": [{"source": "S2", "locator": "L1", "quote": "Security: the boundary is fine."}]}
+  ]
+}
+```
+
+Records: decision ids, artifact ids, consultation ids and `profile`. An artifact may be listed only with every artifact it depends on. Show the list, and what is left out, to the PM. Only after their explicit direction:
+
+```json
+{"op": "reconcile.approve", "id": "R1", "actor": "PM name", "statement": "The PM's actual statement that S2 leaves R1's records unaffected."}
+```
+
+Listed records become current again with a `carried` note naming the reconciliation; their reviews and approvals are carried under that PM attestation, not re-verified. Records left out stay stale and go through revision, review and approval as before. Without a PM answer the proposal stays pending and nothing is carried. Another source voids the proposal; propose again naming all pending sources. Any other change that invalidates (a `start` decision, a profile, a `changes_required` answer) forfeits the reconciliation, so reconcile before revising.
 
 ## Failure and recovery
 

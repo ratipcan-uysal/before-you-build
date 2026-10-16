@@ -4,7 +4,7 @@ Nothing here is a port. Codex reads the same `SKILL.md` format, including `refer
 
 ## Use them in this repository
 
-Open the repository root in Codex. The checked-in `.agents/skills` link points at the canonical [`skills/`](../skills/) directory. It now contains eighteen skills; discovery of the previous fifteen was measured at v4.10.0. New skills are structurally validated and exercised in bounded explicit-invocation trials, not yet measured for automatic host selection. If a newly pulled skill does not appear, start a new task or restart Codex.
+Open the repository root in Codex. The checked-in `.agents/skills` link points at the canonical [`skills/`](../skills/) directory. It contains eighteen skills. At v6.1.0 `codex debug prompt-input` (Codex CLI 0.162.0-alpha.2) showed all eighteen with their full descriptions, beside 77 other installed skills; discovery of the earlier fifteen was measured at v4.10.0. Automatic selection in Codex is still not measured. If a newly pulled skill does not appear, start a new task or restart Codex.
 
 ## Use them in every repository
 

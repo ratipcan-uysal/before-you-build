@@ -6,7 +6,8 @@
 # fails here first, long before a user notices it.
 #
 # Run with:  python3 scripts/validate.py     (structure only, free)
-# Model-based routing checks are added once `claude plugin eval` is GA.
+# Live routing: python3 scripts/routing_eval.py, then the `claude plugin eval`
+# command in that script's docstring (costs model runs; once per minor release).
 
 cases:
   - prompt: "Derive acceptance scenarios from this approved request and flow, including permissions and failed retries."
