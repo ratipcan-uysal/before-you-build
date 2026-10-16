@@ -1,5 +1,5 @@
-import skills from '../generated/skills.json';
-import rubric from '../generated/rubric.json';
+import skills from '../generated/skills.json' with { type: 'json' };
+import rubric from '../generated/rubric.json' with { type: 'json' };
 import { STAGES, latest } from './workflow.ts';
 import type { Case, Run, RubricItem } from './workflow.ts';
 

@@ -54,6 +54,8 @@ import {
   nextStage,
 } from '@/lib/workflow';
 import type { Case, Proposal, Source, Evidence } from '@/lib/workflow';
+import type { Stage } from '@/lib/workflow';
+import { LocalAgentPanel } from '@/components/local-agent-panel';
 
 type Summary = {
   id: string;
@@ -103,7 +105,7 @@ async function api(method: string, data?: unknown, id?: string) {
     '/api/workspace' + (id ? '?id=' + encodeURIComponent(id) : ''),
     {
       method,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'X-BYB-Local': '1' },
       ...(data ? { body: JSON.stringify(data) } : {}),
     },
   );
@@ -111,7 +113,8 @@ async function api(method: string, data?: unknown, id?: string) {
   if (!response.ok) throw new Error(body.error || 'İşlem tamamlanamadı.');
   return body;
 }
-export default function CaseWorkspace() {
+export default function CaseWorkspace({ local = false }: { local?: boolean }) {
+  const [agentStage, setAgentStage] = useState<Stage | null>(null);
   const [requests, setRequests] = useState<Summary[]>([]);
   const [current, setCurrent] = useState<Case | null>(null);
   const [busy, setBusy] = useState(false),
@@ -133,6 +136,13 @@ export default function CaseWorkspace() {
     setUser(data.user.name);
     return data;
   }, []);
+  const agentUpdate = useCallback(
+    (c: Case) => {
+      setCurrent((old) => (old?.id === c.id ? c : old));
+      void reload().catch((e) => setError(e.message));
+    },
+    [reload],
+  );
   useEffect(() => {
     // Loading is asynchronous; state changes only after the response.
     // oxlint-disable-next-line react/react-compiler
@@ -384,6 +394,14 @@ export default function CaseWorkspace() {
             <LockKeyhole size={14} /> Özel çalışma alanı
           </span>
         </header>
+        {local && (
+          <LocalAgentPanel
+            current={current}
+            stage={agentStage}
+            onClose={() => setAgentStage(null)}
+            onUpdate={agentUpdate}
+          />
+        )}
         {error && (
           <div className="status-banner error" role="alert">
             <AlertTriangle size={18} />
@@ -398,10 +416,12 @@ export default function CaseWorkspace() {
               Yenile
             </button>
             {/* Dispatch-owned sign-in must be a top-level navigation, never a router link. */}
-            {/* oxlint-disable-next-line next/no-html-link-for-pages */}
-            <a href="/signin-with-chatgpt?return_to=%2F" target="_top">
-              Oturum aç
-            </a>
+            {!local && (
+              // oxlint-disable-next-line next/no-html-link-for-pages
+              <a href="/signin-with-chatgpt?return_to=%2F" target="_top">
+                Oturum aç
+              </a>
+            )}
           </div>
         )}
         {notice && (
@@ -712,10 +732,15 @@ export default function CaseWorkspace() {
                       <Button
                         disabled={busy || !current.sources.length}
                         onClick={() =>
-                          act({ action: 'packet', stage: 'readiness' })
+                          local
+                            ? setAgentStage('readiness')
+                            : act({ action: 'packet', stage: 'readiness' })
                         }
                       >
-                        Değerlendirme paketi hazırla <ArrowUpRight size={15} />
+                        {local
+                          ? 'Talebi değerlendir'
+                          : 'Değerlendirme paketi hazırla'}{' '}
+                        <ArrowUpRight size={15} />
                       </Button>
                     </section>
                     <aside className="next-card">
@@ -732,14 +757,16 @@ export default function CaseWorkspace() {
                       </h2>
                       <p>
                         {!current.assessments.length
-                          ? 'Ajan çalışma paketini ayrı bir LLM oturumunda çalıştırın. Sonucu içe aldığınızda sorulara kaynaklarıyla başlayın.'
+                          ? local
+                            ? 'Talebi değerlendirerek başlayın. Sonrasında talebi olgunlaştırın; ajan en önemli açık soruyu getirir, siz cevaplar ve önerilere yön verirsiniz.'
+                            : 'Ajan çalışma paketini ayrı bir LLM oturumunda çalıştırın. Sonucu içe aldığınızda sorulara kaynaklarıyla başlayın.'
                           : 'PM yanıtları yeni kaynak olarak kaydedilir. Değişen içerik için eski değerlendirme kullanılmaz.'}
                       </p>
                       <div className="next-footer">
                         <button
                           onClick={() =>
                             setTab(
-                              !current.assessments.length
+                              !current.assessments.length || !questions.length
                                 ? 'workflow'
                                 : 'questions',
                             )
@@ -909,6 +936,15 @@ export default function CaseWorkspace() {
                       anlamına gelmez.
                     </div>
                   )}
+                  {local && current.assessments.length > 0 && (
+                    <Button
+                      variant="outline"
+                      disabled={busy}
+                      onClick={() => setAgentStage('request')}
+                    >
+                      Yanıtlarla talebi yeniden olgunlaştır
+                    </Button>
+                  )}
                 </TabsContent>
                 <TabsContent value="decisions">
                   <div className="panel-heading">
@@ -967,9 +1003,11 @@ export default function CaseWorkspace() {
                 <TabsContent value="documents">
                   <div className="panel-heading">
                     <h2>Belgeler ve sürümler</h2>
-                    <Button variant="outline" onClick={() => open('result')}>
-                      <Upload size={15} /> Ajan sonucu ekle
-                    </Button>
+                    {!local && (
+                      <Button variant="outline" onClick={() => open('result')}>
+                        <Upload size={15} /> Ajan sonucu ekle
+                      </Button>
+                    )}
                   </div>
                   <p className="tab-description">
                     Taslak, onay ve güncellik ayrı durumlardır. Geçmiş sürümler
@@ -1036,22 +1074,25 @@ export default function CaseWorkspace() {
                   ))}
                   {!current.artifacts.length && (
                     <div className="empty-state">
-                      Henüz belge üretilmedi. İş akışından ajan paketi
-                      hazırlayabilirsiniz.
+                      {local
+                        ? 'Henüz belge üretilmedi. İş akışından analizi başlatın; sonuç burada taslak olarak görünür.'
+                        : 'Henüz belge üretilmedi. İş akışından ajan paketi hazırlayabilirsiniz.'}
                     </div>
                   )}
                 </TabsContent>
                 <TabsContent value="workflow">
                   <div className="panel-heading">
                     <h2>Doğru iş, doğru sırada</h2>
-                    <Button variant="outline" onClick={() => open('result')}>
-                      <Upload size={15} /> Sonuç JSON ekle
-                    </Button>
+                    {!local && (
+                      <Button variant="outline" onClick={() => open('result')}>
+                        <Upload size={15} /> Sonuç JSON ekle
+                      </Button>
+                    )}
                   </div>
                   <div className="callout">
-                    Bu sürüm mevcut LLM’inizle çalışma paketi üzerinden çalışır.
-                    Paketi ayrı bir oturuma verin, üretilen JSON’u geri ekleyin.
-                    Uygulama AI çalıştırmış gibi davranmaz.
+                    {local
+                      ? 'Her analiz seçtiğiniz modelle yeni bir Codex oturumunda çalışır. Sonuçlar doğrulanarak taslak olarak kaydedilir. Bir sonraki aşama için gerekli PM onayları ve hazırlık koşulları korunur.'
+                      : 'Bu sürüm mevcut LLM’inizle çalışma paketi üzerinden çalışır. Paketi ayrı bir oturuma verin, üretilen JSON’u geri ekleyin. Uygulama AI çalıştırmış gibi davranmaz.'}
                   </div>
                   <div className="workflow-grid">
                     {STAGES.map((s, i) => {
@@ -1098,10 +1139,13 @@ export default function CaseWorkspace() {
                             variant={reasons.length ? 'outline' : 'default'}
                             disabled={busy || !!reasons.length}
                             onClick={() =>
-                              act({ action: 'packet', stage: s.id })
+                              local
+                                ? setAgentStage(s.id)
+                                : act({ action: 'packet', stage: s.id })
                             }
                           >
-                            Ajan paketi indir <ArrowUpRight size={14} />
+                            {local ? 'Analizi çalıştır' : 'Ajan paketi indir'}{' '}
+                            <ArrowUpRight size={14} />
                           </Button>
                         </section>
                       );
@@ -1366,12 +1410,18 @@ export default function CaseWorkspace() {
                 </p>
               </section>
               <section>
-                <span className="pill blue">AJAN PAKETİ</span>
-                <h3>Mevcut LLM’inizi kullanın</h3>
+                <span className="pill blue">
+                  {local ? 'YEREL CODEX' : 'AJAN PAKETİ'}
+                </span>
+                <h3>
+                  {local
+                    ? 'Modelinizi seçip analizi başlatın'
+                    : 'Mevcut LLM’inizi kullanın'}
+                </h3>
                 <p>
-                  İş akışından paketi indirin. Yeni bir oturumda çalıştırın.
-                  Sonuç JSON’unu talebe geri ekleyin. Kanonik skill talimatları
-                  pakete eklenir.
+                  {local
+                    ? 'Sayfanın üstündeki Yerel AI bağlantısından model seçin. İş akışındaki analiz düğmeleri skill’i ayrı bir Codex oturumunda çalıştırır ve sonucu taslak olarak kaydeder. Claude bağlantısı henüz uygulanmadı.'
+                    : 'İş akışından paketi indirin. Yeni bir oturumda çalıştırın. Sonuç JSON’unu talebe geri ekleyin. Kanonik skill talimatları pakete eklenir.'}
                 </p>
               </section>
               <section>

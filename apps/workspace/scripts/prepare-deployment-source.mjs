@@ -25,6 +25,8 @@ const excluded = new Set([
   'node_modules',
   'dist',
   '.wrangler',
+  '.local-data',
+  'local-dist',
   'generated',
   '.git',
   '.agents',
@@ -38,6 +40,7 @@ cpSync(app, target, {
     return (
       !excluded.has(name) &&
       !name.startsWith('.env') &&
+      !/\.(sqlite|db)(-wal|-shm)?$/.test(name) &&
       !name.endsWith('.tsbuildinfo') &&
       !name.endsWith('.log')
     );

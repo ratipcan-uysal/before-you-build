@@ -37,5 +37,7 @@ next-env.d.ts
 /outputs/
 /work/
 /generated/
+/local-dist/
+/.local-data/
 *.tsbuildinfo
 !.env.example

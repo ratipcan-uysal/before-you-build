@@ -1,11 +1,15 @@
 {
   "name": "before-you-build-workspace",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "engines": {
-    "node": ">=22.13.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
+    "local:build": "npm run prepare:skills && vite build --config vite.local.config.ts",
+    "local:start": "node local/server.ts",
+    "local": "npm run local:build && npm run local:start",
+    "test:local": "node --test tests/local-http.test.mjs",
     "prepare:skills": "node scripts/compile-skills.mjs",
     "dev": "npm run prepare:skills && vinext dev",
     "build": "npm run prepare:skills && vinext build",
