@@ -1,0 +1,13 @@
+{
+  "artifact": "contract.json",
+  "status": "[DRAFT]",
+  "inputs": [
+    {
+      "path": "../../../evals/fixtures/eligibility-brief.md",
+      "sha256": "ecc4d2c30ea3f30c4cea4f73aa609afb7cf210ad84b9efcdd56c5b7862da8a8d",
+      "revision": null,
+      "note": "No revision number supplied; exact content hash identifies this input. Fictional test input supplies scope, requirements and reviewed flow."
+    }
+  ],
+  "approval": null
+}

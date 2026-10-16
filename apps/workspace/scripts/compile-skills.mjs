@@ -47,7 +47,7 @@ for (const line of rubricText.split('\n')) {
       label: item[3],
     });
 }
-if (Object.keys(skills).length !== 15 || rubric.some((r) => !r.category))
+if (Object.keys(skills).length !== readdirSync(dir).length || rubric.some((r) => !r.category))
   throw new Error('Canonical skill compilation failed');
 const output = path.join(app, 'generated');
 mkdirSync(output, { recursive: true });

@@ -4,3 +4,5 @@ node_modules/
 .design-work/
 hizli-gonder-build/
 ekran-paylasimi-sdk/
+.byb/
+__pycache__/

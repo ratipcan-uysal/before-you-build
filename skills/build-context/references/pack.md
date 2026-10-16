@@ -50,7 +50,7 @@ No background, no motivation, no metrics. Those live in the request and a builde
 
 ## 3. Decided
 
-**Orientation, not the specification.** The specification is the chain's own documents, carried whole beside this one; this section tells a reader which of them holds what, and surfaces the handful of facts that would change how they read all of them.
+**For the default chat pack, orientation rather than duplicated specification.** Point to the carried documents and surface facts that change how they are read. When the caller asks for one coding handoff, including a supplied output path, use the subject-organized project-spec shape above: all implementation decisions must be readable in that spec. Source paths are its audit trail, not a requirement that the builder reconstruct decisions across producer documents.
 
 Grouped so they can be found: behaviour and rules · surfaces and states · data · what the system must provide · errors and their exits. Each group is a few lines and a pointer to the document that holds the detail.
 
@@ -89,6 +89,6 @@ Nothing here is invented. If the flow does not name an error path, it is not in 
 
 Always present, always last, even when the answer is *nothing missing*.
 
-Four things decide the output more than any further decision will: **real copy**, **deliberately awkward example data**, **the design system**, and **the actual stack constraints**. Say which you have and which you do not, and say plainly that a generator handed none of them invents all four and returns something that reads as finished.
+Assess **real copy**, **awkward example data**, **design system** and **actual stack constraints** for the selected slice. Mark present, incomplete, missing or explicitly inapplicable with scope evidence. For backend-only work, UI copy and a design system may be inapplicable; response strings and actual integration constraints are not thereby covered. Name what the builder would otherwise invent.
 
 **Open each one before you tick it.** *"The design record drafts the copy"* is what that skill is supposed to do, not evidence that this run did it. Go and find the strings, or mark it missing. A false tick here is worse than a missing section: a missing section gets chased, and a tick closes the question. This is the last part of the pack anyone reads, which is exactly why an unchecked reassurance survives in it — and *"absence is never coverage"* is the rule the whole set is built on.

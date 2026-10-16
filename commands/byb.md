@@ -4,6 +4,8 @@ description: Route to the right before-you-build skill for what you have in hand
 
 The user invoked the before-you-build router. Figure out where they are in the chain and route them — do not do the downstream work yourself.
 
+For persistent work — starting a tracked request, resuming its decisions, or adding a meeting to an existing analysis — route to `work-guide`. Standalone analysis still follows the table below and must not force workspace creation.
+
 **Ask nothing if you can tell from context.** Look at what they attached, pasted, or described, then name the skill and start it.
 
 | What they have | Route to |
@@ -22,6 +24,8 @@ The user invoked the before-you-build router. Figure out where they are in the c
 | A scored request that is clearly bigger than one release | `slice` |
 | A flow, diagram, or journey to be attacked | `flow-grill` |
 | A flow, and nobody has worked out what the backend must supply | `api-needs` |
+| Decided API needs that need complete interface guarantees and examples | `contract-spec` |
+| Decided requirements and flows that need observable acceptance scenarios | `acceptance-spec` |
 | Analysis done, and one named person has to approve one thing | `decision-memo` |
 
 **Two rows take the same input, and routing between them is by what they asked for, not by an order you assert.** A shaped request goes to `design-brief` when the question is what the screens should do, and to `flow-map` when it is what happens step by step. `design-brief` runs ahead of `flow-map` in the chain and that order was measured, not assumed — do not send someone to the flow first on the grounds that the brief would be better for it. Say instead what the brief itself says: written without a mapped flow it will be missing most of its error states, and it will declare itself partial.

@@ -48,6 +48,12 @@ Work the pairs below. Report a count, the way the other skills do — *"eleven c
 
 **A decision that appears unmarked in a later document and marked in an earlier one.** The marker was dropped in transcription, and an assumption is now being read as a fact. Trust the earlier document and say so.
 
+## Acceptance and technical contracts
+
+When supplied, read `acceptance-spec` and `contract-spec` outputs with their exact request/flow/data revisions. Compare structured indexes to the readable statements, then expected outcomes to actual decisions. A referenced id testing the wrong rule is not coverage. Verify category exclusions against scoped evidence; silence is not exclusion. Check error schemas and examples, authorization, partial effects, retries, timeouts, compatibility and side-effect prohibitions against the flow and API needs. Valid JSON cannot establish those meanings.
+
+Every scoped requirement and reachable flow step needs observable acceptance or an unresolved finding. Missing institutional interfaces stay open; an agent cannot approve an unavailable interface by drafting a plausible one. Separate release-only consultations from decisions the implementation would invent. Managed delivery also needs a current PM-approved applicability profile and exact artifact/review revisions; a final analytical verdict does not grant that approval.
+
 ## What not to do with a disagreement
 
 **Do not reconcile it.** Choosing the more recent document, or the one that reads better, is making a product decision by filing order — silently, in a document whose whole purpose is to stop that.

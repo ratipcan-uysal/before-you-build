@@ -1,6 +1,6 @@
 # Interview
 
-Ask in rounds of three to five. Ask only what the input has not already answered. Order the rounds so a user who stops early still has a usable document.
+Ask one main question at a time, following Phase 2 of the skill. Two to four short choice-questions may share a turn when their answer spaces are small and closed; do not batch open factual questions. If the user requests one question, keep exactly one. Ask only what the input has not already answered. Put the highest-impact gap first so someone who stops early still has useful progress.
 
 ## Order
 

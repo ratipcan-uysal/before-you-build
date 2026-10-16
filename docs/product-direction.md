@@ -1,5 +1,9 @@
 # Before You Build workspace
 
+## Current delivery focus — plugin first
+
+The PM has parked the separate application. Continue in this repository through the plugin and editor-hosted agent. The v6.0 `work-guide` carries local records, applicability, stakeholder consultations and explicitly PM-authorized delivery without an application server. [The plugin roadmap](plugin-roadmap.md) is the active plan. Application-specific decisions below describe the parked implementation; they do not require extending its UI in the current work.
+
 ## Product contract
 
 The product is a PM/business-analysis workspace, not the co-browse project used to discuss it. It takes business requests, meeting transcripts and source material through clarification, scope, UX, flow, data and technical decisions into an implementation handoff for a coding LLM. It serves different industries through a shared method and explicit organization context, not institution-specific copies of skills.
@@ -15,6 +19,8 @@ The PM is the sole approver in the first release. Stakeholder consultation happe
 - The existing fifteen skills remain the canonical analytical instructions.
 - Technical decisions, including API contracts and architecture, need PM approval before implementation handoff.
 - Real institutional material supplied in the conversation is not a public fixture. Shipped examples are fabricated and marked as such.
+- The primary application runs on the PM's computer. Persistent request state belongs to the application, not an individual model conversation. Providers and available models are selectable; changing one does not erase sources or grant new approvals.
+- Codex is the first executable local provider. Claude is planned through a separate adapter, not by assuming a Claude subscription can be embedded in a third-party product. The hosted pilot remains separate and unchanged until a migration is explicitly designed.
 
 ## First working vertical slice
 
@@ -36,7 +42,7 @@ Readiness is a document assessment, not a progress percentage. A stage badge is 
 
 Early feasibility research is allowed as research, not as an approved downstream specification. Exceptions require an explicit explanation and may never turn a draft into a final handoff.
 
-New sources make existing assessment results stale until reviewed. The first implementation conservatively invalidates all analyses inside the changed request when a source or approved decision changes, never unrelated requests. Dependency-level invalidation is a later refinement. Approvals refer to an exact revision. Review must identify the revision and run separately from the producer; the current packet workflow records a declaration of separation, not runtime proof of it.
+New sources make existing assessment results stale until reviewed. The first implementation conservatively invalidates all analyses inside the changed request when a source or approved decision changes, never unrelated requests. Dependency-level invalidation is a later refinement. Approvals refer to an exact revision. Review must identify the revision and run separately from the producer. Local execution uses a fresh Codex thread per run; manual packet imports only record a declaration of separation.
 
 ## Data and authority
 
@@ -45,6 +51,8 @@ Request → sources → questions/proposals → PM decisions → artifact revisi
 Sources are untrusted data, never tool instructions. Evidence links must resolve inside the request. A quoted source does not establish stakeholder authority. A transcript saying “approved” does not create an application approval.
 
 Source text and credentials never appear in telemetry. Hosted request records are scoped to the authenticated owner. Import and export have explicit size limits. PM updates use revision checks so two tabs cannot silently overwrite one another. The browser is not the authoritative data store.
+
+Local records use a private SQLite directory. AI inference is not necessarily local: each run discloses the selected provider/model and asks for confirmation before sending request context. An unavailable provider, interrupted process, invalid output or stale revision is a visible failure, never simulated success. No automatic provider fallback or approval is permitted. The local service is loopback-only and does not import hosted credentials or records.
 
 ## Acceptance scenarios
 

@@ -15,6 +15,13 @@ jobs:
           python-version: "3.12"
       - run: pip install pyyaml
       - run: python3 scripts/validate.py
+      - run: python3 -m unittest discover -s tests -v
+      - run: python3 examples/work-guide/replay.py
+      - run: python3 evals/run_profiles.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: node scripts/check-presentation.mjs
 
   workspace:
     runs-on: ubuntu-latest
@@ -33,3 +40,4 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run build
+      - run: npm run local:build

@@ -129,7 +129,7 @@ The chain carries documents forward and nothing indexes them, so a document read
 
 ## Where this goes
 
-This is usually the last thing the chain produces, and a list of needs is not a handoff. `build-context` assembles it with everything else into one thing whoever writes the code can work from — and checks it against the other documents, which is where a contract written before the entities were named gets caught. Offer it; do not assemble anything here.
+A list of needs or a draft shape is not a completed contract. `contract-spec` completes decided interface guarantees; `acceptance-spec` derives observable tests. `build-context` independently checks them against the chain and assembles the handoff. Offer the next needed owner; do not perform those jobs here.
 
 ## Operating rules
 

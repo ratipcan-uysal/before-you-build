@@ -8,9 +8,15 @@ It serves two builders. One writes a request and hands it to a team. The other h
 
 These skills are deliberately hard to please. A model asked to review something will usually find a way to approve it — that is the failure this repo is built against.
 
-## PM / BA workspace — early product
+## Persistent PM / BA work — plugin first
 
-The repository now also contains a persistent analysis workspace in [`apps/workspace`](apps/workspace/README.md): source and Teams VTT intake, questions, PM approvals, document revisions and guarded agent handoff. It uses exported work packets with your existing LLM; automatic AI and enterprise connectors are not yet implemented. See the [product direction](docs/product-direction.md) and the application's tested boundaries before using it with real institutional data. The portable skills below remain independently usable.
+Use [`work-guide`](skills/work-guide/SKILL.md) to start or resume a tracked request, import Teams VTT, preserve unanswered questions and record revision-specific PM decisions. Its bundled Python CLI stores records locally, without a server or model SDK. Say **“Track this request in this folder”** or **“Continue our analysis and show the open decisions.”** The guide routes to the existing analytical skills rather than replacing them.
+
+The workflow includes transactional records, exact evidence, applicability profiles, stakeholder consultations, acceptance scenarios, technical contracts and revision-bound final delivery. Automatic checks never grant approval or prove semantic completeness. See the [Turkish usage guide](docs/user-guide.md), [worked ledger scenario](examples/work-guide/README.md), [implementation roadmap](docs/plugin-roadmap.md) and [offline HTML presentation](docs/presentations/before-you-build.html).
+
+## Separate workspace application — parked
+
+The repository also contains a local analysis workspace in [`apps/workspace`](apps/workspace/README.md): source and Teams VTT intake, real Codex skill execution, selectable models, questions, PM approvals, document revisions and guarded handoff. Run `npm run local` from that directory after installing dependencies and signing into Codex. The hosted pilot remains packet-based; Claude execution, desktop installers and enterprise connectors are not yet implemented. See the [product direction](docs/product-direction.md) and the application's tested boundaries before using it with real institutional data. The portable skills below remain independently usable.
 
 ## Install
 
@@ -25,11 +31,11 @@ Then just describe what you have. The skills trigger on their own, or run `/byb`
 
 ### Codex
 
-Open this repository in Codex and all fifteen skills are discovered automatically through `.agents/skills`; no install or second copy is involved. To use them from every repository, install all fifteen from GitHub in one run. The command, scope rules, and the two behaviour differences are in [`docs/codex.md`](docs/codex.md).
+The canonical skill tree is exposed through `.agents/skills`; no second copy is involved. It contains eighteen skills and retains the description-budget check. Live host discovery was last measured with the earlier fifteen-skill release; structural validation is not proof of current routing quality. Global installation and verification boundaries are in [`docs/codex.md`](docs/codex.md).
 
 ## Where to start
 
-There is no single front door. What you reach for depends on what landed on your desk.
+For ongoing tracked work, start with `work-guide`. For a standalone analysis, what you reach for depends on what landed on your desk; no workspace setup is required.
 
 | What arrived | Can you argue with it? | Start here |
 |---|---|---|
@@ -68,16 +74,19 @@ flowchart TD
     FG -->|error paths the brief needs| DB
     FM -->|touchpoint marks| DMO[data-model]
     DMO -->|nouns before verbs| AN[api-needs]
-    AN --> BC[build-context]
+    AN --> CS[contract-spec]
+    CS --> AS[acceptance-spec]
+    AS --> BC[build-context]
     UX --> BC
-    BC --> out([now build it])
+    BC --> PM{exact PM approval}
+    PM --> out([implementation handoff])
     blocked([a decision nobody will make]) --> DM[decision-memo]
     change([changing something that already exists]) --> IR[impact-radar]
     IR --> RS
 
     classDef shipped fill:#1f6f43,stroke:#0d3a23,color:#fff
     classDef planned fill:#2b2b2b,stroke:#555,color:#bbb,stroke-dasharray:4 3
-    class IG,RS,SC,PA,SL,RI,DB,UX,FM,FG,DMO,AN,BC,IR,DM shipped
+    class IG,RS,SC,PA,SL,RI,DB,UX,FM,FG,DMO,AN,CS,AS,BC,IR,DM shipped
 ```
 
 Nothing forces you to run the whole chain. Most sessions use one skill.
@@ -88,6 +97,7 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 
 | Skill | Answers | |
 |---|---|---|
+| [`work-guide`](skills/work-guide/SKILL.md) | Where did we stop, what is open, and which exact decisions did the PM approve? | ✅ |
 | [`idea-grill`](skills/idea-grill/SKILL.md) | Should we build this at all? | ✅ |
 | [`request-shaper`](skills/request-shaper/SKILL.md) | What exactly are we building? | ✅ |
 | [`readiness-score`](skills/readiness-score/SKILL.md) | Is it ready to build? (0–100 + verdict) | ✅ |
@@ -99,6 +109,8 @@ Nothing forces you to run the whole chain. Most sessions use one skill.
 | [`flow-grill`](skills/flow-grill/SKILL.md) | Is the flow logically complete? | ✅ |
 | [`data-model`](skills/data-model/SKILL.md) | What must the system remember? | ✅ |
 | [`api-needs`](skills/api-needs/SKILL.md) | What must the system be able to provide? | ✅ |
+| [`contract-spec`](skills/contract-spec/SKILL.md) | What exact interface guarantees and examples implement the decided needs? | ✅ |
+| [`acceptance-spec`](skills/acceptance-spec/SKILL.md) | Which observable scenarios demonstrate every scoped requirement? | ✅ |
 | [`prior-art`](skills/prior-art/SKILL.md) | How is this already solved, and where do we depart? | ✅ |
 | [`impact-radar`](skills/impact-radar/SKILL.md) | If I change this, what do I break? | ✅ |
 | [`decision-memo`](skills/decision-memo/SKILL.md) | How do I get a decision made? | ✅ |
@@ -128,11 +140,11 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v4.10` — **fifteen skills**, none planned. Codex now discovers the same canonical skill tree directly when this repository is open; no mirror tree and no separate repository. All descriptions were tightened after a measured Codex run exposed only ten of fifteen within its initial discovery budget; the same check now exposes fifteen. A third worked example, in Turkish, on the strongest request in the set; five rules closing the gaps that run left recorded; and a control group that measures what the rubric adds over a plain prompt, which is not discovery. It runs from zero as well as inside an existing product: two rules that were written absolute now branch on whether the thing exists, because a brief that asks a greenfield team to export tokens they do not have stops the chain and lets the generator invent a visual language instead. The three skills added at 3.1 to 3.3 all come from one correction: the set was built for a PM handing a request to a team, and it also has to serve someone handing it to a model that writes the whole product. `data-model` because an undefined schema gets invented, `slice` because the chain was being run across scope that would not ship, and `build-context` because the chain ended in nine documents and nobody builds from nine documents. `state-matrix` was removed at v3.0 after three rounds of narrowing left it doing what `ux-grill` and `design-brief` already covered; [why](docs/decisions.md). From here the set changes because it is used. This repo has been public from the first commit, so you can read how it was built — including the passes where one skill caught another, and the two occasions a skill caught its own author.
+`v6.0` — **eighteen skills**: seventeen analytical specialists and one persistent work guide. Acceptance and contract production, evidence-backed applicability, stakeholder records, structured final gates, explicit PM-authorized archives, change tracking and backup-first migration are implemented. [The roadmap](docs/plugin-roadmap.md) separates executable checks and bounded independent trials from unmeasured institutional/cross-model quality. No new app, model adapter or duplicate marketplace tree is introduced.
 
 What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
 
-Each skill ships with its trigger and boundary tests in [`evals/triggers.yaml`](evals/triggers.yaml), checked in CI. Boundary tests matter more than trigger tests: fifteen skills with overlapping descriptions fail by firing the wrong one, and the user never finds out why the answer was off.
+Each skill ships with its trigger and boundary cases in [`evals/triggers.yaml`](evals/triggers.yaml), structurally checked in CI. These are not live model-routing evaluations. The local ledger's executable tests run separately. Boundary tests matter: overlapping descriptions can select the wrong skill without making the mistake visible to the user.
 
 ## Origin
 

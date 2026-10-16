@@ -1,0 +1,49 @@
+{
+  "schema": "byb.contract.v1",
+  "protocol": "http",
+  "operations": [
+    {
+      "id": "getEligibility",
+      "name": "GET /v1/eligibility",
+      "requirements": ["R1", "R2", "R3", "R4", "R5"],
+      "flow_steps": ["F1", "F2", "F3", "E1", "E2", "E3"],
+      "request_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false,
+        "description": "Portable logical request only. No query or body inputs. Authentication is supplied through the existing bearer middleware, with no secret in the example."
+      },
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "eligible": {"type": "boolean", "description": "True exactly when the account is active at the lookup read."},
+          "reason": {"type": "string", "enum": ["ACTIVE", "INACTIVE"]}
+        },
+        "required": ["eligible", "reason"],
+        "additionalProperties": false,
+        "enum": [{"eligible": true, "reason": "ACTIVE"}, {"eligible": false, "reason": "INACTIVE"}],
+        "description": "HTTP 200 success body. Only the two matched eligible/reason pairs are valid. No customer identifier or balance."
+      },
+      "errors": [
+        {"code": "AUTH_REQUIRED", "meaning": "HTTP 401 for missing or invalid authentication. Exact JSON body {\"code\":\"AUTH_REQUIRED\"}. No account read and no automatic retry. Retrying the unchanged unauthorized request is not a recovery; a later authenticated invocation follows the normal operation.", "retryable": false, "status": "401", "response_schema": {"type": "object", "properties": {"code": {"type": "string", "enum": ["AUTH_REQUIRED"]}}, "required": ["code"], "additionalProperties": false}, "example": {"code": "AUTH_REQUIRED"}},
+        {"code": "UNAVAILABLE", "meaning": "HTTP 503 for unavailable account source. Exact JSON body {\"code\":\"UNAVAILABLE\"}. No eligibility value; manual retry permitted, never automatic.", "retryable": true, "status": "503", "response_schema": {"type": "object", "properties": {"code": {"type": "string", "enum": ["UNAVAILABLE"]}}, "required": ["code"], "additionalProperties": false}, "example": {"code": "UNAVAILABLE"}}
+      ],
+      "authorization": "R1/R2, F1/E1: invoke the supplied bearer middleware on every invocation, including a manually retried invocation. Read exclusively the customer identity it supplies. A caller cannot select another customer through query/body inputs. On missing or invalid authentication return 401 before any account read. The concrete middleware identity interface is not supplied; see CQ1.",
+      "idempotency": "R4: lookup only, with no stored write, money movement or other business side effect. Repetition has no business side effect; no deduplication facility is required or asserted. A repeated read may return a changed account state under R5.",
+      "consistency": "R1/R5, F2/F3: once authentication succeeds, read that customer's account active flag once and return true/ACTIVE for active or false/INACTIVE otherwise. Response reflects the state at that read. No cache. Later changes do not rewrite prior responses. No multi-write atomicity or cross-request ordering guarantee is implied by this read-only operation.",
+      "timeout": "R4/E3: caller owns the wait, at most 2000 milliseconds. After timeout the caller treats the result as unknown and may retry manually, never automatically. This is a caller outcome, not an invented HTTP error response. No server cancellation or completion deadline is established. There is no partial business write to roll back or reconcile.",
+      "compatibility": "Decided scope: new GET /v1/eligibility endpoint. No existing response shape changes and no migration is in scope. No broader institutional API versioning or compatibility convention was supplied or inferred.",
+      "error_policy": "R2/E1: HTTP 401 with exactly JSON {\"code\":\"AUTH_REQUIRED\"}; no read, no eligibility, no automatic retry. R3/E2: HTTP 503 with exactly JSON {\"code\":\"UNAVAILABLE\"}; no eligibility, manual retry only. Both error bodies contain only code. R4/E3 caller timeout has no prescribed server error body/status. Each wire error has its own declared schema and example checked by the portable validator. Undefined account-source and unexpected-input cases remain CQ2/CQ3; no additional wire error is invented.",
+      "examples": [
+        {"request": {}, "response": {"eligible": true, "reason": "ACTIVE"}},
+        {"request": {}, "response": {"eligible": false, "reason": "INACTIVE"}}
+      ]
+    }
+  ],
+  "open_questions": [
+    "[UNVERIFIED] CQ1: Existing middleware/account-source interfaces and their exact revisions were not supplied. The integration owner must identify how the authenticated customer identity and valid active flag are exposed, and verify the source guarantees. Do not redesign either existing component. Owner role identified; named person unknown.",
+    "[DECISION NEEDED] CQ2: Does the existing account-source contract guarantee a present account with a valid active flag for every authenticated customer? If not, the product/API decision owner must define behavior for missing accounts or invalid flags; neither inactive nor UNAVAILABLE is silently selected. Named owner unknown.",
+    "[DECISION NEEDED] CQ3: Does an existing binding request-validation convention determine the response when query/body inputs are sent to this endpoint? They are outside its accepted request shape, but no rejection/ignore behavior or wire error was supplied. API convention owner must supply it, or the product/API decision owner must decide it. Named owners unknown."
+  ]
+}

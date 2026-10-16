@@ -1,6 +1,6 @@
 ---
 name: request-shaper
-description: Turn a raw idea, notes, or a thin ticket into a structured request by interviewing in short rounds or drafting autonomously with every inference marked. Use for "write this up properly", "turn these notes into a request", "flesh out this ticket", or messy material that needs a document. Do not use to score an existing document, argue whether the idea is worthwhile, decide screen behaviour, or run a production-risk pass.
+description: Turn raw ideas, notes or thin tickets into structured requests through short interviews or drafts with marked inferences. Use for "write this up properly" or "flesh out this ticket". Do not use to score completeness, judge merit, decide screens or run production-risk reviews.
 ---
 
 # Request Shaper
@@ -25,6 +25,7 @@ Marked assumptions use `[ASSUMED]` at the start of the line. This is not decorat
 | To know whether the idea is worth doing at all | `idea-grill` |
 | The screens and design decisions worked out | `design-brief` |
 | The production failure modes surfaced | `risk-interrogate` |
+| Resume a tracked request, preserving questions and PM decisions | `work-guide` |
 
 ## Phase 0 — Read what exists
 

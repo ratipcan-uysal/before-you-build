@@ -4,6 +4,28 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 6.0.0
+
+**Eighteen skills; two new bounded producers.** `acceptance-spec` derives observable scenarios with requirement/flow traceability and explicit blocked decisions. `contract-spec` completes decided API needs with authorization, failure/retry, timeout, consistency and compatibility guarantees plus validated success/error examples. Neither chooses missing business rules or implements software. BYB contract JSON is deliberately not OpenAPI.
+
+**Heads up — managed final delivery is now implemented.** The work guide adds PM-approved applicability profiles, versioned stakeholder responses, structured requirement/flow indexes, acceptance coverage, contract validation and explicit independent passing review verdicts. A passing check yields `AWAITING_PM`, not approval. Separate fingerprint-bound PM authorization permits an exclusive-created archive with subject spec, audit trail and integrity manifest. Old archives remain historical; changes invalidate current delivery authority.
+
+**Backup-first upgrade.** Ledger schema 1 requires explicit migration to schema 2 with a new consistent SQLite backup. Existing history survives; old reviews without verdicts and artifacts without structured indexes cannot pass the new final gate. Actor/context labels remain local attestations, not authenticated institutional sign-offs.
+
+**Behavioral corrections came from independent trials.** Standalone validation is explicitly separated from cross-document checks; error payload examples are validated; unknown protocols require prose-only drafts; standalone acceptance preserves source/revision mappings without silently creating managed work. The skill discovery budget remains fixed. See [verification evidence](examples/work-guide/quality-report.md) and [the updated roadmap](docs/plugin-roadmap.md) for measured scope and remaining external validation.
+
+## 5.0.0
+
+**A sixteenth skill: `work-guide`.** An opt-in persistent PM/BA workflow now sits beside the fifteen analytical skills. It resumes a named request, routes specialist work, and carries sources, open questions, decision proposals and exact-revision PM approvals across sessions. Standalone skills do not require a workspace. Adding a skill is a major release under this repository's versioning contract.
+
+**A self-contained local ledger, not another application.** The new skill bundles a Python standard-library CLI with SQLite transactions, expected-revision writes, immutable source/artifact content versions, exact evidence locators and Teams VTT parsing. Duplicate sources are no-ops; invalid imports roll back. Source changes invalidate analyses and old decision approvals within the affected request. Review and approval changes invalidate dependent artifacts. The script travels with the skill under either installation layout; no network, SDK, server or marketplace mirror is added.
+
+**Heads up — managed work adds conservative gates.** API artifact registration requires a current approved data model and independently reviewed flow. Registered review identity and PM confirmation are operator attestations, not authenticated identities or institutional sign-offs. Context equality catches declared self-review, not fabricated context labels. The exported continuation packet is always draft: there is no final development-ready certification or automated semantic scoring in this release.
+
+The CLI regression suite exercises restarts, conflicting writers, new-source invalidation, evidence validation, stale approvals, malformed VTT and isolated requests. This establishes mechanical behavior, not cross-model analytical quality. The staged implementation and remaining acceptance/contract authoring work are tracked in [the plugin roadmap](docs/plugin-roadmap.md); the separate application remains parked and unchanged by this release.
+
+**A bounded independent forward test exercised the guide, not only its code.** A separate agent used the documented interface on a fictional Turkish request and conflicting VTT, resumed through fresh CLI processes, and left the question and proposal unapproved. It did not verify a second independent model conversation resuming the work. The test also found stale interview guidance in `request-shaper`: its reference still requested three-to-five-question rounds. That now matches Phase 2's one-question default and narrow closed-choice exception. The historical example is annotated rather than rewritten as a run that never happened.
+
 ## 4.10.0
 
 **Codex discovers the same canonical skill tree directly from the repository.** A checked-in `.agents/skills` link exposes all fifteen directories through Codex's documented repo-skill location without copying them or changing their contracts. The validator now fails if that link disappears or points anywhere other than `skills/`.

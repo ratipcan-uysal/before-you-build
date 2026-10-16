@@ -1,5 +1,7 @@
 # Worked examples
 
+For persistent plugin state, see the [fictional work-guide replay](work-guide/README.md). It tests continuity and approval mechanics, not model-generated analysis. The analytical chains below remain separate evidence.
+
 One fictional request, carried through twelve skills in the order they were actually run. Every document here is the real output, including the passes where a skill caught the one before it — and the two where a skill caught its own author.
 
 Read in this order:

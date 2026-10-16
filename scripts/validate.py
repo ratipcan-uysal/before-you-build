@@ -39,6 +39,7 @@ VOCABULARY = {
     "mobile-app", "multi-surface", "backend-only",         # surface axis
     "owner-question",                                      # idea-grill proxy outcome
     "skill-installer",                                     # Codex's own installer, docs/codex.md
+    "validate-artifact", "verify-delivery",                 # bundled ledger CLI commands
 }
 
 # Skills that do not exist yet. Nameable where the set records its direction;
@@ -53,7 +54,7 @@ LINK = re.compile(r"\]\((?!https?://)([^)#\s]+?)(?:#[^)\s]*)?\)")
 HISTORY_MARKER = re.compile(r"remov|retire|supersed|replac|\bdropped\b|\bv\d+\.\d+", re.I)
 NUMBER_WORD = {w: i for i, w in enumerate(
     "zero one two three four five six seven eight nine ten eleven twelve "
-    "thirteen fourteen fifteen sixteen".split())}
+    "thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split())}
 NUMBER_WORD.update({f"{t}-{u}": v + i for t, v in
                     (("twenty", 20), ("thirty", 30), ("forty", 40), ("fifty", 50))
                     for u, i in NUMBER_WORD.items() if 1 <= i <= 9})
@@ -400,7 +401,7 @@ for sub in sorted(d for d in (ROOT / "examples").iterdir() if d.is_dir()):
     for example in sorted(sub.iterdir()):
         if example.name == "README.md" or example.name.startswith("."):
             continue
-        if f"]({example.name})" not in body:
+        if f"]({example.name})" not in body and not (example.is_dir() and f"]({example.name}/README.md)" in body):
             err(f"examples/{sub.name}/README.md: does not link {example.name}")
 
 changelog = (ROOT / "CHANGELOG.md").read_text()

@@ -1,5 +1,35 @@
 # Decisions
 
+## v6.0 — Complete the pre-development workflow without claiming certification
+
+**Two producers, not one larger orchestrator.** The PM explicitly asked for end-to-end acceptance and detailed contracts before a coding LLM starts. `acceptance-spec` and `contract-spec` therefore join the set, with `api-needs`, `work-guide` and `build-context` routing to them. The draft-contract layer of API needs remains a negotiation aid; final contracts have their own source/validation boundary. Rejected: making the guide write and approve everything in one context.
+
+**Applicability is a proposal, not sector magic.** Organization context, scope and review lenses guide questions. Omitted artifacts need evidence and exact PM approval; financial/telecom labels do not manufacture legal rules, existing endpoints or required signatories. Small content work can exclude irrelevant backend artifacts; backend work cannot exclude the contracts its API needs imply.
+
+**Final authorization has a mechanical and a semantic side.** The v5 draft-only limitation is superseded by explicit gates: current inputs, reviewed artifacts, structured coverage, stakeholder start blockers and a separate fingerprint-bound PM authorization. Independent `build-context` still owns substantive consistency. The exported status says `PM_APPROVED_HANDOFF`, not a universal guarantee of development readiness. Integrity hashes detect accidental modification, not a malicious actor rewriting the manifest.
+
+**Bounded portable schemas over pretend standards support.** BYB JSON validates a documented subset and both success/error examples; it is not OpenAPI or a full JSON Schema implementation. Unknown keywords fail. A requested industry standard needs its actual validator. Independent trials exposed overbroad reference-validation wording and success-only example checks; those defects were fixed rather than hidden behind a green syntax result.
+
+**Backup-first schema 2.** Profiles, consultations and delivery history require an explicit schema update. Consistent backups precede migration, future schemas fail closed, and no record is deleted. Old approvals stay in history but do not bypass new delivery requirements. The trade-off is deliberate reconciliation work after upgrade.
+
+**Editor plugin, not a second product surface.** The application remains parked. No automatic model launching, provider fallback, MCP installation or external ticket publishing. A detailed offline HTML walkthrough explains the actual implemented workflow and limits; it is documentation, not a new analysis UI.
+
+**Independent handoff testing found over-blocking and under-specification together.** The eligibility fixture had explicit scope without a separate slice file: missing filenames must not imply missing decisions. Conversely, acceptance treated missing input guarantees as future scope and tested a global prohibition on only one path. Instructions now distinguish those cases, clarify single-spec delivery and permit evidenced UI inapplicability. Release-only findings remain separately counted; standing Critical findings still forbid BUILDABLE.
+
+## v5.0 — Persistent work without a new application
+
+**The new requirement is continuity, not another analyst.** The PM asked to park the application and continue through the plugin. Existing standalone skills do not own session state. `work-guide` owns source intake, question/decision records and routing, not the analyses. Its callers include `request-shaper` and `build-context`. This expands the set to sixteen without merging production and review.
+
+**SQLite rather than independently rewritten JSON registries.** A decision changes proposal status, question disposition, artifact freshness and history together. SQLite keeps those changes atomic with expected-revision checks, using Python's standard library without a service. Source and artifact content versions stay in the ledger; JSON continuation packets are derived exports. The trade-off is a less directly browsable authoritative store; CLI records are not a GUI or enterprise audit log.
+
+**Recorded approval is not proof of a human.** The CLI checks the configured actor and exact revision; the skill requires the PM's explicit statement. A local agent can still fabricate a label. Call this an operator attestation, not authenticated approval. The same boundary applies to reviewer context ids. Strong identity is not simulated with a magic token.
+
+**Draft-only export until semantic gates are implemented and measured.** Mechanical guards prevent API registration without approved data and a reviewed flow, but do not prove completeness or truthful reports. `build-context` still owns its analytical verdict. The ledger does not authorize implementation. Acceptance/contract authoring, adaptive final gates and live host evaluations remain in the roadmap.
+
+**Invalidation includes reviews, not only edited text.** A later review can find a blocker in an unchanged flow. Dependency snapshots therefore include artifact revision and review/approval generation. New reviews clear active approval while retaining history. New sources and decided answers conservatively invalidate analysis within one request; narrower source invalidation waits for stronger provenance.
+
+## Earlier decisions
+
 Why this set is shaped the way it is. One entry per decision that had a real alternative — what was chosen, what was rejected, and why. Principles live in [`method.md`](method.md); this is the record of the calls made.
 
 Kept in the repo rather than in anyone's head, because the most reliable reader of a decision record is the person who made the decision, six weeks later, about to make it again differently.
@@ -30,7 +60,7 @@ Kept in the repo rather than in anyone's head, because the most reliable reader 
 
 **Tone is fixed: sharp but constructive.** Configurable intensity was considered and rejected — it adds mode handling to every skill and requires the harshest setting to be tested separately, for a preference most users would set once and forget.
 
-**CI tests triggers and boundaries, not output quality.** **Fifteen skills** with adjacent descriptions fail by firing the wrong one, and the user never learns why the answer was off. Output-quality evals need fixtures that cost as much as the skills do; they wait until the set stops changing weekly.
+**CI tests triggers and boundaries, not output quality.** The fifteen analytical skills with adjacent descriptions fail by firing the wrong one, and the user never learns why the answer was off. Output-quality evals need fixtures that cost as much as the skills do; they wait until the set stops changing weekly. The guide added at v5.0 brings executable ledger tests; these still do not measure model output quality.
 
 **Verdicts come from a closed set with published definitions.** `READY / CONDITIONAL / NOT READY`, `SURVIVES / SURVIVES, NARROWED / UNRESOLVED / FATAL FLAW`. A summary drifts toward whoever spoke last; a label can be argued with.
 

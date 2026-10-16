@@ -1,6 +1,6 @@
 # Working in this repo
 
-Fifteen skills for the work before code gets written. They are prose that changes how a model behaves, so an edit here is a behaviour change and gets treated as one.
+Eighteen skills for the work before code gets written: seventeen analytical specialists and a persistent work guide. Their prose changes model behavior, so an edit is a behavior change. The guide's bundled ledger also has executable state-transition tests.
 
 Read [`docs/method.md`](docs/method.md) for the principles and [`docs/decisions.md`](docs/decisions.md) for the calls already taken with their rejected alternatives. Do not reopen those without new evidence.
 
@@ -8,6 +8,7 @@ Read [`docs/method.md`](docs/method.md) for the principles and [`docs/decisions.
 
 ```bash
 python3 scripts/validate.py
+python3 -m unittest discover -s tests -v
 ```
 
 Green is the bar, and the checks are not decoration. Each one exists because the failure it catches happened: a dead skill name in a public example, a guard copied without the mechanism that discharges it, a rule that demands an answer in a set that mostly runs with nobody there.

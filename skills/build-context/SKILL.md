@@ -1,6 +1,6 @@
 ---
 name: build-context
-description: Assemble several before-you-build outputs into one implementation handoff, exposing open decisions, assumptions, contradictions, and a BUILDABLE / ASK FIRST / NOT BUILDABLE verdict. Use for "put it all together", "write the handoff", or "I'm ready to build" after the chain ran. Do not use to create missing source documents, choose architecture or stack, estimate, or fill gaps to make a pack look complete.
+description: Assemble existing analyses into one handoff, exposing contradictions and open decisions with a BUILDABLE / ASK FIRST / NOT BUILDABLE verdict. Use for "put it all together" or "write the handoff". Do not use to create missing analyses, choose architecture, estimate or fill gaps.
 ---
 
 # Build Context
@@ -29,8 +29,9 @@ Write for the second. The first is not harmed by it.
 | The architecture, the stack, the file layout | Whoever builds it. Say so and stop |
 | How long it takes | Not in this set |
 | A gap filled so the pack looks finished | Nothing. That is the failure this skill exists against |
+| Resume persistent records or record revision-specific PM approval | `work-guide` |
 
-**You are the only skill that reads more than one document.** That is where the boundary is, and it is also where the work is: the chain drifts, and nothing until now has looked across it.
+**You own the cross-document consistency review**, including `acceptance-spec` assertions and `contract-spec` guarantees against their source decisions. Managed `work-guide` records enforce revisions, not agreement; analytical `BUILDABLE` never substitutes for final PM authorization.
 
 ## Say it when you assembled the sources
 
@@ -44,7 +45,7 @@ Where no subagent is available, do the pass here and say the check is compromise
 
 Say what you have and what is missing. A pack assembled from four of nine documents is legitimate; one that does not say so is not. **Read every carrier first, then the bodies you need.** Each chain document opens with an index of its own counts, tables and markers; reading thirteen of those is what tells you which pairs are worth opening in full. You still open the body wherever you quote, and Phase 2b's walk-back still needs the source line beside you — an index is a map, never the evidence.
 
-Missing pieces are not errors. **A missing `slice` means the pack covers scope that will not ship. A missing `data-model` means the schema gets invented.** Name the consequence, not the absence, and offer the skill.
+Missing filenames are not missing decisions. Without scoped exclusions, a missing `slice` may leave excess work; without entity/identity decisions, a missing `data-model` may force invention. Check whether supplied sources already establish the needed content. Name the actual missing decision and consequence, not a ceremonial document requirement.
 
 ## Phase 1 — Check the documents against each other
 
@@ -69,7 +70,7 @@ Nothing before you has done this, and the chain demonstrably drifts — a design
 Six sections, in this order, and the order is the design. Worked wording: [`references/pack.md`](references/pack.md).
 
 1. **Ask before you start.** Every `[DECISION NEEDED]` whose answer **the first day of work would otherwise invent**, each with its owner and the one sentence that would settle it. Explicitly: *these are to be asked, never filled.*
-   **And every open grill finding belongs here too.** A grill names the decision that closes each finding, in prose, with an owner — and it never writes `[DECISION NEEDED]`, because a finding is a verdict on a document rather than a gap in one. Sourcing this list only from the marker drops all of them. Measured on a run: twenty-seven findings stood against documents still in the pack, and seven of the questions worth asking existed nowhere else.
+   **Inventory every open grill finding too, then classify it by what it blocks.** A finding may lack a `[DECISION NEEDED]` marker; that cannot make it disappear. Starting blockers go here; release-only work goes under *Done means* with its reason and owner. Count both separately. No standing `Critical` may be downgraded to release-only to obtain `BUILDABLE`.
    **Keep the second tier separate and keep it.** `request-shaper` sorts open items by what they block — starting, or going live — and collapsing that here loses the distinction the requester paid an interview for. **That sorting is usually stale by the time you read it**, because `slice` ran afterwards and retired part of it; re-tier it against the cut rather than carrying the old tiers forward. Something that blocks release and not the first commit belongs further down, under *Done means*, named as blocking release. Six undecided error exits do not stop anyone starting; they stop anyone shipping, and a pack that files them alongside the identity rule gets both ignored.
 2. **The job.** One paragraph — who finishes what, end to end. From `slice`'s spine if there is one.
 3. **Decided.** Facts, unhedged, in the words the chain used. Anything carrying `[ASSUMED]` keeps the marker.
@@ -138,7 +139,7 @@ Never write files unasked, and never write code.
 
 Always the last section, always written.
 
-Decisions are necessary and nowhere near sufficient. Without **real copy**, **deliberately awkward example data**, **the design system**, and **the actual stack constraints**, a generator invents all four and returns something that looks finished. Open each one before you tick it, and allow a third answer: present but incomplete. Say which of the four you have, which you do not, and which are half — awkward data that covers three variables and misses the one the record calls the real breaking point is not a tick. Supplying the missing ones changes the output more than any further decision would.
+Check **real copy**, **awkward example data**, **design system** and **actual stack constraints** where relevant. Open each before marking present; distinguish missing, incomplete and explicitly inapplicable with quoted scope evidence. A backend-only slice does not need invented UI copy or a design system. Partial data covering three variables but missing the known breaking point is not complete. State exactly what the builder would otherwise invent.
 
 ## Operating rules
 

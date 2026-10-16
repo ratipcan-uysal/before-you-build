@@ -9,6 +9,33 @@
 # Model-based routing checks are added once `claude plugin eval` is GA.
 
 cases:
+  - prompt: "Derive acceptance scenarios from this approved request and flow, including permissions and failed retries."
+    expect: acceptance-spec
+  - prompt: "Bu kapsam ve akış için izlenebilir Given/When/Then kabul senaryolarını yaz."
+    expect: acceptance-spec
+  - prompt: "Finalize the interface contract from these decided API needs and supplied protocol conventions."
+    expect: contract-spec
+  - prompt: "API ihtiyaçları kararlaştırıldı. Hata cevapları ve doğrulanmış örneklerle sözleşmeyi tamamla."
+    expect: contract-spec
+  - prompt: "Implement automated pytest tests for this Python module."
+    expect: none
+    note: "acceptance-spec specifies business behavior; it does not implement a test suite"
+  - prompt: "Which backend capabilities does this flow need? Do not choose endpoints yet."
+    expect: api-needs
+  - prompt: "Choose PostgreSQL indexes and implement the REST server."
+    expect: none
+    note: "contract-spec is not architecture or implementation"
+  - prompt: "Continue the request we tracked yesterday; show unanswered questions and pending PM decisions."
+    expect: work-guide
+  - prompt: "Add this Teams VTT to our existing analysis and show which approved decisions need revisiting."
+    expect: work-guide
+  - prompt: "Start a persistent PM work folder for this request."
+    expect: work-guide
+  - prompt: "Review this standalone ticket for completeness; do not set up a workspace."
+    expect: readiness-score
+  - prompt: "Summarize this meeting in three sentences; no request tracking."
+    expect: none
+    note: "a standalone summary is not persistent request management"
   # --- idea-grill: should fire -------------------------------------------
   - prompt: "We're thinking about adding a referral program. Poke holes in it."
     expect: idea-grill

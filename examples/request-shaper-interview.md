@@ -2,6 +2,8 @@
 
 Input: [the raw Quick Send request](quick-send-request.md). Abridged; the shape of each move is intact.
 
+**v5.0 reading note:** the multi-question rounds below are retained as historical output, not the current interview pattern. A forward test found the interview reference still recommending three-to-five-question rounds after Phase 2 had changed. The reference now matches Phase 2: one main question by default, with only short closed-choice batching permitted. Do not copy the compound factual question below into a new interview; start with one question such as *"What evidence shows users abandon this flow?"* and follow up after the answer. The recorded answers and counts below have not been rewritten to pretend the old run used the new pattern.
+
 ---
 
 ## Phase 0 — what the input already answers
