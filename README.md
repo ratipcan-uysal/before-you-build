@@ -31,7 +31,7 @@ Then just describe what you have. The skills trigger on their own, or run `/byb`
 
 ### Codex
 
-The canonical skill tree is exposed through `.agents/skills`; no second copy is involved. It contains eighteen skills and retains the description-budget check. At 6.1.0 Codex showed all eighteen with full descriptions, and a live Claude Code routing run fired no wrong skill across 121 cases; see the [quality report](examples/work-guide/quality-report.md) for what that run could not measure. Global installation and verification boundaries are in [`docs/codex.md`](docs/codex.md).
+The canonical skill tree is exposed through `.agents/skills`; no second copy is involved. It contains eighteen skills and retains the description-budget check. At 6.1.0 Codex showed all eighteen with full descriptions, and a live Claude Code routing run reported 97 expected activations across 121 cases; see the [quality report](examples/work-guide/quality-report.md) for what that run could not measure. Global installation and verification boundaries are in [`docs/codex.md`](docs/codex.md).
 
 ## Where to start
 
@@ -140,7 +140,9 @@ The one worth stealing even if you never install this: **if the document does no
 
 ## Status
 
-`v6.1` — **eighteen skills**: seventeen analytical specialists and one persistent work guide. Acceptance and contract production, evidence-backed applicability, stakeholder records, structured final gates, explicit PM-authorized archives, change tracking and backup-first migration are implemented. [The roadmap](docs/plugin-roadmap.md) separates executable checks and bounded independent trials from unmeasured institutional/cross-model quality. No new app, model adapter or duplicate marketplace tree is introduced.
+Version 6.2 closes missing-verdict and consultation production gates, rejects mixed-skill routing traces, and clarifies reviewer isolation and prior output authorization. See the [bounded verification report](docs/audits/skill-reliability-2026-10-18.md). The revised routing grader has not yet been evaluated in a new live host run.
+
+`v6.2` — **eighteen skills**: seventeen analytical specialists and one persistent work guide. Acceptance and contract production, evidence-backed applicability, stakeholder records, structured final gates, explicit PM-authorized archives, change tracking and backup-first migration are implemented. [The roadmap](docs/plugin-roadmap.md) separates executable checks and bounded independent trials from unmeasured institutional/cross-model quality. No new app, model adapter or duplicate marketplace tree is introduced.
 
 What changed between versions — and which changes mean the same document now scores differently — is in [`CHANGELOG.md`](CHANGELOG.md).
 

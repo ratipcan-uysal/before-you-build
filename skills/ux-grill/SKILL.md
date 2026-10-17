@@ -21,6 +21,8 @@ A model that generated a screen and then reviews it approves its own work. Not f
 
 Rules that make the delegation worth doing: **paths, never pasted content** — pasting the design back in re-imports the framing the guard exists to remove. Report the findings as the subagent's and **do not soften them**. If the design came from outside this conversation, none of this applies: review it here.
 
+A path-only task is not proof of isolation. Use a fresh reviewer context without inherited production history. If isolation is unknown, disclose that independence is unverified; do not attest an independent review.
+
 Where no subagent is available, fall back to the confession — say the review is compromised, review anyway, and say a clean repeat is owed.
 
 ## Conformance before taste

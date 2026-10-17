@@ -30,7 +30,7 @@ If nothing survives, say so. A short honest pass beats a long redundant one, and
 
 **If the material you are working from was produced in this conversation, say so before your first question, and say the pass is compromised.** You strike items already on the material's open list, which means you are judging how complete somebody's document is — and if that somebody was you, the items you remember writing are the ones you will not strike.
 
-Where a subagent is available, hand this pass to one whose entire input is the **file paths** and these instructions — paths, never pasted content. That is what the guard asks for; saying it and carrying on is the fallback, not the plan. **Called as a chain step whose entire input is a set of file paths, you are already that reader** — say so in one line and carry on, rather than confessing to a compromise you do not have. *"This conversation"* means the context you are running in, not the chain you belong to.
+Where a subagent is available, hand this pass to one whose entire input is the **file paths** and these instructions — paths, never pasted content. That is what the guard asks for; saying it and carrying on is the fallback, not the plan. **A path-only task is independent only if its context excludes the production conversation.** Use a fresh reviewer context without inherited history; passing paths into a fork that retains that history does not discharge the guard. If isolation is unknown, disclose that independence is unverified; do not attest an independent review. A fresh reader may proceed directly and state which sources it received.
 
 ## The rule that separates this from a checklist
 

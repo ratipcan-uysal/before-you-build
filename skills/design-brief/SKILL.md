@@ -105,7 +105,7 @@ Five lines, approved in minutes, and they are the difference between a product a
 
 ## Phase 4 — The generator block (offer, do not assume)
 
-Ask once: *"Want this as a constraint block for a UI generator?"* On yes, follow [`references/generator.md`](references/generator.md). **With nobody to ask, the test is the work rather than the person: produce it if a drawing step follows, and say so if none does.** A brief handed to someone about to generate a screen and carrying no block sends them to improvise from prose; a brief that ends the chain carries a block nobody opens, and `generator.md` is 12 KB nobody had to read.
+If a generator block was requested, produce it without reconfirmation. Otherwise ask once: *"Want this as a constraint block for a UI generator?"* On yes, follow [`references/generator.md`](references/generator.md). **With nobody to ask, the test is the work rather than the person: produce it if a drawing step follows, and say so if none does.** A brief handed to someone about to generate a screen and carrying no block sends them to improvise from prose; a brief that ends the chain carries a block nobody opens, and `generator.md` is 12 KB nobody had to read.
 
 It is not the brief reformatted. Generators obey structure, order, and prohibitions; they ignore adjectives and quietly invent around gaps. The block states surfaces, the primary job, ranked element order, required states, and explicit prohibitions — and never contains a style adjective, because "modern and clean" is the instruction that produces the generic result the user is trying to escape.
 

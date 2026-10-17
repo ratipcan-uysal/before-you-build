@@ -1,0 +1,47 @@
+{
+  "label": "FICTIONAL profile mechanics fixtures; not complete requests or sector policies",
+  "cases": [
+    {
+      "case": "lending",
+      "profile_recorded": true,
+      "approval_invented": false,
+      "premature_delivery_blocked": true
+    },
+    {
+      "case": "campaign",
+      "profile_recorded": true,
+      "approval_invented": false,
+      "premature_delivery_blocked": true
+    },
+    {
+      "case": "integration",
+      "profile_recorded": true,
+      "approval_invented": false,
+      "premature_delivery_blocked": true
+    },
+    {
+      "case": "reporting",
+      "profile_recorded": true,
+      "approval_invented": false,
+      "premature_delivery_blocked": true
+    },
+    {
+      "case": "permissions",
+      "profile_recorded": true,
+      "approval_invented": false,
+      "premature_delivery_blocked": true
+    },
+    {
+      "case": "content",
+      "profile_recorded": true,
+      "approval_invented": false,
+      "premature_delivery_blocked": true
+    },
+    {
+      "case": "migration",
+      "profile_recorded": true,
+      "approval_invented": false,
+      "premature_delivery_blocked": true
+    }
+  ]
+}

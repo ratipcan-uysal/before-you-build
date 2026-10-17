@@ -164,8 +164,8 @@ class DeliveryTests(unittest.TestCase):
             w.verify_delivery(corrupted)
 
     def test_start_consultation_blocks_and_source_claim_does_not_close_it(self):
-        self.op({"op": "consultation.request", "owner": "Security", "question": "Review the boundary.", "blocking": "start", "evidence": self.evidence()})
         self.seed(False)
+        self.op({"op": "consultation.request", "owner": "Security", "question": "Review the boundary.", "blocking": "start", "evidence": self.evidence()})
         self.assertTrue(any("consultation" in b for b in w.handoff_check(self.state())["blockers"]))
 
     def test_release_consultation_does_not_automatically_block_development(self):

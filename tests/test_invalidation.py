@@ -149,6 +149,33 @@ class InvalidationTests(unittest.TestCase):
         self.assertEqual(gate["status"], "AWAITING_PM", gate["blockers"])
         self.assertEqual(gate["release_consultations"], ["C4"])
 
+    def test_start_consultation_blocks_production_until_current_clear_response(self):
+        self.world()
+        consultation = self.op({"op": "consultation.request", "owner": "Security", "question": "New boundary?",
+                                "blocking": "start", "evidence": self.evidence()})["result"]["id"]
+        state = self.state()
+        self.assertTrue(all(w.accepted(state, a) for a in state["artifacts"]))
+        for kind in ("design", "flow", "data", "api", "contract", "acceptance", "handoff"):
+            with self.subTest(kind=kind), self.assertRaises(w.Invalid):
+                w.prerequisites(state, kind)
+        for kind in ("request", "scope", "risk"):
+            w.prerequisites(state, kind)
+        self.op(self.respond(consultation, "unknown"))
+        with self.assertRaises(w.Invalid):
+            w.prerequisites(self.state(), "flow")
+        self.op(self.respond(consultation))
+        w.prerequisites(self.state(), "flow")
+        state = self.state()
+        state["consultations"][-1]["responses"][-1]["source_epoch"] -= 1
+        with self.assertRaises(w.Invalid):
+            w.prerequisites(state, "flow")
+
+    def test_release_consultation_does_not_block_production(self):
+        self.world()
+        self.op({"op": "consultation.request", "owner": "Operations", "question": "New launch date?",
+                 "blocking": "release", "evidence": self.evidence()})
+        w.prerequisites(self.state(), "flow")
+
     def test_late_clear_answer_to_a_start_consultation_keeps_approvals(self):
         self.world()
         consultation = self.op({"op": "consultation.request", "owner": "Security", "question": "Boundary?", "blocking": "start",

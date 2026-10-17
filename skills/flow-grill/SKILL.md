@@ -17,7 +17,7 @@ You find them before then. Findings, with severity — never a flow you rewrote 
 
 `flow-map` and this skill are a natural pair and will be run back to back. That is exactly when the guard matters.
 
-**So hand the audit to a subagent** whose whole input is the **file paths** of the flow and whatever it is checked against, plus these instructions — nothing from the conversation that wrote the steps. Paths, never pasted content. Report the findings as the subagent's and do not soften them. If the flow arrived from outside this conversation, audit it here as normal. **Called as a chain step whose entire input is a set of file paths, you are already that reader** — say so in one line and carry on, rather than confessing to a compromise you do not have. *"This conversation"* means the context you are running in, not the chain you belong to.
+**So hand the audit to a subagent** whose whole input is the **file paths** of the flow and whatever it is checked against, plus these instructions — nothing from the conversation that wrote the steps. Paths, never pasted content. Report the findings as the subagent's and do not soften them. If the flow arrived from outside this conversation, audit it here as normal. **A path-only task is independent only if its context excludes the production conversation.** Use a fresh reviewer context without inherited history; passing paths into a fork that retains that history does not discharge the guard. If isolation is unknown, disclose that independence is unverified; do not attest an independent review. A fresh reader may proceed directly and state which sources it received.
 
 Where no subagent is available, fall back to the confession: say the review is compromised, audit anyway, and say a clean repeat is owed.
 

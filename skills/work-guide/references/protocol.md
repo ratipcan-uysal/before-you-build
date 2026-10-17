@@ -116,7 +116,7 @@ Mechanical prerequisites:
 | Acceptance without flow | Request and scope, only if flow is explicitly excluded by the profile |
 | Handoff draft | Every applicable artifact named by the profile |
 
-Downstream production also requires a current approved request with independent readiness assessment and no open start questions. Request, scope and risk drafting remain available. Profile exclusions require evidence and final PM approval; a sector label does not infer them. Draft continuation export works even when final delivery is blocked. The ledger cannot establish semantic completeness.
+Downstream production also requires a current approved request with independent readiness assessment and no open start questions or unsettled start consultations. Release-only consultations do not block this production. Request, scope and risk drafting remain available. Profile exclusions require evidence and final PM approval; a sector label does not infer them. Draft continuation export works even when final delivery is blocked. The ledger cannot establish semantic completeness.
 
 Record the specialist's full report:
 
@@ -133,7 +133,7 @@ Record the specialist's full report:
 }
 ```
 
-Review owners: request → `readiness-score`; flow → `flow-grill`; design → `ux-grill`; handoff → `build-context`. Verdicts are respectively `READY` / `CONDITIONAL` / `NOT READY`, `PASS` / `FAIL`, `PASS` / `FAIL`, and `BUILDABLE` / `ASK FIRST` / `NOT BUILDABLE`. Map a grill's actual findings to PASS only when no blocking issue stands; preserve the full report. Any upstream producer context also compromises independence. Final delivery requires explicit passing verdicts and zero blockers. Legacy reviews without verdicts cannot pass final delivery. The helper cannot authenticate context isolation or detect a dishonest report.
+Review owners: request → `readiness-score`; flow → `flow-grill`; design → `ux-grill`; handoff → `build-context`. Verdicts are respectively `READY` / `CONDITIONAL` / `NOT READY`, `PASS` / `FAIL`, `PASS` / `FAIL`, and `BUILDABLE` / `ASK FIRST` / `NOT BUILDABLE`. Map a grill's actual findings to PASS only when no blocking issue stands; preserve the full report. Any upstream producer context also compromises independence. Artifact approval, downstream production and final delivery require explicit passing verdicts and zero blockers. Legacy reviews without verdicts remain readable but cannot enable those transitions; record a new substantive review rather than manufacturing a verdict for the old report. The helper cannot authenticate context isolation or detect a dishonest report.
 
 `artifact.approve` requires `id`, `artifact_revision`, `actor`, `statement`. The reviewed kinds additionally require an independent review with zero development-blocking findings. New reviews clear active approval; old review and approval attestations remain in history. A revision number alone never means approval.
 

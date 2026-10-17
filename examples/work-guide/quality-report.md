@@ -2,6 +2,10 @@
 
 Observed on the local development environment during this implementation. This is evidence of tested mechanics and bounded behavior, not a claim that every PM request or host/model combination is reliable.
 
+## 2026-10-18 qualification of historical routing evidence
+
+The 6.1 generator required the expected skill but did not forbid additional plugin skills on positive cases. A synthetic trace with both correct and incorrect calls passed all 102 positive graders. The historical “no wrong skill” observation below cannot be established from those grader results alone; raw call-trace inspection would be needed to substantiate it. The 6.2 candidate rejects mixed traces; no new live host run is claimed. Current evidence and remaining limits are in the [reliability report](../../docs/audits/skill-reliability-2026-10-18.md).
+
 ## Repeatable local checks
 
 | Check | Observed result | Boundary |

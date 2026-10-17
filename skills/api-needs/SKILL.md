@@ -99,9 +99,9 @@ Each with the specific version for this flow, not the general rule.
 
 ## Phase 4 — The draft contract, offered separately
 
-Ask once: *"Want a draft contract to take to the backend team?"* **With nobody to ask, produce the shape layer and stop there**, and say that is what you did — no answer is not the same as "I don't know", and the concrete layer needs conventions nobody has given you. On yes, follow [`references/draft-contract.md`](references/draft-contract.md).
+If a draft contract was requested, produce it without reconfirmation. Otherwise ask once: *"Want a draft contract to take to the backend team?"* **With nobody to ask, produce the shape layer and stop there**, and say that is what you did — no answer is not the same as "I don't know", and the concrete layer needs conventions nobody has given you. On yes, follow [`references/draft-contract.md`](references/draft-contract.md).
 
-It has two layers. The shape layer is always safe. The **concrete layer** — real operations, paths and fields — only exists once you have **asked** which paradigm, which naming convention and how versioning works. Never assume REST; a proposal in the wrong paradigm tells the reader you do not know the stack, and everything above it is read in that light afterwards.
+It has two layers. The shape layer is always safe. The **concrete layer** — real operations, paths and fields — requires supplied or confirmed paradigm, naming and versioning conventions. Reuse answers already given; ask only for missing conventions. Never assume REST; a proposal in the wrong paradigm tells the reader you do not know the stack, and everything above it is read in that light afterwards.
 
 **It is a conversation opener, not a specification**, and it lives in its own section so it can be deleted without losing anything. The needs stand alone; the draft is a proposal the people who own the system are free to discard entirely — and the skill says so, in the document, where they will read it.
 

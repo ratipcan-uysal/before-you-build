@@ -1,0 +1,114 @@
+{
+  "fixture": "FICTIONAL — NO REAL PM APPROVAL",
+  "checks": {
+    "resumed_same_records": true,
+    "question_answered_before_meeting": true,
+    "question_reopened": true,
+    "approval_not_current": true,
+    "artifact_stale": true,
+    "source_did_not_approve": true,
+    "duplicate_is_noop": true,
+    "draft_only": true
+  },
+  "resumed_status": {
+    "id": "campaign",
+    "title": "[FICTIONAL] Campaign eligibility",
+    "pm": "[FICTIONAL] Ece",
+    "revision": 6,
+    "source_epoch": 2,
+    "sources": [
+      {
+        "id": "S1",
+        "label": "Fictional request",
+        "format": "text",
+        "sha256": "67168339639751715db6a7b067239f9689304ae0e015235c977738f7834cc6e4"
+      },
+      {
+        "id": "S2",
+        "label": "Fictional meeting",
+        "format": "vtt",
+        "sha256": "535a93cf27b1f510bb13c75163a31c15977626f464a0b2b26b8b8fe4034a89f5"
+      }
+    ],
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "Does eligibility change in this slice?",
+        "owner": "Business owner",
+        "blocking": "start",
+        "evidence": [
+          {
+            "source": "S1",
+            "locator": "L1",
+            "quote": "Campaign eligibility is undecided."
+          }
+        ],
+        "recommendation": null,
+        "status": "OPEN"
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "revision": 1,
+        "valid_approval": false,
+        "proposal": {
+          "revision": 1,
+          "text": "Preserve current eligibility.",
+          "rationale": "A narrow option for PM consideration.",
+          "alternatives": [
+            "Expand scope after stakeholder review."
+          ],
+          "questions": [
+            "Q1"
+          ],
+          "resolution": "answer",
+          "evidence": [
+            {
+              "source": "S1",
+              "locator": "L1",
+              "quote": "Campaign eligibility is undecided."
+            }
+          ],
+          "source_epoch": 1,
+          "record": {
+            "actor": "[FICTIONAL] Ece",
+            "statement": "[SYNTHETIC TEST APPROVAL] D1 revision 1 approved.",
+            "at": "2026-10-17T21:52:16.137176+00:00",
+            "outcome": "approved"
+          }
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "A1",
+        "kind": "request",
+        "revision": 1,
+        "fresh": false,
+        "approved": false,
+        "reviewed": false
+      }
+    ],
+    "next": {
+      "action": "reconcile_sources",
+      "skill": "request-shaper",
+      "reason": "Sources changed; compare old records with the new sources, then propose a reconciliation for the unaffected ones or revise the affected ones."
+    },
+    "profiles": [],
+    "consultations": [],
+    "pending_reconcile": {
+      "sources": [
+        "S2"
+      ],
+      "source_epoch": 1,
+      "context_revision": 2,
+      "proposal": null
+    },
+    "handoff": "DRAFT_ONLY",
+    "limitations": [
+      "Recorded PM and reviewer identities are operator attestations, not authenticated identities.",
+      "Semantic readiness remains a separately reviewed analysis, not a computed guarantee."
+    ]
+  }
+}

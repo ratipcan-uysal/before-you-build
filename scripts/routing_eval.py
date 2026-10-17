@@ -7,7 +7,8 @@ binding it to the first is the drift this repo has already paid for. Run:
     python3 scripts/routing_eval.py            # writes routing-eval/
     claude plugin eval . --eval-dir routing-eval --ablation none --no-publish --runs 1 -j 4
 
-Each case passes when the expected skill fires, or, for `expect: none`, when no
+Each case passes when the expected skill fires and no other plugin skill fires,
+or, for `expect: none`, when no
 skill of this plugin fires. That measures routing on the host and model that ran
 it, and nothing about output quality.
 
@@ -53,6 +54,8 @@ def main():
         (folder / "prompt.md").write_text("---\n" + yaml.safe_dump(front, sort_keys=False) + "---\n\n" + case["prompt"] + "\n")
         body = grader(skills, 0, 0) if expect == "none" else grader([expect], 1)
         (folder / "graders" / ("no-skill.md" if expect == "none" else "fires.md")).write_text(body)
+        if expect != "none":
+            (folder / "graders" / "no-other-skill.md").write_text(grader([s for s in skills if s != expect], 0, 0))
     first = next(c for c in cases if c["expect"] != "none")
     control = OUT / "control-wrong-skill"
     (control / "graders").mkdir(parents=True)

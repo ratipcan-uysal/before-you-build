@@ -209,7 +209,8 @@ def reviewed(artifact):
         return False
     review = current(artifact)["review"]
     return bool(review and review["independent"] and review["blocking_findings"] == 0 and
-                review.get("verdict") not in {"NOT READY", "FAIL", "ASK FIRST", "NOT BUILDABLE"})
+                review.get("verdict") in (VERDICTS.get(artifact["kind"], set()) -
+                                          {"NOT READY", "FAIL", "ASK FIRST", "NOT BUILDABLE"}))
 
 
 def decision_valid(state, decision):
@@ -267,7 +268,14 @@ def prerequisites(state, kind):
                 "requires current approved request and independent readiness assessment without start blockers")
         require(not any(q["blocking"] == "start" and question_status(state, q) == "OPEN"
                         for q in state["questions"]), "unanswered start-blocking questions")
+        require(not any(c["blocking"] == "start" and consultation_unsettled(state, c)
+                        for c in state["consultations"]), "unsettled start-blocking consultations")
     return required
+
+
+def consultation_unsettled(state, consultation):
+    response = consultation["responses"][-1] if consultation["responses"] else None
+    return not response or response["outcome"] != "clear" or response["source_epoch"] != state["source_epoch"]
 
 
 def producer_contexts(state, artifact, seen=None):
@@ -301,8 +309,7 @@ def handoff_check(state):
         if version["record"] is None and any(find(state["questions"], q)["blocking"] == "start" for q in version["questions"]):
             blockers.append("Unsettled development proposal: " + d["id"])
     for c in state["consultations"]:
-        response = c["responses"][-1] if c["responses"] else None
-        if c["blocking"] == "start" and (not response or response["outcome"] != "clear" or response["source_epoch"] != state["source_epoch"]):
+        if c["blocking"] == "start" and consultation_unsettled(state, c):
             blockers.append("Unsettled stakeholder consultation: " + c["id"])
     request, acceptance = latest(state, "request"), latest(state, "acceptance")
     flow, contract = latest(state, "flow"), latest(state, "contract")

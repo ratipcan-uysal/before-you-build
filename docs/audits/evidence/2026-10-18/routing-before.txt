@@ -1,0 +1,822 @@
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-075-api-needs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-111-impact-radar')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-066-ux-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-094-data-model')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-053-ux-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-052-ux-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-102-build-context')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-072-risk-interrogate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-013-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-092-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-065-flow-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-114-risk-interrogate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-106-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-101-build-context')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-078-flow-map')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-080-prior-art')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-073-api-needs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-117-decision-memo')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-043-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-110-impact-radar')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-016-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-068-flow-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-050-design-brief')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-039-risk-interrogate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-008-work-guide')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-046-risk-interrogate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-096-data-model')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-074-api-needs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-048-design-brief')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-090-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-049-design-brief')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-081-prior-art')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-014-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-108-request-shaper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-067-flow-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-001-acceptance-spec')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-093-data-model')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-038-risk-interrogate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-011-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-084-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-063-flow-map')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-088-slice')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-062-flow-map')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-107-request-shaper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-109-impact-radar')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-054-ux-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-055-ux-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-032-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-022-ux-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-019-risk-interrogate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-071-flow-map')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-029-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-017-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-086-slice')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-121-request-shaper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-069-flow-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-026-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-120-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-100-data-model')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-058-design-brief')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-095-data-model')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-041-risk-interrogate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-082-prior-art')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-099-api-needs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-006-api-needs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-091-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-118-decision-memo')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-031-request-shaper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-087-slice')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-104-build-context')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-002-acceptance-spec')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-015-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-020-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-060-flow-map')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-061-flow-map')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-116-decision-memo')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-056-ux-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-112-impact-radar')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-033-request-shaper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-079-prior-art')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-004-contract-spec')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-076-api-needs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-023-design-brief')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-018-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-036-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-047-design-brief')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-021-request-shaper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-034-request-shaper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-010-work-guide')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-085-slice')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-035-request-shaper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-045-flow-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-040-risk-interrogate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-009-work-guide')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-028-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-115-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-098-api-needs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-003-contract-spec')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-044-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-103-build-context')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-027-readiness-score')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_expected_skill_plus_wrong_skill_must_not_pass (test_routing_eval.RoutingTests) (case='route-059-idea-grill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/tests/test_routing_eval.py", line 39, in test_expected_skill_plus_wrong_skill_must_not_pass
+    self.assertFalse(passes([expected, wrong]))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 1 test in 0.196s
+
+FAILED (failures=102)
+122 case(s) in /var/folders/p8/x535_cz56zx9_c52cj3_j1y00000gn/T/tmpv5214_mc/generated

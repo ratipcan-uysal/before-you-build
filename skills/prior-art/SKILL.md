@@ -27,7 +27,7 @@ This is the only skill in the set that reads material the user did not produce, 
 
 **If the material you are working from was produced in this conversation, say so before your first departure, and say the pass is compromised.** A departure is a claim that the work does something differently from what is documented elsewhere. Written by whoever chose the mechanism, that comparison bends: the reasons for the choice are still in mind, and they read as answers to the question being asked.
 
-Where a subagent is available, hand this pass to one whose entire input is the **file paths** and these instructions — paths, never pasted content. That is what the guard asks for; saying it and carrying on is the fallback, not the plan. **Called as a chain step whose entire input is a set of file paths, you are already that reader** — say so in one line and carry on, rather than confessing to a compromise you do not have. *"This conversation"* means the context you are running in, not the chain you belong to.
+Where a subagent is available, hand this pass to one whose entire input is the **file paths** and these instructions — paths, never pasted content. That is what the guard asks for; saying it and carrying on is the fallback, not the plan. **A path-only task is independent only if its context excludes the production conversation.** Use a fresh reviewer context without inherited history; passing paths into a fork that retains that history does not discharge the guard. If isolation is unknown, disclose that independence is unverified; do not attest an independent review. A fresh reader may proceed directly and state which sources it received.
 
 ## Not this skill
 

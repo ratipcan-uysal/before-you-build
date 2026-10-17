@@ -55,6 +55,7 @@ class LedgerTests(unittest.TestCase):
     def review(self, aid="A1", revision=1, skill="readiness-score", count=0, reviewer="review-2"):
         return self.send({"op": "review.record", "id": aid, "artifact_revision": revision,
                           "reviewer_context": reviewer, "skill": skill, "blocking_findings": count,
+                          "verdict": {"readiness-score": "READY", "flow-grill": "PASS", "ux-grill": "PASS", "build-context": "BUILDABLE"}[skill],
                           "content": "[FICTIONAL TEST] This is a ledger fixture, not a real rubric assessment."})
 
     def approve_artifact(self, aid="A1", revision=1):
@@ -67,6 +68,16 @@ class LedgerTests(unittest.TestCase):
         self.approve_artifact()
         self.artifact("scope", [{"id": "A1", "revision": 1}])
         self.approve_artifact("A2")
+
+    def test_review_without_verdict_cannot_enable_approval(self):
+        self.artifact()
+        self.send({"op": "review.record", "id": "A1", "artifact_revision": 1,
+                   "reviewer_context": "independent", "skill": "readiness-score",
+                   "blocking_findings": 0, "content": "Assessment has no conclusion."})
+        before = self.state()
+        with self.assertRaises(w.Invalid):
+            self.approve_artifact()
+        self.assertEqual(before, self.state())
 
     def test_restart_preserves_state_and_next_step(self):
         self.question()

@@ -1,0 +1,39 @@
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 scripts/validate.py
+
+18 skill(s), 133 prose file(s), 121 trigger case(s), 0 error(s), 0 warning(s)
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/acceptance-spec
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/api-needs
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/build-context
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/contract-spec
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/data-model
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/decision-memo
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/design-brief
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/flow-grill
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/flow-map
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/idea-grill
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/impact-radar
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/prior-art
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/readiness-score
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/request-shaper
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/risk-interrogate
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/slice
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/ux-grill
+Skill is valid!
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 <skill-creator>/scripts/quick_validate.py skills/work-guide
+Skill is valid!

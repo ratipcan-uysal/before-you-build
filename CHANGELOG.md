@@ -4,6 +4,18 @@ What changes about the output you get. Skills are behaviour, so a rubric that gr
 
 For why a decision was made rather than what changed, see [`docs/decisions.md`](docs/decisions.md).
 
+## 6.2.0
+
+Explicit passing review verdicts now gate artifact approval and downstream production, not just final export. Older verdict-less reviews remain in history but cannot enable those transitions.
+
+**Start consultations block downstream registration.** An unsettled or stale start response now blocks design, flow, data, API, contract, acceptance and handoff production, matching the existing protocol. Request/scope/risk drafting and release-only consultations retain their previous behavior; unrelated existing approvals are preserved.
+
+**Routing checks reject extra skills.** Positive cases now require the expected skill and zero other plugin skills. Before, mixed correct/incorrect activations could pass. The previous live run is historical evidence, not a validation of this corrected grader.
+
+**Reviewer isolation and output authority are explicit.** A path-only prompt does not establish independence when the reviewer inherits production history. Existing save, generator-block and draft-contract requests do not require repeated confirmation. Explicit single-file handoffs take precedence over the default two-file layout.
+
+See [reproductions and verification limits](docs/audits/skill-reliability-2026-10-18.md).
+
 ## 6.1.0
 
 **Heads up — the ledger invalidates by content, not by event.** A late question, a stakeholder consultation request, a `release` or `none` decision and a `clear` or `unknown` answer no longer make every artifact in the request stale. Before, one informational question staled all nine artifacts of a full profile and a launch-only consultation blocked development delivery. An open `start` question or unsettled `start` consultation still blocks production and delivery. What invalidates is now a table in `workspace.py`, tested operation by operation. No schema change; existing stores keep working.

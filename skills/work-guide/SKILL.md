@@ -77,6 +77,8 @@ The mechanical guards require approved prerequisites: flow and data before API, 
 
 Review instructions belong to the specialist. Follow its clean-context rule; never invent a second context id to disguise self-review. If the host cannot supply a separate reviewer, record the same context and disclose the compromise; the ledger will not treat it as an independent review.
 
+A different context id alone does not establish isolation: confirm that the reviewer did not inherit the production conversation. If isolation is unknown, leave independent approval pending.
+
 Register the full review, explicit verdict and count of unresolved development blockers. A count is an attestation, not a substitute for the report. On failure, return findings to their producer; never edit the count to pass a gate. A later review removes prior active approval. A reviewer who produced any upstream dependency is not independent either.
 
 Artifact approval is separate from approval of a proposal. Show the exact artifact revision and review to the PM before recording it. Without an answer, the artifact stays a draft. Automated checks never grant PM approval.

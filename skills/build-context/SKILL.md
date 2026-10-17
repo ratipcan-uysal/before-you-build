@@ -37,7 +37,7 @@ Write for the second. The first is not harmed by it.
 
 If the documents you are checking were produced in this conversation, **open with that.** A model that wrote a brief, a flow and a contract, and then looks for disagreements between them, finds fewer than a stranger would — it recognises its own reasoning on both sides of every pair and reads agreement into it. This is the same guard `ux-grill` and `flow-grill` carry, and it bites harder here, because you are checking several documents rather than one and the pull is toward every one of them.
 
-**So hand the cross-check to a subagent** whose input is the **paths** of the documents and these instructions, and assemble the pack from what it finds. Paths, never pasted content; report its disagreements as its own and do not reconcile them. Say which documents you wrote and which arrived either way. **Called as a chain step whose entire input is a set of file paths, you are already that reader** — say so in one line and carry on, rather than confessing to a compromise you do not have. *"This conversation"* means the context you are running in, not the chain you belong to.
+**So hand the cross-check to a subagent** whose input is the **paths** of the documents and these instructions, and assemble the pack from what it finds. Paths, never pasted content; report its disagreements as its own and do not reconcile them. Say which documents you wrote and which arrived either way. **A path-only task is independent only if its context excludes the production conversation.** Use a fresh reviewer context without inherited history; passing paths into a fork that retains that history does not discharge the guard. If isolation is unknown, disclose that independence is unverified; do not attest an independent review. A fresh reader may proceed directly and state which sources it received.
 
 Where no subagent is available, do the pass here and say the check is compromised — a compromised check that names its compromise still finds most of what is there.
 
@@ -116,9 +116,9 @@ Never soften the verdict because the user is in a hurry. `ASK FIRST` with four q
 
 ## Phase 4 — Offer it as project files
 
-Ask once: *"Want this as files in the repo rather than a document?"* With nobody to ask, do not write them: files are a side effect nobody asked for.
+Honor an existing request to save and its supplied path without asking again. Otherwise ask once: *"Want this as files in the repo rather than a document?"* With nobody to ask and no prior save request, keep the output in chat.
 
-On yes, **two files, and the second is assembled by subject.**
+For a requested project-file handoff, use **two files, and assemble the second by subject.** An explicit single-file request takes precedence; do not add a standing instruction file without authorization.
 
 1. **The standing file** a coding agent loads every session: the job, the ask-don't-guess list, the prohibitions, the decided-now-built-later list, and the vocabulary. A page, not a document.
 2. **One spec**, organised by what someone is about to build — never by which skill produced what. Whoever writes the confirmation screen should find its rules, its hierarchy, its states, its copy, its steps, its error exits, what it stores and what feeds it **in one section**, not spread across five documents that each hold a fifth of it.
